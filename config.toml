@@ -1,4 +1,4 @@
-baseURL = "/chaosblade-website"
+baseURL = "https://sunny0826.github.io/chaosblade-website"
 languageCode = "en-us"
 title = "ChaosBlade"
 theme = ["docsy"]

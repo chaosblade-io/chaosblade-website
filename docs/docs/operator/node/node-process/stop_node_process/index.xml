@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 挂起点上指定进程</title>
-    <link>/chaosblade-website/docs/operator/node/node-process/stop_node_process/</link>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/operator/node/node-process/stop_node_process/</link>
     <description>Recent content in 挂起点上指定进程 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/chaosblade-website/docs/operator/node/node-process/stop_node_process/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/operator/node/node-process/stop_node_process/index.xml" rel="self" type="application/rss+xml" />
     
     
       

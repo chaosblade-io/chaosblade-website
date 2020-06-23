@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 互动教程</title>
-    <link>/chaosblade-website/try/</link>
+    <link>https://sunny0826.github.io/chaosblade-website/try/</link>
     <description>Recent content in 互动教程 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/chaosblade-website/try/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/try/index.xml" rel="self" type="application/rss+xml" />
     
     
       
