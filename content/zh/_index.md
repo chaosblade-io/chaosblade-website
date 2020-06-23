@@ -21,7 +21,7 @@ exclude_search: true
 
 <div id="overview">
   <div class="contain">
-    <h3 class="section-head">What is ChaosBlade?</h4>
+    <h3 class="section-head">ChaosBlade 是什么？</h4>
     <p>ChaosBlade 是阿里巴巴开源的一款遵循混沌工程原理和混沌实验模型的实验注入工具，帮助企业提升分布式系统的容错能力，并且在企业上云或往云原生系统迁移过程中业务连续性保障。</p>
   </div>
   <!-- <img src="https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/release/chaosblade-demo-0.0.1.gif"  height="50%" width="50%" /> -->
