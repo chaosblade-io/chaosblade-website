@@ -4,6 +4,7 @@ title = "ChaosBlade"
 theme = ["docsy"]
 description = "An Easy to Use and Powerful Chaos Engineering Toolkit"
 Paginate = 20
+publishDir = "docs"
 
 # SEO
 enableRobotsTXT = true
