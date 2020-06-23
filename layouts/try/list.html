@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="td-content">
+	<h1>{{ .Title }}</h1>
+	{{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+	{{ .Content }}
+		{{ partial "section-index.html" . }}
+	{{ if (.Params.katacodaName) }}
+		<div id="katacoda-scenario-1"
+    data-katacoda-id="{{ .Params.katacodaName }}/{{ .Params.scenarioName }}"
+    data-katacoda-color="004d7f"
+	style="height: 800px; padding-top: 20px;"></div>
+	{{ end }}
+	{{ if (and (not .Params.hide_feedback) (.Site.Params.ui.feedback.enable) (.Site.GoogleAnalytics)) }}
+		{{ partial "feedback.html" .Site.Params.ui.feedback }}
+		<br />
+	{{ end }}
+	{{ if (.Site.DisqusShortname) }}
+		<br />
+		{{ partial "disqus-comment.html" . }}
+	{{ end }}
+	<div class="text-muted mt-5 pt-3 border-top">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
+{{ end }}

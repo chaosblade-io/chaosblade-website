@@ -1,0 +1,250 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – 快速开始</title>
+    <link>/docs/quickstart/</link>
+    <description>Recent content in 快速开始 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="/docs/quickstart/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 安装部署</title>
+      <link>/docs/quickstart/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/quickstart/installation/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;cli-安装&#34;&gt;CLI 安装&lt;/h2&gt;
+&lt;h3 id=&#34;下载-chaosblade&#34;&gt;下载 chaosblade&lt;/h3&gt;
+&lt;p&gt;获取 chaosblade 最新的 &lt;a href=&#34;https://github.com/chaosblade-io/chaosblade/releases&#34;&gt;release&lt;/a&gt; 包，目前支持的平台是 linux/amd64 和 darwin/64，下载对应平台的包。&lt;/p&gt;
+&lt;p&gt;下载完成后解压即可，无需编译。&lt;/p&gt;
+&lt;h3 id=&#34;使用-chaosblade&#34;&gt;使用 chaosblade&lt;/h3&gt;
+&lt;p&gt;进入解压后的文件夹，可以看到以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── bin
+│   ├── chaos_burncpu
+│   ├── chaos_burnio
+│   ├── chaos_changedns
+│   ├── chaos_delaynetwork
+│   ├── chaos_dropnetwork
+│   ├── chaos_filldisk
+│   ├── chaos_killprocess
+│   ├── chaos_lossnetwork
+│   ├── jvm.spec.yaml
+│   └── tools.jar
+├── blade
+└── lib
+    └── sandbox
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中 blade 是可执行文件，即 chaosblade 工具的 cli，混沌实验执行的工具。执行 &lt;code&gt;./blade help&lt;/code&gt; 可以查看支持命令有哪些：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;An easy to use and powerful chaos engineering experiment toolkit
+
+Usage:
+  blade [command]
+
+Available Commands:
+  create      Create a chaos engineering experiment
+  destroy     Destroy a chaos experiment
+  help        Help about any command
+  prepare     Prepare to experiment
+  revoke      Undo chaos engineering experiment preparation
+  status      Query preparation stage or experiment status
+  version     Print version info
+
+Flags:
+  -d, --debug   Set client to DEBUG mode
+  -h, --help    help for blade
+
+Use &amp;quot;blade [command] --help&amp;quot; for more information about a command.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;operator-安装&#34;&gt;Operator 安装&lt;/h2&gt;
+&lt;p&gt;在 Kubernetes 平台上运行 ChaosBlade，请使用 ChaosBlade Operator。&lt;/p&gt;
+&lt;p&gt;ChaosBlade Operator 需要使用 Helm 安装，进入 &lt;a href=&#34;https://github.com/chaosblade-io/chaosblade-operator/releases&#34;&gt;release 页面&lt;/a&gt; 下载安装包（ChaosBlade 还提供了阿里云 OSS 的下载地址，提升国内下载速度）。&lt;/p&gt;
+&lt;p&gt;使用 Helm 3 安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 下载安装包&lt;/span&gt;
+$ wget -qO chaosblade-operator-0.6.0.tgz https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/0.6.0/chaosblade-operator-0.6.0-v3.tgz
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 为 chaosblade 创建一个 namespace&lt;/span&gt;
+$ kubectl create namespace chaosblade
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 安装 ChaosBlade-Operator&lt;/span&gt;
+$ helm install chaos chaosblade-operator-0.6.0.tgz --set webhook.enable&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt; --namespace&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;chaosblade
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查看安装结果&lt;/span&gt;
+$ kubectl get pod -n chaosblade &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; grep chaosblade
+chaosblade-operator-6b6b484599-gdgq8   1/1     Running   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;          4d23h
+chaosblade-tool-7wtph                  1/1     Running   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;          4d20h
+chaosblade-tool-r4zdk                  1/1     Running   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;          4d23h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;ChaosBlade Operator 启动后将会在每个节点部署一个 &lt;code&gt;chaosblade-tool&lt;/code&gt; Pod 和一个 &lt;code&gt;chaosblade-operator&lt;/code&gt; Pod，如果都运行正常，则安装成功。上面设置 &lt;code&gt;--set webhook.enable=true&lt;/code&gt; 是为了进行 Pod 文件系统 I/O 故障实验，如果不需要进行该实验，则无需添加该设置。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 快速体验</title>
+      <link>/docs/quickstart/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/quickstart/demo/</guid>
+      <description>
+        
+        
+        &lt;p&gt;如果想不下载 chaosblade 工具包，快速体验 chaosblade，可以拉取 docker 镜像并运行，在容器内体验。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/a4660c53b58e95736005c0c892bf0e633dbbd134/68747470733a2f2f6368616f73626c6164652e6f73732d636e2d68616e677a686f752e616c6979756e63732e636f6d2f6167656e742f72656c656173652f6368616f73626c6164652d64656d6f2d302e302e312e676966&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;操作步骤如下： 下载镜像：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull chaosbladeio/chaosblade-demo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动镜像：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run -it --privileged chaosbladeio/chaosblade-demo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;进入镜像之后，可阅读 README.txt 文件实施混沌实验，&lt;strong&gt;Enjoy it&lt;/strong&gt;。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 开始混沌实验</title>
+      <link>/docs/quickstart/first-exp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/quickstart/first-exp/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;执行你的第一个混沌实验&#34;&gt;执行你的第一个混沌实验&lt;/h2&gt;
+&lt;p&gt;我们拿 CPU 满载(CPU 使用率 100%) 演练场景举例（&lt;strong&gt;！！注意，在不清楚影响面的情况下，切勿在生产系统机器上执行&lt;/strong&gt;），执行以下命令实施实验：&lt;/p&gt;
+&lt;h3 id=&#34;开始实验&#34;&gt;开始实验&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade create cpu fullload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行结果返回：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;7c1f7afc281482c8&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查看故障&#34;&gt;查看故障&lt;/h3&gt;
+&lt;p&gt;通过 top 命令查看 CPU 使用率&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CPU usage: 93.79% user, 6.20% sys, 0.0% idle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;停止实验&#34;&gt;停止实验&lt;/h3&gt;
+&lt;p&gt;此时命令已经生效，停止混沌实验，执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade destroy 7c1f7afc281482c8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;返回以下结果，表示停止实验成功&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;command: cpu fullload --debug false --help false&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再去观察 CPU 情况，CPU 负载已回到正常状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CPU usage: 6.36% user, 4.74% sys, 88.88% idle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一次 CPU 满载演练完成。&lt;/p&gt;
+&lt;h2 id=&#34;你的第二个混沌实验&#34;&gt;你的第二个混沌实验&lt;/h2&gt;
+&lt;h3 id=&#34;下载-demo&#34;&gt;下载 demo&lt;/h3&gt;
+&lt;p&gt;这次实验，我们演练 Dubbo 应用，我们的需求是 consumer 调用 com.alibaba.demo.HelloService 服务下的 hello 接口延迟 3 秒。接下来我们下载所需要的 Dubbo Demo：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/demo/dubbo-provider-1.0-SNAPSHOT.jar&#34;&gt;dubbo-provider&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/demo/dubbo-consumer-1.0-SNAPSHOT.jar&#34;&gt;dubbo-consumer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载完成后，执行以下命令启动应用，注意必须先启动 &lt;code&gt;dubbo-provider&lt;/code&gt;，然后再启动 &lt;code&gt;dubbo-consumer&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 启动 dubbo-provider&lt;/span&gt;
+nohup java -Djava.net.preferIPv4Stack&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt; -Dproject.name&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;dubbo-provider -jar dubbo-provider-1.0-SNAPSHOT.jar &amp;gt; provider.nohup.log 2&amp;gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 稍等 2 秒，然后启动 dubbo-consumer&lt;/span&gt;
+nohup java -Dserver.port&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8080&lt;/span&gt; -Djava.net.preferIPv4Stack&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt; -Dproject.name&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;dubbo-consumer -jar dubbo-consumer-1.0-SNAPSHOT.jar &amp;gt; consumer.nohup.log 2&amp;gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;访问 &lt;code&gt;http://localhost:8080/hello?msg=world&lt;/code&gt;，返回以下信息，表示启动成功：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#a40000&#34;&gt;msg:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Dubbo Service: Hello world&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;实验准备&#34;&gt;实验准备&lt;/h3&gt;
+&lt;p&gt;接下来我们要使用 blade 工具进行混沌实验，在执行实验前，我们需要先执行 prepare 命令，挂载所需要的 java agent：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade prepare jvm --process dubbo-consumer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;返回以下结果，表示实验准备成功：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e669d57f079a00cc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;接口延迟实验&#34;&gt;接口延迟实验&lt;/h3&gt;
+&lt;p&gt;我们开始实施混沌实验，我们的需求是 consumer 调用 &lt;code&gt;com.alibaba.demo.HelloService&lt;/code&gt; 服务下的 &lt;code&gt;hello&lt;/code&gt; 接口延迟 3 秒。 我们执行 &lt;code&gt;./blade create dubbo delay -h&lt;/code&gt; 命令查看 dubbo 调用延迟的命令用法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Usage:
+  blade create dubbo delay
+
+Flags:
+      --appname string      The consumer or provider application name
+      --consumer            To tag consumer role experiment.
+  -h, --help                &lt;span style=&#34;color:#204a87&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; delay
+      --methodname string   The method name in service interface
+      --offset string       delay offset &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; the &lt;span style=&#34;color:#204a87&#34;&gt;time&lt;/span&gt;
+      --process string      Application process name
+      --provider            To tag provider experiment
+      --service string      The service interface
+      --time string         delay &lt;span style=&#34;color:#204a87&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;required&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+      --version string      the service version
+
+Global Flags:
+  -d, --debug   Set client to DEBUG mode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;调用 &lt;code&gt;com.alibaba.demo.HelloService&lt;/code&gt; 服务下的 &lt;code&gt;hello&lt;/code&gt; 接口延迟 3 秒，我们执行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade create dubbo delay --time &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3000&lt;/span&gt; --service com.alibaba.demo.HelloService --methodname hello --consumer --process dubbo.consumer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;查看故障-1&#34;&gt;查看故障&lt;/h4&gt;
+&lt;p&gt;返回以下结果，表示执行成功；访问 &lt;code&gt;http://localhost:8080/hello?msg=world&lt;/code&gt; 验证是否延迟 3 秒&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ec695fee1e458fc6&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对实施实验的命令进行解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--time&lt;/code&gt;: 3000，表示延迟 3000 ms；单位是 ms&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--service&lt;/code&gt;: com.alibaba.demo.HelloService， 表示调用的服务&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--methodname&lt;/code&gt;: hello，表示服务接口方法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--consumer&lt;/code&gt;: 表示演练的是 dubbo consumer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--process&lt;/code&gt;: dubbo.consumer，表示对哪个应用进程实施混沌实验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;停止实验-1&#34;&gt;停止实验&lt;/h4&gt;
+&lt;p&gt;停止当前延迟的混沌实验，再次访问 url 验证是否恢复正常：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade destroy ec695fee1e458fc6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不尽兴的话，我们再实施调用刚才那个服务抛异常，执行 &lt;code&gt;./blade create dubbo throwCustomException -h&lt;/code&gt; 命令查看帮助：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Throw custom exception with --exception option
+
+Usage:
+  blade create dubbo throwCustomException
+
+Aliases:
+  throwCustomException, tce
+
+Flags:
+      --appname string      The consumer or provider application name
+      --consumer            To tag consumer role experiment.
+      --exception string    Exception class inherit java.lang.Exception &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;required&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  -h, --help                &lt;span style=&#34;color:#204a87&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; throwCustomException
+      --methodname string   The method name in service interface
+      --process string      Application process name
+      --provider            To tag provider experiment
+      --service string      The service interface
+      --version string      the service version
+
+Global Flags:
+  -d, --debug   Set client to DEBUG mode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;抛出异常实验&#34;&gt;抛出异常实验&lt;/h3&gt;
+&lt;p&gt;和刚才延迟命令参数差不多，因为相同的参数是演练 dubbo 所需要的，不同的是没有了 &lt;code&gt;--time&lt;/code&gt;，多了个 &lt;code&gt;--exception&lt;/code&gt; 参数。 我们模拟调用刚才的服务抛 &lt;code&gt;java.lang.Exception&lt;/code&gt; 异常：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade create dubbo throwCustomException --exception java.lang.Exception --service com.alibaba.demo.HelloService --methodname hello --consumer --process dubbo.consumer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;查看故障-2&#34;&gt;查看故障&lt;/h4&gt;
+&lt;p&gt;返回以下结果，访问 &lt;code&gt;http://localhost:8080/hello?msg=world&lt;/code&gt; 验证是否异常&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;09dd96f4c062df69&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;停止实验-2&#34;&gt;停止实验&lt;/h4&gt;
+&lt;p&gt;停止此次试验，再次访问请求，验证是否恢复：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade destroy 09dd96f4c062df69
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;销毁实验&#34;&gt;销毁实验&lt;/h3&gt;
+&lt;p&gt;最后，我们撤销刚才的实验准备，即卸载 Java Agent：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./blade revoke e669d57f079a00cc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果找不到之前执行 prepare 返回的 UID 的话，执行 &lt;code&gt;./blade status --type prepare&lt;/code&gt; 命令查询：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Uid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e669d57f079a00cc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ProgramType&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;jvm&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Process&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;dubbo.consumer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Port&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;59688&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Running&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CreateTime&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-03-29T16:19:37.284579975+08:00&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;UpdateTime&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-03-29T17:05:14.183382945+08:00&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "ChaosBlade"
+theme = ["docsy"]
+description = "An Easy to Use and Powerful Chaos Engineering Toolkit"
+Paginate = 20
+
+# SEO
+enableRobotsTXT = true
+
+# Docsy: Gives values to .Lastmod etc.
+enableGitInfo = true
+
+# Docsy: Language settings
+contentDir = "content/zh"
+defaultContentLanguage = "zh"
+# Tell Hugo not to include the /en/ element in the URL path for English docs:
+defaultContentLanguageInSubdir = false
+# Docsy: Useful when translating.
+enableMissingTranslationPlaceholders = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# Docsy: Highlighting config
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "tango"
+
+ # Docsy: First one is picked as the Twitter card image if not set on page.
+ #images = ["images/project-illustration.png"]
+
+# Top-level navigation (horizontal)
+
+
+# Docsy: Configure the format of URLs per section.
+#[permalinks]
+#blog = "/:section/:year/:month/:day/:slug/"
+
+# Docsy: Configuration for Goldmark markdown parser, which is default from 
+# Hugo 0.60 onwards. https://github.com/yuin/goldmark/
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+# Allow Goldmark to render raw HTML:
+      unsafe = true
+
+# Docsy: Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
+
+# [services]
+# [services.googleAnalytics]
+# id = "UA-135379910-1"
+
+# Docsy: Language configuration
+
+[languages]
+# [languages.en]
+# title = "ChaosBlade"
+# description = "An Easy to Use and Powerful Chaos Engineering Toolkit"
+# languageName ="English"
+# # Weight used for sorting in the language menu:
+# weight = 2
+
+# # Below is an example of another language (Norwegian):
+# #[languages.no]
+# #title = "Docsy"
+# #description = "Docsy er operativsystem for skyen"
+# #languageName ="Norsk"
+# #contentDir = "content/no"
+# time_format_default = "02.01.2006"
+# time_format_blog = "02.01.2006"
+
+[languages.zh]
+title = "ChaosBlade"
+description = "简单易用且功能强大的混沌实验实施工具"
+languageName ="简体中文"
+contentDir = "content/zh"
+time_format_default = "2006年01月02日"
+time_format_blog = "2006年01月02日"
+# Weight used for sorting.
+weight = 1
+
+# Site params
+
+[params]
+
+# GitHub repository for in-page links to editing a page and opening and issues.
+github_repo = "https://github.com/kubeflow/website"
+# An optional link to a related project repo. For example, the sibling repository where your product code lives.
+github_project_repo = "https://github.com/kubeflow/kubeflow"
+
+RSSLink = "/index.xml"
+author = "kubeflow.org" # add your company name
+github = "kubeflow" # add your github profile name
+twitter = "kubeflow" # add your twitter profile
+#email = "myemail@myaddress.xxx"
+
+copyright = "The ChaosBlade Authors."
+# privacy_policy = "https://policies.google.com/privacy"
+
+# Docsy: Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "007239566369470735695:624rglujm-w"
+
+#Enable offline search with Lunr.js
+offlineSearch = true
+offlineSearchSummaryLength = 200
+offlineSearchMaxResults = 25
+
+# Text label for the version menu in the top bar of the website.
+version_menu = "v0.6.0"
+
+# The major.minor version tag for the version of the docs represented in this
+# branch of the repository. Used in the "version-banner" partial to display a
+# version number for this doc set.
+version = "v0.6.0"
+
+# Flag used in the "version-banner" partial to decide whether to display a 
+# banner on every page indicating that this is an archived version of the docs.
+archived_version = false
+
+# A link to latest version of the docs. Used in the "version-banner" partial to
+# point people to the main doc site.
+url_latest_version = "https://chaosblade.io/docs/"
+
+# A variable used in various docs to determine URLs for config files etc.
+# To find occurrences, search the repo for 'params "githubbranch"'.
+githubbranch = "v1.0-branch"
+
+# Add new release versions here. These entries appear in the drop-down menu
+# at the top of the website.
+[[params.versions]]
+  version = "master"
+  githubbranch = "master"
+  url = "https://master.chaosblade.io"
+
+[[params.versions]]
+  version = "v0.6.0"
+  githubbranch = "v0.6.0-branch"
+  url = "https://v0-6-0.chaosblade.io"
+
+
+# Docsy: User interface configuration
+[params.ui]
+# Docsy: Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = true
+# Docsy: Disable the search box in the side bar.
+sidebar_search_disable = true
+#  Docsy: Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+
+# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
+# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
+# add "hide_feedback: true" to the page's front matter.
+[params.ui.feedback]
+enable = true
+# The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
+yes = 'Glad to hear it! Please <a href="https://github.com/kubeflow/website/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/kubeflow/website/issues/new">tell us how we can improve</a>.'
+
+
+[params.links]
+# Docsy: "User" links will show on left side of footer and in the community page if you have one.
+[[params.links.user]]
+	name ="Twitter"
+	url = "https://twitter.com/chaosblade.io"
+	icon = "fab fa-twitter"
+        desc = "Follow us on Twitter to get the latest news"
+[[params.links.user]]
+	name = "GitHub"
+	url = "https://github.com/chaosblade-io/chaosblade"
+	icon = "fab fa-github"
+        desc = "Development takes place here!"
+[[params.links.user]]
+	name = "Gitter"
+	url = "https://gitter.im/chaosblade-io/community"
+	icon = "fab fa-gitter"
+[[params.links.user]]
+	name = "Mailing list"
+	url = "https://groups.google.com/forum/#!forum/chaosblade-io"
+	icon = "fa fa-envelope"
+        desc = "Discussion and help from your fellow users"
+
+
+# Docsy: "Developer" links will show on right side of footer and in the community page if you have one.
+#[[params.links.developer]]
+#	name = "A name"
+#	url = "http://example.com"
+#	icon = "fab fa-envelope"
+#       desc = "A description"

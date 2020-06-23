@@ -1,0 +1,240 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/create/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-resource/cpu-load/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-resource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/try/operator-pod/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/remove/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/quickstart/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/contributing/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/pod-io-error/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-process/kill_container_process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-process/kill_node_process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-disk/fill_node_disk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-network/delay_container_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-network/delay_node_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/delay_pod_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/cpu-load/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/destroy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/contributing/dev/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/quickstart/demo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-process/stop_container_process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-process/stop_node_process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-network/loss_container_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-network/loss_node_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/loss_pod_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-disk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/prepare/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/contributing/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/container/container-network/tamper_container_dns/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-network/dns_node_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/dns_pod_network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/quickstart/first-exp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/operator/node/node-process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/revoke/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/status/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/query/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/version/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/server/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/blog/cloudnative/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/blog/cloudnative/chaosblade-operator/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/blog/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/try/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/contributing/</loc>
+  </url>
+  
+</urlset>
