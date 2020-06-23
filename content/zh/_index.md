@@ -60,7 +60,7 @@ Kubernetes 平台节点上 CPU、内存、网络、磁盘、进程实验场景�
     <p>
       我们非常欢迎每个 Issue 和 PR，即使一个标点符号，如何参加贡献请阅读  <a href="/contributing/">CONTRIBUTING</a> 文档，或者通过下面的方式联系我们。 
     </p>
-    <a class="btn btn-lg btn-primary mr-3 mb-4" href="/contributing/">
+    <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/contributing" >}}">
       贡献指南 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
     </a>
   </div>

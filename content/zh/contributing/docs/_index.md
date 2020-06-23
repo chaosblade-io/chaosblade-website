@@ -6,7 +6,7 @@ type: docs
 description: > 
     帮助撰写文档
 ---
-ChaosBlade 使用 [Hugo] 的 [Docsy](https://www.docsy.dev) 主题，并在其基础上进行了定制。
+ChaosBlade 使用 [Hugo](https://gohugo.io) 的 [Docsy](https://www.docsy.dev) 主题，并在其基础上进行了定制。
 
 ## 前提条件
 
