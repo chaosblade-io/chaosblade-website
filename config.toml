@@ -132,19 +132,19 @@ url_latest_version = "https://chaosblade.io/docs/"
 
 # A variable used in various docs to determine URLs for config files etc.
 # To find occurrences, search the repo for 'params "githubbranch"'.
-githubbranch = "v1.0-branch"
+# githubbranch = "v0.6.0-branch"
 
-# Add new release versions here. These entries appear in the drop-down menu
-# at the top of the website.
-[[params.versions]]
-  version = "master"
-  githubbranch = "master"
-  url = "https://master.chaosblade.io"
+# # Add new release versions here. These entries appear in the drop-down menu
+# # at the top of the website.
+# [[params.versions]]
+#   version = "master"
+#   githubbranch = "master"
+#   url = "https://master.chaosblade.io"
 
-[[params.versions]]
-  version = "v0.6.0"
-  githubbranch = "v0.6.0-branch"
-  url = "https://v0-6-0.chaosblade.io"
+# [[params.versions]]
+#   version = "v0.6.0"
+#   githubbranch = "v0.6.0-branch"
+#   url = "https://v0-6-0.chaosblade.io"
 
 
 # Docsy: User interface configuration
