@@ -3,238 +3,292 @@
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-resource/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/create/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-resource/cpu-load/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-resource/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/try/operator-pod/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-resource/remove/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/remove/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/quickstart/installation/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/quickstart/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/contributing/docs/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/pod-io-error/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-process/kill_container_process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-process/kill_node_process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-disk/fill_node_disk/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-network/delay_container_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-network/delay_node_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/delay_pod_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-resource/cpu-load/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/destroy/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/contributing/dev/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/quickstart/demo/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-process/stop_container_process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-process/stop_node_process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-network/loss_container_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-network/loss_node_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/loss_pod_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-disk/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/prepare/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/contributing/community/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/container/container-network/tamper_container_dns/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-network/dns_node_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/dns_pod_network/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/quickstart/first-exp/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/operator/node/node-process/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/revoke/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/status/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/query/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/version/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/server/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/blog/cloudnative/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/blog/cloudnative/chaosblade-operator/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.kubeflow.org/blog/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/faq/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/try/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/blog/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.org/contributing/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
 </urlset>
