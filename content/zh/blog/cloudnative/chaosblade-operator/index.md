@@ -1,6 +1,6 @@
 ---
-title: "Chaosblade Operator：在云原生场景下，将 Kubernetes 设计理解与混沌实验模型相结合标准化实现方案 "
-linkTitle: "Chaosblade Operator：在云原生场景下，将 Kubernetes 设计理解与混沌实验模型相结合标准化实现方案 "
+title: "Chaosblade Operator：在云原生场景下，将 Kubernetes 设计理解与混沌实验模型相结合标准化实现方案"
+linkTitle: "Chaosblade Operator：在云原生场景下，将 Kubernetes 设计理解与混沌实验模型相结合标准化实现方案"
 date: 2020-01-15
 description: "云原生下的混沌工程实践。"
 author: 穹谷([@xcaspar](https://github.com/xcaspar))
