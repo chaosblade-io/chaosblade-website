@@ -1,0 +1,172 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – docker 容器场景</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</link>
+    <description>Recent content in docker 容器场景 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 容器内 CPU 负载实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-cpu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-cpu/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持 CPU 场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create docker cpu load&lt;/code&gt; 容器内 CPU 负载场景，同 [blade create cpu load](blade create cpu load.md)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 docker 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--blade-override           是否覆盖容器内已有的 chaosblade 工具，默认是 false，表示不覆盖，chaosblade 在容器内的部署路径为 /opt/chaosblade
+--blade-tar-file string    指定本地 chaosblade-VERSION.tar.gz 工具包全路径，用于拷贝到容器内执行
+--container-id string      目标容器 ID
+--docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;对 container id 是 &lt;code&gt;5239e26f6329&lt;/code&gt; 的做 CPU 使用率 80% 的实验场景，执行命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt; blade create docker cpu fullload --cpu-percent 80 --blade-tar-file /root/chaosblade-0.4.0.tar.gz --container-id 5239e26f6329
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行成功会返回 &lt;code&gt;{&amp;quot;code&amp;quot;:200,&amp;quot;success&amp;quot;:true,&amp;quot;result&amp;quot;:&amp;quot;0a47bb2f75dc71ab&amp;quot;}&lt;/code&gt;
+可在本机或者容器内使用 top 命令验证 CPU 使用率：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;%Cpu(s): 22.7 us, 57.2 sy,  0.0 ni, 20.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;销毁实验执行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade destroy 0a47bb2f75dc71ab
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: 执行报如下错误：&lt;code&gt;{&amp;quot;code&amp;quot;:801,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000Omv: cannot stat &#39;/opt/chaosblade-0.4.0.linux-amd64&#39;: No such file or directory&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：需要修改将 chaosblade-0.4.0.linux-amd64.tar.gz 包名改为 chaosblade-VERSION.tar.gz 格式，即此处改为 chaosblade-0.4.0.tar.gz&lt;/p&gt;
+&lt;p&gt;Q: 执行报如下错误：
+&lt;code&gt;{&amp;quot;code&amp;quot;:801,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：重试即可&lt;/p&gt;
+&lt;h2 id=&#34;兜底方案&#34;&gt;兜底方案&lt;/h2&gt;
+&lt;p&gt;登录容器，kill 掉 chaos_burncpu 进程即可，或者主机上执行。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 容器内网络实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-network/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持的网络场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create docker network delay&lt;/code&gt; 容器网络延迟，同 &lt;a href=&#34;../../network/network-delay/&#34;&gt;blade create network delay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create docker network loss&lt;/code&gt; 容器网络丢包，同 &lt;a href=&#34;../../network/network-loss/&#34;&gt;blade create network loss&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create docker network dns&lt;/code&gt; 容器内域名访问异常，同 &lt;a href=&#34;../../network/network-dns/&#34;&gt;blade create network dns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 docker 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--container-id string      目标容器 ID
+--docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
+--image-repo string        chaosblade-tool 镜像仓库地址，默认是从 `registry.cn-hangzhou.aliyuncs.com/chaosblade`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;对 nginx 容器 80 端口做访问延迟 3 秒，执行命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade create docker network delay --time 3000 --interface eth0 --local-port 80 --container-id 5239e26f6329
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一次会拉取 chaosblade-tool 镜像，可能会慢一些。返回 &lt;code&gt;{&amp;quot;code&amp;quot;:200,&amp;quot;success&amp;quot;:true,&amp;quot;result&amp;quot;:&amp;quot;fc3a1b0b4295e47f&amp;quot;}&lt;/code&gt; 表示执行成功，可以看到新启动了一个名字为 5239e26f6329-delay 的容器，通过 sidecar 方式，复用目标容器网络，执行实验。&lt;/p&gt;
+&lt;p&gt;在本机访问该容器映射出的端口服务，比如映射的端口为 &lt;code&gt;0.0.0.0:32768-&amp;gt;80/tcp&lt;/code&gt;，可以看出发生延迟：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[root@izbp11rrxxxx ~]# time curl localhost:32768
+real	0m9.001s
+user	0m0.004s
+sys	    0m0.002s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此处延迟 9 秒的原因是涉及到多次 80 端口访问。&lt;/p&gt;
+&lt;p&gt;也可以在同一网段下的另外一台容器内访问目标容器的 80 服务，同样能验证效果：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;bash-4.4# time curl 172.17.0.2:80
+real	0m9.005s
+user	0m0.004s
+sys 	0m0.001s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行以下命令可销毁实验：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade destroy fc3a1b0b4295e47f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动的 sidecar 容器会被销毁，网络恢复。可以通过上述方法再次验证。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[root@izbp11rr7oumxxxxx ~]# time curl localhost:32768
+real	0m0.011s
+user	0m0.003s
+sys	    0m0.002s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q：执行命令报错：
+&lt;code&gt;{&amp;quot;code&amp;quot;:604,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;RTNETLINK answers: File exists\n exit status 2 exit status 1&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：网络演练场景已存在，可以使用 &lt;code&gt;docker ps | grep chaosblade&lt;/code&gt; 来查看正在运行的 sidecar 容器&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 容器内进程场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-process/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持的进程场景如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create docker process kill&lt;/code&gt;， 杀容器内指定的进程，同 &lt;a href=&#34;../../process/process-kill&#34;&gt;blade create process kill&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create docker process stop&lt;/code&gt;，挂起容器内指定的进程，同 &lt;a href=&#34;../../process/process-stop&#34;&gt;blade create process stop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 docker 实验场景下还支持的参数是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--blade-override           是否覆盖容器内已有的 chaosblade 工具，默认是 false，表示不覆盖，chaosblade 在容器内的部署路径为 /opt/chaosblade
+--blade-tar-file string    指定本地 chaosblade-VERSION.tar.gz 工具包全路径，用于拷贝到容器内执行
+--container-id string      目标容器 ID
+--docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;杀掉容器内 nginx 进程，命令执行如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade create docker process kill --process nginx --blade-tar-file /root/chaosblade-0.4.0.tar.gz --container-id ee54f1e61c08
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:801,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;open : no such file or directory&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 没有指定 &lt;code&gt;--blade-tar-file&lt;/code&gt; 参数&lt;/p&gt;
+&lt;p&gt;Q：&lt;code&gt;{&amp;quot;code&amp;quot;:801,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：重试即可&lt;/p&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:503,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;ps command not found&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 目标容器内没有 &lt;code&gt;ps&lt;/code&gt; 命令&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 容器资源自身的场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-container/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持场景命令如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create docker container remove&lt;/code&gt; 删除容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--container-id string      要删除的容器 ID
+--docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
+--force                    是否强制删除
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除容器后，执行 &lt;code&gt;blade destroy UID&lt;/code&gt; 命令不会恢复容器，需要靠容器自身的管理拉起！&lt;/p&gt;
+&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;删除 container id 是 a76d53933d3f 的容器，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade create docker container remove --container-id a76d53933d3f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果返回 &lt;code&gt;{&amp;quot;code&amp;quot;:200,&amp;quot;success&amp;quot;:true,&amp;quot;result&amp;quot;:&amp;quot;ed79c686daa88152&amp;quot;}&lt;/code&gt; 说明执行成功。如果执行失败，会有详细的错误提升。&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

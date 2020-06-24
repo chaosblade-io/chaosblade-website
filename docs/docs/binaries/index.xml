@@ -23,7 +23,41 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;创建混沌实验命令，每个实验对应一个 uid，后续的查询、销毁实验都要用到此 uid，如果遗忘了 uid，可以通过 &lt;code&gt;blade status --type create&lt;/code&gt; 命令进行查询。
+create 可以简写为 c，即 &lt;code&gt;blade create&lt;/code&gt; 可以简写为 &lt;code&gt;blade c&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  -h, --help   查看 create 命令帮助
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;可使用的父命令参数&#34;&gt;可使用的父命令参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  -d, --debug   设置 DEBUG 执行模式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 查看 create 命令帮助文档
+blade create -h
+
+# 查看如何创建 cpu 混沌实验
+blade create cpu -h
+
+# 查看如何创建 cpu 满载实验
+blade create cpu fullload -h
+
+# 创建 cpu 满载实验
+blade create cpu fullload --cpu-count 1
+
+# 返回结果如下
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;6fa04946baf42920&amp;#34;}
+
+# code 的值等于 200 说明执行成功，其中 result 的值就是 uid。使用 top 命令验证实验效果
+%Cpu0  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+# 销毁上述实验
+blade destroy 6fa04946baf42920
+
+# 返回结果如下
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;command: cpu fullload --cpu-count 2 --debug false --help false&amp;#34;}
+
+# 返回值会打印此次实验的命令。再次使用 top 命令验证实验效果
+%Cpu0  :  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -75,7 +109,81 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;查询混沌实验和混沌实验环境状态，可通过创建的混沌实验的 uid 或命令类型来查询混沌实验。&lt;/p&gt;
+&lt;p&gt;status 可以简写为 s，即 &lt;code&gt;blade status&lt;/code&gt; 可以简写为 &lt;code&gt;blade s&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  --asc bool        默认值为 false，按 CreateTime 进行降序排序
+  --limit string    查询实验数目限制，支持 OFFSET 子句，例如：limit 4,3 就表示从位置5开始，返回后3项
+  --status string   实验状态，create 类型支持 Created|Success|Error|Destroyed 状态，prepare 类型支持 Created|Running|Error|Revoked 状态
+  --target string   实验目标，例如：dubbo
+  --type string     命令类型，attach|create|destroy|detach
+  --uid string      prepare 或 experiment 的 uid
+  -h, --help        查看 create 命令帮助
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;可使用的父命令参数&#34;&gt;可使用的父命令参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  -d, --debug   设置 DEBUG 执行模式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查看 status 命令帮助文档&lt;/span&gt;
+blade status -h
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查询 uid 为 4c6b4a3fc313e1d4 的实验信息&lt;/span&gt;
+blade status 4c6b4a3fc313e1d4
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;: 200,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;: true,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Uid&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4c6b4a3fc313e1d4&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cpu&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SubCommand&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fullload&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Flag&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; --cpu-percent=60&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Destroyed&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Error&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-01-14T14:09:49.152708+08:00&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UpdateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-01-14T14:10:45.605888+08:00&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查询 create 类型命令的实验信息&lt;/span&gt;
+blade status --type create
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;: 200,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;: true,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;
+            &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Uid&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4c6b4a3fc313e1d4&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cpu&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SubCommand&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fullload&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Flag&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; --cpu-percent=60&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Destroyed&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Error&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-01-14T14:09:49.152708+08:00&amp;#34;&lt;/span&gt;,
+                &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UpdateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-01-14T14:10:45.605888+08:00&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查询 prepare 类型命令的实验信息&lt;/span&gt;
+blade status --type prepare
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;: 200,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;: true,
+        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;
+                &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Uid&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e669d57f079a00cc&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ProgramType&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;jvm&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Process&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;dubbo.consumer&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Port&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;59688&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Status&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Running&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Error&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CreateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-03-29T16:19:37.284579975+08:00&amp;#34;&lt;/span&gt;,
+                        &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;UpdateTime&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2019-03-29T17:05:14.183382945+08:00&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q:&lt;code&gt;{&amp;quot;code&amp;quot;:406,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;data not found&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A:查询的实验不存在，可能是数据文件 &lt;code&gt;chaosblade.dat&lt;/code&gt; 丢失，这时如果需要停止实验，需要手工停止 &lt;code&gt;blade&lt;/code&gt; 进程&lt;/p&gt;
+
       </description>
     </item>
     
@@ -101,7 +209,20 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;打印 blade 工具版本信息。&lt;/p&gt;
+&lt;p&gt;version 可以简写为 v，即 &lt;code&gt;blade version&lt;/code&gt; 可以简写为 &lt;code&gt;blade v&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  -h, --help        查看 create 命令帮助
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;可使用的父命令参数&#34;&gt;可使用的父命令参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;  -d, --debug   设置 DEBUG 执行模式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 查看 blade 工具版本信息&lt;/span&gt;
+blade version
+version: 0.4.0  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 版本&lt;/span&gt;
+env: Darwin Kernel Version 19.0.0: Wed Sep &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt; 20:18:50 PDT 2019&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; root:xnu-6153.11.26~2/RELEASE_X86_64 x86_64    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 环境信息&lt;/span&gt;
+build-time: Thu Dec  &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt; 14:29:44 CST &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2019&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 构建时间&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -114,7 +235,38 @@
       <description>
         
         
-        
+        &lt;p&gt;后台启动 blade，会暴露出 web 服务，上层可通过 http 调用&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;在 server 模式下，blade 程序会对外暴露 web 服务，上层可通过 http 请求调用，请求格式是 &lt;code&gt;chaosblade?cmd=&lt;/code&gt; 具体命令，例如执行 CPU 满载，则请求是 &lt;code&gt;chaosblade?cmd=create%20cpu%20fullload&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;start       启动 server 模式, 暴露 web 服务
+stop        停止 server 模式, 关闭 web 服务
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;start-命令参数&#34;&gt;start 命令参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;-p, --port string   服务端口号，默认是 9526
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 启动 server 模式，服务端口是 8080&lt;/span&gt;
+blade server start --port &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8080&lt;/span&gt;
+success, listening on &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8080&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 触发 CPU 负载 50% 场景&lt;/span&gt;
+curl &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://xxx.xxx.xxx.xxx:8080/chaosblade?cmd=create%20cpu%20load%20--cpu-percent%2050&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e08a64a9af02c393&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 销毁实验场景&lt;/span&gt;
+curl &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://xxx.xxx.xxx.xxx:8080/chaosblade?cmd=destroy%20e08a64a9af02c393&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 停止 blade server&lt;/span&gt;
+blade server stop
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pid is 12619&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:605,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;the chaosblade has been started. If you want to stop it, you can execute blade server stop command&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：服务已经启动&lt;/p&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:500,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;time=\&amp;quot;2019-09-25T11:36:28.321495762+08:00\&amp;quot; level=error msg=\&amp;quot;start blade server error, listen tcp :8080: bind: address already in use\&amp;quot;\n&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：端口已被占用&lt;/p&gt;
+
       </description>
     </item>
     

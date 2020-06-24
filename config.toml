@@ -38,8 +38,8 @@ pygmentsStyle = "tango"
 
 
 # Docsy: Configure the format of URLs per section.
-#[permalinks]
-#blog = "/:section/:year/:month/:day/:slug/"
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
 
 # Docsy: Configuration for Goldmark markdown parser, which is default from 
 # Hugo 0.60 onwards. https://github.com/yuin/goldmark/
@@ -57,7 +57,7 @@ anchor = "smart"
 
 # [services]
 # [services.googleAnalytics]
-# id = "UA-135379910-1"
+# id = ""
 
 # Docsy: Language configuration
 
@@ -93,21 +93,21 @@ weight = 1
 [params]
 
 # GitHub repository for in-page links to editing a page and opening and issues.
-github_repo = "https://github.com/kubeflow/website"
+github_repo = "https://github.com/chaosblade-io/chaosblade"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/kubeflow/kubeflow"
 
 RSSLink = "/index.xml"
-author = "kubeflow.org" # add your company name
-github = "kubeflow" # add your github profile name
-twitter = "kubeflow" # add your twitter profile
+author = "chaosblade.io" # add your company name
+github = "chaosblade" # add your github profile name
+twitter = "chaosblade.io" # add your twitter profile
 #email = "myemail@myaddress.xxx"
 
 copyright = "The ChaosBlade Authors."
 # privacy_policy = "https://policies.google.com/privacy"
 
 # Docsy: Google Custom Search Engine ID. Remove or comment out to disable search.
-# gcs_engine_id = "007239566369470735695:624rglujm-w"
+# gcs_engine_id = ""
 
 #Enable offline search with Lunr.js
 offlineSearch = true

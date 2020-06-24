@@ -14,5 +14,157 @@
       
     
     
+    <item>
+      <title>Docs: 资源场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 磁盘场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 网络场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 进程场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: docker 容器场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;执行&#34;&gt;执行&lt;/h2&gt;
+&lt;p&gt;执行 docker 相关实验场景，必须确保本地能访问 docker server，可通过 tcp 或 socket 方式访问，默认是通过本地 socket 访问，也可通过 &amp;ndash;docker-endpoint 参数指定。&lt;/p&gt;
+&lt;p&gt;很重要的一点是，如果执行 CPU 场景，必须指定 chaosblade 安装包，因为需要将安装包拷贝到容器 &lt;code&gt;/opt&lt;/code&gt; 目录下执行，使用 &amp;ndash;blade-tar-file 参数指定，例如 &lt;code&gt;--blade-tar-file /home/admin/chaosblade-0.4.0.tar.gz&lt;/code&gt;。如果执行网络或者进程场景，无需指定，但这两个场景依赖 chaosblade-tool 镜像，默认是从 &lt;code&gt;registry.cn-hangzhou.aliyuncs.com/chaosblade&lt;/code&gt; 仓库下载，也可以通过 &lt;code&gt;--image-repo&lt;/code&gt; 参数指定，例如 &lt;code&gt;--image-repo registry-vpc.cn-hangzhou.aliyuncs.com/chaosblade&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;实验场景案例请点击各场景查看&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:801,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;Error: No such image: xxx/chaosblade-tool:0.4.0&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 说明 chaosblade-tool 镜像拉取失败，需要通过 &lt;code&gt;--image-repo&lt;/code&gt; 指定正确的镜像仓库地址&lt;/p&gt;
+&lt;p&gt;创建 docker 相关的混沌实验，比如杀容器，容器网络延迟、丢包，杀容器里的进程等，不同的场景依赖的参数不同，目前支持以下实验场景：&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 脚本函数执行</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: kubernetes 实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;创建 kubernetes 相关的实验场景，除了使用 blade 命令创建场景外，还可以将实验使用 yaml 文件描述，使用 kubectl 命令执行。&lt;/p&gt;
+&lt;p&gt;更详细 Kubernetes 平台实验场景介绍见：&lt;a href=&#34;../../../operator/&#34;&gt;Kubernetes 平台场景&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
+&lt;p&gt;执行 Kubernetes 实验场景，需要提前部署 ChaosBlade Operator，Helm 安装包下载地址：&lt;a href=&#34;https://github.com/chaosblade-io/chaosblade-operator/releases&#34;&gt;https://github.com/chaosblade-io/chaosblade-operator/releases&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;部署方式见&lt;a href=&#34;../../../installation/#operator-%E5%AE%89%E8%A3%85&#34;&gt;安装部署&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;创建实验&#34;&gt;创建实验&lt;/h2&gt;
+&lt;p&gt;执行方式有两种，一是通过配置 yaml 方式，使用 kubectl 执行，另一种是直接使用 chaosblade 包中的 blade 命令执行。&lt;/p&gt;
+&lt;p&gt;配置 yaml 使用 kubectl 执行方式见：&lt;a href=&#34;../../../operator&#34;&gt;Kubernetes 平台场景&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;blade-命令执行方式&#34;&gt;blade 命令执行方式&lt;/h3&gt;
+&lt;p&gt;下载 chaosblade 工具包，下载地址：&lt;a href=&#34;https://github.com/chaosblade-io/chaosblade/releases&#34;&gt;https://github.com/chaosblade-io/chaosblade/releases&lt;/a&gt; ，解压即可使用。还是上述例子，使用 &lt;code&gt;blade&lt;/code&gt; 命令执行如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade create k8s node-cpu fullload --names cn-hangzhou.192.168.0.205 --cpu-percent &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;80&lt;/span&gt; --kubeconfig ~/.kube/config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用 blade 命令执行，如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID，使用查询命令可以查询详细的实验结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;blade query k8s create &amp;lt;UID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;销毁实验&#34;&gt;销毁实验&lt;/h2&gt;
+&lt;p&gt;可以通过以下三种方式停止实验：&lt;/p&gt;
+&lt;h3 id=&#34;根据实验资源名停止&#34;&gt;根据实验资源名停止&lt;/h3&gt;
+&lt;p&gt;比如上述 cpu-load 场景，可以执行以下命令停止实验&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;kubectl delete chaosblade cpu-load
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;通过-yaml-配置文件停止&#34;&gt;通过 yaml 配置文件停止&lt;/h3&gt;
+&lt;p&gt;指定上述创建好的 yaml 文件进行删除，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;kubectl delete -f chaosblade_cpu_load.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;通过-blade-命令停止&#34;&gt;通过 blade 命令停止&lt;/h3&gt;
+&lt;p&gt;此方式仅限使用 blade 创建的实验，使用以下命令停止：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade destroy &amp;lt;UID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;&amp;lt;UID&amp;gt;&lt;/code&gt; 是执行 &lt;code&gt;blade create&lt;/code&gt; 命令返回的结果，如果忘记，可使用 &lt;code&gt;blade status --type create&lt;/code&gt; 命令查询。&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;validation failure list:spec.experiments.matchers.value in body must be of type array: &amp;quot;string&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 所有 matchers 中 value 参数必须是字符串数组，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;names&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;names&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; 
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Q：&lt;code&gt;{&amp;quot;code&amp;quot;:800,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT must be defined&amp;quot;,&amp;quot;result&amp;quot;:{&amp;quot;uid&amp;quot;:&amp;quot;08dec77bd45c8e55&amp;quot;,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT must be defined&amp;quot;,&amp;quot;statuses&amp;quot;:[{&amp;quot;id&amp;quot;:&amp;quot;08dec77bd45c8e55&amp;quot;,&amp;quot;state&amp;quot;:&amp;quot;Error&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT must be defined&amp;quot;,&amp;quot;success&amp;quot;:false}]}}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：没有指定 &lt;code&gt;--kubeconfig&lt;/code&gt; 文件路径&lt;/p&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:504,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;unexpected status, the real value is Error&amp;quot;,&amp;quot;result&amp;quot;:{&amp;quot;uid&amp;quot;:&amp;quot;78abb71fb0587c2e&amp;quot;,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;unexpected status, the real value is Error&amp;quot;,&amp;quot;statuses&amp;quot;:[{&amp;quot;state&amp;quot;:&amp;quot;Error&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;must specify one flag in evict-count,evict-percent,labels,names&amp;quot;,&amp;quot;success&amp;quot;:false}]}}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 缺少必要参数&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Java 实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

@@ -12,13 +12,41 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/cpu-load/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/container/container-cpu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-cpu/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/http-delay/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/servlet-delay/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/node/node-resource/cpu-load/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/</loc>
   </url>
   
   <url>
@@ -47,13 +75,19 @@
   </url>
   
   <url>
-    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/quickstart/installation/</loc>
-    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/installation/</loc>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/quickstart/</loc>
-    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-cpu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/jvm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-delay/</loc>
   </url>
   
   <url>
@@ -77,6 +111,10 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-kill/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/node/node-disk/fill_node_disk/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
@@ -97,6 +135,22 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-delay/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-delay/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-pod/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/container/container-resource/cpu-load/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
@@ -112,6 +166,22 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-dns/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/http-throwcustomexception/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/servlet-throwcustomexception/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/node/node-network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
@@ -122,8 +192,20 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/pod/pod-network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/container/container-network/</loc>
   </url>
   
   <url>
@@ -133,6 +215,11 @@
   
   <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/quickstart/demo/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/quickstart/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
@@ -147,8 +234,24 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-return/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-stop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-burn/</loc>
   </url>
   
   <url>
@@ -167,6 +270,18 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-exit/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
@@ -177,8 +292,11 @@
   </url>
   
   <url>
-    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/</loc>
-    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/</loc>
   </url>
   
   <url>
@@ -222,8 +340,36 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/container/container-process/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/quickstart/first-exp/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-fill/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-loss/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-script/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-process/</loc>
   </url>
   
   <url>
@@ -237,8 +383,57 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/operator/</loc>
+    <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/mem-load/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/docker-container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/container/container-container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-cpufullload/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-disk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-corrupt/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/status/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-reorder/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-codecachefilling/</loc>
   </url>
   
   <url>
@@ -247,8 +442,32 @@
   </url>
   
   <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-duplicate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/version/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-throwcustomexception/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/network-occupy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</loc>
   </url>
   
   <url>
@@ -262,13 +481,13 @@
   </url>
   
   <url>
-    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/blog/cloudnative/chaosblade-operator/</loc>
+    <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://sunny0826.github.io/chaosblade-website/</loc>
-    <lastmod>2020-06-23T16:06:36+08:00</lastmod>
+    <lastmod>2020-06-23T16:28:15+08:00</lastmod>
   </url>
   
   <url>

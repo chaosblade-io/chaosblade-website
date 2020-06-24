@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ChaosBlade – Kubernetes 平台场景</title>
+    <title>ChaosBlade – 云原生场景</title>
     <link>https://sunny0826.github.io/chaosblade-website/docs/operator/</link>
-    <description>Recent content in Kubernetes 平台场景 on ChaosBlade</description>
+    <description>Recent content in 云原生场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     

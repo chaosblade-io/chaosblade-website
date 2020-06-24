@@ -1,0 +1,101 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – 进程场景</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</link>
+    <description>Recent content in 进程场景 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 杀进程</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-kill/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-kill/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;此实验会指定进程号杀掉进程。支持命令行或者命令中进程匹配。&lt;/p&gt;
+&lt;p&gt;此实验可以验证程序的自愈能力，或者服务进程不存在时，系统的容错能力。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--process string       进程关键词，会在整个命令行中查找
+--process-cmd string   进程命令，只会在命令中查找
+--count string      限制杀掉进程的数量，0 表示无限制
+--signal string     指定杀进程的信号量，默认是 9，例如 --signal 15
+--timeout string   设定运行时长，单位是秒，通用参数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 删除包含 SimpleHTTPServer 关键词的进程
+blade create process kill --process SimpleHTTPServer
+
+# 删除 java 进程
+blade create process kill --process-cmd java
+
+# 指定信号量和本地端口杀进程
+blade c process kill --local-port 8080 --signal 15 
+
+# 执行前
+netstat -tanp | grep 8080
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      10764/java
+
+# 执行后此进程已不存在
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;--process&lt;/code&gt; 内部使用 &lt;code&gt;ps -ef | grep KEY&lt;/code&gt; 查找；&lt;code&gt;--process-cmd&lt;/code&gt; 内部使用 &lt;code&gt;pgrep&lt;/code&gt; 命令查找。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;kill -9 PIDS&lt;/code&gt; 杀死进程。&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q：信号量有哪些？&lt;/p&gt;
+&lt;p&gt;A：Common kill signals&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Signal name	Signal value	Effect
+SIGHUP	        1	        Hangup
+SIGINT	        2	        Interrupt from keyboard
+SIGKILL	        9	        Kill signal
+SIGTERM	        15	        Termination signal
+SIGSTOP	        17,19,23	Stop the process
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Q：杀死的进程能否恢复&lt;/p&gt;
+&lt;p&gt;A：blade 命令不能恢复杀掉的进程&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 暂停进程</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-stop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/process-stop/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;此实验会暂停进程。支持命令行或者命令中进程匹配。&lt;/p&gt;
+&lt;p&gt;此实验可以验证程序 Hang 时，系统的容错能力。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--process string       进程关键词，会在整个命令行中查找
+--process-cmd string   进程命令，只会在命令中查找
+--timeout string   设定运行时长，单位是秒，通用参数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 暂停包含 SimpleHTTPServer 关键词的进程
+blade create process stop --process SimpleHTTPServer
+
+# 暂停 java 进程
+blade create process stop --process-cmd java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;--process&lt;/code&gt; 内部使用 &lt;code&gt;ps -ef | grep KEY&lt;/code&gt; 查找；&lt;code&gt;--process-cmd&lt;/code&gt; 内部使用 &lt;code&gt;pgrep&lt;/code&gt; 命令查找。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;kill -STOP PIDS&lt;/code&gt; 暂停进程，使用 &lt;code&gt;kill -CONT PIDS&lt;/code&gt; 恢复进程。&lt;/p&gt;
+&lt;h2 id=&#34;常见错误&#34;&gt;常见错误&lt;/h2&gt;
+&lt;p&gt;Q：查找不到 UID，无法恢复暂停的进程&lt;/p&gt;
+&lt;p&gt;A：手动执行 kill -CONT PIDS&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

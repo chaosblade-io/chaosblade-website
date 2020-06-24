@@ -14,5 +14,46 @@
       
     
     
+    <item>
+      <title>Docs: 挂载 java agent</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/jvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/jvm/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;-j, --javaHome string   指定 JAVA_HOME 路径，用于指定 java bin 和 tools.jar，如果不添加此参数，默认会优先获取 JAVA_HOME 环境变量，如果获取失败，会解析指定进程参数获取 JAVA_HOME，获取失败，会使用 chaosblade 自带的 tools.jar
+--pid string        java 进程ID
+-P, --port int          java agent 暴露服务的本地端口，用于下发实验命令
+-p, --process string    java 进程关键词，用于定位 java 进程
+-d, --debug   开启 debug 模式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;指定 pid 执行 java agent 挂载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade prepare jvm --pid &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26652&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 命令也可简写为&lt;/span&gt;
+blade p jvm --pid &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26652&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行成功，会返回实验准备的 UID，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2552c05c6066dde5&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;2552c05c6066dde5&lt;/code&gt; 就是实验准备对象的 UID，执行卸载操作需要用到此 UID，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade revoke 2552c05c6066dde5
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 命令也可简写为&lt;/span&gt;
+blade r 2552c05c6066dde5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果 UID 忘记，可通过以下命令查询&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade status --type prepare --target jvm
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 命令也可简写为：&lt;/span&gt;
+blade s --type p --target jvm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;挂载 java agent 操作是个比较耗时的过程，在未返回结果前请耐心等待。&lt;/p&gt;
+&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:500,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;cannot get port from local, please execute prepare command first&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 没有挂载所需的 java agent，执行 &lt;code&gt;prepare jvm&lt;/code&gt; 命令挂载&lt;/p&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:602,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;less --process or --pid flags&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A: 缺少必要参数用于指定 java 应用进程&lt;/p&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>

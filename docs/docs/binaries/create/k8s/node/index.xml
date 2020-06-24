@@ -1,0 +1,195 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – Node 实验场景</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/</link>
+    <description>Recent content in Node 实验场景 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 节点 CPU 负载实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-cpu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-cpu/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持 CPU 场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-cpu load&lt;/code&gt;，节点 CPU 负载场景，同 &lt;a href=&#34;../../../resource/cpu-load&#34;&gt;blade create cpu load&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--evict-count string     限制实验生效的数量
+--evict-percent string   限制实验生效数量的百分比，不包含 %
+--labels string          节点资源标签
+--names string           节点资源名，多个资源名之间使用逗号分隔
+--kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
+--waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;面以指定一台节点，做 CPU 负载 80% 实验举例。&lt;/p&gt;
+&lt;h3 id=&#34;blade-命令执行方式&#34;&gt;blade 命令执行方式&lt;/h3&gt;
+&lt;p&gt;下载 chaosblade 工具包，下载地址：&lt;a href=&#34;https://github.com/chaosblade-io/chaosblade/releases/tag/v0.4.0-alpha&#34;&gt;https://github.com/chaosblade-io/chaosblade/releases/tag/v0.4.0-alpha&lt;/a&gt; ，解压即可使用。还是上述例子，使用 blade 命令执行如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade create k8s node-cpu fullload --names cn-hangzhou.192.168.0.205 --cpu-percent &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;80&lt;/span&gt; --kubeconfig ~/.kube/config 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用 blade 命令执行，如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID，使用查询命令可以查询详细的实验结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;blade query k8s create &amp;lt;UID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;销毁实验&#34;&gt;销毁实验&lt;/h4&gt;
+&lt;p&gt;此方式仅限使用 blade 创建的实验，使用以下命令停止：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade destroy &amp;lt;UID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;&amp;lt;UID&amp;gt;&lt;/code&gt; 是执行 blade create 命令返回的结果，如果忘记，可使用 &lt;code&gt;blade status --type create&lt;/code&gt; 命令查询。&lt;/p&gt;
+&lt;h3 id=&#34;kubectl-执行方式&#34;&gt;kubectl 执行方式&lt;/h3&gt;
+&lt;p&gt;yaml 的配置方式见：&lt;a href=&#34;../../../../../operator/node/node-resource/cpu-load/&#34;&gt;Node CPU 负载场景&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 节点网络相关场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-network/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持的网络场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-network delay&lt;/code&gt; 节点网络延迟场景，同 &lt;a href=&#34;../../../network/network-delay&#34;&gt;blade create network delay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-network loss&lt;/code&gt; 节点网络丢包场景，同 &lt;a href=&#34;../../../network/network-loss&#34;&gt;blade create network loss&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-network dns&lt;/code&gt; 节点域名访问异常场景，同 &lt;a href=&#34;../../../network/network-dns&#34;&gt;blade create network dns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--evict-count string     限制实验生效的数量
+--evict-percent string   限制实验生效数量的百分比，不包含 %
+--labels string          节点资源标签
+--names string           节点资源名，多个资源名之间使用逗号分隔
+--kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
+--waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;对 cn-hangzhou.192.168.0.205 节点本地端口 40690 访问丢包率 60%&lt;/p&gt;
+&lt;h3 id=&#34;blade-执行方式&#34;&gt;blade 执行方式&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade create k8s node-network loss --percent &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt; --interface eth0 --local-port &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;40690&lt;/span&gt; --kubeconfig config --names cn-hangzhou.192.168.0.205
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e647064f5f20953c&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可通过以下命令查询实验状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade query k8s create e647064f5f20953c --kubeconfig config
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e647064f5f20953c&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;statuses&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fa471a6285ec45f5&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e179b30d-df77-11e9-b3be-00163e136d88&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Success&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kind&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;nodeName&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}]}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;销毁实验&#34;&gt;销毁实验&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;blade destroy e647064f5f20953c
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;kubectl-执行方式&#34;&gt;kubectl 执行方式&lt;/h3&gt;
+&lt;p&gt;yaml 的配置方式见：&lt;a href=&#34;../../../../../operator/node/node-network/loss_node_network/&#34;&gt;Kubernetes Node 网络丢包场景&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 节点进程相关场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-process/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持的进程场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-process kill&lt;/code&gt; 杀节点上指定进程，同 &lt;a href=&#34;../../../process/process-kill/&#34;&gt;blade create process kill&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-process stop&lt;/code&gt; 挂起节点上指定进程，同 &lt;a href=&#34;../../../process/process-stop/&#34;&gt;blade create process stop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--evict-count string     限制实验生效的数量
+--evict-percent string   限制实验生效数量的百分比，不包含 %
+--labels string          节点资源标签
+--names string           节点资源名，多个资源名之间使用逗号分隔
+--kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
+--waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;杀指定 cn-hangzhou.192.168.0.205 节点上 kubelet 进程&lt;/p&gt;
+&lt;h3 id=&#34;blade-执行方式&#34;&gt;blade 执行方式&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade create k8s node-process &lt;span style=&#34;color:#204a87&#34;&gt;kill&lt;/span&gt; --process redis-server --names cn-hangzhou.192.168.0.205 --kubeconfig config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fc93e5bbe4827d4b&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可通过以下命令查询实验状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade query k8s create fc93e5bbe4827d4b --kubeconfig config
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fc93e5bbe4827d4b&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;statuses&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;859c56e6850c1c1b&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;uid&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;e179b30d-df77-11e9-b3be-00163e136d88&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Success&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kind&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;nodeName&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.205&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}]}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到执行前后，redis-server 的进程号发生改变，说明被杀掉后，又被重新拉起&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# ps -ef | grep redis-server&lt;/span&gt;
+&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;19497&lt;/span&gt; root      2:05 redis-server *:6379
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# ps -ef | grep redis-server&lt;/span&gt;
+&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;31855&lt;/span&gt; root      0:00 redis-server *:6379
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;销毁实验&#34;&gt;销毁实验&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade destroy fc93e5bbe4827d4b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;kubectl-执行方式&#34;&gt;kubectl 执行方式&lt;/h3&gt;
+&lt;p&gt;yaml 的配置方式见：&lt;a href=&#34;../../../../../operator/node/node-process/kill_node_process/&#34;&gt;Kubernetes 杀节点上指定进程&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 节点磁盘相关场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-disk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-disk/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;命令&#34;&gt;命令&lt;/h2&gt;
+&lt;p&gt;支持磁盘场景命令如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-disk fill&lt;/code&gt;，节点磁盘填充，同 &lt;a href=&#34;../../../disk/disk-fill&#34;&gt;blade create disk fill&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blade create k8s node-disk burn&lt;/code&gt;，节点磁盘IO读写负载，同 &lt;a href=&#34;../../../disk/disk-burn&#34;&gt;blade create disk burn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--evict-count string     限制实验生效的数量
+--evict-percent string   限制实验生效数量的百分比，不包含 %
+--labels string          节点资源标签
+--names string           节点资源名，多个资源名之间使用逗号分隔
+--kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
+--waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;指定节点磁盘占用 80%&lt;/p&gt;
+&lt;h3 id=&#34;blade-命令执行方式&#34;&gt;blade 命令执行方式&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;blade c k8s node-disk fill --names cn-hangzhou.192.168.0.35 --percent &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;80&lt;/span&gt; --kubeconfig ~/.kube/config
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ec322fbb977a455c&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/vda1                 118.0G     89.0G     24.0G  79% / 
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 恢复实验&lt;/span&gt;
+blade d ec322fbb977a455c
+
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Target&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;node-disk&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Scope&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ActionName&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fill&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ActionFlags&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;kubeconfig&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;~/.kube/config&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;names&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;cn-hangzhou.192.168.0.35&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;percent&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;80&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}}}&lt;/span&gt;
+
+df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/vda1                 118.0G     74.8G     38.1G  66% /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用 blade 命令执行，如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID，使用查询命令可以查询详细的实验结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;blade query k8s create &amp;lt;UID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;kubectl-执行方式&#34;&gt;kubectl 执行方式&lt;/h3&gt;
+&lt;p&gt;yaml 的配置方式见：&lt;a href=&#34;../../../../../operator/node/node-disk/fill_node_disk/&#34;&gt;Kubernetes Node 磁盘填充场景&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

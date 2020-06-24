@@ -1,0 +1,61 @@
+---
+title: "jvm 实验场景"
+linkTitle: "jvm 实验场景"
+weight: 1
+type: docs
+description: > 
+    Java jvm 相关的实验场景
+---
+## 介绍
+
+jvm 本身相关场景，以及可以指定类，方法注入延迟、返回值、异常故障场景，也可以编写 groovy 和 java 脚本来实现复杂的场景。
+
+## 参数
+
+此处列举 jvm 支持的通用参数：
+
+```text
+--pid string         指定 java 进程号
+--process string     指定 java 进程名，如果同时填写
+--timeout string     设定运行时长，单位是秒，通用参数
+```
+
+JVM 方法级别的故障场景通用参数：
+
+```text
+--classname string        指定类名，必须是实现类，带全包名，例如 com.xxx.xxx.XController (必填项)
+--methodname string       指定方法名，注意相同方法名的方法都会被注入相同故障 (必填项)
+--after                   方法执行完成返回前注入故障，比如修改复杂的返回对象
+--effect-count string     限制影响数量
+--effect-percent string   限制影响百分比
+```
+
+各场景还有自身所独有的参数，可以在每个场景文档中查看
+
+## 案例
+
+此处举个简单的例子：当前 Java 进程 CPU 使用率满载
+
+```shell
+# 先执行 prepare 操作
+blade prepare jvm --process tomcat
+{"code":200,"success":true,"result":"af9ec083eaf32e26"}
+
+# 执行进程内 CPU 满载
+blade create jvm cpufullload --process tomcat
+{"code":200,"success":true,"result":"2a97b8c2fe9d7c01"}
+```
+
+验证结果：
+
+![-w461](https://tvax2.sinaimg.cn/large/ad5fbf65ly1gg38r3inyxj20pm0j0acc.jpg)
+
+停止实验：
+
+```shell
+# 停止实验
+blade destroy 2a97b8c2fe9d7c01
+
+# 卸载 agent
+blade revoke af9ec083eaf32e26
+```

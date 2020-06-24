@@ -1,7 +1,7 @@
 ---
-title: "Kubernetes 平台场景"
-linkTitle: "Kubernetes 平台场景"
-weight: 3
+title: "云原生场景"
+linkTitle: "云原生场景"
+weight: 4
 type: docs
 description: >
   ChaosBlade Operator 使用文档。

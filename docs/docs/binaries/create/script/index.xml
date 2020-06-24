@@ -1,0 +1,85 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – 脚本函数执行</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</link>
+    <description>Recent content in 脚本函数执行 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 脚本函数执行延迟</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-delay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-delay/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--time string      延迟时间，单位是毫秒（必要参数）
+--timeout string   设定运行时长，单位是秒，通用参数
+--file string      脚本路径（必要参数）
+--function-name string  脚本中的函数名（必要参数） 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;#  blade create script delay --time 10000 --file test.sh --function-name start0
+
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;b6a0f477b7fb1f4c&amp;#34;}
+
+# 会在脚本中添加如下命令：
+start0() {
+sleep 10.000000
+...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;备份原有脚本，根据函数名添加 &lt;code&gt;sleep&lt;/code&gt; 命令&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:602,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;get too many lines by the install function name&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：查找到多个函数，不能执行&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 脚本函数执行退出</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-exit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/script-exit/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--exit-code string      退出码，默认值是 1
+--exit-message string   退出信息
+--timeout string        设定运行时长，单位是秒，通用参数
+--file string           脚本路径（必要参数）
+--function-name string  脚本中的函数名（必要参数）
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# blade create script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0
+
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;d8a016b96380d7f3&amp;#34;}
+
+# 执行脚本会触发场景。查看脚本修改如下:
+start0() {
+echo this-is-error-message;exit 1
+...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;备份原有脚本，根据函数名添加 &lt;code&gt;echo&lt;/code&gt; 和 &lt;code&gt;exit&lt;/code&gt; 命令。回复时还原脚本。&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: &lt;code&gt;{&amp;quot;code&amp;quot;:602,&amp;quot;success&amp;quot;:false,&amp;quot;error&amp;quot;:&amp;quot;get too many lines by the install function name&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A：查找到多个函数，不能执行&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

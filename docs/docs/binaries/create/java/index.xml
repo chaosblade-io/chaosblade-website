@@ -1,0 +1,128 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – Java 实验场景</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</link>
+    <description>Recent content in Java 实验场景 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: jvm 实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;jvm 本身相关场景，以及可以指定类，方法注入延迟、返回值、异常故障场景，也可以编写 groovy 和 java 脚本来实现复杂的场景。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;此处列举 jvm 支持的通用参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--pid string         指定 java 进程号
+--process string     指定 java 进程名，如果同时填写
+--timeout string     设定运行时长，单位是秒，通用参数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JVM 方法级别的故障场景通用参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--classname string        指定类名，必须是实现类，带全包名，例如 com.xxx.xxx.XController (必填项)
+--methodname string       指定方法名，注意相同方法名的方法都会被注入相同故障 (必填项)
+--after                   方法执行完成返回前注入故障，比如修改复杂的返回对象
+--effect-count string     限制影响数量
+--effect-percent string   限制影响百分比
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;各场景还有自身所独有的参数，可以在每个场景文档中查看&lt;/p&gt;
+&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;此处举个简单的例子：当前 Java 进程 CPU 使用率满载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 先执行 prepare 操作&lt;/span&gt;
+blade prepare jvm --process tomcat
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;af9ec083eaf32e26&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 执行进程内 CPU 满载&lt;/span&gt;
+blade create jvm cpufullload --process tomcat
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;:200,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;success&amp;#34;&lt;/span&gt;:true,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;result&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2a97b8c2fe9d7c01&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tvax2.sinaimg.cn/large/ad5fbf65ly1gg38r3inyxj20pm0j0acc.jpg&#34; alt=&#34;-w461&#34;&gt;&lt;/p&gt;
+&lt;p&gt;停止实验：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 停止实验&lt;/span&gt;
+blade destroy 2a97b8c2fe9d7c01
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 卸载 agent&lt;/span&gt;
+blade revoke af9ec083eaf32e26
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Java Servlet 实验场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Servlet 是 Java 的 web 的接口规范，Java web 服务器都遵循此规范实现。本场景主要模拟 Java Web 请求延迟、异常场景。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;servlet 通用参数&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--effect-count string     影响的请求条数
+--effect-percent string   影响的请求百分比
+--method string           HTTP 请求类型, 例如： GET, POST, or PUT.
+--pathinfo string         已废弃
+--pid string              java进程号
+--process string          java进程名
+--querystring string      请求参数，例如http://localhost:8080/dubbodemo/async?name=friend&amp;amp;timeout=2000 中 querystring的值是 name=friend&amp;amp;timeout=2000
+--requestpath string      请求 URI，不包含 Context 部分，例如 http://localhost:8080/dubbodemo/async?name=friend&amp;amp;timeout=2000，则 requestpath 的值是 /async，注意要带 /
+--servletpath string      已废弃
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实验原理&#34;&gt;实验原理&lt;/h2&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: 下发规则不生效&lt;/p&gt;
+&lt;p&gt;A: 在命令后添加 &amp;ndash;debug，然后触发业务请求，查看应用进程用户目录下 &lt;code&gt;logs/chaosblade/chaosblade.log&lt;/code&gt; 日志，如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2019&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;09&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;12&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DEBUG&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;servlet&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;matchers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;matchers&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;querystring&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;name=bobo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;servletpath&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/servlet/path&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;method&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;requestpath&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/servlet/path&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}}&lt;/span&gt;
+&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2019&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;09&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;12&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;INFO&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;Match&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rule&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;action&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;delay&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;actionName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;delay&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;matcher&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;matchers&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:{}},&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;target&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;servlet&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;servlet matchers 日志表示获取应用的匹配数据，Match rule 表示和下发的命令匹配。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: http 接口调用场景</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;p&gt;此处列举 http 支持的通用参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--effect-count string     影响的请求条数
+--effect-percent string   影响的请求百分比
+--pid string              指定 java 进程号
+--process string          指定 java 进程名
+--timeout string          设定运行时长，单位是秒，通用参数
+--httpclient3             作用 httpclient3 组件，即 Apache HttpClient 3.x
+--httpclient4             作用 httpclient4 组件，即 Apache HttpClient 4.x
+--rest                    作用 rest 组件，即 Spring Web 模块中的 RestTemplate
+--uri                     请求 URL，不包含 querystring 部分，例如：http://127.0.0.1:8801/getName
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;各场景还有自身所独有的参数，可以在每个场景文档中查看&lt;/p&gt;
+&lt;h2 id=&#34;实验原理&#34;&gt;实验原理&lt;/h2&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;Q: 下发规则不生效&lt;/p&gt;
+&lt;p&gt;A: 在命令后添加 &amp;ndash;debug，然后触发业务请求，查看应用进程用户目录下 ~/logs/chaosblade/chaosblade.log 日志，如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;2020-05-04 23:01:00 INFO  command: create, request: {&amp;#34;headers&amp;#34;:{},&amp;#34;params&amp;#34;:{&amp;#34;rest&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;process&amp;#34;:&amp;#34;http-client&amp;#34;,&amp;#34;debug&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;action&amp;#34;:&amp;#34;delay&amp;#34;,&amp;#34;suid&amp;#34;:&amp;#34;d7ab31c151a045aa&amp;#34;,&amp;#34;time&amp;#34;:&amp;#34;3000&amp;#34;,&amp;#34;uri&amp;#34;:&amp;#34;http://127.0.0.1:8801/getName&amp;#34;,&amp;#34;target&amp;#34;:&amp;#34;http&amp;#34;}}
+2020-05-04 23:01:00 INFO  change log level to debug
+2020-05-04 23:01:13 DEBUG http matchers: {&amp;#34;matchers&amp;#34;:{&amp;#34;uri&amp;#34;:&amp;#34;http://127.0.0.1:8801/getName&amp;#34;}}
+2020-05-04 23:01:13 INFO  Match rule: {&amp;#34;action&amp;#34;:{&amp;#34;name&amp;#34;:&amp;#34;delay&amp;#34;},&amp;#34;actionName&amp;#34;:&amp;#34;delay&amp;#34;,&amp;#34;matcher&amp;#34;:{&amp;#34;matchers&amp;#34;:{&amp;#34;rest&amp;#34;:&amp;#34;true&amp;#34;,&amp;#34;uri&amp;#34;:&amp;#34;http://127.0.0.1:8801/getName&amp;#34;}},&amp;#34;target&amp;#34;:&amp;#34;http&amp;#34;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;command create 表示下发了 create 指令并开启 debug 日志，http matchers 表示获取请求的匹配数据，Match rule 表示请求和下发的命令匹配成功，延迟故障生效&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

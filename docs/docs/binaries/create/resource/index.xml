@@ -1,0 +1,146 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaosBlade – 资源场景</title>
+    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</link>
+    <description>Recent content in 资源场景 on ChaosBlade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: CPU 负载实验</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/cpu-load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/cpu-load/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;CPU 相关的混沌实验包含 CPU 满载，可以指定核数、具体核满载或者总 CPU 负载百分比。&lt;/p&gt;
+&lt;p&gt;旨在 CPU 在特定负载下，验证服务质量、监控告警、流量调度、弹性伸缩等能力。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;load&lt;/code&gt;、&lt;code&gt;fullload&lt;/code&gt;、&lt;code&gt;fl&lt;/code&gt; 命令都可以，即 &lt;code&gt;blade create cpu load&lt;/code&gt;、&lt;code&gt;blade create cpu fullload&lt;/code&gt; 或 &lt;code&gt;blade create cpu fl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;执行命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;blade create cpu load [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--timeout string   设定运行时长，单位是秒，通用参数
+--cpu-count string     指定 CPU 满载的个数
+--cpu-list string      指定 CPU 满载的具体核，核索引从 0 开始 (0-3 or 1,3)
+--cpu-percent string   指定 CPU 负载百分比，取值在 0-100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 创建 CPU 满载实验
+blade create cpu load
+
+# 返回结果如下
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;beeaaf3a7007031d&amp;#34;}
+
+# code 的值等于 200 说明执行成功，其中 result 的值就是 uid。使用 top 命令验证实验效果
+Tasks: 100 total,   2 running,  98 sleeping,   0 stopped,   0 zombie
+%Cpu0  : 21.3 us, 78.7 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu1  : 20.9 us, 79.1 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu2  : 20.5 us, 79.5 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu3  : 20.9 us, 79.1 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+# 4 核都满载，实验生效，销毁实验
+blade destroy beeaaf3a7007031d
+
+# 返回结果如下
+{&amp;#34;code&amp;#34;:200,&amp;#34;success&amp;#34;:true,&amp;#34;result&amp;#34;:&amp;#34;command: cpu load --help false --debug false&amp;#34;}
+
+# 指定随机两个核满载
+blade create cpu load --cpu-count 2
+
+# 使用 top 命令验证结果如下，实验生效
+Tasks: 100 total,   2 running,  98 sleeping,   0 stopped,   0 zombie
+%Cpu0  : 17.9 us, 75.1 sy,  0.0 ni,  7.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu1  :  3.0 us,  6.7 sy,  0.0 ni, 90.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu2  :  0.7 us,  0.7 sy,  0.0 ni, 98.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu3  : 19.7 us, 80.3 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+# 指定索引是 0，3 的核满载，核的索引从 0 开始
+blade create cpu load --cpu-list 0,3
+
+# 使用 top 命令验证结果如下，实验生效
+Tasks: 101 total,   2 running,  99 sleeping,   0 stopped,   0 zombie
+%Cpu0  : 23.5 us, 76.5 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu1  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu2  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu3  : 20.9 us, 79.1 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+# 指定索引 1 到 3 的核满载
+blade create cpu load --cpu-list 1-3
+
+Tasks: 102 total,   4 running,  98 sleeping,   0 stopped,   0 zombie
+%Cpu0  :  2.4 us,  7.1 sy,  0.0 ni, 90.2 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+%Cpu1  : 20.0 us, 80.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu2  : 15.7 us, 78.7 sy,  0.0 ni,  5.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu3  : 19.1 us, 78.9 sy,  0.0 ni,  2.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+# 指定百分比负载
+blade create cpu load --cpu-percent 60
+
+# 可以看到 CPU 总的使用率达到 60%， 空闲 40%
+Tasks: 100 total,   1 running,  99 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 15.8 us, 44.1 sy,  0.0 ni, 40.0 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;利用消耗CPU时间片来做。详见代码：&lt;a href=&#34;https://github.com/chaosblade-io/chaosblade-exec-os/blob/master/exec/bin/burncpu/burncpu.go&#34;&gt;burncpu&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 内存占用</title>
+      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/mem-load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/mem-load/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;指定内存占用，注意，此场景触发内存占用满，即使指定了 &amp;ndash;timeout 参数，也可能出现通过 blade 工具无法恢复的情况，可通过重启机器解决！！！推荐指定内存百分比！&lt;/p&gt;
+&lt;p&gt;由于目前内存大小计算通过 memory.stat 等文件计算，所以和 free 命令计算不一致，同 top 命令一致，验证时请使用 top 命令查看内存使用。后续会针对内存占用场景进行优化。&lt;/p&gt;
+&lt;h2 id=&#34;参数&#34;&gt;参数&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--mem-percent string    内存使用率，取值是 0 到 100 的整数
+--mode string   内存占用模式，有 ram 和 cache 两种，例如 --mode ram。ram 采用代码实现，可控制占用速率，优先推荐此模式；cache 是通过挂载tmpfs实现；默认值是 --mode cache
+--reserve string    保留内存的大小，单位是MB，如果 mem-percent 参数存在，则优先使用 mem-percent 参数
+--rate string 内存占用速率，单位是 MB/S，仅在 --mode ram 时生效
+--timeout string   设定运行时长，单位是秒，通用参数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 在执行命令之前，先使用 top 命令查看内存使用信息，如下，总内存大小是 8G，使用了 7.6%
+KiB Mem :  7.6/8010196  
+
+# 执行内存占用 50%
+blade c mem load --mode ram --mem-percent 50
+
+# 查看内存使用
+KiB Mem : 50.0/8010196 
+
+# 执行内存占用 100%
+KiB Mem : 99.6/8010196
+
+# 保留 200M 内存，总内存大小 1G
+blade c mem load --mode ram --reserve 200 --rate 100
+KiB Mem :  1014744 total,    78368 free,   663660 used,   272716 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   209652 avail Mem
+KiB Mem : 79.7/1014744  [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                   ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现原理&#34;&gt;实现原理&lt;/h2&gt;
+&lt;p&gt;ram 模式采用代码申请内存实现
+cache 模式采用 &lt;code&gt;dd&lt;/code&gt;、&lt;code&gt;mount&lt;/code&gt; 命令实现，挂载 tmpfs 并且进行文件填充&lt;/p&gt;
+&lt;h2 id=&#34;常见错误&#34;&gt;常见错误&lt;/h2&gt;
+&lt;p&gt;Q：如果执行了内存满载，无法恢复，如何处理&lt;/p&gt;
+&lt;p&gt;A：重启机器恢复&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
