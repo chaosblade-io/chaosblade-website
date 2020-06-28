@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – Pod 实验场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/</link>
+    <link>/docs/binaries/create/k8s/pod/</link>
     <description>Recent content in Pod 实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/k8s/pod/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Pod 资源自身场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-pod/</link>
+      <link>/docs/binaries/create/k8s/pod/pod-pod/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-pod/</guid>
+      <guid>/docs/binaries/create/k8s/pod/pod-pod/</guid>
       <description>
         
         
@@ -58,10 +58,10 @@
     
     <item>
       <title>Docs: Pod 网络相关场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-network/</link>
+      <link>/docs/binaries/create/k8s/pod/pod-network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/pod/pod-network/</guid>
+      <guid>/docs/binaries/create/k8s/pod/pod-network/</guid>
       <description>
         
         

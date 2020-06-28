@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 磁盘场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</link>
+    <link>/docs/binaries/create/disk/</link>
     <description>Recent content in 磁盘场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/disk/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 磁盘读写 io 负载实验</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-burn/</link>
+      <link>/docs/binaries/create/disk/disk-burn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-burn/</guid>
+      <guid>/docs/binaries/create/disk/disk-burn/</guid>
       <description>
         
         
@@ -70,10 +70,10 @@ vda               0.00    36.00  229.50  252.50 108512.00 107750.00   897.35    
     
     <item>
       <title>Docs: 磁盘填充混沌实验</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-fill/</link>
+      <link>/docs/binaries/create/disk/disk-fill/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/disk-fill/</guid>
+      <guid>/docs/binaries/create/disk/disk-fill/</guid>
       <description>
         
         
