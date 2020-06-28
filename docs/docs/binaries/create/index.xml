@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – create 命令</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/</link>
+    <link>/docs/binaries/create/</link>
     <description>Recent content in create 命令 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 资源场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</link>
+      <link>/docs/binaries/create/resource/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/resource/</guid>
+      <guid>/docs/binaries/create/resource/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>Docs: 磁盘场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</link>
+      <link>/docs/binaries/create/disk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/disk/</guid>
+      <guid>/docs/binaries/create/disk/</guid>
       <description>
         
         
@@ -42,10 +42,10 @@
     
     <item>
       <title>Docs: 网络场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/</link>
+      <link>/docs/binaries/create/network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/network/</guid>
+      <guid>/docs/binaries/create/network/</guid>
       <description>
         
         
@@ -55,10 +55,10 @@
     
     <item>
       <title>Docs: 进程场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</link>
+      <link>/docs/binaries/create/process/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/process/</guid>
+      <guid>/docs/binaries/create/process/</guid>
       <description>
         
         
@@ -68,10 +68,10 @@
     
     <item>
       <title>Docs: docker 容器场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</link>
+      <link>/docs/binaries/create/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/docker/</guid>
+      <guid>/docs/binaries/create/docker/</guid>
       <description>
         
         
@@ -90,10 +90,10 @@
     
     <item>
       <title>Docs: 脚本函数执行</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</link>
+      <link>/docs/binaries/create/script/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/script/</guid>
+      <guid>/docs/binaries/create/script/</guid>
       <description>
         
         
@@ -103,10 +103,10 @@
     
     <item>
       <title>Docs: kubernetes 实验场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/</link>
+      <link>/docs/binaries/create/k8s/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/</guid>
+      <guid>/docs/binaries/create/k8s/</guid>
       <description>
         
         
@@ -155,10 +155,10 @@
     
     <item>
       <title>Docs: Java 实验场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</link>
+      <link>/docs/binaries/create/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</guid>
+      <guid>/docs/binaries/create/java/</guid>
       <description>
         
         

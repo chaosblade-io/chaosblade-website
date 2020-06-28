@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – Java 实验场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/</link>
+    <link>/docs/binaries/create/java/</link>
     <description>Recent content in Java 实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/java/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: jvm 实验场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/</link>
+      <link>/docs/binaries/create/java/jvm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/</guid>
+      <guid>/docs/binaries/create/java/jvm/</guid>
       <description>
         
         
@@ -60,10 +60,10 @@ blade revoke af9ec083eaf32e26
     
     <item>
       <title>Docs: Java Servlet 实验场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/</link>
+      <link>/docs/binaries/create/java/servlet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/servlet/</guid>
+      <guid>/docs/binaries/create/java/servlet/</guid>
       <description>
         
         
@@ -92,10 +92,10 @@ blade revoke af9ec083eaf32e26
     
     <item>
       <title>Docs: http 接口调用场景</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/</link>
+      <link>/docs/binaries/create/java/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/http/</guid>
+      <guid>/docs/binaries/create/java/http/</guid>
       <description>
         
         

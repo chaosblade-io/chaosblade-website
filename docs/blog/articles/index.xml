@@ -1,13 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 文章</title>
-    <link>https://sunny0826.github.io/chaosblade-website/blog/articles/</link>
+    <link>/blog/articles/</link>
     <description>Recent content in 文章 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/blog/articles/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/blog/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +16,10 @@
     
     <item>
       <title>Blog: 混沌工程介绍与实践</title>
-      <link>https://sunny0826.github.io/chaosblade-website/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
+      <link>/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
       <description>
         
         

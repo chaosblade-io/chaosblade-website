@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – CLI 工具</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/</link>
+    <link>/docs/binaries/</link>
     <description>Recent content in CLI 工具 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: create 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/</link>
+      <link>/docs/binaries/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/</guid>
+      <guid>/docs/binaries/create/</guid>
       <description>
         
         
@@ -63,10 +63,10 @@ blade destroy 6fa04946baf42920
     
     <item>
       <title>Docs: destroy 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/destroy/</link>
+      <link>/docs/binaries/destroy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/destroy/</guid>
+      <guid>/docs/binaries/destroy/</guid>
       <description>
         
         
@@ -76,10 +76,10 @@ blade destroy 6fa04946baf42920
     
     <item>
       <title>Docs: prepare 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/</link>
+      <link>/docs/binaries/prepare/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/</guid>
+      <guid>/docs/binaries/prepare/</guid>
       <description>
         
         
@@ -89,10 +89,10 @@ blade destroy 6fa04946baf42920
     
     <item>
       <title>Docs: revoke 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/revoke/</link>
+      <link>/docs/binaries/revoke/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/revoke/</guid>
+      <guid>/docs/binaries/revoke/</guid>
       <description>
         
         
@@ -102,10 +102,10 @@ blade destroy 6fa04946baf42920
     
     <item>
       <title>Docs: status 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/status/</link>
+      <link>/docs/binaries/status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/status/</guid>
+      <guid>/docs/binaries/status/</guid>
       <description>
         
         
@@ -189,10 +189,10 @@ blade status --type prepare
     
     <item>
       <title>Docs: query 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/query/</link>
+      <link>/docs/binaries/query/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/query/</guid>
+      <guid>/docs/binaries/query/</guid>
       <description>
         
         
@@ -202,10 +202,10 @@ blade status --type prepare
     
     <item>
       <title>Docs: version 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/version/</link>
+      <link>/docs/binaries/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/version/</guid>
+      <guid>/docs/binaries/version/</guid>
       <description>
         
         
@@ -228,10 +228,10 @@ build-time: Thu Dec  &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;
     
     <item>
       <title>Docs: server 命令</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/server/</link>
+      <link>/docs/binaries/server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/server/</guid>
+      <guid>/docs/binaries/server/</guid>
       <description>
         
         

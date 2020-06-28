@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 撰写文档</title>
-    <link>https://sunny0826.github.io/chaosblade-website/contributing/docs/</link>
+    <link>/contributing/docs/</link>
     <description>Recent content in 撰写文档 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/contributing/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/contributing/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       

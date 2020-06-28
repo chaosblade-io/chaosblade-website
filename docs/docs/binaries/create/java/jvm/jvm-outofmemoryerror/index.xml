@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 内存溢出场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</link>
+    <link>/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</link>
     <description>Recent content in 内存溢出场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-outofmemoryerror/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/java/jvm/jvm-outofmemoryerror/index.xml" rel="self" type="application/rss+xml" />
     
     
       

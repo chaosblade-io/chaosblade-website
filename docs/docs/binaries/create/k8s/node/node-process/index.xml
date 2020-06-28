@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 节点进程相关场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-process/</link>
+    <link>/docs/binaries/create/k8s/node/node-process/</link>
     <description>Recent content in 节点进程相关场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/k8s/node/node-process/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/k8s/node/node-process/index.xml" rel="self" type="application/rss+xml" />
     
     
       

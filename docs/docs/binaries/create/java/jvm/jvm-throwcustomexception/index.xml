@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 指定类方法抛自定义异常</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-throwcustomexception/</link>
+    <link>/docs/binaries/create/java/jvm/jvm-throwcustomexception/</link>
     <description>Recent content in 指定类方法抛自定义异常 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/create/java/jvm/jvm-throwcustomexception/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/create/java/jvm/jvm-throwcustomexception/index.xml" rel="self" type="application/rss+xml" />
     
     
       

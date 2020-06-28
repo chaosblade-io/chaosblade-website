@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 磁盘填充场景</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/operator/node/node-disk/fill_node_disk/</link>
+    <link>/docs/operator/node/node-disk/fill_node_disk/</link>
     <description>Recent content in 磁盘填充场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/operator/node/node-disk/fill_node_disk/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/operator/node/node-disk/fill_node_disk/index.xml" rel="self" type="application/rss+xml" />
     
     
       

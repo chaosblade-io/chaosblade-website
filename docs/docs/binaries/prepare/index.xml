@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – prepare 命令</title>
-    <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/</link>
+    <link>/docs/binaries/prepare/</link>
     <description>Recent content in prepare 命令 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/binaries/prepare/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 挂载 java agent</title>
-      <link>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/jvm/</link>
+      <link>/docs/binaries/prepare/jvm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sunny0826.github.io/chaosblade-website/docs/binaries/prepare/jvm/</guid>
+      <guid>/docs/binaries/prepare/jvm/</guid>
       <description>
         
         
