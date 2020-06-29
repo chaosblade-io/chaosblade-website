@@ -51,6 +51,7 @@ CPU、内存、网络、磁盘、进程等实验场景
 Kubernetes 平台节点上 CPU、内存、网络、磁盘、进程实验场景，Pod 网络和 Pod 本身实验场景如杀 Pod，容器的实验场景
 {{% /blocks/feature %}}
 {{% blocks/feature icon="fab fa-node" title="Node js 应用" %}}
+遵照 Chaosblade 标准的 Node.js 混沌工程执行器实现，通过集成该执行器，可以在应用依赖的组件上注入故障。
 {{% /blocks/feature %}}
 {{< /blocks/section >}}
 
