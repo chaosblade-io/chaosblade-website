@@ -12,7 +12,7 @@ ChaosBlade 使用 [Hugo](https://gohugo.io) 的 [Docsy](https://www.docsy.dev) �
 
 - [安装 hugo](https://gohugo.io/getting-started/installing/#fetch-from-github)
 - Clone chaosblade docs
-  - `git clone https://github.com/chaosblade-io/website.git && cd website/`
+  - `git clone https://github.com/chaosblade-io/chaosblade-website.git && cd chaosblade-website/`
 
 ## 运行
 
@@ -50,7 +50,7 @@ Press Ctrl+C to stop
 
 ## 发布
 
-在完成文档更新后，运行 `hugo` 命令即可完成前端页面文件的渲染，渲染后的文件存放在 `public` 目录中。
+在完成文档更新后，运行 `hugo` 命令即可完成前端页面文件的渲染，渲染后的文件存放在 `docs` 目录中。
 
 ```shell script
 hugo
@@ -81,7 +81,7 @@ hugo
 
 1. 进入仓库的 **Settings** 页面
 2. 跳转到 **GitHub Pages** 部分
-3. 设置源为 master 分支的 **/public 目录**
+3. 设置源为 master 分支的 **/docs 目录**
 
 ### 发布到 GitHub Pages
 
