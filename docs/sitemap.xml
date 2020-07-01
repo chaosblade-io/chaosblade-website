@@ -103,7 +103,7 @@
   
   <url>
     <loc>https://www.kubeflow.org/contributing/docs/</loc>
-    <lastmod>2020-06-23T16:06:36+08:00</lastmod>
+    <lastmod>2020-06-29T11:54:54+08:00</lastmod>
   </url>
   
   <url>
@@ -204,6 +204,10 @@
   <url>
     <loc>https://www.kubeflow.org/docs/binaries/create/java/servlet/servlet-throwcustomexception/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/try/operatoe-node/</loc>
   </url>
   
   <url>
@@ -553,7 +557,7 @@
   
   <url>
     <loc>https://www.kubeflow.org/</loc>
-    <lastmod>2020-06-23T16:28:15+08:00</lastmod>
+    <lastmod>2020-06-29T11:54:54+08:00</lastmod>
   </url>
   
   <url>
