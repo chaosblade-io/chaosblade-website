@@ -1,9 +1,9 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark bg-primary {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar">
-	<a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+<nav class="js-navbar-scroll navbar navbar-expand bg-primary {{ if $cover}} td-navbar-cover navbar-dark {{ else }} nav-shadow {{ end }} flex-column flex-md-row td-navbar">
+	<a id="chaos-top" class="navbar-brand" {{ if $cover }} style="display: none;" {{end}} href="{{ .Site.Home.RelPermalink }}">
 		<span class="navbar-logo">{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }} {{ end }}</span><span class="brand-name text-uppercase font-weight-bold">{{ .Site.Title }}</span>
 	</a>
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar" style="color:aqua">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			{{ $p := . }}
 			{{ range .Site.Menus.main }}

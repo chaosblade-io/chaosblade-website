@@ -10,7 +10,7 @@ html.smooth-scroll {
 
 // Theme colors
 
-$primary: #ed6a5a;
+$primary: #fff  !default;;
 $secondary: #fff;
 $dark: #333333;
 $info: #adb5bd;
@@ -156,3 +156,31 @@ $google_font_family: "Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap
     #pageContent .lead:nth-child(2n+0) > .text {
       -ms-flex-order: 1;
           order: 1; } }
+
+
+
+#agones-search {
+    background: rgba(190, 185, 185, 0.3);
+}
+input[type="search"]::placeholder {
+    color:  #9B9595 !important;
+}
+
+.nav-shadow {
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+.navbar-brand {
+  color: black !important
+}
+
+.navbar-bg-onscroll {
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  #chaos-top {
+      display: block !important;
+  }
+}
+
+.control-bar {
+  display: none;
+}
