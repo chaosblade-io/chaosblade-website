@@ -21,7 +21,7 @@ exclude_search: true
 
 <div id="overview">
   <div class="contain">
-    <h3 class="section-head">ChaosBlade 是什么？</h4>
+    <h3 class="section-head -text-dark">ChaosBlade 是什么？</h4>
     <p>ChaosBlade 是阿里巴巴开源的一款遵循混沌工程原理和混沌实验模型的实验注入工具，帮助企业提升分布式系统的容错能力，并且在企业上云或往云原生系统迁移过程中业务连续性保障。</p>
   </div>
   <!-- <img src="https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/release/chaosblade-demo-0.0.1.gif"  height="50%" width="50%" /> -->
@@ -31,7 +31,6 @@ exclude_search: true
 ### 支持场景
 
 将场景按领域实现封装成一个个单独的项目，不仅可以使领域内场景标准化实现，而且非常方便场景水平和垂直扩展，通过遵循混沌实验模型，实现 chaosblade cli 统一调用。目前包含的项目如下：
-
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" >}}
@@ -57,11 +56,11 @@ Kubernetes 平台节点上 CPU、内存、网络、磁盘、进程实验场景�
 
 <div id="community">
   <div class="contain">
-    <h4 class="section-head">加入社区</h4>
+    <h4 class="section-head -text-dark">加入社区</h4>
     <p>
-      我们非常欢迎每个 Issue 和 PR，即使一个标点符号，如何参加贡献请阅读  <a href="/contributing/">CONTRIBUTING</a> 文档，或者通过下面的方式联系我们。 
+      我们非常欢迎每个 Issue 和 PR，即使一个标点符号，如何参加贡献请阅读  <a href="/contributing/">CONTRIBUTING</a> 文档，或者通过下面的方式联系我们。
     </p>
-    <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/contributing" >}}">
+    <a class="btn btn-lg btn-dark mr-3 mb-4" href="{{< relref "/contributing" >}}">
       贡献指南 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
     </a>
   </div>
