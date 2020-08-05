@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 删除 Pod</title>
-    <link>/docs/operator/pod/pod-resource/remove/</link>
+    <link>https://chaosblade.io/docs/operator/pod/pod-resource/remove/</link>
     <description>Recent content in 删除 Pod on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/operator/pod/pod-resource/remove/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/operator/pod/pod-resource/remove/index.xml" rel="self" type="application/rss+xml" />
     
     
       

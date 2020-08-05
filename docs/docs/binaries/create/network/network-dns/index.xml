@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – DNS 解析异常实验场景</title>
-    <link>/docs/binaries/create/network/network-dns/</link>
+    <link>https://chaosblade.io/docs/binaries/create/network/network-dns/</link>
     <description>Recent content in DNS 解析异常实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/network/network-dns/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/network/network-dns/index.xml" rel="self" type="application/rss+xml" />
     
     
       

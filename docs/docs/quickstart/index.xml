@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 快速开始</title>
-    <link>/docs/quickstart/</link>
+    <link>https://chaosblade.io/docs/quickstart/</link>
     <description>Recent content in 快速开始 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/quickstart/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/quickstart/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 快速体验</title>
-      <link>/docs/quickstart/demo/</link>
+      <link>https://chaosblade.io/docs/quickstart/demo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/quickstart/demo/</guid>
+      <guid>https://chaosblade.io/docs/quickstart/demo/</guid>
       <description>
         
         
@@ -36,10 +36,10 @@
     
     <item>
       <title>Docs: 开始混沌实验</title>
-      <link>/docs/quickstart/first-exp/</link>
+      <link>https://chaosblade.io/docs/quickstart/first-exp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/quickstart/first-exp/</guid>
+      <guid>https://chaosblade.io/docs/quickstart/first-exp/</guid>
       <description>
         
         
