@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 资源场景</title>
-    <link>/docs/binaries/create/resource/</link>
+    <link>https://chaosblade.io/docs/binaries/create/resource/</link>
     <description>Recent content in 资源场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/resource/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/resource/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: CPU 负载实验</title>
-      <link>/docs/binaries/create/resource/cpu-load/</link>
+      <link>https://chaosblade.io/docs/binaries/create/resource/cpu-load/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/resource/cpu-load/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/resource/cpu-load/</guid>
       <description>
         
         
@@ -98,10 +98,10 @@ Tasks: 100 total,   1 running,  99 sleeping,   0 stopped,   0 zombie
     
     <item>
       <title>Docs: 内存占用</title>
-      <link>/docs/binaries/create/resource/mem-load/</link>
+      <link>https://chaosblade.io/docs/binaries/create/resource/mem-load/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/resource/mem-load/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/resource/mem-load/</guid>
       <description>
         
         

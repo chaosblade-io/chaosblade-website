@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 域名访问异常场景</title>
-    <link>/docs/operator/pod/pod-network/dns_pod_network/</link>
+    <link>https://chaosblade.io/docs/operator/pod/pod-network/dns_pod_network/</link>
     <description>Recent content in 域名访问异常场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/operator/pod/pod-network/dns_pod_network/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/operator/pod/pod-network/dns_pod_network/index.xml" rel="self" type="application/rss+xml" />
     
     
       

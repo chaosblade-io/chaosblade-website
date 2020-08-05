@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 磁盘读写 io 负载实验</title>
-    <link>/docs/binaries/create/disk/disk-burn/</link>
+    <link>https://chaosblade.io/docs/binaries/create/disk/disk-burn/</link>
     <description>Recent content in 磁盘读写 io 负载实验 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/disk/disk-burn/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/disk/disk-burn/index.xml" rel="self" type="application/rss+xml" />
     
     
       

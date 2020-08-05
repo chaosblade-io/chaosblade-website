@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – Pod 实验场景</title>
-    <link>/try/operator-pod/</link>
+    <link>https://chaosblade.io/try/operator-pod/</link>
     <description>Recent content in Pod 实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/try/operator-pod/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/try/operator-pod/index.xml" rel="self" type="application/rss+xml" />
     
     
       

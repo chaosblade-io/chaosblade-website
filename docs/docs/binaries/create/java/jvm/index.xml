@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – jvm 实验场景</title>
-    <link>/docs/binaries/create/java/jvm/</link>
+    <link>https://chaosblade.io/docs/binaries/create/java/jvm/</link>
     <description>Recent content in jvm 实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/java/jvm/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/java/jvm/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 指定类方法调用延迟</title>
-      <link>/docs/binaries/create/java/jvm/jvm-delay/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-delay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-delay/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-delay/</guid>
       <description>
         
         
@@ -68,10 +68,10 @@
     
     <item>
       <title>Docs: 指定类方法的返回值</title>
-      <link>/docs/binaries/create/java/jvm/jvm-return/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-return/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-return/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-return/</guid>
       <description>
         
         
@@ -121,10 +121,10 @@
     
     <item>
       <title>Docs: 脚本实现复杂的故障场景</title>
-      <link>/docs/binaries/create/java/jvm/jvm-script/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-script/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-script/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-script/</guid>
       <description>
         
         
@@ -222,10 +222,10 @@
     
     <item>
       <title>Docs: 指定 java 进程 CPU 满载</title>
-      <link>/docs/binaries/create/java/jvm/jvm-cpufullload/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-cpufullload/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-cpufullload/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-cpufullload/</guid>
       <description>
         
         
@@ -260,10 +260,10 @@
     
     <item>
       <title>Docs: 内存溢出场景</title>
-      <link>/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</guid>
       <description>
         
         
@@ -345,10 +345,10 @@
     
     <item>
       <title>Docs: jvm CodeCacheFilling</title>
-      <link>/docs/binaries/create/java/jvm/jvm-codecachefilling/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-codecachefilling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-codecachefilling/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-codecachefilling/</guid>
       <description>
         
         
@@ -385,10 +385,10 @@
     
     <item>
       <title>Docs: 指定类方法抛自定义异常</title>
-      <link>/docs/binaries/create/java/jvm/jvm-throwcustomexception/</link>
+      <link>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-throwcustomexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/java/jvm/jvm-throwcustomexception/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/java/jvm/jvm-throwcustomexception/</guid>
       <description>
         
         
