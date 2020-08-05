@@ -2,586 +2,587 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-resource/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/resource/cpu-load/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/resource/cpu-load/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/container/container-cpu/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/container/container-cpu/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/node/node-cpu/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/node/node-cpu/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/http/http-delay/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/http/http-delay/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/servlet/servlet-delay/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/servlet/servlet-delay/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-resource/cpu-load/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-resource/cpu-load/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/node/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/node/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-resource/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-resource/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/try/operator-pod/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/try/operator-pod/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-resource/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/remove/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-resource/remove/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-resource/remove/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-resource/remove/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/installation/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/installation/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/docker/docker-cpu/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/docker/docker-cpu/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/prepare/jvm/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/prepare/jvm/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-delay/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-delay/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/contributing/docs/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/contributing/docs/</loc>
     <lastmod>2020-06-29T11:54:54+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/pod-io-error/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-io/pod-io-error/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/blog/articles/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/articles/</loc>
     <lastmod>2020-06-24T15:49:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-process/kill_container_process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-process/kill_container_process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-process/kill_node_process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-process/kill_node_process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/process/process-kill/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/process/process-kill/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-disk/fill_node_disk/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-disk/fill_node_disk/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-network/delay_container_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-network/delay_container_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-network/delay_node_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-network/delay_node_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/delay_pod_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-network/delay_pod_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-delay/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-delay/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/script/script-delay/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/script/script-delay/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/resource/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/resource/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/pod/pod-pod/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/pod/pod-pod/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-resource/cpu-load/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-resource/cpu-load/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/destroy/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/destroy/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-dns/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-dns/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/http/http-throwcustomexception/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/http/http-throwcustomexception/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/servlet/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/servlet/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/servlet/servlet-throwcustomexception/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/servlet/servlet-throwcustomexception/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/try/operatoe-node/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/try/operatoe-node/</loc>
     <lastmod>2020-07-01T16:48:08+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/pod/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/pod/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/docker/docker-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/docker/docker-network/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/container/container-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/container/container-network/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/contributing/dev/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/contributing/dev/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/quickstart/demo/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/quickstart/demo/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/quickstart/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/quickstart/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-process/stop_container_process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-process/stop_container_process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-process/stop_node_process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-process/stop_node_process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-return/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-return/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/process/process-stop/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/process/process-stop/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/disk/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/disk/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/disk/disk-burn/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/disk/disk-burn/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-network/loss_container_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-network/loss_container_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-network/loss_node_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-network/loss_node_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/loss_pod_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-network/loss_pod_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/node/node-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/node/node-network/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/pod/pod-network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/pod/pod-network/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/script/script-exit/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/script/script-exit/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/container/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/container/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/try/operator-container/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/try/operator-container/</loc>
+    <lastmod>2020-08-05T15:20:11+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/http/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/http/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-disk/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-disk/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-io/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-io/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/prepare/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/prepare/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/contributing/community/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/contributing/community/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/container/container-network/tamper_container_dns/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/container-network/tamper_container_dns/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-network/dns_node_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-network/dns_node_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/pod/pod-network/dns_pod_network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/pod/pod-network/dns_pod_network/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/docker/docker-process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/docker/docker-process/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/container/container-process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/container/container-process/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/quickstart/first-exp/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/quickstart/first-exp/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/disk/disk-fill/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/disk/disk-fill/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-loss/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-loss/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-script/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-script/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/node/node-process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/node/node-process/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/node/node-process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/node/node-process/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/revoke/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/revoke/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/operator/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/resource/mem-load/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/resource/mem-load/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/docker/docker-container/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/docker/docker-container/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/container/container-container/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/container/container-container/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-cpufullload/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-cpufullload/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/node/node-disk/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/node/node-disk/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-corrupt/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-corrupt/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/process/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/process/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/status/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/status/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-outofmemoryerror/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-reorder/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-reorder/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/docker/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/docker/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-codecachefilling/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-codecachefilling/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/query/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/query/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-duplicate/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-duplicate/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/script/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/script/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/k8s/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/k8s/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/version/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/version/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/jvm/jvm-throwcustomexception/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/jvm/jvm-throwcustomexception/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/network/network-occupy/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/network/network-occupy/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/docs/binaries/server/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/server/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/blog/cloudnative/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/cloudnative/</loc>
     <lastmod>2020-06-24T15:49:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2020-06-24T15:49:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2019-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/</loc>
     <lastmod>2020-07-03T13:59:42+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/faq/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/faq/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/try/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/try/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/blog/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.kubeflow.org/contributing/</loc>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/contributing/</loc>
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   

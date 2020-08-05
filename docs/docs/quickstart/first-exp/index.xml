@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 开始混沌实验</title>
-    <link>/docs/quickstart/first-exp/</link>
+    <link>https://chaosblade.io/docs/quickstart/first-exp/</link>
     <description>Recent content in 开始混沌实验 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/quickstart/first-exp/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/quickstart/first-exp/index.xml" rel="self" type="application/rss+xml" />
     
     
       

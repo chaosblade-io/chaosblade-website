@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 磁盘填充混沌实验</title>
-    <link>/docs/binaries/create/disk/disk-fill/</link>
+    <link>https://chaosblade.io/docs/binaries/create/disk/disk-fill/</link>
     <description>Recent content in 磁盘填充混沌实验 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/disk/disk-fill/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/disk/disk-fill/index.xml" rel="self" type="application/rss+xml" />
     
     
       

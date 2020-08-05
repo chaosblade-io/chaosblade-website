@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – ChaosBlade</title>
-    <link>/</link>
+    <link>https://chaosblade.io/</link>
     <description>Recent content on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Blog: Chaosblade Operator：在云原生场景下，将 Kubernetes 设计理解与混沌实验模型相结合标准化实现方案</title>
-      <link>/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</link>
+      <link>https://chaosblade.io/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</guid>
+      <guid>https://chaosblade.io/blog/2020/01/15/chaosblade-operator%E5%9C%A8%E4%BA%91%E5%8E%9F%E7%94%9F%E5%9C%BA%E6%99%AF%E4%B8%8B%E5%B0%86-kubernetes-%E8%AE%BE%E8%AE%A1%E7%90%86%E8%A7%A3%E4%B8%8E%E6%B7%B7%E6%B2%8C%E5%AE%9E%E9%AA%8C%E6%A8%A1%E5%9E%8B%E7%9B%B8%E7%BB%93%E5%90%88%E6%A0%87%E5%87%86%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</guid>
       <description>
         
         
@@ -132,10 +132,10 @@ spec:
     
     <item>
       <title>Blog: 混沌工程介绍与实践</title>
-      <link>/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://chaosblade.io/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://chaosblade.io/blog/2019/12/10/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
       <description>
         
         

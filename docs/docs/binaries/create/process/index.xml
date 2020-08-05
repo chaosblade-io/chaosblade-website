@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 进程场景</title>
-    <link>/docs/binaries/create/process/</link>
+    <link>https://chaosblade.io/docs/binaries/create/process/</link>
     <description>Recent content in 进程场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/process/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/process/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 杀进程</title>
-      <link>/docs/binaries/create/process/process-kill/</link>
+      <link>https://chaosblade.io/docs/binaries/create/process/process-kill/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/process/process-kill/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/process/process-kill/</guid>
       <description>
         
         
@@ -67,10 +67,10 @@ SIGSTOP	        17,19,23	Stop the process
     
     <item>
       <title>Docs: 暂停进程</title>
-      <link>/docs/binaries/create/process/process-stop/</link>
+      <link>https://chaosblade.io/docs/binaries/create/process/process-stop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/process/process-stop/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/process/process-stop/</guid>
       <description>
         
         

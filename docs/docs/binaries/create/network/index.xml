@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – 网络场景</title>
-    <link>/docs/binaries/create/network/</link>
+    <link>https://chaosblade.io/docs/binaries/create/network/</link>
     <description>Recent content in 网络场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/docs/binaries/create/network/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://chaosblade.io/docs/binaries/create/network/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 网络延迟实验场景</title>
-      <link>/docs/binaries/create/network/network-delay/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-delay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-delay/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-delay/</guid>
       <description>
         
         
@@ -73,10 +73,10 @@ tc qdisc del dev eth0 root
     
     <item>
       <title>Docs: DNS 解析异常实验场景</title>
-      <link>/docs/binaries/create/network/network-dns/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-dns/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-dns/</guid>
       <description>
         
         
@@ -105,10 +105,10 @@ blade create network dns --domain www.baidu.com --ip 10.0.0.0
     
     <item>
       <title>Docs: 网络丢包实验场景</title>
-      <link>/docs/binaries/create/network/network-loss/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-loss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-loss/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-loss/</guid>
       <description>
         
         
@@ -164,10 +164,10 @@ tc qdisc del dev eth0 root
     
     <item>
       <title>Docs: 网络包损坏实验场景</title>
-      <link>/docs/binaries/create/network/network-corrupt/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-corrupt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-corrupt/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-corrupt/</guid>
       <description>
         
         
@@ -213,10 +213,10 @@ ping 180.101.49.12
     
     <item>
       <title>Docs: 网络包重排序实验场景</title>
-      <link>/docs/binaries/create/network/network-reorder/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-reorder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-reorder/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-reorder/</guid>
       <description>
         
         
@@ -271,10 +271,10 @@ PING 180.101.49.12 (180.101.49.12) 56(84) bytes of data.
     
     <item>
       <title>Docs: 网络包重复实验场景</title>
-      <link>/docs/binaries/create/network/network-duplicate/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-duplicate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-duplicate/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-duplicate/</guid>
       <description>
         
         
@@ -339,10 +339,10 @@ ping 180.101.49.12
     
     <item>
       <title>Docs: 网络本地端口占用</title>
-      <link>/docs/binaries/create/network/network-occupy/</link>
+      <link>https://chaosblade.io/docs/binaries/create/network/network-occupy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/binaries/create/network/network-occupy/</guid>
+      <guid>https://chaosblade.io/docs/binaries/create/network/network-occupy/</guid>
       <description>
         
         
