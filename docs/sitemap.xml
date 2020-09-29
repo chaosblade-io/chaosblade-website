@@ -337,12 +337,20 @@
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://www.kubeflow.orghttps://chaosblade.io/try/operator-container/</loc>
     <lastmod>2020-08-05T15:17:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/http/</loc>
+=======
+    <loc>https://www.kubeflow.org/try/operator-container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.org/docs/binaries/create/java/http/</loc>
+>>>>>>> upstream/master
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   

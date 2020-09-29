@@ -1,12 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChaosBlade – Container 实验场景</title>
+<<<<<<< HEAD
     <link>https://chaosblade.io/try/operator-container/</link>
+=======
+    <link>/try/operator-container/</link>
+>>>>>>> upstream/master
     <description>Recent content in Container 实验场景 on ChaosBlade</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
+<<<<<<< HEAD
 	  <atom:link href="https://chaosblade.io/try/operator-container/index.xml" rel="self" type="application/rss+xml" />
+=======
+	  <atom:link href="/try/operator-container/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> upstream/master
     
     
       
