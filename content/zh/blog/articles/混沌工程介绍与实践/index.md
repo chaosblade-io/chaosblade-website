@@ -2,7 +2,7 @@
 title: "混沌工程介绍与实践"
 linkTitle: "混沌工程介绍与实践"
 date: 2019-12-10
-description: "混沌工程介绍与实践"
+description: "本文会着重介绍什么是混沌工程，为什么需要混沌工程以及混沌工程相关工具与实践。"
 author: 穹谷([@xcaspar](https://github.com/xcaspar))
 ---
 {{% pageinfo color="primary" %}}

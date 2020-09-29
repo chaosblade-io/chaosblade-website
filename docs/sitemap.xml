@@ -2,6 +2,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/release/0.7.x/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/operator/container/</loc>
     <lastmod>2020-06-23T15:38:12+08:00</lastmod>
   </url>
@@ -337,20 +342,12 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://www.kubeflow.orghttps://chaosblade.io/try/operator-container/</loc>
-    <lastmod>2020-08-05T15:17:53+08:00</lastmod>
+    <lastmod>2020-08-05T15:20:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://chaosblade.io/docs/binaries/create/java/http/</loc>
-=======
-    <loc>https://www.kubeflow.org/try/operator-container/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.kubeflow.org/docs/binaries/create/java/http/</loc>
->>>>>>> upstream/master
     <lastmod>2020-06-24T14:43:48+08:00</lastmod>
   </url>
   
@@ -557,6 +554,16 @@
   <url>
     <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/cloudnative/</loc>
     <lastmod>2020-06-24T15:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/release/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.kubeflow.orghttps://chaosblade.io/blog/2020/09/28/chaosblade-0.7.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
