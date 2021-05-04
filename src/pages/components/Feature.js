@@ -3,17 +3,20 @@ import clsx from 'clsx'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './Feature.module.css'
 
-export default function Feature({ imageUrl, title, description }) {
-    const imgUrl = useBaseUrl(imageUrl)
+export default function Feature({ imgUrl, title, description, reverse }) {
     return (
-        <div className={clsx('col col--4', styles.feature)}>
-            {imgUrl && (
-                <div className="text--center">
-                    <img className={styles.featureImage} src={imgUrl} alt={title} />
-                </div>
-            )}
-            <h3>{title}</h3>
-            <p>{description}</p>
+      <div className={clsx('row', styles.feature, reverse ? styles.featureReverse : '')}>
+        <div className="col col--3">
+          <div className="text--center">
+            {imgUrl && <img className={styles.featureImage} src={useBaseUrl(imgUrl)} alt={'feture-'+title} />}
+          </div>
         </div>
+        <div className={clsx('col col--9', styles.featureDesc)}>
+          <div>
+            <h2>{title}</h2>
+            <div>{description}</div>
+          </div>
+        </div>
+      </div>
     )
-}
+  }

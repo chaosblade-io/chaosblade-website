@@ -4,10 +4,10 @@ import clsx from 'clsx'
 import styles from './highlight.module.css'
 
 export default function Highlight({ reversed, title, img, text, isDark }) {
-    const left = <div className={clsx('col col--6', styles.featureImage, reversed ? styles.featureImageReversed : '')}>{img}</div>
+    const left = <div className={clsx('col col--6', styles.hfeatureImage, reversed ? styles.hfeatureImageReversed : '')}>{img}</div>
     const right = (
-        <div className={clsx('col col--6', styles.featureContent, reversed ? styles.featureContentReversed : '')}>
-            <h3 className={styles.featureTitle}>{title}</h3>
+        <div className={clsx('col col--6', styles.hfeatureContent, reversed ? styles.hfeatureContentReversed : '')}>
+            <h3 className={styles.hfeatureTitle}>{title}</h3>
             {text}
         </div>
     )

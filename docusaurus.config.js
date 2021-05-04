@@ -46,9 +46,9 @@ module.exports = {
         //     trackingID: 'UA-47063382-1'
         // },
         algolia: {
-            apiKey: '1b22fa823f22b7916528edc0e36d9d4a',
-            indexName: 'webdriver',
-            appId: 'BH4D9OD16A'
+            apiKey: 'b8a269688857cb7ea2bc24386b32280b',
+            indexName: 'chaosblade.io',
+            appId: 'N2KB4TAKFF'
         },
         announcementBar: {
             id: 'supportus',
@@ -87,9 +87,6 @@ module.exports = {
                 items: [{
                     label: 'Getting Started',
                     to: '/docs/',
-                }, {
-                    label: 'API Reference',
-                    to: '/',
                 }, {
                     label: 'Contribute',
                     to: '/',

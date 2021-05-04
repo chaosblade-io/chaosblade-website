@@ -1,22 +1,22 @@
-.featureTitle {
+.hfeatureTitle {
     font-size: 36px;
     font-weight: 500;
 }
 
-.featureContent {
+.hfeatureContent {
     padding: var(--wdio-spacing-vertical) 0 var(--wdio-spacing-vertical) calc(var(--ifm-spacing-horizontal) + 20px)!important;
 }
 
-.featureContentReversed {
+.hfeatureContentReversed {
     padding: var(--wdio-spacing-vertical) calc(var(--ifm-spacing-horizontal) + 20px) var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal)!important;
 }
 
-.featureImage {
+.hfeatureImage {
     height: 100%;
     padding: var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal)!important;
 }
 
-.featureImage iframe {
+.hfeatureImage iframe {
     width: 100%;
 }
 
@@ -25,37 +25,37 @@
 }
 
 @media (max-width: 996px) {
-    .featureContent {
+    .hfeatureContent {
         padding: var(--wdio-spacing-vertical) 0 calc(var(--wdio-spacing-vertical) * 4) calc(var(--ifm-spacing-horizontal) + 20px)!important;
     }
 
-    .featureImage {
+    .hfeatureImage {
         padding: calc(var(--wdio-spacing-vertical) * 4) var(--ifm-spacing-horizontal) var(--wdio-spacing-vertical)!important;
     }
 
-    .featureContentReversed {
+    .hfeatureContentReversed {
         padding: calc(var(--wdio-spacing-vertical) * 4) calc(var(--ifm-spacing-horizontal) + 20px) var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal)!important;
     }
 
-    .featureImageReversed {
+    .hfeatureImageReversed {
         padding: var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal) calc(var(--wdio-spacing-vertical) * 4)!important;
     }
 }
 
 @media (max-width: 500px) {
-    .featureContent {
+    .hfeatureContent {
         padding: var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal) calc(var(--wdio-spacing-vertical) * 4) var(--ifm-spacing-horizontal)!important;
     }
 
-    .featureImage {
+    .hfeatureImage {
         padding: calc(var(--wdio-spacing-vertical) * 4) var(--ifm-spacing-horizontal) var(--wdio-spacing-vertical)!important;
     }
 
-    .featureContentReversed {
+    .hfeatureContentReversed {
         padding: calc(var(--wdio-spacing-vertical) * 4) var(--ifm-spacing-horizontal) var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal)!important;
     }
 
-    .featureImageReversed {
+    .hfeatureImageReversed {
         padding: var(--wdio-spacing-vertical) var(--ifm-spacing-horizontal) calc(var(--wdio-spacing-vertical) * 4)!important;
     }
 }

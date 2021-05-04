@@ -1,15 +1,33 @@
-.features {
-    display: flex;
-    align-items: center;
+.feature {
+    margin-bottom: 0.5rem;
+}
+
+.feature:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .feature {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.featureReverse {
+    flex-direction: row-reverse;
 }
 
 .featureImage {
-    height: 200px;
-    width: 200px;
+  height: 256px;
 }
 
-.features h3 {
-    font-size: 1.7em;
-    font-weight: 500;
-    text-align: left;
+@media screen and (max-width: 768px) {
+  .featureImage {
+    height: 96px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.featureDesc {
+  display: flex !important;
+  align-items: center;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 
 export const features = [{
     title: 'Automated deployment experimental tools',
+    imgUrl: 'img/experimental-tools.svg',
     description: (
         <>
             Automated deployment experimental tools by connecting to the operation, 
@@ -10,39 +11,22 @@ export const features = [{
     ),
 }, {
     title: 'Support experimental tools hosting',
+    imgUrl: 'img/tools-hosting.svg',
     description: (
         <>
             More experimental tools can be accessed in accordance with the specifications 
             to meet the needs of experimental scenarios.
         </>
     ),
+    reverse: true,
 },
 {
     title: 'Unified Chaos Experiment User Interface',
+    imgUrl: 'img/user-interface.svg',
     description: (
         <>
             Users do not need to be concerned with the way of using different tools, 
             and perform chaos experiments on the same interface.
-        </>
-    ),
-},
-{
-    title: 'Support multi-dimensional experiments',
-    description: (
-        <>
-            From the host to Kubernetes resources (such as Container, Pod, Node), 
-            and then to the application dimension.
-        </>
-    ),
-},
-{
-    title: 'Wide range of experimental scenarios',
-    description: (
-        <>
-             Including basic resources (CPU, memory, network, disk, process, kernel, File, etc.), 
-             multi-language application services (Java, C ++, NodeJS, Golang, etc.), 
-             kubernetes platform (covering Container, Pod, and Node resources, including 
-            the preceding experimental scenarios).
         </>
     ),
 }]
