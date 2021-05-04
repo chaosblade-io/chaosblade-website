@@ -1,32 +1,33 @@
 import React from 'react'
+import Translate from '@docusaurus/Translate';
 
 export const features = [{
-    title: 'Automated deployment experimental tools',
-    imgUrl: 'img/experimental-tools.svg',
+    title: <>Automated deployment experimental tools</>,
+    imgUrl: '/img/experimental-tools.svg',
     description: (
         <>
-            Automated deployment experimental tools by connecting to the operation, 
-            maintenance channel or other methods.
+            <Translate>Automated deployment experimental tools by connecting to the operation, 
+            maintenance channel or other methods.</Translate>
         </>
     ),
 }, {
-    title: 'Support experimental tools hosting',
-    imgUrl: 'img/tools-hosting.svg',
+    title: <>Support experimental tools hosting</>,
+    imgUrl: '/img/tools-hosting.svg',
     description: (
         <>
-            More experimental tools can be accessed in accordance with the specifications 
-            to meet the needs of experimental scenarios.
+            <Translate>More experimental tools can be accessed in accordance with the specifications 
+            to meet the needs of experimental scenarios.</Translate>
         </>
     ),
     reverse: true,
 },
 {
-    title: 'Unified Chaos Experiment User Interface',
-    imgUrl: 'img/user-interface.svg',
+    title: <>Unified Chaos Experiment User Interface</>,
+    imgUrl: '/img/user-interface.svg',
     description: (
         <>
-            Users do not need to be concerned with the way of using different tools, 
-            and perform chaos experiments on the same interface.
+            <Translate>Users do not need to be concerned with the way of using different tools, 
+            and perform chaos experiments on the same interface.</Translate>
         </>
     ),
 }]

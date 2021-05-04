@@ -18,6 +18,18 @@ module.exports = {
     customFields: {
         repoUrl
     },
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en', 'zh'],
+        localeConfigs: {
+          en: {
+            label: 'English',
+          },
+          zh: {
+            label: '简体中文',
+          },
+        },
+    },
     themeConfig: {
         image: 'img/cb-logo.png',
         metadatas: [{ name: 'twitter:card', content: 'summary' }],
@@ -76,6 +88,10 @@ module.exports = {
             {
                 href: repoUrl,
                 className: 'header-githab-link',
+                position: 'right',
+            },
+            {
+                type: 'localeDropdown',
                 position: 'right',
             },
         ],

@@ -1,0 +1,23 @@
+{
+  "Get Started": {
+    "message": "快速开始"
+  },
+  "Learn More": {
+    "message": "了解更多"
+  },
+  "ChaosBlade is a cloud-native chaos engineering platform that supports multiple environments, clusters, and languages.": {
+    "message": "ChaosBlade is a cloud-native chaos engineering platform that supports multiple environments, clusters, and languages."
+  },
+  "It includes the chaosblade-box chaos engineering platform and the chaosblade chaos engineering tool.": {
+    "message": "It includes the chaosblade-box chaos engineering platform and the chaosblade chaos engineering tool."
+  },
+  "ChaosBlade is a": {
+    "message": "ChaosBlade 是"
+  },
+  "sandbox project": {
+    "message": "sandbox 项目"
+  },
+  "Who is using ChaosBlade?": {
+    "message": "Who is using ChaosBlade?"
+  }
+}

@@ -5,6 +5,7 @@ import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import Translate from '@docusaurus/Translate';
 
 import LogoCarousel from './components/LogoCarousel'
 import Feature from './components/Feature'
@@ -26,7 +27,6 @@ function Home() {
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
                     <h1 className="hero__title">
-                        {/* <Robot /> */}
                         <img className={styles.homeImg} src="/img/homepage-img.png" alt="homepage" />
                     </h1>
                     <p className="hero__subtitle">{siteConfig.tagline}</p>
@@ -40,7 +40,7 @@ function Home() {
                                 styles.getStarted,
                             )}
                             to={useBaseUrl('/docs/')}>
-                        Get Started
+                        <Translate>Get Started</Translate>
                         </Link>
                         <Link
                             to="https://github.com/chaosblade-io/chaosblade"
@@ -48,7 +48,9 @@ function Home() {
                                 'button button--outline button--secondary button--lg',
                                 styles.getStarted,
                             )}
-                        >Learn More</Link>
+                        >
+                        <Translate>Learn More</Translate>
+                        </Link>
                     </div>
                 </div>
             </header>
@@ -66,10 +68,10 @@ function Home() {
                     text={
                         <>
                             <p>
-                                ChaosBlade is a cloud-native chaos engineering platform that supports multiple environments, clusters, and languages.
+                            <Translate>ChaosBlade is a cloud-native chaos engineering platform that supports multiple environments, clusters, and languages.</Translate>
                             </p>
                             <p>
-                                It includes the chaosblade-box chaos engineering platform and the chaosblade chaos engineering tool.
+                            <Translate>It includes the chaosblade-box chaos engineering platform and the chaosblade chaos engineering tool.</Translate>
                             </p>
                         </>
                     }
@@ -88,7 +90,7 @@ function Home() {
             <div className={clsx('hero', styles.hero)}>
                 <div className="container text--center">
                 <h3 className="hero__subtitle">
-                    ChaosBlade is a <a href="https://cncf.io/">Cloud Native Computing Foundation</a> sandbox project
+                <Translate>ChaosBlade is a</Translate> <a href="https://cncf.io/">Cloud Native Computing Foundation</a> <Translate>sandbox project</Translate>
                 </h3>
                 <div className={clsx('cncf-logo', styles.cncfLogo)} />
                 </div>
