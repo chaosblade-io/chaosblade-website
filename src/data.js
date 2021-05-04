@@ -1,33 +1,39 @@
 import React from 'react'
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 
 export const features = [{
-    title: <>Automated deployment experimental tools</>,
+    title: <><Translate>Automated deployment experimental tools</Translate></>,
     imgUrl: '/img/experimental-tools.svg',
     description: (
         <>
-            <Translate>Automated deployment experimental tools by connecting to the operation, 
-            maintenance channel or other methods.</Translate>
+            <p>
+                <Translate>Automated deployment experimental tools by connecting to the operation, 
+                maintenance channel or other methods.</Translate>
+            </p>
         </>
     ),
 }, {
-    title: <>Support experimental tools hosting</>,
+    title: <><Translate>Support experimental tools hosting</Translate></>,
     imgUrl: '/img/tools-hosting.svg',
     description: (
         <>
-            <Translate>More experimental tools can be accessed in accordance with the specifications 
-            to meet the needs of experimental scenarios.</Translate>
+            <p>
+                <Translate>More experimental tools can be accessed in accordance with the specifications 
+                to meet the needs of experimental scenarios.</Translate>
+            </p>
         </>
     ),
     reverse: true,
 },
 {
-    title: <>Unified Chaos Experiment User Interface</>,
+    title: <><Translate>Unified Chaos Experiment User Interface</Translate></>,
     imgUrl: '/img/user-interface.svg',
     description: (
         <>
-            <Translate>Users do not need to be concerned with the way of using different tools, 
-            and perform chaos experiments on the same interface.</Translate>
+            <p>
+                <Translate>Users do not need to be concerned with the way of using different tools, 
+                and perform chaos experiments on the same interface.</Translate>
+            </p>
         </>
     ),
 }]

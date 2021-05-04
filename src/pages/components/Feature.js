@@ -2,6 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './Feature.module.css'
+import Translate, {translate} from '@docusaurus/Translate';
 
 export default function Feature({ imgUrl, title, description, reverse }) {
     return (

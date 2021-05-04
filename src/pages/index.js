@@ -13,7 +13,7 @@ import Section from './components/Section'
 import Highlight from './components/Highlight'
 
 import styles from './styles.module.css'
-import { logos, features, LHIntregrationExample, SetupExample, ReactIntegration } from '../data'
+import { logos, features } from '../data'
 
 
 
@@ -64,7 +64,7 @@ function Home() {
                         />
                     }
                     isDark
-                    title="What is ChaosBlade"
+                    title={<Translate>What is ChaosBlade</Translate>}
                     text={
                         <>
                             <p>
