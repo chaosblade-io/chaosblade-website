@@ -77,7 +77,7 @@ function Home() {
                     }
                 />
                 {features && features.length > 0 && (
-                    <Section>
+                    <Section className="highlightSection">
                         {features.map((props, idx) => (
                             <Feature key={idx} {...props} />
                         ))}

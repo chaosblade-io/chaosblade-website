@@ -6,6 +6,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 
 export default function Feature({ imgUrl, title, description, reverse }) {
     return (
+      <div className="container">
       <div className={clsx('row', styles.feature, reverse ? styles.featureReverse : '')}>
         <div className="col col--3">
           <div className="text--center">
@@ -18,6 +19,7 @@ export default function Feature({ imgUrl, title, description, reverse }) {
             <div>{description}</div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
