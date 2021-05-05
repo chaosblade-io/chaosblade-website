@@ -1,5 +1,5 @@
 ---
-title: Quick Start
+title: 快速开始
 ---
 
 Download the chaosblade demo image and experience the use of the blade toolkit.
