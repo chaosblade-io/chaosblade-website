@@ -18,4 +18,4 @@ Run the demo container：
 docker run -it --privileged chaosbladeio/chaosblade-demo
 ```
 
-After entering the container, you can read the README.txt file to implement the chaos experiment, Enjoy it.
+After entering the container, you can read the [README.md](https://github.com/chaosblade-io/chaosblade) file to implement the chaos experiment, Enjoy it.

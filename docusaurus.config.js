@@ -22,12 +22,12 @@ module.exports = {
         defaultLocale: 'en',
         locales: ['en', 'zh'],
         localeConfigs: {
-          en: {
-            label: 'English',
-          },
-          zh: {
-            label: '简体中文',
-          },
+            en: {
+                label: 'English',
+            },
+            zh: {
+                label: '简体中文',
+            },
         },
     },
     themeConfig: {
@@ -65,7 +65,7 @@ module.exports = {
         announcementBar: {
             id: 'supportus',
             content:
-              `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/${projectName}">GitHub</a>! ⭐️`,
+                `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/${projectName}">GitHub</a>! ⭐️`,
         },
         navbar: {
             title: 'ChaosBlade',
@@ -78,11 +78,11 @@ module.exports = {
                 label: 'Documentation',
                 position: 'left',
                 activeBasePath: 'docs',
-                to: 'docs/',
+                to: 'docs',
             },
             {
-                to: 'blog', 
-                label: 'Blog', 
+                to: 'blog',
+                label: 'Blog',
                 position: 'left'
             },
             {
@@ -94,7 +94,7 @@ module.exports = {
                 type: 'localeDropdown',
                 position: 'right',
             },
-        ],
+            ],
         },
         footer: {
             style: 'dark',
@@ -102,13 +102,7 @@ module.exports = {
                 title: 'Docs',
                 items: [{
                     label: 'Getting Started',
-                    to: '/docs/',
-                }, {
-                    label: 'Contribute',
-                    to: '/',
-                }, {
-                    label: 'Help',
-                    to: '/',
+                    to: '/docs',
                 }],
             }, {
                 title: 'Community',
@@ -131,13 +125,15 @@ module.exports = {
                     label: 'GitHub',
                     href: repoUrl,
                 }],
-            }],
+            },
+            ],
             logo: {
                 alt: 'CNCF',
                 src: '/img/cncf-white.svg',
                 href: 'https://cncf.io/'
             },
-            copyright: `Copyright © ${new Date().getFullYear()} The Linux Foundation. `,
+            copyright: `© ${new Date().getFullYear()} The ChaosBlade Authors. All rights reserved. <br />
+            The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/"> Trademark Usage</a> page.`,
         },
     },
     presets: [
@@ -146,7 +142,7 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl:`${repoUrl}/edit/${branch}/website/`,
+                    editUrl: `${repoUrl}/edit/${branch}/website/`,
                     remarkPlugins: [
                         [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
                     ],
@@ -170,26 +166,26 @@ module.exports = {
         [
             '@docusaurus/preset-classic',
             {
-              docs: {
-                sidebarPath: require.resolve('./sidebars.js'),
-                editUrl: function ({
-                  locale,
-                  docPath,
-                }) {
-                  return repoUrl+`/edit/master/docs/${locale}/${docPath}`;
+                docs: {
+                    sidebarPath: require.resolve('./sidebars.js'),
+                    editUrl: function ({
+                        locale,
+                        docPath,
+                    }) {
+                        return repoUrl + `/edit/master/docs/${locale}/${docPath}`;
+                    },
+                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: true,
+                    includeCurrentVersion: true,
                 },
-                showLastUpdateAuthor: true,
-                showLastUpdateTime: true,
-                includeCurrentVersion: true,
-              },
-              blog: {
-                showReadingTime: true,
-                editUrl:
-                  'https://github.com/oam-dev/kubevela.io/tree/main/blog',
-              },
-              theme: {
-                customCss: require.resolve('./src/css/custom.css'),
-              },
+                blog: {
+                    showReadingTime: true,
+                    editUrl:
+                        'https://github.com/oam-dev/kubevela.io/tree/main/blog',
+                },
+                theme: {
+                    customCss: require.resolve('./src/css/custom.css'),
+                },
             },
         ],
         [
