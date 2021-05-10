@@ -107,13 +107,16 @@ module.exports = {
             }, {
                 title: 'Community',
                 items: [{
-                    label: 'Support Chat',
-                    href: `https://gitter.im/${organizationName}/${projectName}`,
+                    label: 'Gitter',
+                    href: `https://gitter.im/chaosblade-io/community`,
+                }, {
+                    label: 'Twitter',
+                    href: `https://twitter.com/chaosblade.io`,
                 }, {
                     label: 'Slack',
                     href: 'https://seleniumhq.slack.com/join/shared_invite/zt-f7jwg1n7-RVw4v4sMA7Zjufira_~EVw#/'
                 }, {
-                    label: 'DingTalk',
+                    label: 'DingTalk(23177705)',
                     href: '/',
                 }],
             }, {
