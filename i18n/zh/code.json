@@ -158,7 +158,7 @@
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Edit this page",
+    "message": "编辑本页",
     "description": "The link label to edit the current page"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
