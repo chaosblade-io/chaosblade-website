@@ -1,7 +1,7 @@
 const path = require('path')
 
 const organizationName = 'chaosblade-io' // Usually your GitHub org/user name.
-const projectName = 'chaosblade' // Usually your repo name.
+const projectName = 'chaosblade-website' // Usually your repo name.
 const branch = 'master'
 const repoUrl = `https://github.com/${organizationName}/${projectName}`
 
@@ -54,9 +54,6 @@ module.exports = {
             theme: require('prism-react-renderer/themes/github'),
             darkTheme: require('prism-react-renderer/themes/dracula')
         },
-        // googleAnalytics: {
-        //     trackingID: 'UA-47063382-1'
-        // },
         algolia: {
             apiKey: 'b8a269688857cb7ea2bc24386b32280b',
             indexName: 'chaosblade.io',
