@@ -42,52 +42,84 @@ export const logos = [{
 /**
  * Page 1
  */
-    img: 'cmit.png',
-    alt: 'Cmit',
-    url: 'https://it.10086.cn/'
+    img: 'google.png',
+    alt: 'Google',
+    url: 'https://developers.google.com/blockly/'
 }, {
-    img: 'xiaomi.png',
-    alt: 'XiaoMi',
-    url: 'https://www.mi.com/'
+    img: 'netflix.png',
+    alt: 'Netflix',
+    url: 'https://netflix.com/'
 }, {
     img: 'microsoft.svg',
-    alt: 'JD',
-    url: 'jd.png'
+    alt: 'Microsoft',
+    url: 'https://www.microsoft.com/'
 }, {
-    img: 'jd.png',
+    img: 'mozilla.png',
     alt: 'Mozilla',
     url: 'https://www.mozilla.org/'
 }, {
-    img: 'icbc.png',
-    alt: 'ICBC',
-    url: 'http://www.icbc.com.cn/icbc/'
+    img: 'buoyant.png',
+    alt: 'Buoyant',
+    url: 'https://buoyant.io/'
+}, {
+    img: 'sap.png',
+    alt: 'SAP',
+    url: 'https://www.sap.com/'
 },
 /**
  * Page 2
  */
+{
+    img: 'hilton.png',
+    alt: 'Hilton',
+    url: 'https://www.hilton.com/'
+}, {
+    img: 'schwab.png',
+    alt: 'Charles Schwab',
+    url: 'https://www.schwab.com/'
+}, {
+    img: 'jwplayer.png',
+    alt: 'JW Player',
+    url: 'https://www.jwplayer.com/'
+}, {
+    img: 'bbva.png',
+    alt: 'BBVA',
+    url: 'https://www.bbva.com/'
+}, {
+    img: 'gopro.png',
+    alt: 'GoPro',
+    url: 'https://gopro.com/'
+}, {
+    img: 'algolia.png',
+    alt: 'Algolia',
+    url: 'https://www.algolia.com/'
+},
+/**
+ * Page 3
+ */
 // {
-//     img: 'hilton.png',
-//     alt: 'Hilton',
-//     url: 'https://www.hilton.com/'
+//     img: 'financialtimes.png',
+//     alt: 'Financial Times',
+//     url: 'https://www.ft.com/'
 // }, {
-//     img: 'schwab.png',
-//     alt: 'Charles Schwab',
-//     url: 'https://www.schwab.com/'
+//     img: 'zendesk.png',
+//     alt: 'Zendesk',
+//     url: 'https://www.zendesk.com/'
 // }, {
-//     img: 'jwplayer.png',
-//     alt: 'JW Player',
-//     url: 'https://www.jwplayer.com/'
+//     img: '1und1.png',
+//     alt: '1&1',
+//     url: 'https://www.1und1.de/'
 // }, {
-//     img: 'bbva.png',
-//     alt: 'BBVA',
-//     url: 'https://www.bbva.com/'
+//     img: 'avira.png',
+//     alt: 'Avira',
+//     url: 'https://www.avira.com/'
 // }, {
-//     img: 'gopro.png',
-//     alt: 'GoPro',
-//     url: 'https://gopro.com/'
+//     img: 'deloitte.jpg',
+//     alt: 'Deloitte',
+//     url: 'https://deloitte.com'
 // }, {
-//     img: 'algolia.png',
-//     alt: 'Algolia',
-//     url: 'https://www.algolia.com/'
+//     img: 'rabobank.png',
+//     alt: 'Rabobank',
+//     url: 'https://www.rabobank.com/'
 // }
 ]
