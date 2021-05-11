@@ -4,14 +4,14 @@
         <title>ChaosBlade Blog</title>
         <link>https://chaosblade.io/blog</link>
         <description>ChaosBlade Blog</description>
-        <lastBuildDate>Tue, 11 May 2021 05:41:41 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 May 2021 09:03:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[混沌工程介绍与实践]]></title>
             <link>https://chaosblade.io/blog/chaos-engineering</link>
             <guid>混沌工程介绍与实践</guid>
-            <pubDate>Tue, 11 May 2021 05:41:41 GMT</pubDate>
+            <pubDate>Tue, 11 May 2021 09:03:22 GMT</pubDate>
             <description><![CDATA[本文会着重介绍什么是混沌工程，为什么需要混沌工程以及混沌工程相关工具与实践。]]></description>
         </item>
     </channel>
