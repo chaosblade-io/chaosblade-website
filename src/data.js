@@ -42,84 +42,27 @@ export const logos = [{
 /**
  * Page 1
  */
-    img: 'google.png',
-    alt: 'Google',
-    url: 'https://developers.google.com/blockly/'
+    img: 'aliyun.png',
+    alt: 'Aliyun',
+    url: 'https://www.aliyun.com/'
+},{
+    img: 'cmit.png',
+    alt: 'CMIT',
+    url: 'http://it.10086.cn/'
 }, {
-    img: 'netflix.png',
-    alt: 'Netflix',
-    url: 'https://netflix.com/'
+    img: 'xiaomi.png',
+    alt: 'XiaoMi',
+    url: 'https://www.mi.com/'
 }, {
-    img: 'microsoft.svg',
-    alt: 'Microsoft',
-    url: 'https://www.microsoft.com/'
+    img: 'jd.png',
+    alt: 'JD',
+    url: 'https://www.jd.com/'
 }, {
-    img: 'mozilla.png',
-    alt: 'Mozilla',
-    url: 'https://www.mozilla.org/'
-}, {
-    img: 'buoyant.png',
-    alt: 'Buoyant',
-    url: 'https://buoyant.io/'
-}, {
-    img: 'sap.png',
-    alt: 'SAP',
-    url: 'https://www.sap.com/'
-},
+    img: 'icbc.png',
+    alt: 'ICBC',
+    url: 'http://www.icbc.com.cn/icbc/'
+}, 
 /**
  * Page 2
  */
-{
-    img: 'hilton.png',
-    alt: 'Hilton',
-    url: 'https://www.hilton.com/'
-}, {
-    img: 'schwab.png',
-    alt: 'Charles Schwab',
-    url: 'https://www.schwab.com/'
-}, {
-    img: 'jwplayer.png',
-    alt: 'JW Player',
-    url: 'https://www.jwplayer.com/'
-}, {
-    img: 'bbva.png',
-    alt: 'BBVA',
-    url: 'https://www.bbva.com/'
-}, {
-    img: 'gopro.png',
-    alt: 'GoPro',
-    url: 'https://gopro.com/'
-}, {
-    img: 'algolia.png',
-    alt: 'Algolia',
-    url: 'https://www.algolia.com/'
-},
-/**
- * Page 3
- */
-// {
-//     img: 'financialtimes.png',
-//     alt: 'Financial Times',
-//     url: 'https://www.ft.com/'
-// }, {
-//     img: 'zendesk.png',
-//     alt: 'Zendesk',
-//     url: 'https://www.zendesk.com/'
-// }, {
-//     img: '1und1.png',
-//     alt: '1&1',
-//     url: 'https://www.1und1.de/'
-// }, {
-//     img: 'avira.png',
-//     alt: 'Avira',
-//     url: 'https://www.avira.com/'
-// }, {
-//     img: 'deloitte.jpg',
-//     alt: 'Deloitte',
-//     url: 'https://deloitte.com'
-// }, {
-//     img: 'rabobank.png',
-//     alt: 'Rabobank',
-//     url: 'https://www.rabobank.com/'
-// }
 ]
