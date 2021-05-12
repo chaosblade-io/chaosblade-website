@@ -46,7 +46,7 @@ export const logos = [{
     alt: 'Aliyun',
     url: 'https://www.aliyun.com/'
 },{
-    img: 'cmit.png',
+    img: 'cmit.svg',
     alt: 'CMIT',
     url: 'http://it.10086.cn/'
 }, {
