@@ -75,10 +75,6 @@ chaosblade-box 是一个场景丰富的混沌工程平台，chaosblade-box 的�
 | 集成测试 | 5 |
 | PR 交付 | 2 |
 
-#### 参考资料
-- [SkyWalking 事件](https://github.com/chaosblade-io/chaosblade/issues/495)
-- [Prometheus 自定义 exporter ](https://prometheus.io/docs/instrumenting/writing_exporters/)
-
 ### 任务二
 本次任务主要在 chaosblade-box 编码即可，Github 地址：https://github.com/chaosblade-io/chaosblade-box ，可以 litmuschaos 是如何接入到 chaosblade-box 的。
 
