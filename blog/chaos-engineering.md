@@ -103,15 +103,5 @@ blade create cpu fullload
 ![Screen Shot 2019-08-21 at 2.44.07 P](https://user-images.githubusercontent.com/3992234/63409297-778adf00-c423-11e9-9179-d991eab7b6db.png)
 前面讲了一个符合预期的案例，我们再来看一个不符合预期的。此案例是验证系统异常实例隔离的能力，我们的 Demo 中 consumer 调用 provider 服务，provider 服务具有两个实例，我们对其中一个注入延迟故障，监控指标是 consumer 的 QPS，稳态在 510 左右。我们做的容错假设是系统会自动隔离或下线出问题的服务实例，防止请求路由的此实例，所有 QPS 会有短暂的下跌，但很快会恢复。这个案例，我们使用阿里云 AHAS 混沌实验平台来执行，我们对 demo-provider-1 注入延迟故障，基于此平台可以很方便的执行混沌实验。执行混沌实验后，QPS 下跌到 40 左右，很长时间没有自动恢复，所以不符合预期，我们通过人工的方式对该异常的实例做下线处理，很快就看到，consumer 的 QPS 恢复正常。所以我们通过混沌工程发现了系统问题，我们后面需要做就是记录此问题，并且推动修复，后续做持续性的验证。
 
-## 相关文章交流群
-- ChaosBlade 钉钉讨论群号：23177705
-- 相关资料：[awesome-chaosblade 项目](https://github.com/chaosblade-io/awesome-chaosblade)
-后续的分享和讨论都会在上述钉钉群中进行，欢迎加入。我们还会不定期的给 ChaosBlade 社区贡献者发放纪念品，欢迎加入到 ChaosBlade 社区中，加入方式：star、issue、pr 等均可。
-
 ## 加入我们
-
-【稳定大于一切】打造国内稳定性领域知识库，**让无法解决的问题少一点点，让世界的确定性多一点点**。
-
-* [GitHub 地址](https://github.com/StabilityMan/StabilityGuide)
-* 钉钉群号：23179349
-* 如果阅读本文有所收获，欢迎分享给身边的朋友，期待更多同学的加入！
+- ChaosBlade 钉钉讨论群号：23177705
