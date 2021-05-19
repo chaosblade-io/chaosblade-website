@@ -4,6 +4,9 @@ module.exports = {
         "getting-started/introduce",
         "getting-started/quick-start"
       ],
+      "Community": [
+        "community/docs",
+      ]
     }
   }
   
