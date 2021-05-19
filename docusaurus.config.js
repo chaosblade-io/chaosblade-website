@@ -83,7 +83,7 @@ module.exports = {
                 position: 'left'
             },
             {
-                href: repoUrl,
+                href: 'https://github.com/chaosblade-io/chaosblade',
                 className: 'header-githab-link',
                 position: 'right',
             },
