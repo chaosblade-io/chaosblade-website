@@ -59,6 +59,9 @@ module.exports = {
             indexName: 'chaosblade.io',
             appId: 'N2KB4TAKFF'
         },
+        gtag: {
+            trackingID: 'G-FY5W27B8XH',
+        },
         announcementBar: {
             id: 'supportus',
             content:
