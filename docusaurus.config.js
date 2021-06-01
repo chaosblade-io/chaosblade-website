@@ -65,7 +65,7 @@ module.exports = {
         announcementBar: {
             id: 'supportus',
             content:
-                `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/${projectName}">GitHub</a>! ⭐️`,
+                `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/chaosblade">GitHub</a>! ⭐️`,
         },
         navbar: {
             title: 'ChaosBlade',
