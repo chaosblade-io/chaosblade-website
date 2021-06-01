@@ -4,22 +4,22 @@
         <title>ChaosBlade Blog</title>
         <link>https://chaosblade.io/blog</link>
         <description>ChaosBlade Blog</description>
-        <lastBuildDate>Tue, 01 Jun 2021 01:51:48 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Jun 2021 02:18:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
-        <item>
-            <title><![CDATA[混沌工程介绍与实践]]></title>
-            <link>https://chaosblade.io/zh/blog/chaos-engineering</link>
-            <guid>混沌工程介绍与实践</guid>
-            <pubDate>Tue, 01 Jun 2021 01:51:48 GMT</pubDate>
-            <description><![CDATA[本文会着重介绍什么是混沌工程，为什么需要混沌工程以及混沌工程相关工具与实践。]]></description>
-        </item>
         <item>
             <title><![CDATA[暑期2021]]></title>
             <link>https://chaosblade.io/zh/blog/summer-2021</link>
             <guid>暑期2021</guid>
-            <pubDate>Tue, 01 Jun 2021 01:51:48 GMT</pubDate>
+            <pubDate>Tue, 01 Jun 2021 02:18:12 GMT</pubDate>
             <description><![CDATA[开源软件供应链点亮计划]]></description>
+        </item>
+        <item>
+            <title><![CDATA[混沌工程介绍与实践]]></title>
+            <link>https://chaosblade.io/zh/blog/chaos-engineering</link>
+            <guid>混沌工程介绍与实践</guid>
+            <pubDate>Tue, 01 Jun 2021 02:18:12 GMT</pubDate>
+            <description><![CDATA[本文会着重介绍什么是混沌工程，为什么需要混沌工程以及混沌工程相关工具与实践。]]></description>
         </item>
     </channel>
 </rss>
