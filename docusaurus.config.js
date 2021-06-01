@@ -55,9 +55,8 @@ module.exports = {
             darkTheme: require('prism-react-renderer/themes/dracula')
         },
         algolia: {
-            apiKey: 'b8a269688857cb7ea2bc24386b32280b',
-            indexName: 'chaosblade.io',
-            appId: 'N2KB4TAKFF'
+            apiKey: 'a408c7b1a069a17addfdfeffb900aceb',
+            indexName: 'chaosblade',
         },
         gtag: {
             trackingID: 'G-FY5W27B8XH',
@@ -65,7 +64,7 @@ module.exports = {
         announcementBar: {
             id: 'supportus',
             content:
-                `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/${projectName}">GitHub</a>! ⭐️`,
+                `⭐️  &nbsp; If you like ChaosBlade, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/${organizationName}/chaosblade">GitHub</a>! ⭐️`,
         },
         navbar: {
             title: 'ChaosBlade',
