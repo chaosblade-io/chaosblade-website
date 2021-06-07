@@ -14,7 +14,7 @@ hide_table_of_contents: false
 ## 目录
 - [任务背景](#任务背景)
 - [任务清单](#任务清单)
-- [加入我们](#加入我们)
+- [联系方式](#联系方式)
 
 ## 任务背景
 **将 ChaosBlade 事件导出到 SkyWalking & Prometheus**
