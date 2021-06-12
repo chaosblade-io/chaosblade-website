@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chaosblade.io/blog</id>
     <title>ChaosBlade Blog</title>
-    <updated>2021-06-07T02:23:43.426Z</updated>
+    <updated>2021-06-12T12:20:24.337Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chaosblade.io/blog"/>
     <subtitle>ChaosBlade Blog</subtitle>
@@ -11,14 +11,14 @@
         <title type="html"><![CDATA[混沌工程介绍与实践]]></title>
         <id>混沌工程介绍与实践</id>
         <link href="https://chaosblade.io/zh/blog/chaos-engineering"/>
-        <updated>2021-06-07T02:23:43.426Z</updated>
+        <updated>2021-06-12T12:20:24.337Z</updated>
         <summary type="html"><![CDATA[本文会着重介绍什么是混沌工程，为什么需要混沌工程以及混沌工程相关工具与实践。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[暑期2021]]></title>
         <id>暑期2021</id>
         <link href="https://chaosblade.io/zh/blog/summer-2021"/>
-        <updated>2021-06-07T02:23:43.426Z</updated>
+        <updated>2021-06-12T12:20:24.337Z</updated>
         <summary type="html"><![CDATA[开源软件供应链点亮计划]]></summary>
     </entry>
 </feed>
