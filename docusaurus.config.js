@@ -113,7 +113,7 @@ module.exports = {
                     href: `https://twitter.com/chaosblade.io`,
                 }, {
                     label: 'Slack',
-                    href: 'https://seleniumhq.slack.com/join/shared_invite/zt-f7jwg1n7-RVw4v4sMA7Zjufira_~EVw#/'
+                    href: 'https://join.slack.com/t/chaosblade-io/shared_invite/zt-f0d3r3f4-TDK13Wr3QRUrAhems28p1w'
                 }, {
                     label: 'DingTalk(23177705)',
                     href: '/',
