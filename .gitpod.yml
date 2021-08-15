@@ -1,0 +1,9 @@
+image: node:buster
+
+tasks:
+  - init: yarn
+    command: yarn start
+
+ports:
+  - port: 3000
+    onOpen: open-preview
