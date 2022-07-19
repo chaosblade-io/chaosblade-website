@@ -6,6 +6,9 @@ module.exports = {
       ],
       "Community": [
         "community/docs",
+        "community/PR-guide",
+        "community/dev-standard",
+        "community/issue-standard",
       ]
     }
   }
