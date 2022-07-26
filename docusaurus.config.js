@@ -85,6 +85,12 @@ module.exports = {
                 position: 'left'
             },
             {
+                to: '/api/blade',
+                label: 'API',
+                position: 'left',
+                activeBaseRegex: `/api/`,
+            },
+            {
                 href: 'https://github.com/chaosblade-io/chaosblade',
                 className: 'header-githab-link',
                 position: 'right',
@@ -195,6 +201,21 @@ module.exports = {
                 fromExtensions: ['html'],
             }
         ],
+        [
+            '@docusaurus/plugin-content-docs',
+            /** @type {import('@docusaurus/plugin-content-docs').Options} */
+            ({
+              id: 'api',
+              path: 'api',
+              routeBasePath: 'api',
+              remarkPlugins: [
+                  [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+              ],
+            //   remarkPlugins: [npm2yarn],
+              editCurrentVersion: true,
+              sidebarPath: require.resolve('./sidebarsApi.js')
+            }),
+        ]
     ],
     themes: ['@saucelabs/theme-github-codeblock'],
     stylesheets: [
