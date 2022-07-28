@@ -27,6 +27,22 @@ module.exports = {
             "experiment-types/host/blade create process kill",
             "experiment-types/host/blade create process stop",
           ]
+        },
+        {
+          "Kubernetes": [
+            "experiment-types/k8s/blade create k8s",
+            "experiment-types/k8s/blade create k8s node-cpu",
+            "experiment-types/k8s/blade create k8s node-network",
+            "experiment-types/k8s/blade create k8s node-process",
+            "experiment-types/k8s/blade create k8s node-disk",
+            "experiment-types/k8s/blade create k8s pod-pod",
+            "experiment-types/k8s/blade create k8s pod-IO",
+            "experiment-types/k8s/blade create k8s pod-network",
+            "experiment-types/k8s/blade create k8s container-cpu",
+            "experiment-types/k8s/blade create k8s container-network",
+            "experiment-types/k8s/blade create k8s container-process",
+            "experiment-types/k8s/blade create k8s container-container",
+          ]
         }
       ]
     }

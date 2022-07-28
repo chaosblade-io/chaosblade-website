@@ -19,7 +19,7 @@ module.exports = {
         repoUrl
     },
     i18n: {
-        defaultLocale: 'en',
+        defaultLocale: 'zh',
         locales: ['en', 'zh'],
         localeConfigs: {
             en: {
