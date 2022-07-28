@@ -6,5 +6,13 @@
   "sidebar.docs.category.Getting Started": {
     "message": "快速开始",
     "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Types of Chaos Experiments": {
+    "message": "混沌工程实验类型",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Physical Host": {
+    "message": "物理主机",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
   }
 }
