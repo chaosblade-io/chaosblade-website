@@ -14,5 +14,25 @@
   "sidebar.docs.category.Physical Host": {
     "message": "物理主机",
     "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Network": {
+    "message": "网络",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Disk": {
+    "message": "磁盘",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Process": {
+    "message": "进程",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Node": {
+    "message": "节点",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Container": {
+    "message": "容器",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
   }
 }
