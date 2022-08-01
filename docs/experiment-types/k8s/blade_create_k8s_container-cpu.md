@@ -10,7 +10,7 @@ ChaosBlade 提供的的 k8s 实验类型支持通过**容器** Cpu 负载实验�
 kubernetes 下 容器内 CPU 负载实验场景，同基础资源的 CPU 场景。该场景可向指定容器注入 CPU 负载异常，注入后容器所在 pod cpu 使用率将提升。
 
 支持 CPU 场景命令如下：
-* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](https://chaosblade.io/docs/experiment-types/host/blade%20create%20cpu%20load)
+* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](https://chaosblade.io/docs/experiment-types/host/blade_create_cpu_load)
 
 
 ## 参数
@@ -18,9 +18,9 @@ kubernetes 下 容器内 CPU 负载实验场景，同基础资源的 CPU 场景�
 
 |  参数名 |  说明 | 类型 | 值 |
 |  ----  | ---- | ---- | ---- |
-| ```container-ids``` | 容器ID，支持配置多个 | string | 默认值：“”，和容器名称必填其一 |
-| ```container-names``` | 容器名称，支持配置多个 | string | 默认值：“”，和容器id必填其一  |
-| ```docker-endpoint``` | Docker server 地址  | string | ，默认为本地的 /var/run/docker.sock |
+| `container-ids` | 容器ID，支持配置多个 | string | 默认值：“”，和容器名称必填其一 |
+| `container-names` | 容器名称，支持配置多个 | string | 默认值：“”，和容器id必填其一  |
+| `docker-endpoint` | Docker server 地址  | string | ，默认为本地的 /var/run/docker.sock |
 | ```namespace``` | Pod 所属的命名空间，只能填写一个值，必填项 | string | 必填 |
 | ```evict-count``` | 限制实验生效的数量 | string | 可选 |
 | ```evict-percent``` | 限制实验生效数量的百分比，不包含 % | string | 可选 |
@@ -145,4 +145,4 @@ kubectl delete -f examples/increase_container_cpu_load_by_id.yaml
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade_create%_k8s) 常见问题
