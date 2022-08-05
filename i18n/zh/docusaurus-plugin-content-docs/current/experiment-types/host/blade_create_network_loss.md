@@ -4,9 +4,9 @@ id: blade create network loss
 
 # 模拟网络丢包实验
 
-网络丢包实验场景
+本文档介绍如何在物理主机下使用 ChaosBlade 模拟网络丢包实验场景
 
-## 介绍
+## 场景介绍
 可以指定网卡、本地端口、远程端口、目标 IP 丢包。需要特别注意，如果不指定端口、ip 参数，而是整个网卡丢包，切记要添加 --timeout 参数或者 --exclude-port 参数，前者是指定运行时间，自动停止销毁实验，后者是指定排除掉的丢包端口，两者都是防止因丢包率设置太高，造成机器无法连接的情况，如果真实发生此问题，重启机器即可恢复。
 
 本地端口和远程端口之间是或的关系，即这两个端口都会发生丢包，只要指定了本地端口或者远程端口，无需指定需要排除的端口。端口与 IP 之间是与的关系，即指定的 IP:PORT 发生丢包。
@@ -14,45 +14,77 @@ id: blade create network loss
 网络丢包场景主要验证网络异常的情况下，系统的自我容错能力。
 
 ## 参数
-```text
---destination-ip string   目标 IP. 支持通过子网掩码来指定一个网段的IP地址, 例如 192.168.1.0/24. 则 192.168.1.0~192.168.1.255 都生效。你也可以指定固定的 IP，如 192.168.1.1 或者 192.168.1.1/32，也可以通过都号分隔多个参数，例如 192.168.1.1,192.168.2.1。
---exclude-port string     排除掉的端口，默认会忽略掉通信的对端端口，目的是保留通信可用。可以指定多个，使用逗号分隔或者连接符表示范围，例如 22,8000 或者 8000-8010。 这个参数不能与 --local-port 或者 --remote-port 参数一起使用
---exclude-ip string       排除受影响的 IP，支持通过子网掩码来指定一个网段的IP地址, 例如 192.168.1.0/24. 则 192.168.1.0~192.168.1.255 都生效。你也可以指定固定的 IP，如 192.168.1.1 或者 192.168.1.1/32，也可以通过都号分隔多个参数，例如 192.168.1.1,192.168.2.1。
---interface string        网卡设备，例如 eth0 (必要参数)
---local-port string       本地端口，一般是本机暴露服务的端口。可以指定多个，使用逗号分隔或者连接符表示范围，例如 80,8000-8080
---percent string          丢包百分比，取值在[0, 100]的正整数 (必要参数)
---remote-port string      远程端口，一般是要访问的外部暴露服务的端口。可以指定多个，使用逗号分隔或者连接符表示范围，例如 80,8000-8080
---force                   强制覆盖已有的 tc 规则，请务必在明确之前的规则可覆盖的情况下使用
---ignore-peer-port        针对添加 --exclude-port 参数，报 ss 命令找不到的情况下使用，忽略排除端口
---timeout string          设定运行时长，单位是秒，通用参数
-```
+
+|  参数名 |  说明 | 类型 | 值 |
+|  ----  | ---- | ---- | ---- |
+| `destination-ip` | 目标 IP. 支持通过子网掩码来指定一个网段的IP地址, 例如 192.168.1.0/24. 则 192.168.1.0~192.168.1.255 都生效。你也可以指定固定的 IP，如 192.168.1.1 或者 192.168.1.1/32，也可以通过都号分隔多个参数，例如 192.168.1.1,192.168.2.1。 | string | 例：`192.168.1.0/24` 或 `192.168.1.1` |
+| `exclude-port` | 排除掉的端口，默认会忽略掉通信的对端端口，目的是保留通信可用。可以指定多个，使用逗号分隔或者连接符表示范围，例如 22,8000 或者 8000-8010。 这个参数不能与 --local-port 或者 --remote-port 参数一起使用 | string | 例 `22,8000` 或者 `8000-8010` |
+| `exclude-ip` | 排除受影响的 IP，支持通过子网掩码来指定一个网段的IP地址, 例如 192.168.1.0/24. 则 192.168.1.0~192.168.1.255 都生效。你也可以指定固定的 IP，如 192.168.1.1 或者 192.168.1.1/32，也可以通过都号分隔多个参数，例如 192.168.1.1,192.168.2.1。 | string | 例：`192.168.1.0/24`或 `192.168.1.1` | 
+| `interface` | 网卡设备，例如 eth0 (必要参数) | string | 例：`eth0` |
+| `local-port` | 本地丢包端口，一般是本机暴露服务的端口。可以指定多个，使用逗号分隔或者连接符表示范围，例如 80,8000-8080 | string | 例: `80` |
+| `percent` | 丢包百分比，取值在[0, 100]的正整数 (必要参数) | int | 例: `50` |
+| `remote-port` | 远程端口，一般是要访问的外部暴露服务的端口。可以指定多个，使用逗号分隔或者连接符表示范围 | string | 例：`80,8000-8080` |
+| `force` | 强制覆盖已有的 tc 规则，请务必在明确之前的规则可覆盖的情况下使用 | string | 例: `true` 或 `false` |
+| `ignore-peer-port` | 针对添加 --exclude-port 参数，报 ss 命令找不到的情况下使用，忽略排除端口 | string | |
+| `timeout` | 设定运行时长，单位是秒，通用参数 | int | |
+
+
 
 ## 案例
-```text
-# 访问本机 8080 和 8081 端口丢包率 70%
+
+### 访问本机端口丢包
+访问本机 8080 和 8081 端口丢包率 70%
+```
 blade create network loss --percent 70 --interface eth0 --local-port 8080,8081
 
 {"code":200,"success":true,"result":"b1cea124e2383848"}
-
-# 可以在另一台相同网络内的机器通过 curl 命令验证，即 curl  xxx.xxx.xxx.xxx:8080，不使用 telnet 的原因是 telnet 内部有重试机制，影响实验验证。如果将 percent 的值设置为 100，可以使用 telnet 验证。
-# 销毁实验
-blade destroy b1cea124e2383848
-
-# 本机访问外部 14.215.177.39 机器（ping www.baidu.com 获取到的 IP）80 端口丢包率 100%
-blade create network loss --percent 100 --interface eth0 --remote-port 80 --destination-ip 14.215.177.39
-
-# 可在本机通过 curl 14.215.177.39 命令验证，会发现访问不通。执行 curl 14.215.177.38 是通的。
-# 对整个网卡 eth0 做 60% 的丢包，排除 22 和 8000到8080 端口
-blade create network loss --percent 60 --interface eth0 --exclude-port 22,8000-8080
-
-# 会发现 22 端口和 8000 到 8080 端口不受影响，可在另一台相同网络内的机器通过分别执行多次 curl xxx.xxx.xxx.xxx:8080 和 telnet xxx.xxx.xxx.xxx:8081 进行测试
-
-# 实现整个网卡不可访问，不可访问时间 20 秒。执行完成下面命令后，当前的网络会中断掉，20 秒后恢复。切记！！勿忘 --timeout 参数
-blade create network loss --percent 100 --interface eth0 --timeout 20
 ```
 
+丢包实验较难准确验证，可通过在另一台相同网络内的机器通过 curl 命令初步验证，即 curl xxx.xxx.xxx.xxx:8080，执行 curl 指令后观察 rtt 可粗略判断丢包实验是否执行成功，不使用 telnet 的原因是 telnet 内部有重试机制，影响实验验证。
+
+可通过 tcpdump 抓包准确验证该端口丢包率
+
+销毁实验
+```
+blade destroy b1cea124e2383848
+```
+
+### 访问远程IP丢包
+
+本机访问外部 14.215.177.39 机器（ping www.baidu.com 获取到的 IP）80 端口丢包率 100%
+```
+blade create network loss --percent 100 --interface eth0 --remote-port 80 --destination-ip 14.215.177.39
+```
+
+可在本机通过 curl 14.215.177.39 命令验证，会发现访问不通。执行 curl 14.215.177.38 是通的。
+
+### 网卡整体丢包
+对整个网卡 eth0 做 60% 的丢包，排除 22 和 8000到8080 端口
+```
+blade create network loss --percent 60 --interface eth0 --exclude-port 22,8000-8080
+```
+
+对整个网卡的丢包实验可通过Ping命令验证
+```
+ping www.baidu.com
+
+PING www.a.shifen.com (180.101.49.11) 56(84) bytes of data.
+64 bytes from 180.101.49.11 (180.101.49.11): icmp_seq=1 ttl=50 time=13.6 ms
+64 bytes from 180.101.49.11 (180.101.49.11): icmp_seq=3 ttl=50 time=13.6 ms
+64 bytes from 180.101.49.11 (180.101.49.11): icmp_seq=6 ttl=50 time=13.6 ms
+64 bytes from 180.101.49.11 (180.101.49.11): icmp_seq=7 ttl=50 time=13.6 ms
+64 bytes from 180.101.49.11 (180.101.49.11): icmp_seq=8 ttl=50 time=13.6 ms
+^C
+--- www.a.shifen.com ping statistics ---
+11 packets transmitted, 5 received, 54.5455% packet loss, time 24196ms
+rtt min/avg/max/mdev = 13.555/13.597/13.637/0.028 ms
+```
+
+## 注意事项
+模拟网络场景并不能真实让互联网链路上的数据包丢失，而是通过限制主机发包来实现的，例如到A主机本地端口的50%丢包，并不能让A主机少接受到50%的数据包，而是发包返回给对端的Ack会被过滤掉50%，一般会通过设置丢包率100%来模拟双方网络不通的情况。请合理设置丢包率进行网络丢包实验场景的故障演练。
+
 ## 实现原理
-待补充
+TC（Linux内核流量控制机制 Traffic Control）
 
 ## 常见问题
 Q: {"code":604,"success":false,"error":"RTNETLINK answers: File exists\n exit status 2 exit status 1"}

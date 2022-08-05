@@ -9,28 +9,29 @@ kubernetes 下 容器内进程场景，同基础资源的进程场景
 
 ## 命令
 支持的进程场景命令如下：
-* `blade create k8s container-process kill` 杀容器内指定进程，同 [blade create process kill](blade create process kill.md)
-* `blade create k8s container-process stop` 挂起容器内指定进程，同 [blade create process stop](blade create process stop.md)
+* `blade create k8s container-process kill` 杀容器内指定进程，同 [blade create process kill](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20kill)
+* `blade create k8s container-process stop` 挂起容器内指定进程，同 [blade create process stop](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20stop)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
-```
---container-ids string     容器ID，支持配置多个
---container-names string   容器名称，支持配置多个
---docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
---namespace string       Pod 所属的命名空间，只能填写一个值，必填项
---evict-count string     限制实验生效的数量
---evict-percent string   限制实验生效数量的百分比，不包含 %
---labels string          Pod 资源标签，多个标签之前是或的关系
---names string           Pod 资源名
---kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
---waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
-```
+
+|  参数名 |  说明 | 类型 | 值 |
+|  ----  | ---- | ---- | ---- |
+| `container-ids`       | 容器ID，支持配置多个 | string |  |
+| `container-names`     | 容器名称，支持配置多个 | string |  |
+| `docker-endpoint `    | Docker server 地址 | string | 默认为本地的 /var/run/docker.sock | 
+| `namespace`           | Pod 所属的命名空间，只能填写一个值，必填项 | string | 例：`default` |
+| `evict-count`         | 限制实验生效的数量 | int |  |
+| `evict-percent`       | 限制实验生效数量的百分比，不包含 % | int | |
+| `labels`              | Pod 资源标签，多个标签之间是或的关系 | string | |
+| `names`               | Pod 资源名 | string | |
+| `kubeconfig`          | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | 例: "/root/.kube/config" |
+| `waiting-time`        | 实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m | string | |
 
 ## 案例
 指定 default 命名空间下 Pod 名是 frontend-d89756ff7-tl4xl，容器id为 f1de335b4eeaf，进程名为 top 的进程。
 
-**yaml 配置方式** 
+### yaml 配置方式
 ```yaml
 apiVersion: chaosblade.io/v1alpha1
 kind: ChaosBlade
@@ -106,7 +107,7 @@ kubectl delete -f kill_container_process_by_id.yaml
 
 注意，停止实验不会恢复已杀掉的进程！！
 
-**blade 命令执行方式**
+### blade 命令执行方式
 ```shell
 blade create k8s container-process kill --process top --names frontend-d89756ff7-tl4xl --container-ids f1de335b4eeaf --namespace default --kubeconfig config
 ```
@@ -124,6 +125,10 @@ blade query k8s create 06d5ebae60e8fe3f --kubeconfig config
 ```
 blade destroy 06d5ebae60e8fe3f
 ```
+
+## 注意事项
+
+* 停止实验不会恢复已杀掉的进程！请谨慎使用
 
 ## 常见问题
 Q: 如果状态如下：
@@ -201,4 +206,4 @@ Q:
 ```
 A：目标进程找不到
 
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题

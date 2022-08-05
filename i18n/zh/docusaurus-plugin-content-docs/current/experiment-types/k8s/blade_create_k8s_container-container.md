@@ -4,29 +4,61 @@ id: blade create k8s container-container
 
 # 模拟容器资源自身场景
 
-## 介绍
-Kubernetes 下 container 资源自身的场景，比如删容器，需要注意，执行容器场景，必须先确定 Pod，所以需要配置 Pod 相关参数
+该文档介绍如何 Kubernetes 环境下模拟 Container 自身资源相关的场景故障，如删除容器。
+
+## 场景介绍
+
+Kubernetes 下 container 资源自身的场景，比如删容器，需要注意，执行容器场景，必须先确定 Pod，所以需要配置 Pod 相关参数。
+
+验证 Pod 内容器消失、删除情况对系统服务的影响，以及集群是否能正常自动恢复被删除的容器进程。
 
 ## 命令
 支持场景命令如下
 * `blade create k8s container-container remove` 删除容器 
 
 ## 参数
-```
---container-ids string     容器ID，支持配置多个
---container-names string   容器名称，支持配置多个
---docker-endpoint string   Docker server 地址，默认为本地的 /var/run/docker.sock
---namespace string       Pod 所属的命名空间，只能填写一个值，必填项
---evict-count string     限制实验生效的数量
---evict-percent string   限制实验生效数量的百分比，不包含 %
---labels string          Pod 资源标签，多个标签之前是或的关系
---names string           Pod 资源名
---kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
---waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
---force                    是否强制删除
-```
+
+|  参数名 |  说明 | 类型 | 值 |
+|  ----  | ---- | ---- | ---- |
+| `container-ids`       | 容器ID，支持配置多个 | string |  |
+| `container-names`     | 容器名称，支持配置多个 | string |  |
+| `docker-endpoint `    | Docker server 地址 | string | 默认为本地的 /var/run/docker.sock | 
+| `namespace`           | Pod 所属的命名空间，只能填写一个值，必填项 | string | 例：`default` |
+| `evict-count`         | 限制实验生效的数量 | int |  |
+| `evict-percent`       | 限制实验生效数量的百分比，不包含 % | int | |
+| `labels`              | Pod 资源标签，多个标签之间是或的关系 | string | |
+| `names`               | Pod 资源名 | string | |
+| `kubeconfig`          | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | 例: "/root/.kube/config" |
+| `waiting-time`        | 实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m | string | |
+
+
 
 ## 案例
+
+### Blade命令创建实验
+
+```
+blade create k8s container-container remove --container-ids 060833967b0a37 --names frontend-d89756ff7-szblb --namespace default --kubeconfig config
+```
+如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：
+```
+{"code":200,"success":true,"result":"17d7021c777b76e3"}
+```
+可通过以下命令查询实验状态：
+```
+blade query k8s create 17d7021c777b76e3 --kubeconfig config
+
+{"code":200,"success":true,"result":{"uid":"17d7021c777b76e3","success":true,"error":"","statuses":[{"id":"205515ad8fcc31da","uid":"060833967b0a3733d10f0e64d3639066b8b7fbcf371e0ace2401af150dbd9b12","name":"php-redis","state":"Success","kind":"container","success":true,"nodeName":"cn-hangzhou.192.168.0.205"}]}}
+```
+销毁实验：
+```
+blade destroy 17d7021c777b76e3
+```
+
+删除容器后，执行销毁实验命令不会恢复容器，需要靠容器自身的管理拉起！
+
+### Yaml方式创建实验
+
 删除 default 命名空间下，Pod 名为 frontend-d89756ff7-szblb 下的 container id 是 072aa6bbf2e2e2 的容器
 
 **yaml 配置方式**
@@ -120,26 +152,11 @@ kubectl delete blade remove-container-by-id
 
 删除容器后，执行销毁实验命令不会恢复容器，需要靠容器自身的管理拉起！
 
-**blade 执行方式**
-```
-blade create k8s container-container remove --container-ids 060833967b0a37 --names frontend-d89756ff7-szblb --namespace default --kubeconfig config
-```
-如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：
-```
-{"code":200,"success":true,"result":"17d7021c777b76e3"}
-```
-可通过以下命令查询实验状态：
-```
-blade query k8s create 17d7021c777b76e3 --kubeconfig config
 
-{"code":200,"success":true,"result":{"uid":"17d7021c777b76e3","success":true,"error":"","statuses":[{"id":"205515ad8fcc31da","uid":"060833967b0a3733d10f0e64d3639066b8b7fbcf371e0ace2401af150dbd9b12","name":"php-redis","state":"Success","kind":"container","success":true,"nodeName":"cn-hangzhou.192.168.0.205"}]}}
-```
-销毁实验：
-```
-blade destroy 17d7021c777b76e3
-```
+## 注意事项
 
-删除容器后，执行销毁实验命令不会恢复容器，需要靠容器自身的管理拉起！
+删除容器的场景下，执行销毁实验命令不会恢复容器，需要靠容器自身的管理拉起！请谨慎使用
+
 
 ## 常见问题
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
