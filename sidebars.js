@@ -67,8 +67,23 @@ module.exports = {
               "experiment-types/k8s/blade create k8s container-container",
             ]
           },
-
-
+        ]
+      },
+      {
+        "Application": [
+          {
+            "Java": [
+              "experiment-types/jvm/blade create jvm",
+              "experiment-types/jvm/blade prepare jvm",
+              "experiment-types/jvm/blade create jvm delay",
+              "experiment-types/jvm/blade create jvm return",
+              "experiment-types/jvm/blade create jvm script",
+              "experiment-types/jvm/blade create jvm cpufullload",
+              "experiment-types/jvm/blade create jvm OutOfMemoryError",
+              "experiment-types/jvm/blade create jvm CodeCacheFilling",
+              "experiment-types/jvm/blade create jvm throwCustomException",
+            ]
+          },
         ]
       }
     ]
