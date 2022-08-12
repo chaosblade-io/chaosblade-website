@@ -34,7 +34,7 @@ id: blade create network loss
 
 ### 访问本机端口丢包
 访问本机 8080 和 8081 端口丢包率 70%
-```
+```bash
 blade create network loss --percent 70 --interface eth0 --local-port 8080,8081
 
 {"code":200,"success":true,"result":"b1cea124e2383848"}
@@ -65,7 +65,7 @@ blade create network loss --percent 60 --interface eth0 --exclude-port 22,8000-8
 ```
 
 对整个网卡的丢包实验可通过Ping命令验证
-```
+```bash
 ping www.baidu.com
 
 PING www.a.shifen.com (180.101.49.11) 56(84) bytes of data.

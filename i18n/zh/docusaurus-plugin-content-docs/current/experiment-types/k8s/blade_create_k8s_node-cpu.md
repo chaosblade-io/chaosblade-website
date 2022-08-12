@@ -5,25 +5,29 @@ id: blade create k8s node-cpu
 # 模拟节点CPU负载实验场景
 
 ## 介绍
-kubernetes 节点 CPU 负载实验场景，同基础资源的 CPU 场景
+本文件介绍如何向 kubernetes 节点注入 CPU 负载实验场景故障，同基础资源的 CPU 场景，注入后可通过 K8S 监控观测到节点 CPU 负载上升。
+
+用于在 Kubernetes 环境下验证节点 CPU 负载上升对 K8S 集群和服务的影响。
 
 ## 命令
 支持 CPU 场景命令如下：
-* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](blade create cpu load.md)
+* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](https://chaosblade.io/docs/experiment-types/host/blade%20create%20cpu%20load)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
-```
---evict-count string     限制实验生效的数量
---evict-percent string   限制实验生效数量的百分比，不包含 %
---labels string          节点资源标签
---names string           节点资源名，多个资源名之间使用逗号分隔
---kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
---waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
-```
+
+|  参数名 |  说明 | 类型 | 值 |
+|  ----  | ---- | ---- | ---- |
+| `evict-count`         | 限制实验生效的数量 | int |  |
+| `evict-percent`       | 限制实验生效数量的百分比，不包含 % | int | |
+| `labels`              | Pod 资源标签，多个标签之间是或的关系 | string | |
+| `names`               | Pod 资源名 | string | |
+| `kubeconfig`          | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | 例: "/root/.kube/config" |
+| `waiting-time`        | 实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m | string | |
+
 
 ## 案例
-面以指定一台节点，做 CPU 负载 80% 实验举例。
+下面以指定一台节点，做 CPU 负载 80% 实验举例。
 
 **yaml 配置方式** 
 ```yaml
@@ -53,10 +57,13 @@ spec:
  ```
  kubectl get blade cpu-load -o json
  ``` 
-更多的实验场景配置事例可查看: https://github.com/chaosblade-io/chaosblade-operator/tree/v0.0.1/examples
+
+更多的实验场景配置事例可查看: https://github.com/chaosblade-io/chaosblade-operator/tree/master/examples
 
 **blade 命令执行方式**
-下载 chaosblade 工具包，下载地址：https://github.com/chaosblade-io/chaosblade/releases/tag/v0.4.0-alpha ，解压即可使用。还是上述例子，使用 blade 命令执行如下：
+
+下载 chaosblade 工具包，下载地址：https://github.com/chaosblade-io/chaosblade/releases ，解压即可使用。还是上述例子，使用 blade 命令执行如下：
+
 ```shell
 blade create k8s node-cpu fullload --names cn-hangzhou.192.168.0.205 --cpu-percent 80 --kubeconfig ~/.kube/config 
 ```

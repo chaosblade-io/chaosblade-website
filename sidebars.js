@@ -48,7 +48,6 @@ module.exports = {
               "experiment-types/k8s/blade create k8s pod-network",
               "experiment-types/k8s/blade create k8s pod-pod",
               "experiment-types/k8s/blade create k8s pod-IO",
-              "experiment-types/k8s/blade create k8s pod-fail",
             ]
           },
           {
