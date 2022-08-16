@@ -117,11 +117,11 @@ kubectl delete -f tamper_container_dns_by_id.yaml
 blade create k8s container-network dns --domain www.baidu.com --ip 10.0.0.1 --names frontend-d89756ff7-trsxf --namespace default --container-ids 4b25f66580c4 --kubeconfig config 
 ```
 如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：
-```
+```bash
 {"code":200,"success":true,"result":"6e46a5df94e0b065"}
 ```
 可通过以下命令查询实验状态：
-```
+```bash
 blade query k8s create 6e46a5df94e0b065 --kubeconfig config
 
 {"code":200,"success":true,"result":{"uid":"6e46a5df94e0b065","success":true,"error":"","statuses":[{"id":"90304950e52d679e","uid":"4b25f66580c4dbf465a1b167c4c6967e987773442e5d47f0bee5db0a5e27a12d","name":"php-redis","state":"Success","kind":"container","success":true,"nodeName":"cn-hangzhou.192.168.0.203"}]}}

@@ -41,11 +41,11 @@ Kubernetes 下 container 资源自身的场景，比如删容器，需要注意�
 blade create k8s container-container remove --container-ids 060833967b0a37 --names frontend-d89756ff7-szblb --namespace default --kubeconfig config
 ```
 如果执行失败，会返回详细的错误信息；如果执行成功，会返回实验的 UID：
-```
+```bash
 {"code":200,"success":true,"result":"17d7021c777b76e3"}
 ```
 可通过以下命令查询实验状态：
-```
+```bash
 blade query k8s create 17d7021c777b76e3 --kubeconfig config
 
 {"code":200,"success":true,"result":{"uid":"17d7021c777b76e3","success":true,"error":"","statuses":[{"id":"205515ad8fcc31da","uid":"060833967b0a3733d10f0e64d3639066b8b7fbcf371e0ace2401af150dbd9b12","name":"php-redis","state":"Success","kind":"container","success":true,"nodeName":"cn-hangzhou.192.168.0.205"}]}}

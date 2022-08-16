@@ -116,7 +116,7 @@ blade create k8s container-process kill --process top --names frontend-d89756ff7
 {"code":200,"success":true,"result":"06d5ebae60e8fe3f"}
 ```
 可通过以下命令查询实验状态：
-```
+```bash
 blade query k8s create 06d5ebae60e8fe3f --kubeconfig config
 
 {"code":200,"success":true,"result":{"uid":"06d5ebae60e8fe3f","success":true,"error":"","statuses":[{"id":"1000cbd2018e2c90","uid":"f1de335b4eeaf035b8d23a87080f3d24cebc803cbb6ad15e5fe0d8567e2e8939","name":"php-redis","state":"Success","kind":"container","success":true,"nodeName":"cn-hangzhou.192.168.0.204"}]}}
@@ -132,7 +132,7 @@ blade destroy 06d5ebae60e8fe3f
 
 ## 常见问题
 Q: 如果状态如下：
-```
+```json
 "status": {
         "expStatuses": [
             {
@@ -160,7 +160,7 @@ Q: 如果状态如下：
 A: 其实已经执行，只是返回结果有乱码；删除实验，重新执行实验即可
 
 Q: 
-```
+```json
 "status": {
         "expStatuses": [
             {
@@ -178,7 +178,7 @@ Q:
 A: container 没有找到
 
 Q: 
-```
+```json
 "status": {
         "expStatuses": [
             {

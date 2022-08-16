@@ -11,7 +11,7 @@ CPU 混沌实验用于在主机模拟 CPU 负载情况，通过抢占CPU资源�
 CPU 相关的混沌实验包含 CPU 满载，可以指定核数、具体核满载或者总 CPU 负载百分比。
 
 运行以下命令可查看模拟 CPU 负载场景的帮助信息：
-```
+```bash
 blade create cpu fullload -h
 ```
 
@@ -28,34 +28,34 @@ blade create cpu fullload -h
 
 ## 示例
 ### 创建 CPU 满载实验
-```
+```bash
 blade create cpu fullload
 ```
 输出如下所示代表实验执行成功，result返回值表示实验的uid，在销毁实验中需要使用
-```
+```bash
 {"code":200,"success":true,"result":"3383caddcd7c43f7"}
 ```
 可通过top 1指令查看执行情况
-```
+```bash
 %Cpu0  : 99.3 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.7 hi,  0.0 si,  0.0 st
 %Cpu1  : 99.3 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.3 hi,  0.3 si,  0.0 st
 %Cpu2  : 99.0 us,  0.7 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.3 hi,  0.0 si,  0.0 st
 %Cpu3  : 97.3 us,  2.3 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.3 hi,  0.0 si,  0.0 st
 ```
 实验生效，接下来销毁实验
-```
+```bash
 blade destroy 3383caddcd7c43f7
 ```
 若返回code为200则销毁成功
 
 ### 随机指定核数满载
 
-```
+```bash
 blade create cpu fullload --cpu-count 2
 ```
 
 使用top 1指令验证
-```
+```bash
 %Cpu0  : 99.3 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.3 hi,  0.3 si,  0.0 st
 %Cpu1  :  0.7 us,  1.7 sy,  0.0 ni, 13.3 id, 83.3 wa,  0.7 hi,  0.3 si,  0.0 st
 %Cpu2  : 99.3 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.7 hi,  0.0 si,  0.0 st
@@ -66,13 +66,13 @@ blade create cpu fullload --cpu-count 2
 
 ### 指定具体索引核满载
 
-```
+```bash
 blade create cpu fullload --cpu-list 0,3
 ```
 
 使用 top 1 指令验证
 
-```
+```bash
 %Cpu0  : 99.3 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.7 hi,  0.0 si,  0.0 st
 %Cpu1  :  0.3 us,  2.3 sy,  0.0 ni, 11.4 id, 84.9 wa,  0.7 hi,  0.3 si,  0.0 st
 %Cpu2  :  0.7 us,  2.0 sy,  0.0 ni,  0.0 id, 96.3 wa,  1.0 hi,  0.0 si,  0.0 st
@@ -83,13 +83,13 @@ blade create cpu fullload --cpu-list 0,3
 
 
 ### 指定 CPU 负载百分比
-```
+```bash
 blade create cpu fullload --percent 50
 ```
 
 使用 top 指令验证
 
-```
+```bash
 %Cpu(s): 40.3 us,  1.3 sy,  0.0 ni, 58.1 id,  0.0 wa,  0.3 hi,  0.0 si,  0.0 st
 ```
 

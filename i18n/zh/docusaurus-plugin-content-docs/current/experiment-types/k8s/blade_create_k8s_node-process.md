@@ -9,19 +9,20 @@ kubernetes 节点进程相关场景，同基础资源的进程场景
 
 ## 命令
 支持的进程场景命令如下：
-* `blade create k8s node-process kill` 杀节点上指定进程，同 [blade create process kill](blade create process kill.md)
-* `blade create k8s node-process stop` 挂起节点上指定进程，同 [blade create process stop](blade create process stop.md)
+* `blade create k8s node-process kill` 杀节点上指定进程，同 [blade create process kill](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20kill)
+* `blade create k8s node-process stop` 挂起节点上指定进程，同 [blade create process stop](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20stop)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
-```
---evict-count string     限制实验生效的数量
---evict-percent string   限制实验生效数量的百分比，不包含 %
---labels string          节点资源标签
---names string           节点资源名，多个资源名之间使用逗号分隔
---kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
---waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
-```
+
+|  参数名 |  说明 | 类型 | 值 |
+|  ----  | ---- | ---- | ---- |
+| `evict-count`         | 限制实验生效的数量 | int |  |
+| `evict-percent`       | 限制实验生效数量的百分比，不包含 % | int | |
+| `labels`              | Pod 资源标签，多个标签之间是或的关系 | string | |
+| `names`               | Pod 资源名 | string | |
+| `kubeconfig`          | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | 例: "/root/.kube/config" |
+| `waiting-time`        | 实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m | string | |
 
 ## 案例
 杀指定 cn-hangzhou.192.168.0.205 节点上 kubelet 进程
@@ -46,7 +47,7 @@ spec:
 ```
 
 可以看到执行前后，redis-server 的进程号发生改变，说明被杀掉后，又被重新拉起
-```
+```bash
 # ps -ef | grep redis-server
 19497 root      2:05 redis-server *:6379
 
@@ -118,7 +119,7 @@ blade create k8s node-process kill --process redis-server --names cn-hangzhou.19
 {"code":200,"success":true,"result":"fc93e5bbe4827d4b"}
 ```
 可通过以下命令查询实验状态：
-```
+```json
 blade query k8s create fc93e5bbe4827d4b --kubeconfig config
 
 {"code":200,"success":true,"result":{"uid":"fc93e5bbe4827d4b","success":true,"error":"","statuses":[{"id":"859c56e6850c1c1b","uid":"e179b30d-df77-11e9-b3be-00163e136d88","name":"cn-hangzhou.192.168.0.205","state":"Success","kind":"node","success":true,"nodeName":"cn-hangzhou.192.168.0.205"}]}}
@@ -129,4 +130,4 @@ blade destroy fc93e5bbe4827d4b
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
