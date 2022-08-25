@@ -4,7 +4,6 @@ id: blade create network duplicate
 
 # 模拟网络包重复实验
 
-# blade create network duplicate
 网络包重复实验场景
 
 ## 介绍

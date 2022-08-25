@@ -13,7 +13,11 @@ module.exports = {
     "Types of Chaos Experiments": [
       {
         "Physical Host":[
-          "experiment-types/host/blade create cpu load",
+          {
+            "CPU": [
+              "experiment-types/host/blade create cpu load",
+            ]
+          },
           {
             "Network":[
               "experiment-types/host/blade create network delay",
