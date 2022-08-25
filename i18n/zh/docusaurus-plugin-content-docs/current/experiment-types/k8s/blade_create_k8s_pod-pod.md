@@ -13,15 +13,18 @@ kubernetes Pod 资源自身场景，比如删除 Pod
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
-```
---namespace string       Pod 所属的命名空间，只能填写一个值，必填项
---evict-count string     限制实验生效的数量
---evict-percent string   限制实验生效数量的百分比，不包含 %
---labels string          Pod 资源标签，多个标签之前是或的关系
---names string           Pod 资源名
---kubeconfig string      kubeconfig 文件全路径（仅限使用 blade 命令调用时使用）
---waiting-time string    实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m
-```
+
+| 参数名             | 说明                                   | 类型     | 值                       |
+|-----------------|--------------------------------------|--------|-------------------------|
+| `evict-count`   | 限制实验生效的数量                            | int    |                         |
+| `evict-percent` | 限制实验生效数量的百分比，不包含 %                   | int    |                         |
+| `namespace`     | Pod 所属的命名空间，只能填写一个值，必填项              | string | 例:`default`             |
+| `labels`        | Pod 资源标签，多个标签之间是或的关系                 | string |                         |
+| `names`         | Pod 资源名                              | string |                         |
+| `kubeconfig`    | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | 例: "/root/.kube/config" |
+| `waiting-time`  | 实验结果等待时间，默认为 20s，参数值要包含单位，例如 10s，1m  | string |                         |
+
+
 
 ## 案例
 删除指定 default 命名空间下标签是 app=guestbook 的 pod，删除
@@ -134,4 +137,4 @@ blade destroy 4d3caa0a99c3b2dd
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
