@@ -3,8 +3,8 @@ title: PR提交指南
 ---
 
 ## 准备工作
-* 在您准备向我们提交代码之前，请先阅读[开发规范](https://chaosblade.io/zh/docs/community/dev-standard)并严格遵守其中规定的代码格式
-* 请确保您想要修复或增强的功能存在对应的 issue ，如果是您新发现的问题或想提供 issue 中没有的功能增强，请先新建一个 issue 并设置正确的标签，并在这个 issue 下回复表明您正在这个 issue 上工作。 提交或处理 issue 请参考[Issue提交与处理规范](https://chaosblade.io/zh/docs/community/issue-standard)
+* 在您准备向我们提交代码之前，请先阅读[开发规范](/docs/community/dev-standard)并严格遵守其中规定的代码格式
+* 请确保您想要修复或增强的功能存在对应的 issue ，如果是您新发现的问题或想提供 issue 中没有的功能增强，请先新建一个 issue 并设置正确的标签，并在这个 issue 下回复表明您正在这个 issue 上工作。 提交或处理 issue 请参考[Issue提交与处理规范](/docs/community/issue-standard)
 * 请在 git 中正确设置```user.name```与```user.email```参数，否则您的id可能不会显示在 contributor 列表中，参考指令```git config --global user.name "username"```
 
 ## 开发流程
@@ -51,7 +51,7 @@ git checkout -b issueNo
 ```
 
 **4. 编码开发**
-* 请您在开发过程中遵循 [ChaosBlade](https://chaosblade.io/zh/docs/community/dev-standard) 的开发规范。并在准备提交 pull request 之前完成相应的检查，测试涉及到的 ChaosBlade 命令工作正常。
+* 请您在开发过程中遵循 [ChaosBlade](/docs/community/dev-standard) 的开发规范。并在准备提交 pull request 之前完成相应的检查，测试涉及到的 ChaosBlade 命令工作正常。
 * 将修改的代码 push 到 fork 库的分支上。
 
 **5. 提交PR**
