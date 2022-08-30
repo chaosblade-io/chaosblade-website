@@ -11,15 +11,21 @@ id: blade create process kill
 
 此实验可以验证程序的自愈能力，或者服务进程不存在时，系统的容错能力。
 
+> 注：blade destroy销毁实验无法恢复被杀掉的进程，请谨慎使用
+
+## 命令
+* `blade create process kill -h`
 
 ## 参数
-```text
---process string       进程关键词，会在整个命令行中查找
---process-cmd string   进程命令，只会在命令中查找
---count string      限制杀掉进程的数量，0 表示无限制
---signal string     指定杀进程的信号量，默认是 9，例如 --signal 15
---timeout string   设定运行时长，单位是秒，通用参数
-```
+
+| 参数名           | 说明                | 类型     | 值          |
+|---------------|-------------------|--------|------------|
+| `process`     | 进程关键词，会在整个命令行中查找  | string | 例：`tomcat` |
+| `process-cmd` | 进程命令，只会在命令中查找     | string | 例: `java`  |
+| `count`       | 限制杀掉进程的数量，0 表示无限制 | int    |            |
+| `signal`      | 指定杀进程的信号量，默认是 9   | string | 例:`15`     |
+| `timeout`     | 设定运行时长，单位是秒，通用参数  | int    |            |
+
 
 ## 案例
 ```text

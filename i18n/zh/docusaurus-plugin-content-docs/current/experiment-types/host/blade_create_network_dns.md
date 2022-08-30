@@ -11,12 +11,18 @@ id: blade create network dns
 
 网络丢包场景主要验证域名解析异常的情况下，系统的自我容错能力。
 
+## 命令
+* `blade create network dns -h`
+
 ## 参数
-```text
---domain string    域名 (必要参数)
---ip string        映射的 ip (必要参数)
---timeout string   设定运行时长，单位是秒，通用参数
-```
+
+| 参数名       | 说明             | 类型     | 值                 |
+|-----------|----------------|--------|-------------------|
+| `domain`  | 域名 (必要参数)      | string | 例：`www.baidu.com` |
+| `ip`      | 映射的 ip (必要参数)  | string | 例: `10.0.0.1`     |
+| `timeout` | 设定的运行时长，单位为秒   | int    |                   |
+
+
 
 ## 案例
 ```text

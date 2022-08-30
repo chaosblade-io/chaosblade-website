@@ -11,13 +11,17 @@ id: blade create process stop
 
 此实验可以验证程序 Hang 时，系统的容错能力。
 
+## 命令
+* `blade create process stop -h`
 
 ## 参数
-```text
---process string       进程关键词，会在整个命令行中查找
---process-cmd string   进程命令，只会在命令中查找
---timeout string   设定运行时长，单位是秒，通用参数
-```
+
+| 参数名           | 说明                | 类型     | 值          |
+|---------------|-------------------|--------|------------|
+| `process`     | 进程关键词，会在整个命令行中查找  | string | 例：`tomcat` |
+| `process-cmd` | 进程命令，只会在命令中查找     | string | 例: `java`  |
+| `timeout`     | 设定运行时长，单位是秒，通用参数  | int    |            |
+
 
 ## 案例
 ```text

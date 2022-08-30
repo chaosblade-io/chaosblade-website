@@ -9,8 +9,8 @@ kubernetes 节点进程相关场景，同基础资源的进程场景
 
 ## 命令
 支持的进程场景命令如下：
-* `blade create k8s node-process kill` 杀节点上指定进程，同 [blade create process kill](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20kill)
-* `blade create k8s node-process stop` 挂起节点上指定进程，同 [blade create process stop](https://chaosblade.io/docs/experiment-types/host/blade%20create%20process%20stop)
+* `blade create k8s node-process kill` 杀节点上指定进程，同 [blade create process kill](/docs/experiment-types/host/blade%20create%20process%20kill)
+* `blade create k8s node-process stop` 挂起节点上指定进程，同 [blade create process stop](/docs/experiment-types/host/blade%20create%20process%20stop)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -130,4 +130,4 @@ blade destroy fc93e5bbe4827d4b
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题

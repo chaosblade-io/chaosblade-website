@@ -11,7 +11,7 @@ id: blade create k8s node-cpu
 
 ## 命令
 支持 CPU 场景命令如下：
-* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](https://chaosblade.io/docs/experiment-types/host/blade%20create%20cpu%20load)
+* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](/docs/experiment-types/host/blade%20create%20cpu%20load)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：

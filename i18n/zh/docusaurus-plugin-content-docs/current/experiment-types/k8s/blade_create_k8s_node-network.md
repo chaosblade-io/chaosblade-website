@@ -9,9 +9,9 @@ kubernetes 节点网络相关场景，同基础资源的网络场景
 
 ## 命令
 支持的网络场景命令如下：
-* `blade create k8s node-network delay` 节点网络延迟场景，同 [blade create network delay](https://chaosblade.io/docs/experiment-types/host/blade%20create%20network%20delay)
-* `blade create k8s node-network loss` 节点网络丢包场景，同 [blade create network loss](https://chaosblade.io/docs/experiment-types/host/blade%20create%20network%20loss)
-* `blade create k8s node-network dns` 节点域名访问异常场景，同 [blade create network dns](https://chaosblade.io/docs/experiment-types/host/blade%20create%20network%20dns)
+* `blade create k8s node-network delay` 节点网络延迟场景，同 [blade create network delay](/docs/experiment-types/host/blade%20create%20network%20delay)
+* `blade create k8s node-network loss` 节点网络丢包场景，同 [blade create network loss](/docs/experiment-types/host/blade%20create%20network%20loss)
+* `blade create k8s node-network dns` 节点域名访问异常场景，同 [blade create network dns](/docs/experiment-types/host/blade%20create%20network%20dns)
 
 ## 参数
 除了上述场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -130,4 +130,4 @@ blade destroy e647064f5f20953c
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题

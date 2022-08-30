@@ -10,24 +10,24 @@ ChaosBlade 提供的的 k8s 实验类型支持通过**容器** Cpu 负载实验�
 kubernetes 下 容器内 CPU 负载实验场景，同基础资源的 CPU 场景。该场景可向指定容器注入 CPU 负载异常，注入后容器所在 pod cpu 使用率将提升。
 
 支持 CPU 场景命令如下：
-* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](https://chaosblade.io/docs/experiment-types/host/blade%20create%20cpu%20load)
+* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](/docs/experiment-types/host/blade%20create%20cpu%20load)
 
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
 
-|  参数名 |  说明 | 类型 | 值 |
-|  ----  | ---- | ---- | ---- |
-| `container-ids` | 容器ID，支持配置多个 | string | 默认值：“”，和容器名称必填其一 |
-| `container-names` | 容器名称，支持配置多个 | string | 默认值：“”，和容器id必填其一  |
-| `docker-endpoint` | Docker server 地址  | string | ，默认为本地的 /var/run/docker.sock |
-| `namespace` | Pod 所属的命名空间，只能填写一个值，必填项 | string | 必填 |
-| `evict-count` | 限制实验生效的数量 | string | 可选 |
-| `evict-percent` | 限制实验生效数量的百分比，不包含 % | string | 可选 |
-| `labels` | Pod 资源标签，多个标签之前是或的关系 | string | 可选 |
-| `names` | Pod 资源名 | string | 必填 |
-| `kubeconfig` | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | blade命令行调用时必填 |
-| `waiting-time` | 实验结果等待时间 | string | 默认为20s，参数值要包含单位，例如 10s，1m |
+| 参数名               |  说明 | 类型 | 值                         |
+|-------------------| ---- | ---- |---------------------------|
+| `container-ids`   | 容器ID，支持配置多个 | string | 默认值：“”，和容器名称必填其一          |
+| `container-names` | 容器名称，支持配置多个 | string | 默认值：“”，和容器id必填其一          |
+| `docker-endpoint` | Docker server 地址  | string | 默认 `/var/run/docker.sock`   |
+| `namespace`       | Pod 所属的命名空间，只能填写一个值，必填项 | string | 必填                        |
+| `evict-count`     | 限制实验生效的数量 | string | 可选                        |
+| `evict-percent`   | 限制实验生效数量的百分比，不包含 % | string | 可选                        |
+| `labels`          | Pod 资源标签，多个标签之前是或的关系 | string | 可选                        |
+| `names`           | Pod 资源名 | string | 必填                        |
+| `kubeconfig`      | kubeconfig 文件全路径（仅限使用 blade 命令调用时使用） | string | blade命令行调用时必填             |
+| `waiting-time`    | 实验结果等待时间 | string | 默认为20s，参数值要包含单位，例如 10s，1m |
 
 ## 示例
 
@@ -145,4 +145,4 @@ kubectl delete -f examples/increase_container_cpu_load_by_id.yaml
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](https://chaosblade.io/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
