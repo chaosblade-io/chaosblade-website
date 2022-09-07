@@ -73,7 +73,9 @@ module.exports = {
                 src: 'img/cb-head.png',
                 srcDark: 'img/cb-head.png',
             },
-            items: [{
+            items: [
+            { type: 'docsVersionDropdown' },
+            {
                 label: 'Documentation',
                 position: 'left',
                 activeBasePath: 'docs',
@@ -147,6 +149,13 @@ module.exports = {
                     remarkPlugins: [
                         [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
                     ],
+                    lastVersion: 'current',
+                    versions: {
+                        current: {
+                        label: '1.7.0',
+                        path: '1.7.0',
+                        },
+                    },
                 },
                 blog: {
                     showReadingTime: true,
