@@ -3,8 +3,8 @@ title: PR Submission Guidelines
 ---
 
 ## Preparation
-* Before you are ready to submit code to us, please read the [Development Specification](/en/docs/community/dev-standard) and strictly follow the code format specified therein
-* Please make sure that there is a corresponding issue for the function you want to fix or enhance. If it is a newly discovered problem or you want to provide a function enhancement that is not in the issue, please create a new issue and set the correct label, and reply under this issue Show that you are working on this issue. For submitting or handling issues, please refer to [Issue Submission and Handling Specifications](/en/docs/community/issue-standard)
+* Before you are ready to submit code to us, please read the [Development Specification](../community/dev-standard.md) and strictly follow the code format specified therein
+* Please make sure that there is a corresponding issue for the function you want to fix or enhance. If it is a newly discovered problem or you want to provide a function enhancement that is not in the issue, please create a new issue and set the correct label, and reply under this issue Show that you are working on this issue. For submitting or handling issues, please refer to [Issue Submission and Handling Specifications](../community/issue-standard.md)
 * Please set the ```user.name``` and ```user.email``` parameters correctly in git, otherwise your id may not be displayed in the contributor list, refer to the command ```git config -- global user.name "username"```
 
 
@@ -52,7 +52,7 @@ git checkout -b issueNo
 ````
 
 **4. Coding Development**
-* Please follow the development specifications of [ChaosBlade](/en/docs/community/dev-standard) during the development process. And complete the corresponding checks before preparing to submit a pull request, test the ChaosBlade commands involved in the work.
+* Please follow the development specifications of [ChaosBlade](../community/dev-standard.md) during the development process. And complete the corresponding checks before preparing to submit a pull request, test the ChaosBlade commands involved in the work.
 * Push the modified code to the branch of the fork library.
 
 **5. Submit PR**
