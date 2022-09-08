@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "1.7.0",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "快速开始",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Types of Chaos Experiments": {
+    "message": "混沌工程实验类型",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Physical Host": {
+    "message": "物理主机",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Network": {
+    "message": "网络",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Disk": {
+    "message": "磁盘",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Process": {
+    "message": "进程",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Node": {
+    "message": "节点",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Container": {
+    "message": "容器",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Application": {
+    "message": "应用",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  }
+}
