@@ -73,7 +73,9 @@ module.exports = {
                 src: 'img/cb-head.png',
                 srcDark: 'img/cb-head.png',
             },
-            items: [{
+            items: [
+            { type: 'docsVersionDropdown' },
+            {
                 label: 'Documentation',
                 position: 'left',
                 activeBasePath: 'docs',

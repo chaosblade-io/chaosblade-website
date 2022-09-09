@@ -148,4 +148,4 @@ Pod 不可用的停止实验操作，chaosblade 会重新拉起被删除的 Pod
 
 
 ## 常见问题
-其他问题参考 [blade create k8s](./blade_create_k8s.md) 常见问题
+其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题

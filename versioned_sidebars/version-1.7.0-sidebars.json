@@ -1,0 +1,266 @@
+{
+  "version-1.7.0/docs": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.7.0/getting-started/introduce"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/getting-started/quick-start"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.7.0/community/docs"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/community/PR-guide"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/community/dev-standard"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/community/issue-standard"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Types of Chaos Experiments",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Physical Host",
+          "items": [
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "CPU",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create cpu load"
+                }
+              ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Network",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network delay"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network dns"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network drop"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network loss"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network corrupt"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network reorder"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network duplicate"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create network occupy"
+                }
+              ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Disk",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create disk burn"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create disk fill"
+                }
+              ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Process",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create process kill"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create process stop"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Kubernetes",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.7.0/experiment-types/k8s/blade create k8s"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Pod",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s pod-network"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s pod-pod"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s pod-IO"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s pod-fail"
+                }
+              ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Node",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s node-network"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s node-cpu"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s node-process"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s node-disk"
+                }
+              ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Container",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s container-network"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s container-cpu"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s container-process"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/k8s/blade create k8s container-container"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Application",
+          "items": [
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Java",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade prepare jvm"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm delay"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm return"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm script"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm cpufullload"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm OutOfMemoryError"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm CodeCacheFilling"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/jvm/blade create jvm throwCustomException"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
