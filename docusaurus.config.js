@@ -1,11 +1,17 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
 const path = require('path')
 
 const organizationName = 'chaosblade-io' // Usually your GitHub org/user name.
 const projectName = 'chaosblade-website' // Usually your repo name.
 const branch = 'master'
 const repoUrl = `https://github.com/${organizationName}/${projectName}`
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-module.exports = {
+/** @type {import('@docusaurus/types').Config} */
+const config = {
     title: 'ChaosBlade',
     tagline: 'Help companies solve the high availability problems in the process of migrating to cloud-native systems through chaos engineering',
     url: 'https://chaosblade.io',
@@ -30,36 +36,24 @@ module.exports = {
             },
         },
     },
-    themeConfig: {
+    themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
         image: 'img/cb-logo.png',
-        metadatas: [{ name: 'twitter:card', content: 'summary' }],
+        metadata: [{ name: 'twitter:card', content: 'summary' }],
         colorMode: {
             defaultMode: 'light',
             disableSwitch: false,
             respectPrefersColorScheme: true,
-            switchConfig: {
-                darkIcon: '🌜',
-                lightIcon: '☀️',
-                // React inline style object
-                // see https://reactjs.org/docs/dom-elements.html#style
-                darkIconStyle: {
-                    marginLeft: '2px',
-                },
-                lightIconStyle: {
-                    marginLeft: '1px',
-                },
-            },
         },
         prism: {
-            theme: require('prism-react-renderer/themes/github'),
-            darkTheme: require('prism-react-renderer/themes/dracula')
+            theme: lightCodeTheme,
+            darkTheme: darkCodeTheme,
         },
         algolia: {
+            appId: 'AJZLJ48ZRO',
             apiKey: 'a408c7b1a069a17addfdfeffb900aceb',
             indexName: 'chaosblade',
-        },
-        gtag: {
-            trackingID: 'G-FY5W27B8XH',
         },
         announcementBar: {
             id: 'supportus',
@@ -138,72 +132,48 @@ module.exports = {
             For a list of trademarks of The Linux Foundation, 
             please see our <a href="https://www.linuxfoundation.org/trademark-usage/"> Trademark Usage</a> page.`,
         },
-    },
+    }),
+
     presets: [
         [
-            '@docusaurus/preset-classic', {
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
-                    editUrl: `${repoUrl}/edit/${branch}/website/`,
-                    remarkPlugins: [
-                        [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
-                    ],
-                },
-                blog: {
-                    showReadingTime: true,
-                    postsPerPage: 3,
-                    // Please change this to your repo.
-                    editUrl: `${repoUrl}/edit/${branch}/website/blog/`,
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-                pages: {
-                    remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
-                },
+          'classic',
+          /** @type {import('@docusaurus/preset-classic').Options} */
+          ({
+            docs: {
+                sidebarPath: require.resolve('./sidebars.js'),
+                // Please change this to your repo.
+                editUrl: `${repoUrl}/edit/${branch}/website/`,
+                remarkPlugins: [
+                    [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+                ],
             },
+            blog: {
+                showReadingTime: true,
+                postsPerPage: 3,
+                // Please change this to your repo.
+                editUrl: `${repoUrl}/edit/${branch}/website/blog/`,
+            },
+            theme: {
+                customCss: require.resolve('./src/css/custom.css'),
+            },
+            pages: {
+                remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
+            },
+            gtag: {
+                trackingID: 'G-FY5W27B8XH',
+                anonymizeIP: true,
+            },
+          }),
         ],
     ],
-    plugins: [
-        [
-            '@docusaurus/preset-classic',
-            {
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    editUrl: function ({
-                        locale,
-                        docPath,
-                    }) {
-                        return repoUrl + `/edit/master/docs/${locale}/${docPath}`;
-                    },
-                    showLastUpdateAuthor: true,
-                    showLastUpdateTime: true,
-                    includeCurrentVersion: true,
-                },
-                blog: {
-                    showReadingTime: true,
-                    editUrl:
-                        'https://github.com/oam-dev/kubevela.io/tree/main/blog',
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-            },
-        ],
-        [
-            '@docusaurus/plugin-client-redirects',
-            {
-                fromExtensions: ['html'],
-            }
-        ],
-    ],
-    themes: ['@saucelabs/theme-github-codeblock'],
+    
     stylesheets: [
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=block',
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=block'
     ],
     scripts: [
         'https://buttons.github.io/buttons.js'
-    ]
-}
+    ],
+};
+
+module.exports = config;
