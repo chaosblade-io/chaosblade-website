@@ -2064,10 +2064,10 @@
   resolved "https://registry.nlark.com/@polka/url/download/@polka/url-1.0.0-next.12.tgz#431ec342a7195622f86688bbda82e3166ce8cb28"
   integrity sha1-Qx7DQqcZViL4Zoi72oLjFmzoyyg=
 
-"@saucelabs/theme-github-codeblock@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.nlark.com/@saucelabs/theme-github-codeblock/download/@saucelabs/theme-github-codeblock-0.0.3.tgz#ae67032a2718def0f04fbdd1773d8ae4c2af903b"
-  integrity sha1-rmcDKicY3vDwT73Rdz2K5MKvkDs=
+"@saucelabs/theme-github-codeblock@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@saucelabs/theme-github-codeblock/-/theme-github-codeblock-0.1.1.tgz#d2caa3fbf56c38ae2fe974871f1188226bb57d92"
+  integrity sha512-iHzODYjcUAYI4eJzLrNCw/Iq9SWxCKB/cMgEKHjRmNMb2NKch1dsI2ZSCg8lNedIPmOaRfqHT29hLyMoc/5Wpg==
 
 "@sideway/address@^4.1.3":
   version "4.1.4"
