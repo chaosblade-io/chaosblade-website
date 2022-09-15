@@ -3305,11 +3305,6 @@ clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-clsx@^1.1.1, clsx@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
-  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
-
 clsx@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmmirror.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
@@ -5815,10 +5810,10 @@ node-releases@^2.0.6:
   resolved "https://registry.npmmirror.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
-nodejieba@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.nlark.com/nodejieba/download/nodejieba-2.5.2.tgz#fc929ee29f93c28c639696bac0319bac116a296a"
-  integrity sha1-/JKe4p+Twoxjlpa6wDGbrBFqKWo=
+nodejieba@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/nodejieba/-/nodejieba-2.6.0.tgz#f56dd4f0660cd294af0e2834f9008ef92dfe36c0"
+  integrity sha512-cyEOLRGLjDuxbTuv6nuMAK3NpML4ft9i7st98TFHvXtg+m3RFhIuf4INBHGp3VhUaqPsCTfAkhHB/ZNTFiwJjg==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0.4"
     node-addon-api "^3.0.2"
