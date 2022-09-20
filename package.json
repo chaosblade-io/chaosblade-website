@@ -27,7 +27,7 @@
     "@docusaurus/theme-search-algolia": "^2.1.0",
     "@mdx-js/react": "^1.6.21",
     "@saucelabs/theme-github-codeblock": "0.1.1",
-    "asciinema-player": "^2.6.1",
+    "asciinema-player": "^3.0.1",
     "clsx": "^1.2.1",
     "nodejieba": "^2.6.0",
     "react": "^17.0.1",
