@@ -1,13 +1,16 @@
 ---
-title: Introduce
+title: ChaosBlade Overview
 slug: / 
 ---
+This document describes the concepts, use cases, core strengths, and the architecture of ChaosBlade.
 
-![](/img/en/en-overview.jpg)
+## ChaosBlade Overview
 
 ChaosBlade is an open source chaos engineering project of Alibaba in 2019. It includes chaos engineering experimental tool chaosblade and chaos engineering platform chaosblade-box. It aims to help enterprises solve high-availability problems in the cloud-native process through chaos engineering. The experimental tool chaosblade supports 3 large system platforms, 4 programming language applications, involving more than 200 experimental scenarios and more than 3000 experimental parameters, which can finely control the scope of the experiment. The chaos engineering platform chaosblade-box supports the hosting of experimental tools. In addition to the hosted chaosblade, it also supports the Litmuschaos experimental tools. There are more than [40](https://github.com/chaosblade-io/chaosblade/issues/32) registered companies, of which the ICBC, China Mobile, Xiaomi, JD.com and other companies have landed and used it.
 
-## Features
+## Core strengths
+
+ChaosBlade has the following core strengths:：
 
 * Rich experimental scenarios: including basic resources (CPU, memory, network, disk, process, kernel, files, etc.), multilingual application services (Java, C++, NodeJS, Golang, etc.), Kubernetes platform (covering Container, Pod, Node resources) Scenes, including the above experimental scenes).
 * Diversified execution methods: In addition to using the platform white screen operation, it can also be executed through the blade tool or kubectl or coding that comes with the tool.
@@ -18,15 +21,16 @@ ChaosBlade is an open source chaos engineering project of Alibaba in 2019. It in
 * Multi-dimensional experiment method: Support experiment orchestration from the host to Kubernetes resources, and then to the application dimension.
 * Integrated cloud native ecology: Helm deployment management, integrated Prometheus monitoring, support for cloud native experiment tool hosting, etc.
 
-## Architecture design
+## Architecture overview
 
-![](/img/en/en-architecture.jpg)
+![](/img/zh/overall-architecture.png)
 
-At the beginning of chaosblade design, we considered the ease of use and the convenience of scene expansion, which makes it convenient for everyone to use and expand more experimental scenes according to their own needs. Following the chaos experimental model, it provides unified operations and concise execution tools, and is divided according to domains. The scene realization is encapsulated into a single project to facilitate scene expansion in the field. Based on the domain implementation, chaosblade is packaged into a separate project. Each project is implemented according to best practices in each field. It can not only meet the usage habits of various fields, but also can establish a connection with the chaosblade cli project through the chaos experimental model, which is convenient to use, and uses chaosblade in a unified call. The yaml file based on the chaos experiment model describes the experimental scenes in various fields and is exposed to the upper chaos experiment platform. The Chaos Experiment Platform automatically perceives the changes in the experiment scene according to the changes in the experiment scene description file, without adding new scenes. Perform platform development again to make Chaos Platform more focused on other parts of Chaos Engineering.
+ChaosBlade supports deployment and training in a variety of environments, including linux, docker, kubernetes clusters and various cloud vendor environments. ChaosBlade mainly includes the following components:
 
-![](/img/en/en-chaosblade-box.jpg)
-
-Through the console page, automated deployment of managed tools such as chaosblade, litmuschaos, etc. can be realized. The experiment scene is unified according to the chaos experiment model established by the community, and the target resources are divided according to the host, Kubernetes, and applications. The target resource is controlled by the target manager, and the page is created in the experiment. The target resource selection of white screen can be realized. The platform executes experiment scenarios of different tools by calling the chaos experiment execution, and with access to prometheus monitoring, the experiment metric can be observed, and a wealth of experiment reports will be provided in the follow-up.
+- ChaosBlade-Box Console：The ChaosBlade visualization component mainly provides a set of user-friendly Web interface, through which users can arrange and manage chaos engineering experiments.
+- ChaosBlade-Box Server：The core logic component is mainly responsible for the management and arrangement of chaos engineering experiments, probe and application management. Including components, Chaos Engine: exercise engine, including process orchestration, security control, exercise report and other functions; Chaos Runner: exercise executor, compatible with a variety of execution tools; Chaos Experinece: exercise experience library, etc.
+- Agent：The core logic component is deployed on the host of the user terminal or in the Kubernetes cluster. It is mainly responsible for establishing a connection with ChaosBlade-Box Server, reporting the heartbeat and serving as a command delivery channel.
+- ChaosBlade：The main execution tool can perform fault injection on different environments such as the host and Kubernetes, and can perform fault interference on system network devices, file systems, kernels, and applications running on the system.
 
 ## Future
 
