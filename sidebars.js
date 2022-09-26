@@ -1,8 +1,10 @@
 module.exports = {
   "docs": {
-    "Getting Started": [
-      "getting-started/introduce",
-      "getting-started/quick-start"
+    "About ChaosBlade": [
+      "about-chaosblade/overall-introduce",
+      "about-chaosblade/box-introduce",
+      "about-chaosblade/blade-introduce",
+      "about-chaosblade/quick-start",
     ],
     "Community": [
       "community/docs",

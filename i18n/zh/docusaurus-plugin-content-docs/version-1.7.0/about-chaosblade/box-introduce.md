@@ -1,6 +1,6 @@
 ---
 title: ChaosBlade-Box平台介绍
-slug: / 
+slug: box-introduce
 ---
 本文档主要介绍ChaosBlade-Box混沌工程平台的模块、功能及演练编排等。
 
@@ -8,7 +8,7 @@ slug: /
 
 ![](/img/zh/zh-chaosblade-box.jpg)
 
-通过控制台页面可实现 chaosblade、litmuschaos 等已托管工具自动化部署，按照社区的建立的混沌实验模型统一实验场景，根据主机、Kubernetes、应用来划分目标资源，通过目标管理器来控制，在实验创建页面，可以实现白屏化的目标资源选择。平台通过调用混沌实验执行来执行不同工具的实验场景，配合接入 prometheus 监控，可以观察实验 metric 指标，后续会提供丰富的实验报告。Chaosblade-box 的部署也非常简单，具体可以查看 https://github.com/chaosblade-io/chaosblade-box/releases 。
+通过控制台页面可实现 chaosblade、litmuschaos 等已托管工具自动化部署，按照社区的建立的混沌实验模型统一实验场景，根据主机、Kubernetes、应用来划分目标资源，通过目标管理器来控制，在实验创建页面，可以实现白屏化的目标资源选择。平台通过调用混沌实验执行来执行不同工具的实验场景，配合接入 prometheus 监控，可以观察实验 metric 指标，后续会提供丰富的实验报告。Chaosblade-box 的部署也非常简单，具体可以查看 [chaosblade-box](https://github.com/chaosblade-io/chaosblade-box/releases) 。
 
 ## 演练概览
 
