@@ -1,6 +1,6 @@
 ---
 title: ChaosBlade整体介绍
-slug: overall-introduce
+slug: / 
 ---
 本篇文档主要描述ChaosBlade的概念、系统架构，使用场景及核心优势
 

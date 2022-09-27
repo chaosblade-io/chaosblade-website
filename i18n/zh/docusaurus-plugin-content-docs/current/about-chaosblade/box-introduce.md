@@ -1,6 +1,5 @@
 ---
 title: ChaosBlade-Box平台介绍
-slug: box-introduce
 ---
 本文档主要介绍ChaosBlade-Box混沌工程平台的模块、功能及演练编排等。
 

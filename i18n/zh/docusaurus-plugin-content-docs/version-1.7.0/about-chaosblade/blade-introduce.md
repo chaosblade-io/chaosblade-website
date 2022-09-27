@@ -1,6 +1,5 @@
 ---
 title: ChaosBlade工具介绍
-slug: blade-introduce
 ---
 本文档主要介绍ChaosBlade混沌工程演练执行工具的架构特性、模块分层及执行方式。
 

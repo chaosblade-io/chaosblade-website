@@ -1,6 +1,5 @@
 ---
 title: ChaosBlade Execution Tools Introduction
-slug: blade-introduce
 ---
 This document mainly introduces the architectural features, module layering and execution methods of the ChaosBlade chaos engineering exercise execution tool.
 

@@ -96,7 +96,7 @@ const config = {
             links: [{
                 title: 'Docs',
                 items: [{
-                    label: 'Getting Started',
+                    label: 'About ChaosBlade',
                     to: '/docs',
                 }],
             }, {
