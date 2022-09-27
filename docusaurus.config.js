@@ -98,6 +98,9 @@ const config = {
                 items: [{
                     label: 'About ChaosBlade',
                     to: '/docs',
+                },{
+                    label: 'Contribute documents',
+                    to: '/docs/community/docs',
                 }],
             }, {
                 title: 'Community',
