@@ -3,15 +3,23 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Getting Started",
+      "label": "About ChaosBlade",
       "items": [
         {
           "type": "doc",
-          "id": "version-1.7.0/getting-started/introduce"
+          "id": "version-1.7.0/about-chaosblade/overall-introduce"
         },
         {
           "type": "doc",
-          "id": "version-1.7.0/getting-started/quick-start"
+          "id": "version-1.7.0/about-chaosblade/box-introduce"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/about-chaosblade/blade-introduce"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.7.0/about-chaosblade/quick-start"
         }
       ]
     },
