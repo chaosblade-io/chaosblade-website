@@ -155,6 +155,7 @@ const config = {
                 postsPerPage: 3,
                 // Please change this to your repo.
                 editUrl: `${repoUrl}/edit/${branch}/website/blog/`,
+                authorsMapPath: 'authors.yml',
             },
             theme: {
                 customCss: require.resolve('./src/css/custom.css'),
