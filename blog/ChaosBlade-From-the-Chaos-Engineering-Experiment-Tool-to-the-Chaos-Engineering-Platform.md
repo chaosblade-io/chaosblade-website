@@ -1,5 +1,5 @@
 ---
-title: ChaosBlade: From the Chaos Engineering Experiment Tool to the Chaos Engineering Platform
+title: ChaosBlade, From the Chaos Engineering Experiment Tool to the Chaos Engineering Platform
 authors: [xcaspar, sangjie]
 tags: [ chaosblade ]
 description: 本文会着重介绍什么是混沌工程在云原生架构下的落地与实践
