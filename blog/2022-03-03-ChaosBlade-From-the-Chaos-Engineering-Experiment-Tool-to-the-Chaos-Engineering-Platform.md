@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 ChaosBlade is Alibaba's open-source chaos engineering project created in 2019. It has been added to CNCF Sandbox. At first, ChaosBlade was a multi-environment and multi-language chaos engineering experimental tool but developed into a multi-cluster, multi-environment, and multi-language chaos engineering platform called chaosblade-box. The platform supports experimental tool hosting and automatic tool deployment. The user's energy is focused on solving high-availability problems in the cloud-native process through chaos engineering and a unified user experiment interface. This article introduces ChaosBlade in detail from three stages, including the abstraction of the chaos experimental model, the open-source process of the chaos experimental tool, and the update of the chaos engineering platform.
-
+<!--truncate-->
 **In this year's trusted cloud evaluation, the Alibaba Cloud fault drill platform passed the highest level (advanced certification required by the trusted cloud chaos engineering platform) with the highest score.** 
 
 # Chaos Experimental Model

@@ -5,19 +5,12 @@ tags: [ chaosblade ]
 hide_table_of_contents: false
 ---
 
-![chaosblade](https://static001.geekbang.org/infoq/69/69cc78aa343e945eef5e20624f60af4e.png)
-
 ## 前言
 
 在上篇文章中，我们介绍了如何使用 **ChaosBlade Operator** 对 pod 资源进行混沌实验。从本章将继续对 Kubernetes Node 资源的混沌实验进行讲解，同时也配套了 [katacode](https://katacoda.com/) 交互式教程，读者可用通过 katacode，在浏览器上操作真实的 Kubernetes 和 ChaosBlade。
 
 [chaosblade.io](https://chaosblade.io/) 官网已经正式上线。
-
-{{% pageinfo color="primary" %}}
-> KataCoda 教程：《ChaosBlade Node 实验场景》
->
-> 地址：[https://katacoda.com/guoxudong/courses/chaosblade/chaosblade-node-experiment](https://katacoda.com/guoxudong/courses/chaosblade/chaosblade-node-experiment)
-{{% /pageinfo %}}
+<!--truncate-->
 
 ## 实验对象：Node
 
@@ -25,7 +18,7 @@ hide_table_of_contents: false
 
 ## Node 实验场景
 
-同[上篇文章](../start-chaosblade-2)，本篇默认已安装 [guestbook](https://github.com/cloudnativeapp/guestbook?spm=5176.2020520152.0.0.7c5f16ddH8myx6) 应用和 ChaosBlade Operator。
+同上篇文章，本篇默认已安装 [guestbook](https://github.com/cloudnativeapp/guestbook?spm=5176.2020520152.0.0.7c5f16ddH8myx6) 应用和 ChaosBlade Operator。
 
 ### 节点资源相关场景
 

@@ -18,6 +18,7 @@ ChaosBlade is an easy-to-use, efficient, and open-source Chaos Engineering exper
 Chaos Engineering is a discipline that conducts experiments on distributed systems. Chaos Engineering helps detect weak points of systems in advance, promotes the improvement of the architecture, and finally realizes business resilience by actively injecting faults.
 
 Since 2021, major enterprises have paid attention to and invested in the research and development of Chaos Engineering. ChaosBlade (an open-source Chaos Engineering tool from Alibaba) has officially become a CNCF Sandbox project. A new version of the ChaosBlade-Box was released to help users of open-source projects implement Chaos Engineering better. The following sections describe the features of the new version.
+<!--truncate-->
 
 # 2. An Introduction to the New ChaosBlade-Box
 ChaosBlade-Box aims to build a unified Chaos Engineering operation platform. Since its release, it has received extensive attention from the open-source community. There are also the following problems.

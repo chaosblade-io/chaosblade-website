@@ -10,6 +10,7 @@ hide_table_of_contents: false
 在2020.11.25 AWS发生了服务大面积故障，造成了多个云产品服务受影响，不到一个月的时间内谷歌发生了那年的第三次大规模宕机，造成了波及20亿用户，损失170万美元的巨大损失。
 系统架构经历了单机 到 分布式，再到现在的云原生架构，其复杂度不断上涨，问题定位的难度也随之上涨。面对随时都可能发生的故障，有没有什么的办法能很好解决这个困境。
 混沌工程（Chaos Engineering）在分布式系统上进行实验的学科，通过主动注入故障的方式，提前发现系统的薄弱点，推进架构的改进，最终实现业务韧性。从而避免故障在线上运行环境上发生。
+<!--truncate-->
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1655193440764-a84cfee2-a2de-4d12-974b-e8c32dc97008.png#clientId=ud43b2306-2c6a-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=699&id=u6f254632&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1398&originWidth=2608&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1584386&status=done&style=none&taskId=ubed9da50-b1ef-4171-891b-cc0320a66aa&title=&width=1304)
 这里拿云原生架构来举例说明，为什么混沌工程能解决系统架构中存在的问题。云原生架构原则和混沌工程原则是可以找到对应关系，以服务化原则说明，服务化原则其根本就是服务如何治理的问题，也就是判断上下游服务之间强弱依赖关系的问题。通过混沌工程，可以通过将请求定位到具体机器，再缩小到具体机器上的应用，不断最小化爆炸半径，通过在应用之间注入故障，判断上下游服务是否正常，来判断其强弱依赖关系。
 
