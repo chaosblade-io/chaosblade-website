@@ -151,8 +151,11 @@ const config = {
                 ],
             },
             blog: {
+                blogSidebarTitle: '全部博文',
+                blogSidebarCount: 'ALL',
                 showReadingTime: true,
-                postsPerPage: 3,
+                // postsPerPage: 3,
+                postsPerPage: 'ALL',
                 // Please change this to your repo.
                 editUrl: `${repoUrl}/edit/${branch}/website/blog/`,
                 authorsMapPath: 'authors.yml',

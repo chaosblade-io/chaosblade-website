@@ -5,15 +5,11 @@ tags: [ chaosblade ]
 hide_table_of_contents: false
 ---
 
-![chaosblade](https://static001.geekbang.org/infoq/69/69cc78aa343e945eef5e20624f60af4e.png)
-
 ## 前言
 
 在上篇文章中，我们介绍了如何使用 **ChaosBlade Operator** 对 node 资源进行混沌实验。从本章将继续对 Kubernetes Container 资源的混沌实验进行讲解，同时也配套了 [katacode](https://katacoda.com/) 交互式教程，读者可用通过 katacode，在浏览器上操作真实的 Kubernetes 和 ChaosBlade，同时本篇也是系列文章的倒数第二篇，实践内容的最后一篇。
-
-{{% pageinfo color="primary" %}}
+<!--truncate-->
 > katacode 现已关闭
-{{% /pageinfo %}}
 
 ## 实验对象：Container
 
@@ -21,7 +17,7 @@ Pod 由一个或多个容器（Container）组成。容器（Container）是一�
 
 ## Container 实验场景
 
-同[之前的文章](../start-chaosblade-2)，本篇默认已安装 [guestbook](https://github.com/cloudnativeapp/guestbook?spm=5176.2020520152.0.0.7c5f16ddH8myx6) 应用和 ChaosBlade Operator。
+同之前的文章，本篇默认已安装 [guestbook](https://github.com/cloudnativeapp/guestbook?spm=5176.2020520152.0.0.7c5f16ddH8myx6) 应用和 ChaosBlade Operator。
 
 ### container 资源自身的场景
 

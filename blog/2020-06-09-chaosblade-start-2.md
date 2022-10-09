@@ -5,11 +5,10 @@ tags: [ chaosblade ]
 hide_table_of_contents: false
 ---
 
-![chaosblade](https://static001.geekbang.org/infoq/69/69cc78aa343e945eef5e20624f60af4e.png)
-
 ## 前言
 
 在上篇文章中，我们介绍了**混沌工程**以及 **ChaosBlade**。从本篇开始，从 ChaosBlade 的安装部署，到实验的创建销毁，在实践的角度，一步步的完成各种混沌实验，深入认识和使用混沌工程。
+<!--truncate-->
 
 ## ChaosBlade-Operator
 

@@ -16,6 +16,7 @@ Chaosblade是建立在阿里巴巴近十年故障测试和演练实践基础上�
 好了，上面的介绍是从Chaosblade的github主页抄的。
 github主页地址：[chaosblade-github](https://github.com/chaosblade-io/chaosblade)
 说白了，Chaosblade是一个故障模拟工具，可以模拟比如服务器CPU满了、磁盘满了、网络慢、Dubbo某个服务响应时间长、jvm中某个方法抛出异常、调用Mysql慢等等。所以这个工具对于大公司来说是非常非常有用的，因为可以提前模拟出各种各样的故障，从而保证系统的高可用与稳定。
+<!--truncate-->
 
 # Chaosblade怎么用？
 
