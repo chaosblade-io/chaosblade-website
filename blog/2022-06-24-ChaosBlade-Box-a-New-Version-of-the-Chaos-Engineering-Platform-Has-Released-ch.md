@@ -1,6 +1,6 @@
 ---
 title: 混沌工程平台 ChaosBlade-Box 新版重磅发布
-author: camix
+authors: camix
 tags: [ chaosblade ]
 description: 本文会着重介绍什么是混沌工程平台新版本功能特性。
 hide_table_of_contents: false
