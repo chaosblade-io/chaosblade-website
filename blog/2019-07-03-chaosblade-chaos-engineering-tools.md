@@ -2,6 +2,8 @@
 title: Chaosblade, 阿里一个超级牛逼的混沌实验实施工具
 tags: [ chaosblade ]
 author: 1点25
+author_url: https://juejin.cn/user/4353721774901806
+author_image_url: https://p3-passport.byteimg.com/img/user-avatar/023f14b3a5377f09b98af09696e3c6ac~180x180.awebp
 hide_table_of_contents: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: ChaosBlade-Box, a New Version of the Chaos Engineering Platform Has Released
-author: camix
+authors: camix
 tags: [ chaosblade ]
 description: 本文会着重介绍什么是混沌工程平台新版本功能特性。
 hide_table_of_contents: false
