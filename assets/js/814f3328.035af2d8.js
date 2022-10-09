@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchaosblade=self.webpackChunkchaosblade||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u6df7\u6c8c\u5de5\u7a0b\u4ecb\u7ecd\u4e0e\u5b9e\u8df5","permalink":"/blog/chaos-engineering"},{"title":"\u6691\u671f2021","permalink":"/blog/summer-2021"}]}')}}]);
