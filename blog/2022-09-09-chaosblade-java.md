@@ -7,7 +7,6 @@ hide_table_of_contents: false
 ---
 
 # 1.介绍
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662013958501-7c1374a2-b064-47e3-8756-00eb0cd5d1b7.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=137&id=u1ecc8f38&margin=%5Bobject%20Object%5D&name=image.png&originHeight=274&originWidth=1768&originalType=binary&ratio=1&rotation=0&showTitle=false&size=42360&status=done&style=none&taskId=u6cf92846-7846-4c93-b7a6-927b4be4787&title=&width=884)
 
 [ChaosBlade](https://chaosblade.io/) 是阿里巴巴开源的一款遵循混沌工程原理和混沌实验模型的实验注入工具，帮助企业提升分布式系统的容错能力，并且在企业上云或往云原生系统迁移过程中业务连续性保障。
 
@@ -18,9 +17,11 @@ hide_table_of_contents: false
 **通过对ChaosBlade Java 场景的性能优化，使CPU在故障注入时的抖动得到了有效的控制，不会再出现CPU使用率达到100%的抖动，经过测试在线上8C，4G，QPS 3K左右的服务实例上注入Dubbo 自定义抛异常的故障，CPU的使用率可以控制在40%左右的瞬时抖动范围内,性能整体提升近2.5倍。**
 
 本文将会详细的介绍影响性能的问题点以及是如何对这些问题进行优化的。
-
+<!--truncate-->
 # 2.Java场景
-在介绍前先了解下ChaosBlade Java场景的注入流程。![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014005578-270f85a6-fd83-4e0a-b43b-dc97eb26f510.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=232&id=u536ca7fe&margin=%5Bobject%20Object%5D&name=image.png&originHeight=464&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&size=107988&status=done&style=none&taskId=u5f0cd5e6-7193-4e6e-8b83-392a6b276dc&title=&width=799)Java场景的故障注入是基于字节码增强框架JVM-Sandbox实现的，注入一个故障分为两步：
+在介绍前先了解下ChaosBlade Java场景的注入流程。
+
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014005578-270f85a6-fd83-4e0a-b43b-dc97eb26f510.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=232&id=u536ca7fe&margin=%5Bobject%20Object%5D&name=image.png&originHeight=464&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&size=107988&status=done&style=none&taskId=u5f0cd5e6-7193-4e6e-8b83-392a6b276dc&title=&width=799)Java场景的故障注入是基于字节码增强框架JVM-Sandbox实现的，注入一个故障分为两步：
 
 1. ChaosBlade 执行prepare命令，触发sandbox对目标JVM挂载 Java agent。
 2. ChaosBlade 执行create命令，触发sandbox对目标JVM进行字节码增强，从而达到故障注入的目的。
@@ -29,10 +30,13 @@ hide_table_of_contents: false
 # 3.prepare(挂载)阶段优化
 
 ## 3.1 现象
-本地模拟一个简单的HTTP服务，控制其CPU Idle在50%左右，当执行blade prepare jvm --pid挂载agent后，发现CPU空闲率迅速下降，并且下降的幅度较大。在生产中进行故障注入有可能会直接让Idle掉低从而触发告警![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014042664-6aa32560-c4ad-4cf9-af1c-12bbe48d3ef6.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=172&id=u78f2e45e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=274&originWidth=1188&originalType=binary&ratio=1&rotation=0&showTitle=false&size=82193&status=done&style=none&taskId=u4e1a626e-a680-4a97-899e-090dc4062f5&title=&width=745)
+本地模拟一个简单的HTTP服务，控制其CPU Idle在50%左右，当执行blade prepare jvm --pid挂载agent后，发现CPU空闲率迅速下降，并且下降的幅度较大。在生产中进行故障注入有可能会直接让Idle掉低从而触发告警
+
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014042664-6aa32560-c4ad-4cf9-af1c-12bbe48d3ef6.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=172&id=u78f2e45e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=274&originWidth=1188&originalType=binary&ratio=1&rotation=0&showTitle=false&size=82193&status=done&style=none&taskId=u4e1a626e-a680-4a97-899e-090dc4062f5&title=&width=745)
 
 ## 3.2 定位
 通过采集CPU profile生成火焰图来观察在执行blade prepare时CPU的使用情况，如下图可以看到loadPlugins方法是资源消耗的重灾区
+
 [image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014182779-f714d227-c3c4-45ce-822b-7b68bc23e0b8.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=325&id=u24cbcf93&margin=%5Bobject%20Object%5D&name=image.png&originHeight=484&originWidth=1074&originalType=binary&ratio=1&rotation=0&showTitle=false&size=354434&status=done&style=none&taskId=u2fe4bf22-dd36-46c5-adf4-77b0adb50c6&title=&width=721)
 
 loadPlugins方法中主要是加载ChaosBlade Java中支持的全部插件，例如dubbo,redis,kafka等。当加载了这些插件后就可以进行故障注入了。加载插件的过程中会对插件中定义的类以及方法进行字节码增强。
