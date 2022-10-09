@@ -32,16 +32,16 @@ ChaosBlade-Box旨在建设统一的混沌工程操作平台，从发布以来，
 就以上问题，对ChaosBlade-Box及Agent进行一次大的改版，将社区版与企业版内核进行融合，统一用户操作习惯，升级社区版系统架构，并增强其组件功能。
 ## 2.1 平台整体介绍
 新版ChaosBlade-Box控制台是一个面向多集群、多环境、多语言的云原生混沌工程平台。支持国际化中英文切换，支持全局命名空间，使得同一用户可根据自己需求，设置不同的全局命名空间，如：测试空间、沙盒空间和线上空间等。提供自动化的工具部署，简化工具安装步骤，提高执行效率。平台支持不同环境的探针安装和演练，如主机和Kubernetes，其中Kubernetes环境下支持 Node、Pod、Container维度下的演练。在Kubernetes环境下会自动收集集群内的Pod相关数据，并在应用管理中进行统一管理，这样简化用户演练查询步骤，无需去集群内查看要演练应用的Pod名或Container名。并支持一键迁移到企业版，按需将社区版的演练数据同步到企业版。
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1652430437417-2c725627-4f99-403f-abeb-69b4a9e8319f.png#clientId=ubf723c2f-56b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=355&id=XFcZw&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1650&originWidth=3850&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1324943&status=done&style=none&taskId=u79eaa628-6109-4c3e-95d5-2bd402202d0&title=&width=829)
+![image.png](/img/blog/chaosblade-box-overview.png)
 ## 2.2 新版演练流程
 以下是在新版ChaosBlade-Box平台上进行一次演练的全过程，支持顺序执行、阶段执行两种流程编排，顺序执行指的是多个演练场景依次生效，阶段执行值得是多个演练场景同时生效。通过多种安全策略保证演练得到恢复，如手动处罚和自动停止，自动停止通过在演练配置的时候设置超时参数来进行配置，这样即便平台和探针（Agent）失联，无法进行手动停止时，也能在超时时间到达的时候，自动恢复故障。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1652437554770-d762ae9b-f3f2-4b57-a115-ef40c71f9b84.png#clientId=ub15c66cf-fe3c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=624&id=SRLfS&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1248&originWidth=3320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=470745&status=done&style=none&taskId=u408addbb-2150-45ef-a3bd-6568239d633&title=&width=1660)
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1655193003127-32f7d4b1-5f3a-4e5c-9b35-d5a37a5ce048.png#clientId=u991fd39b-ce6d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=654&id=clfsI&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1308&originWidth=3036&originalType=binary&ratio=1&rotation=0&showTitle=false&size=631731&status=done&style=none&taskId=u321a6aea-ad9e-4b81-b3b7-0e24f3d5bcd&title=&width=1518)
+![image.png](/img/blog/chaosblade-box-workflow.png)
+![image.png](/img/blog/chaosblade-box-result.png)
 # 3.  架构介绍
 
 下图说明了新版本ChaosBlade的系统架构及其组件功能：
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1652422726125-95a08d92-a6e5-427f-8de6-c01ea6fda572.png#clientId=ubf723c2f-56b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=1048&id=d30Pe&margin=%5Bobject%20Object%5D&name=image.png&originHeight=2096&originWidth=2398&originalType=binary&ratio=1&rotation=0&showTitle=false&size=349247&status=done&style=none&taskId=u459f9123-9b6f-4714-bef5-d4ecb89619f&title=&width=1199)
+![image.png](/img/zh/overall-architecture.png)
 **组件**
 
 - ChaosBlade-Box Console: 混沌工程控制台前端，负责前端界面交互
