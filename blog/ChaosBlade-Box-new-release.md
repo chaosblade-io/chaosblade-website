@@ -6,7 +6,7 @@ description: 本文会着重介绍什么是混沌工程平台新版本功能特�
 hide_table_of_contents: false
 ---
 
- ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/340851/1652433147520-9ebb5fc2-c89c-4df4-9cdc-dc63a3509e43.png#clientId=ubf723c2f-56b5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=137&id=u5077952f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=274&originWidth=1768&originalType=binary&ratio=1&rotation=0&showTitle=false&size=42357&status=done&style=none&taskId=ud1ca0bb9-9170-4114-af0d-55336b172cc&title=&width=884)
+ ![image.png](/img/logo.png)
 # 1. 前言
 
 - ChaosBlade-Box是什么？
