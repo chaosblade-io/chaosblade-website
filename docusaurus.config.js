@@ -52,7 +52,7 @@ const config = {
         },
         algolia: {
             appId: 'AJZLJ48ZRO',
-            apiKey: 'a408c7b1a069a17addfdfeffb900aceb',
+            apiKey: '778c20275bbb7d909cf22e4663360e39',
             indexName: 'chaosblade',
         },
         announcementBar: {
