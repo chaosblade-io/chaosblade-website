@@ -1773,10 +1773,10 @@
     "@types/react" "*"
     prop-types "^15.6.2"
 
-"@docusaurus/remark-plugin-npm2yarn@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/@docusaurus/remark-plugin-npm2yarn/-/remark-plugin-npm2yarn-2.1.0.tgz#45d933002880e55ac70ac33a21894243e8af7643"
-  integrity sha512-crlbE7XN4m6f5PMW+1K0w1/r6YsJPBHPAnxBu+dwcObBYFKeNnmtci8mBOX/Ey1eeV9wO1yFwaSWKEn1EAbcbQ==
+"@docusaurus/remark-plugin-npm2yarn@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@docusaurus/remark-plugin-npm2yarn/-/remark-plugin-npm2yarn-2.2.0.tgz#12d433eda8986c475277dd7fb8624b10c8a976ea"
+  integrity sha512-CFiwzk+0QrlBjkcx4cNV8LQZHgo15aQ3piO0Iao0vGXLc7eupGigDLuE7q3Phc10ELweO+P2gRQTjlBqIQTC+Q==
   dependencies:
     npm-to-yarn "^1.0.1"
     tslib "^2.4.0"
@@ -7807,12 +7807,7 @@ ts-essentials@^2.0.3:
   resolved "https://registry.npm.taobao.org/ts-essentials/download/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
   integrity sha1-yTA/PXT3X6dSjD1JuA4ImrCdh0U=
 
-tslib@^2.0.3, tslib@^2.1.0:
-  version "2.2.0"
-  resolved "https://registry.nlark.com/tslib/download/tslib-2.2.0.tgz?cache=0&sync_timestamp=1618847132149&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
-  integrity sha1-+yxHWXfjXiQTEe3iaTzuHsZpj1w=
-
-tslib@^2.4.0:
+tslib@^2.0.3, tslib@^2.1.0, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
