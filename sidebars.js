@@ -4,7 +4,18 @@ module.exports = {
       "about-chaosblade/overall-introduce",
       "about-chaosblade/box-introduce",
       "about-chaosblade/blade-introduce",
-      "about-chaosblade/quick-start",
+    ],
+    "Getting Started": [
+      "getting-started/platform-box-quick-start",
+      "getting-started/quick-start",
+      {
+        "Installation And Deployment": [
+          "getting-started/installation-and-deployment/platform-box-install-and-uninstall",
+          "getting-started/installation-and-deployment/tool-chaosblade-install-and-uninstall",
+          "getting-started/installation-and-deployment/agent-install",
+          "getting-started/installation-and-deployment/environment-prepare",
+        ]
+      }
     ],
     "Community": [
       "community/docs",

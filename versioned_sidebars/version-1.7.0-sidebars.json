@@ -16,10 +16,44 @@
         {
           "type": "doc",
           "id": "version-1.7.0/about-chaosblade/blade-introduce"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.7.0/getting-started/platform-box-quick-start"
         },
         {
           "type": "doc",
-          "id": "version-1.7.0/about-chaosblade/quick-start"
+          "id": "version-1.7.0/getting-started/quick-start"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Installation And Deployment",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/installation-and-deployment/platform-box-install-and-uninstall"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/installation-and-deployment/tool-chaosblade-install-and-uninstall"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/installation-and-deployment/agent-install"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/installation-and-deployment/environment-prepare"
+            }
+          ]
         }
       ]
     },

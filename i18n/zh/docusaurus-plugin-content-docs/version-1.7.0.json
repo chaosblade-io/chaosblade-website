@@ -7,6 +7,14 @@
     "message": "关于chaosblade",
     "description": "The label for category About ChaosBlade in sidebar docs"
   },
+  "sidebar.docs.category.Getting Started": {
+    "message": "开始使用",
+    "description": "Chaosblade platform and tools usage docs"
+  },
+  "sidebar.docs.category.Installation And Deployment": {
+    "message": "安装与部署",
+    "description": "Chaosblade platform and tools usage docs"
+  },
   "link.item.label.Contribute documents": {
     "message": "贡献文档",
     "description": "The label of footer link with label=Contribute documents linking to /docs/community/docs"
