@@ -131,8 +131,8 @@ const config = {
                 href: 'https://cncf.io/'
             },
             copyright: `© ${new Date().getFullYear()} The ChaosBlade Authors. All rights reserved. <br />
-            The Linux Foundation has registered trademarks and uses trademarks. 
-            For a list of trademarks of The Linux Foundation, 
+            The Linux Foundation has registered trademarks and uses trademarks.
+            For a list of trademarks of The Linux Foundation,
             please see our <a href="https://www.linuxfoundation.org/trademark-usage/"> Trademark Usage</a> page.`,
         },
     }),
@@ -145,7 +145,7 @@ const config = {
             docs: {
                 sidebarPath: require.resolve('./sidebars.js'),
                 // Please change this to your repo.
-                editUrl: `${repoUrl}/edit/${branch}/website/`,
+                editUrl: `${repoUrl}/edit/${branch}/`,
                 remarkPlugins: [
                     [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
                 ],
@@ -157,7 +157,7 @@ const config = {
                 // postsPerPage: 3,
                 postsPerPage: 'ALL',
                 // Please change this to your repo.
-                editUrl: `${repoUrl}/edit/${branch}/website/blog/`,
+                editUrl: `${repoUrl}/edit/${branch}/`,
                 authorsMapPath: 'authors.yml',
             },
             theme: {
@@ -173,7 +173,7 @@ const config = {
           }),
         ],
     ],
-    
+
     stylesheets: [
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=block',
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=block'
