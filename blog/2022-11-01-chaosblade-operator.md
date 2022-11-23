@@ -8,20 +8,20 @@ hide_table_of_contents: false
 
 ## ChaosBlade
 随着云原生的发展，云原生应用一致性、可靠性、灵活编排的能力让大部分企业选择将应用往云上迁移，但同时云基础设施在稳定性、高可用、可观测方面也接受着强大的考验。
-ChaosBlade 是阿里巴巴开源的一款遵循混沌工程原理和混沌实验模型的实验注入工具，帮助企业提升分布式系统的容错能力，并且在企业上云或往云原生系统迁移过程中业务连续性保障。
-ChaosBlade Operator 是 kubernetes 平台实验场景的实现，将混沌实验通过 Kubernetes 标准的 CRD 方式定义，很方便的使用 Kubernetes 资源操作的方式来创建、更新、删除实验场景，包括使用 kubectl、client-go 等方式执行，同时也可以使用 chaosblade cli 工具执行。
+ChaosBlade 是阿里巴巴开源的一款遵循混沌工程原理和混沌实验模型的实验注入工具，帮助企业提升分布式系统的容错能力，并且在企业上云或往云原生系统迁移过程中提供业务连续性保障。
+ChaosBlade Operator 是 Kubernetes 平台实验场景的实现，将混沌实验通过 Kubernetes 标准的 CRD 方式定义，很方便地使用 Kubernetes 资源操作的方式来创建、更新、删除实验场景，包括使用 kubectl、client-go 等方式执行，同时也可以使用 chaosblade cli 工具执行。
 <!--truncate-->
 **本文将主要介绍 ChaosBlade 在 Kubernetes 中故障注入的底层实现原理、版本优化过程以及大规模应用演练测试。**
 
 ### 资源模型
-在 Kubernetes 中部署应用，通常我们会选择将应用定义为 pod、Deployment、Statefulset 等资源类型，这些都是 Kubernetes 已经内置的；在实际应用中，面对对复杂的应用场景，内置的资源类型是无法满足我们需求的，Operator 是一种解决复杂应用容器化的一种方案，通过自定义资源和自定义控制器来实现复杂应用容器化，chaosblade-operator 正是就是基于 Operator 实现的。
+在 Kubernetes 中部署应用，通常我们会选择将应用定义为 pod、Deployment、Statefulset 等资源类型，这些都是 Kubernetes 已经内置的；在实际应用中，面对复杂的应用场景，内置的资源类型是无法满足我们需求的，Operator 是一种解决复杂应用容器化的一种方案，通过自定义资源和自定义控制器来实现复杂应用容器化，chaosblade-operator 正是就是基于 Operator 实现的。
 在 Kubernetes 中安装完 chaosblade-operator 后，会生成一个 deployment 资源类型的  chaosblade-operator 实例、一个 daemonset 资源类型的  chaosblade-tool 实例、一个自定义资源定义，当然还包含 RABC、SA 等等其他资源；
 ![image.png](/img/2022-11-01-chaosblade-operator/chaosblade_operator_resource_mode.png)
 chaosblade 将自定义资源类型定义为  chaosblade ，简称 blade ；每次新建演练就可以通过 kubectl 或者 chaosblade cli 创建 blade 实例资源，blade 资源本身也包含了 chaosblade 混沌实验定义；
-chaosblade-operator 会监听 blade 资源的生命周期，当发现有 blade 资源实例被创建时，同时就能拿到混沌实验定义，然后解析实验定义，去调用 chaosblade-tool 真正的注入故障；
+chaosblade-operator 会监听 blade 资源的生命周期，当发现有 blade 资源实例被创建时，同时就能拿到混沌实验定义，然后解析实验定义，去调用 chaosblade-tool 真正地注入故障；
 chaosblade-tool 是 daemonset 资源类型，一个 Node 节点必定会部署一个 pod，从 Linux Namespace 的维度出发，该 pod 网络、PID 命名空间与 Node 节点处在同一命名空间，因此可以做到部分 Node 级别的演练。
 ### 生命周期
-在资源模型中，简单提到了 chaosblade-operator 会监听 blade 资源的创建； chaosblade-operator 实则会监听整个 blade 资源的生命周期，blade 资源的生命周期等同演练实验生命周期；chaosblade-operator 会根据 blade 资源状态去更新实验的状态
+在资源模型中，简单提到了 chaosblade-operator 会监听 blade 资源的创建； chaosblade-operator 实则会监听整个 blade 资源的生命周期，blade 资源的生命周期等同演练实验生命周期；chaosblade-operator 会根据 blade 资源状态去更新实验的状态。
 
 | blade 资源状态 | 实验过程 | CPU 负载案例 |
 | --- | --- | --- |
@@ -30,12 +30,12 @@ chaosblade-tool 是 daemonset 资源类型，一个 Node 节点必定会部署�
 | deleted(被删除) | 恢复演练 | 恢复演练 |
 
 ### 故障注入
-在资源模型中提到了 chaosblade-operator 发现有 blade 资源实例被创建时，同时就能拿到混沌实验定义，然后解析实验定义，去真正的注入故障；那么 chaosblade-operator 是如去真正的注入故障呢？
+在资源模型中提到了 chaosblade-operator 发现有 blade 资源实例被创建时，同时就能拿到混沌实验定义，然后解析实验定义，去真正地注入故障；那么 chaosblade-operator 是如何去真正地注入故障呢？
 其实在早期的 chaosblade-operator 版本中，大部分场景是通过将 chaosblade cli 工具通过 kubenetes API 通道复制到容器内部，然后再去容器内部执行命令来实现故障注入，整体实现方案入下图；
 ![1.5.x.png](/img/2022-11-01-chaosblade-operator/early_stage_chaosblade_operator.png)
 可以看到左边的 yaml 定义就是 Chaosblade 混沌实验模型定义，也是 blade 资源实例的一部分信息，当 blade 资源通过 kubectl apply 以后，chaosblade-operator 会监听到资源的创建，同时解析到实验定义；
-当解析道 scope = node 的时候，会找到 node 节点所在 chaosblade-tool pod 中执行命令，这些动作几乎对整个集群来说资源消耗也是极少的；
-但是当解析道 scope = pod 或者  scope = container  的时候，大部分场景 chaosblade-operator 会把 chaosblade cli 工具本身复制到业务容器内部，然后再去业务容器执行命令，工具包的大小、实验选择的容器数量、决定了资源的消耗大小，往往兼容性、版本更新等等都得不到很好的保障；
+当解析到 scope = node 的时候，会找到 node 节点所在 chaosblade-tool pod 中执行命令，这些动作几乎对整个集群来说资源消耗也是极少的；
+但是当解析到 scope = pod 或者  scope = container  的时候，大部分场景 chaosblade-operator 会把 chaosblade cli 工具本身复制到业务容器内部，然后再去业务容器执行命令，工具包的大小、实验选择的容器数量、决定了资源的消耗大小，往往兼容性、版本更新等等都得不到很好的保障；
 **在新版本的 chaosblade-operator 版本中，将在下面最初的问题、优化过程、实现原理等小节详细介绍。**
 ## 最初的痛点
 当一个云原生应用达到一定规模时，去进行演练；
@@ -113,7 +113,7 @@ echo PID >> /sys/fs/cgroup/cpu$(cat /proc/$(docker inspect --format "{{.State.Pi
 ks
 ```
 
-5. 此时可以观察到容器 CPU 达到 100%，而宿主机未达到，说明 CPU 负载只对容器产生了效果，运用同样的方式，可以做到资源占用形的任何故障场景，比如内存、IO 等
+5. 此时可以观察到容器 CPU 达到 100%，而宿主机未达到，说明 CPU 负载只对容器产生了效果，运用同样的方式，可以做到资源占用型的任何故障场景，比如内存、IO 等
 
 最终成功在不侵入该容器的情况下，给该容器注入 CPU 负载的场景。通过 Cgroups 控制组，还能做到其他 Cgroups 支持的子系统的场景注入，比如 CPU 高负载、内存占用高、IO 高负载等等；
 #### Linux Namespace
@@ -162,25 +162,25 @@ $ ip addr
 tc qdisc add dev eth0 root netem delay 100ms
 ```
 此时在客户端打开浏览器访问 `http://IP:8087` 会查看到有稳定 100ms 的延时，但是并不会对其他端口生效，比如 22、3306 等等；因为实际延时本身是作用在容器网络命名空间内，并且不会对宿主机生效。
-最终成功在不侵入该容器的情况下，给该容器注入网络延时的故障场景。LInux 提供了很多维度的命名空间隔离，并且允许加入任何类型的命名空间，通过 Linux Namespace ，还能做到文件删除、杀进程等等场景
+最终成功在不侵入该容器的情况下，给该容器注入网络延时的故障场景。Linux 提供了很多维度的命名空间隔离，并且允许加入任何类型的命名空间，通过 Linux Namespace ，还能做到文件删除、杀进程等等场景
 ### chaosblade 实现
-在  Chaosblade 1.6.x 版本已经通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，chaosblade-operator 主要负责监听 crd 资源状态变更，chaosblade-operator  不在去执行故障注入的操作，而且由作为 dasemonset 类型资源 chaosblade-tool 主要负责真正的注入故障，整体实现方案入下图：
+在  Chaosblade 1.6.x 版本已经通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，chaosblade-operator 主要负责监听 crd 资源状态变更，chaosblade-operator  不再去执行故障注入的操作，而是由作为 dasemonset 类型资源的 chaosblade-tool 主要负责真正地注入故障，整体实现方案入下图：
 
 ![image.png](/img/2022-11-01-chaosblade-operator/current_chaosblade_operator.png)
 
 同理可以看到左边的 yaml 定义就是 Chaosblade 混沌实验模型定义，也是 blade 资源实例的一部分信息，当 blade 资源通过 kubectl apply 以后，chaosblade-operator 会监听到资源的创建，同时解析到实验定义；
 当解析到 scope = node 的时候，会找到 node 节点所在 chaosblade-tool pod 中执行命令，这些动作几乎对整个集群来说资源消耗也是极少的，这部分和早期版本几乎是没有任何区别的；
-但是当解析道 scope = pod 或者  scope = container  的时候， chaosblade-operator 并不会把 chaosblade cli 工具本身复制到业务容器内部，更不会去容器里面执行相关命令，极大的减少了对 kubernetes API 的依赖；那么 chaosblade-operator 究竟是怎么做的呢？ chaosblade-operator 仅仅通过 kubernetes API  找到实验对象，即目标业务 pod，然后继续找到目标业务 pod 所在的节点上部署的 chaosblade-tool pod ，解析 pod 里面的容器名称，最后封装命令直接在 chaosblade-tool 执行命令，去真正的执行故障注入；在 chaosblade-tool 层注入故障的时候已经没有 pod 的概念，这一层是  chaosblade-operator 去解析和封装的；
-为何在目标业务 pod 所在的节点上部署的 chaosblade-tool 执行命令，能够直接对目标业务 pod 生效呢？如果你仔细阅读了之前 **Linux 虚拟化 **章节，相信你已经有了答案；chaosblade-tool 作为 daemonset 资源，拥有宿主机 PID 命令空间切换的能力，同时在资源定义时也已经宿主机将 `/sys/fs` 目录挂载进 chaosblade-tool  pod，使得 chaosblade-tool  能够自由更该进程的 cgroups 控制组；所以 chaosblade-tool 可以对该宿主机上任意容器注入故障，将 chaosblade-operator  的一部分工作剥离了出来，使用 chaosblade-operator  的职责更简单一且轻量级，符合最初的设计理论；
-Chaosblade-tool  通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，不论是性能、兼容性、稳定性都有极大的提升；因为大部分场景是可以直接 chaosblade-tool 执行的，只要保证  chaosblade-tool  容器依赖库版本和命令能够支持演练，就不会存在兼容性、稳定性等问题；就好比在早起的版本中，我们甚至需要考虑目标业务容器中没有 dd、tc 命令怎么，或者 dd 版本命令不兼容又怎么办等等问题。
+但是当解析到 scope = pod 或者  scope = container  的时候， chaosblade-operator 并不会把 chaosblade cli 工具本身复制到业务容器内部，更不会去容器里面执行相关命令，极大地减少了对 kubernetes API 的依赖；那么 chaosblade-operator 究竟是怎么做的呢？ chaosblade-operator 仅仅通过 kubernetes API  找到实验对象，即目标业务 pod，然后继续找到目标业务 pod 所在的节点上部署的 chaosblade-tool pod ，解析 pod 里面的容器名称，最后封装命令直接在 chaosblade-tool 执行命令，去真正地执行故障注入；在 chaosblade-tool 层注入故障的时候已经没有 pod 的概念，这一层是  chaosblade-operator 去解析和封装的；
+为何在目标业务 pod 所在的节点上部署的 chaosblade-tool 执行命令，能够直接对目标业务 pod 生效呢？如果你仔细阅读了之前 **Linux 虚拟化 **章节，相信你已经有了答案；chaosblade-tool 作为 daemonset 资源，拥有宿主机 PID 命令空间切换的能力，同时在资源定义时也已经将宿主机 `/sys/fs` 目录挂载进 chaosblade-tool  pod，使得 chaosblade-tool  能够自由更改进程的 cgroups 控制组；所以 chaosblade-tool 可以对该宿主机上任意容器注入故障，将 chaosblade-operator  的一部分工作剥离了出来，使用 chaosblade-operator  的职责更简单且轻量级，符合最初的设计理论；
+Chaosblade-tool  通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，不论是性能、兼容性、稳定性都有极大的提升；因为大部分场景是可以直接 chaosblade-tool 执行的，只要保证  chaosblade-tool  容器依赖库版本和命令能够支持演练，就不会存在兼容性、稳定性等问题；就好比在早起的版本中，我们甚至需要考虑目标业务容器中没有 dd、tc 命令怎么办，或者 dd 版本命令不兼容又怎么办等等问题。
 无论 kubernetes 使用 docker、contained、crio 或者其他容器运行时相关技术，Chaosblade 都能做到快速兼容，因为 Chaosblade 通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，对容器运行时相关的 API 依赖并不大，只需要找到容器 1 号进程即可；
 #### 场景分析
-首先先从 chaosblade 支持的故障场景出发，基于进程维度故障注入的方式可以分为两类**资源占用和状态变更；**
-**资源占用 **注入的方式很容易理解，通过运行可持续占用资源的进程，并且保证进程的持续运行，来达到占用系统资源的目的，通过有 CPU 满载、内存满载、磁盘IO负载、端口占用 等；
-**状态变更 **注入的方式可能不是那么贴切，此“状态”可以理解为磁盘可用大小、文件权限、pod 状态等等，实现这种类型的故障注入，我们需要通过运行一个进程来打包修该目标资源的状态即可，当然【状态变更】的方式也有可能进程需要运行很长时间来完成，与【资源占用】不同的时，他是需要一个终态来完成故障的注入，即进程执行成功，而不是需要保证进程的持续运行。
-将 chaosblade 支持的故障场景分类，得下如下表格：
+首先先从 chaosblade 支持的故障场景出发，基于进程维度故障注入的方式可以分为两类：**资源占用和状态变更；**
+**资源占用 **注入的方式很容易理解，通过运行可持续占用资源的进程，并且保证进程的持续运行，来达到占用系统资源的目的，通常有 CPU 满载、内存满载、磁盘IO负载、端口占用 等；
+**状态变更 **注入的方式可能不是那么贴切，此“状态”可以理解为磁盘可用大小、文件权限、pod 状态等等，实现这种类型的故障注入，我们需要通过运行一个进程来打包修该目标资源的状态即可，当然【状态变更】的方式也有可能进程需要运行很长时间来完成，与【资源占用】不同的是，它需要一个终态来完成故障的注入，即进程执行成功，而不是需要保证进程的持续运行。
+将 chaosblade 支持的故障场景分类，得到如下表格：
 
-| 场景 |  | 是否加入 Cgroup 控制 | 需要进入的命名空间 |
+| 场景 | 分类 | 是否加入 Cgroup 控制 | 需要进入的命名空间 |
 | --- | --- | --- | --- |
 | CPU | **资源占用** | 是 | PID |
 | 内存 | **资源占用** | 是 | PID |
@@ -192,10 +192,10 @@ Chaosblade-tool  通过 Linux Namespace 的隔离能力、Linux Cgroups 的限�
 | 文件场景 | 状态变更 | 否 | MNT |
 
 在资源占用的故障注入模式下，需要判断资源是否是宿主机级别共享的，并且是 Linux Cgroups 已经支持的子系统，比如 CPU、内存、磁盘IO 等等，只需要进入目标容器进程的 PID 命令空间，然后加入目标容器进程控制组即实现故障注入；也有比较特别的，比如网络端口占用，虽然它被列为属于资源占用的故障注入模式，但是端口是独立命名空间内共享的资源，所以他是需要通过 NET 命名空间切换才能实现的。
-在状态变更的故障注入模式下，通过需要根据具体场景，进入目标容器进程的命令空间去做一些操作，比如网络场景，需要进入 NET Namespace；文件场景需要进入 MNT Namespace 等等。
+在状态变更的故障注入模式下，通过需要根据具体场景，进入目标容器进程的命名空间去做一些操作，比如网络场景，需要进入 NET Namespace；文件场景需要进入 MNT Namespace 等等。
 在 chaosblade-1.6.x 版本下，也已经提供命名空间切换的实现，比如进入容器（进程 PID 是 35941）命名空间执行 ls 命令：
 ![image.png](/img/2022-11-01-chaosblade-operator/chaosblade_nsexec.png)
-结合场景的注入模式以及 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力，大都是情况下都能分析出场景应该通过什么样的方式在容器注入故障；
+结合场景的注入模式以及 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力，大多数情况下都能分析出场景应该通过什么样的方式在容器注入故障；
 ## 大规模应用演练
 在 Chaosblade 1.6.x 版本已经通过 Linux Namespace 的隔离能力、Linux Cgroups 的限制能力实现容器化故障注入，相比通过工具复制的方式，效率提升显著、兼容性更强、而且无侵入。
 在此章节通过实际场景来观测 chaosblade-operator 早期版本和 Chaosblade chaosblade-operator 1.6.x 版本的注入性能和资源消耗情况。

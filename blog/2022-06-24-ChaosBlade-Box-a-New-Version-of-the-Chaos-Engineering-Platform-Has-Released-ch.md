@@ -54,7 +54,7 @@ ChaosBlade-Box是面向多集群、多语言、多环境，开源的云原生混
 
 ![image.png](/img/blog/chaosblade-box-experiment.png)
 ![image.png](/img/blog/chaosblade-box-migrate.png)
-以下是在新版ChaosBlade-Box平台上进行一次演练的全过程，支持顺序执行、阶段执行两种流程编排，顺序执行指的是多个演练场景依次生效，阶段执行值得是多个演练场景同时生效。通过多种安全策略保证演练得到恢复，如手动处罚和自动停止，自动停止通过在演练配置的时候设置超时参数来进行配置，这样即便平台和探针（Agent）失联，无法进行手动停止时，也能在超时时间到达的时候，自动恢复故障。
+以下是在新版ChaosBlade-Box平台上进行一次演练的全过程，支持顺序执行、阶段执行两种流程编排，顺序执行指的是多个演练场景依次生效，阶段执行指的是多个演练场景同时生效。通过多种安全策略保证演练得到恢复，如手动触发和自动停止，自动停止通过在演练配置的时候设置超时参数来进行配置，这样即便平台和探针（Agent）失联，无法进行手动停止时，也能在超时时间到达的时候，自动恢复故障。
 ![image.png](/img/blog/chaosblade-box-workflow.png)
 ![image.png](/img/blog/chaosblade-box-result.png)
 # 新版优势是什么？

@@ -21,7 +21,7 @@ hide_table_of_contents: false
 
 不同企业关注和引入混沌工程的时间不同，但开局类似。阿里巴巴最开始引入混沌工程，也是为了解决实际问题。据中亭介绍，阿里巴巴探索混沌工程的时间线和 Netflix 差不多，只不过 Netflix 从基础资源开始实践，阿里巴巴则是从应用层开始。阿里巴巴最开始是为了解决技术架构变化和组织变化的问题，才去演进一些新的实践。
 
-![alibaba发展历程](https://mmbiz.qpic.cn/mmbiz_png/YriaiaJPb26VPjv3GbW4HtPl3XuSRibovbY2lN9tfRJa41L2pbQHibwhzb3ib7km5CyiacOxibMLoiaLxY056E4vHZzx3g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![alibaba发展历程](/img/blog/alibaba-chaos-engineering-roadmap-until-2021.png)
 
 混沌工程一步步走进阿里巴巴，可以分为五个阶段：
 
