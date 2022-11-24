@@ -169,6 +169,21 @@
                   "id": "version-1.7.0/experiment-types/host/blade create process stop"
                 }
               ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Script",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create script delay"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create script exit"
+                }
+              ]
             }
           ]
         },

@@ -54,6 +54,12 @@ module.exports = {
               "experiment-types/host/blade create process kill",
               "experiment-types/host/blade create process stop",
             ]
+          },
+          {
+            "Script": [
+              "experiment-types/host/blade create script delay",
+              "experiment-types/host/blade create script exit",
+            ]
           }
         ]
       },
