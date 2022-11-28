@@ -12,7 +12,7 @@ id: blade create network reorder
 本地端口和远程端口之间是或的关系，即这两个端口都会生效，只要指定了本地端口或者远程端口，无需指定需要排除的端口。端口与 IP 之间是与的关系，即指定的 IP:PORT 发生包重排。
 
 ## 命令
-* `blade create network occupy -h`
+* `blade create network reorder -h`
 
 ## 参数
 
