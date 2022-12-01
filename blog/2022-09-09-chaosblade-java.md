@@ -21,7 +21,7 @@ hide_table_of_contents: false
 # 2.Java场景
 在介绍前先了解下ChaosBlade Java场景的注入流程。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014005578-270f85a6-fd83-4e0a-b43b-dc97eb26f510.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=232&id=u536ca7fe&margin=%5Bobject%20Object%5D&name=image.png&originHeight=464&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&size=107988&status=done&style=none&taskId=u5f0cd5e6-7193-4e6e-8b83-392a6b276dc&title=&width=799)Java场景的故障注入是基于字节码增强框架JVM-Sandbox实现的，注入一个故障分为两步：
+![injection_process.png](/img/2022-09-09-chaosblade-java/injection_process.png)Java场景的故障注入是基于字节码增强框架JVM-Sandbox实现的，注入一个故障分为两步：
 
 1. ChaosBlade 执行prepare命令，触发sandbox对目标JVM挂载 Java agent。
 2. ChaosBlade 执行create命令，触发sandbox对目标JVM进行字节码增强，从而达到故障注入的目的。
@@ -32,22 +32,22 @@ hide_table_of_contents: false
 ## 3.1 现象
 本地模拟一个简单的HTTP服务，控制其CPU Idle在50%左右，当执行blade prepare jvm --pid挂载agent后，发现CPU空闲率迅速下降，并且下降的幅度较大。在生产中进行故障注入有可能会直接让Idle掉低从而触发告警
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014042664-6aa32560-c4ad-4cf9-af1c-12bbe48d3ef6.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=172&id=u78f2e45e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=274&originWidth=1188&originalType=binary&ratio=1&rotation=0&showTitle=false&size=82193&status=done&style=none&taskId=u4e1a626e-a680-4a97-899e-090dc4062f5&title=&width=745)
+![prepare_phenomenon.png](/img/2022-09-09-chaosblade-java/prepare_phenomenon.png)
 
 ## 3.2 定位
 通过采集CPU profile生成火焰图来观察在执行blade prepare时CPU的使用情况，如下图可以看到loadPlugins方法是资源消耗的重灾区
 
-[image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014182779-f714d227-c3c4-45ce-822b-7b68bc23e0b8.png#clientId=u52ad7d43-5028-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=325&id=u24cbcf93&margin=%5Bobject%20Object%5D&name=image.png&originHeight=484&originWidth=1074&originalType=binary&ratio=1&rotation=0&showTitle=false&size=354434&status=done&style=none&taskId=u2fe4bf22-dd36-46c5-adf4-77b0adb50c6&title=&width=721)
+![prepare_cpu_profile.png](/img/2022-09-09-chaosblade-java/prepare_cpu_profile.png)
 
 loadPlugins方法中主要是加载ChaosBlade Java中支持的全部插件，例如dubbo,redis,kafka等。当加载了这些插件后就可以进行故障注入了。加载插件的过程中会对插件中定义的类以及方法进行字节码增强。
 
-![attach&加载.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014673785-ea235bde-77c7-49da-a083-df8cf33a8fee.png#clientId=u1e121cd7-cea1-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u9a60fe1b&margin=%5Bobject%20Object%5D&name=attach%26%E5%8A%A0%E8%BD%BD.png&originHeight=258&originWidth=1532&originalType=binary&ratio=1&rotation=0&showTitle=false&size=30862&status=done&style=none&taskId=u69b3ea87-d7a9-4501-ab63-a88d77fea12&title=)
+![attach_and_all_load.png](/img/2022-09-09-chaosblade-java/attach_and_all_load.png)
 
 导致CPU消耗的问题就在于加载全量的插件耗时较大，而我们故障注入时会选择具体某个插件进行故障注入，显然全量加载并不是最优解
 
 ## 3.3 优化
 优化思路:既然故障注入时会选择具体的插件，那么通过懒加载的方式即可解决，当我们要针对哪一个插件故障注入就加载哪个插件，加载的粒度变小，CPU的消耗自然就小了
-![attach.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014682629-b696cbe2-83ff-42d4-bcd8-ffa3212b51c3.png#clientId=u1e121cd7-cea1-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=uf7664a78&margin=%5Bobject%20Object%5D&name=attach.png&originHeight=250&originWidth=1438&originalType=binary&ratio=1&rotation=0&showTitle=false&size=28442&status=done&style=none&taskId=ua75afa23-dfe9-4a58-967f-918be317eac&title=)
+![attach_and_lazy_load.png](/img/2022-09-09-chaosblade-java/attach_and_lazy_load.png)
 
 核心代码：
 在故障注入阶段，通过指定的插件进行懒加载。
@@ -72,16 +72,16 @@ private void lazyLoadPlugin(ModelSpec modelSpec, Model model) throws ExperimentE
 
 ## 3.4 改进后效果
 CPU Idle 下降幅度降低
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014777027-115887c7-3f45-4920-ac86-386ea965676b.png#clientId=u1e121cd7-cea1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=214&id=u9b9f16de&margin=%5Bobject%20Object%5D&name=image.png&originHeight=378&originWidth=1157&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75312&status=done&style=none&taskId=u0d4cf015-6977-4180-af58-a7e30591c40&title=&width=655.5)
+![optimize_cpu_idle.png](/img/2022-09-09-chaosblade-java/optimize_cpu_idle.png)
 
 火焰图中的CPU使用率几乎“消失”
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014826580-a39a6aeb-1aaf-4395-9e86-a52c722a7e93.png#clientId=u1e121cd7-cea1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=284&id=u706b2e3e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=484&originWidth=1146&originalType=binary&ratio=1&rotation=0&showTitle=false&size=413253&status=done&style=none&taskId=ua87d9097-7a43-4975-b0b4-35889169026&title=&width=673)
+![optimize_cpu_profile.png](/img/2022-09-09-chaosblade-java/optimize_cpu_profile.png)
 
 # 4.create(注入)阶段优化
 在实际使用中发现故障注入导致CPU Idle跌底的情况比较多，跌底的持续时间是比较短暂的基本都在20S左右，有一些情况是和目标服务的业务代码有关系或者是和目标服务的jvm参数设置有关，本文只介绍由ChaosBlade导致的或间接导致的CPU Idle跌底问题。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662014860747-8535e13d-dfa9-45eb-b9ca-56a51487c8a6.png#clientId=u1e121cd7-cea1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=203&id=uec06453d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=335&originWidth=1188&originalType=binary&ratio=1&rotation=0&showTitle=false&size=66082&status=done&style=none&taskId=u80bd32f1-7e4c-4bc7-821a-6d0063e4e10&title=&width=719)
+![create_cpu_idle.png](/img/2022-09-09-chaosblade-java/create_cpu_idle.png)
 
 > CPU Idle跌底:这里指的是CPU 空闲率降低为0，同时意味着CPU 使用率达到了100%
 
@@ -93,22 +93,22 @@ ChaosBlade中支持对dubbo provider或者consumer进行故障注入（例如抛
 
 **正常情况：**一个既是provider又是consumer的服务，它的请求处理流程是流量会首先进入到provider经过处理后交由业务逻辑执行，最后通过consumer将请求转发出去。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662015356816-ccd9ffd2-8b25-4299-8271-109f11f3af83.png#clientId=u2a5f2d5c-785c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=223&id=ua9805d3c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=446&originWidth=2062&originalType=binary&ratio=1&rotation=0&showTitle=false&size=84435&status=done&style=none&taskId=u363047b1-4e34-4518-ac7d-973c7beb21d&title=&width=1031)
+![dubbo_normal.png](/img/2022-09-09-chaosblade-java/dubbo_normal.png)
 
 **针对consumer故障注入：**当利用ChaosBlade对consumer进行故障注入时，流量到达consumer就会抛出异常，不会将流量真正的转发出去，从而达到一个模拟故障发生的效果。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662015418084-149453ef-e51d-4ebf-ae78-ef72bd75c610.png#clientId=u2a5f2d5c-785c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=310&id=u4e441628&margin=%5Bobject%20Object%5D&name=image.png&originHeight=620&originWidth=2080&originalType=binary&ratio=1&rotation=0&showTitle=false&size=109051&status=done&style=none&taskId=u07dd9a40-afa8-4df7-9e7e-a34c5b07b51&title=&width=1040)
+![dubbo_consumer.png](/img/2022-09-09-chaosblade-java/dubbo_consumer.png)
 
 **针对provider故障注入：**当利用ChaosBlade对provider进行故障注入时，流量到达provider就会抛出异常，不会将流量向下转发。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662015421125-2b212d41-659f-42b7-af77-75bd47f6a427.png#clientId=u2a5f2d5c-785c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=311&id=uc41e07ca&margin=%5Bobject%20Object%5D&name=image.png&originHeight=622&originWidth=2082&originalType=binary&ratio=1&rotation=0&showTitle=false&size=108382&status=done&style=none&taskId=u5ce1b3ab-81a4-45fb-8850-3fd25e6c4a8&title=&width=1041)
+![dubbo_provider.png](/img/2022-09-09-chaosblade-java/dubbo_provider.png)
 
 **上面说的都是预期效果，实际上ChaosBlade无论是对provider或者consumer进行故障注入时，都会同时provider以及consumer同时进行故障注入，这就有可能造成额外的资源浪费**。
 
 1. 字节码增强的类变的多了
 2. 例如当注入provider故障时，我们希望流量不要经过业务逻辑，因为一旦是在consumer也抛出了异常，流量返回时自然要经过业务逻辑的异常处理（例如打印error日志，重试等），这就有可能因为业务逻辑的处理问题导致CPU Idle下降。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662015488924-3b805ca7-7b55-4500-8225-c90e5d7285d6.png#clientId=u2a5f2d5c-785c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=306&id=u4b3c3902&margin=%5Bobject%20Object%5D&name=image.png&originHeight=612&originWidth=2108&originalType=binary&ratio=1&rotation=0&showTitle=false&size=112277&status=done&style=none&taskId=u8fd572bc-c7eb-4e0f-b4cc-3423c81e79a&title=&width=1054)
+![dubbo_consumer_and_provider.png](/img/2022-09-09-chaosblade-java/dubbo_consumer_and_provider.png)
 
 **问题原因:因为ChaosBlade的字节码增强逻辑是按照插件的粒度进行的，例如dubbo就属于一个插件，不过像dubbo和kafka这种既有针对provider又有针对consumer故障注入的插件就会同时对provider和consumer都注入故障了。**
 
@@ -156,11 +156,11 @@ ChaosBlade命令:
 
 **故障注入前:**
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662024346261-4f84e22b-db13-4626-a28d-8bb0edbbed64.png#clientId=u0a32c8ae-289c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=421&id=u3c6a7cd4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=716&originWidth=612&originalType=binary&ratio=1&rotation=0&showTitle=false&size=84822&status=done&style=none&taskId=u0a4730b2-934b-4365-8cf9-509d3a08f42&title=&width=360)
+![before_fault_injection.png](/img/2022-09-09-chaosblade-java/before_fault_injection.png)
 
 **故障注入后:**
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662024384319-6c65bb55-30d3-454c-9903-3259db20ada5.png#clientId=u0a32c8ae-289c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=456&id=uccb4930e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=768&originWidth=612&originalType=binary&ratio=1&rotation=0&showTitle=false&size=97382&status=done&style=none&taskId=ube55edef-27ae-4a7b-91fa-f9c7096278c&title=&width=363)
+![after_fault_injection.png](/img/2022-09-09-chaosblade-java/after_fault_injection.png)
 
 BLOCKED的线程堆栈:
 ```java
@@ -216,7 +216,7 @@ at com.alibaba.jvm.sandbox.core.enhance.weaver.EventListenerHandler.handleOnRetu
 
 其实是在ChaosBlade 注入自定义脚本时，自定义脚本（Java代码）只是被当作一段字符串来处理，当真正的激活插件时会把这段字符串解析，然后变成Java代码让jvm进行加载编译并执行这段代码。
 
-![脚本编译.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662024674788-83a1c267-9a95-416b-a84c-c8a8c1ffbb5a.png#clientId=u854e1a66-dc20-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u15e852b9&margin=%5Bobject%20Object%5D&name=%E8%84%9A%E6%9C%AC%E7%BC%96%E8%AF%91.png&originHeight=666&originWidth=1676&originalType=binary&ratio=1&rotation=0&showTitle=false&size=115604&status=done&style=none&taskId=u046c9be7-044c-44ac-997a-b5d9a724362&title=)
+![script_compilation.png](/img/2022-09-09-chaosblade-java/script_compilation.png)
 
 **问题就在这里,当故障注入时外部流量也是在源源不断的调用当前服务的。那么按照上面说的逻辑就有可能在激活插件时，因为外部流量也在不断调用，导致大量请求都来解析自定义脚本，这样的话就造成了线程被blocked，因为解析自定义脚本到正确的让jvm加载它，这个过程是相对复杂且缓慢的，而且有的地方是要保证线程安全的。**
 > 其实ChaosBlade 也做了缓存，只要自定义脚本被编译过一次，后面的请求就会直接执行这个脚本了，但这样的缓存在并发请求的场景下编译效果并不好
@@ -227,7 +227,7 @@ at com.alibaba.jvm.sandbox.core.enhance.weaver.EventListenerHandler.handleOnRetu
 
 ChaosBlade注入故障分为两步,第一步挂载agent时拿不到自定义脚本信息，那么就在第二步**激活插件前进行加载**（因为一旦插件被激活后就有流量会执行到故障注入的埋点方法从而触发脚本的编译了）
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662024727494-f322ffc3-e397-406e-8d15-370d24673b78.png#clientId=u854e1a66-dc20-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=334&id=ub7fddc91&margin=%5Bobject%20Object%5D&name=image.png&originHeight=668&originWidth=1668&originalType=binary&ratio=1&rotation=0&showTitle=false&size=119885&status=done&style=none&taskId=uaf619068-ab50-4976-8b63-5af78a7b60b&title=&width=834)
+![script_optimize.png](/img/2022-09-09-chaosblade-java/script_optimize.png)
 
 **这个优化思路不仅仅适用于自定义脚本故障，例如自定义抛异常故障也是可以的。**
 
@@ -274,7 +274,7 @@ at org.apache.log4j.Category.forcedLog(Category.Java:391)
 at org.apache.log4j.Category.log(Category.Java:856)
 at org.slf4j.impl.Log4jLoggerAdapter.log(Log4jLoggerAdapter.Java:601)
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662024805257-1df804ba-b2f4-4718-b85f-576efda49d21.png#clientId=u854e1a66-dc20-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=307&id=u7fc7ec6d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=435&originWidth=612&originalType=binary&ratio=1&rotation=0&showTitle=false&size=115307&status=done&style=none&taskId=u0fc9e5fd-9ce3-4d99-971d-b9c08f05cd2&title=&width=432)
+![log_print_optimize.png](/img/2022-09-09-chaosblade-java/log_print_optimize.png)
 
 2. ChaosBlade 自身的日志打印,每次故障注入规则匹配成功时都会输出info日志
 ```java
@@ -362,11 +362,11 @@ Their lifetime is usually scoped to that of the loading classloader - when a loa
 
 在使用ChaosBlade注入无效后，登陆目标机器上观察日志，首先发现 jvm-sandbox 在 attach 目标 jvm 时失败
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025134235-ccc6d0c6-f059-4024-8b21-e6f108ef0d4e.png#clientId=u854e1a66-dc20-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=146&id=u252466f4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=291&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=565948&status=done&style=none&taskId=u6ffeaa9f-3222-47f4-b5ee-9e6f0eab537&title=&width=960)
+![attach_jvm_fail.png](/img/2022-09-09-chaosblade-java/attach_jvm_fail.png)
 
 其次看到更关键的日志:Metaspace 溢出了！！！
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025159003-cbe3e050-32c9-4cea-8bfb-b3950170f51c.png#clientId=u854e1a66-dc20-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=343&id=u74144a61&margin=%5Bobject%20Object%5D&name=image.png&originHeight=686&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1121123&status=done&style=none&taskId=u9e3ca2a4-cdec-419c-ab47-d1dfa4a9426&title=&width=960)
+![metaspace_out_of_memory.png](/img/2022-09-09-chaosblade-java/metaspace_out_of_memory.png)
 
 ## 5.2 定位
 在文章开始介绍了ChaosBlade注入Java故障的流程，知道在故障注入时会将 jvm-sandbox 动态的挂载(attach)到目标进程 JVM 上,在 attach 后会加载 sandbox 内部 jar 以及 sandbox 的自定义模块 jar 等，在这个过程中会加载大量的类，当加载类时会分配 Metaspace 空间存储类的元数据。
@@ -390,11 +390,11 @@ Their lifetime is usually scoped to that of the loading classloader - when a loa
 
 TraceClassLoading 和 TraceClassUnloding 参数则是为了观察 JVM-SANDBOX 在故障注入和清除时加载/卸载类的信息。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025224907-466c59fa-2368-42ac-b8d0-310a69b2dc3f.png#clientId=u4157e217-e5f5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=392&id=ub4ebcc30&margin=%5Bobject%20Object%5D&name=image.png&originHeight=784&originWidth=1420&originalType=binary&ratio=1&rotation=0&showTitle=false&size=110130&status=done&style=none&taskId=u3515020a-9a7c-4358-94e5-8d9ce0b9432&title=&width=710)
+![jvm_sandbox.png](/img/2022-09-09-chaosblade-java/jvm_sandbox.png)
 
 在多次注入以及清除的操作后，复现了线上业务出现的 Metaspace OOM，可以看到在多次注入的过程中，Metaspace 一直没有被回收过，占用空间曲线是一路上升。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025257540-54ad0e55-7bbb-4d6b-b974-254e786d8a72.png#clientId=u4157e217-e5f5-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=661&id=u548266fd&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1321&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=200347&status=done&style=none&taskId=uab1cb32a-8508-4f99-8943-d602ae934ed&title=&width=960)
+![memory_pool_metaspace.png](/img/2022-09-09-chaosblade-java/memory_pool_metaspace.png)
 
 **Metaspace OOM 是因为 Metaspace 没有进行过回收，Metaspace 回收的前提是 ClassLoader 关闭，而 JVM-SANDBOX 在 shutdown 时会关闭 ClassLoader。JVM-SANDBOX 中自定义的 ClassLoader 都是继承了 URLClassLoader，URLClassLoader 的关闭方法 官方介绍：**
 ```java
@@ -409,13 +409,13 @@ The URLClassLoader close() method effectively eliminates the problem of how to s
 **验证猜想**
 **在故障清除后，在目标服务的方法上 debug 看一下线程信息，果然在 threadLocal 中找到了两个 jvm-sandbox 的内部类（EventProcesser$Process,SandboxProtector）的引用。说明猜想是对的，问题的原因就是出现在这里了**
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025409608-049339d0-4065-4e90-b6de-d27fd125b5f6.png#clientId=u90f09cf4-59dc-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=662&id=u56284955&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1324&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=677495&status=done&style=none&taskId=u3ddb2694-e1f6-4055-870b-c894ab9c7a5&title=&width=960)
+![current_thread.png](/img/2022-09-09-chaosblade-java/current_thread.png)
 
 jvm-sandbox源码在这里就不带大家分析了，感兴趣的可以查看这篇[文章](https://xie.infoq.cn/article/c5be9834709f7eb48cfa683b1)。主要是 jvm-sandbox 的代码实现有 bug，在以下两种情况会导致 processRef 的 ThreadLocal 没有及时 remove 造成泄漏
 
 1. 假如在执行注入故障的过程中，进行故障清除会导致泄漏。如下：
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025438733-39f99d72-7d45-477d-8bae-1b4fe23fa0db.png#clientId=u90f09cf4-59dc-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=612&id=u5597fc7a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1224&originWidth=1556&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1398788&status=done&style=none&taskId=ud0fe7ed4-f453-4fdb-b725-562334731c6&title=&width=778)
+![fault_inject_and_clear.png](/img/2022-09-09-chaosblade-java/fault_inject_and_clear.png)
 
 2. 假设使用了 jvm-sandbox 的特性-流程变更（例如立即返回，立即抛出异常），本质也是 thread local 没有及时 remove，导致造成了泄漏
 
@@ -426,11 +426,11 @@ jvm-sandbox源码在这里就不带大家分析了，感兴趣的可以查看这
 ## 5.4 改进后效果
 启动参数还是相同的 MaxMetaspaceSize=30M，经过优化后多次注入和清除不会出现 Metaspace OOM，Metaspace可以被回收了。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025496836-b6895072-2d92-46ea-ba0f-59ab65035aff.png#clientId=u90f09cf4-59dc-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=638&id=u39968c09&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1275&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=143820&status=done&style=none&taskId=ub9a9c81b-5e4b-42d7-942a-51a6015c5c6&title=&width=960)
+![no_metaspace_oom.png](/img/2022-09-09-chaosblade-java/no_metaspace_oom.png)
 
 卸载类的信息也打印出来了
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662025512805-62c158bc-61fc-4443-befd-b10445f9fb92.png#clientId=u90f09cf4-59dc-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=344&id=u051ce70b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=687&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=344964&status=done&style=none&taskId=uebfee1f3-f546-47a5-a96e-0725dace717&title=&width=960)
+![print_uninstall_class.png](/img/2022-09-09-chaosblade-java/print_uninstall_class.png)
 
 ## 5.4 再次优化
 **虽然我们解决了JVM-Sandbox的ThreadLocal泄漏问题，但是由于Metaspace的内存分配以及回收机制还是有可能导致OOM!!!.**
@@ -466,7 +466,7 @@ public static void agentmain(String featureString, Instrumentation inst) {
 
 后面我们会根据这个思路，对整个故障注入流程进行优化，相信会有更多的提升。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/215568/1662372406854-f575ffcf-01f9-4832-ae28-280d4b1848eb.png#clientId=u72ad57af-f46a-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=371&id=ue01bb516&margin=%5Bobject%20Object%5D&name=image.png&originHeight=742&originWidth=1584&originalType=binary&ratio=1&rotation=0&showTitle=false&size=185312&status=done&style=none&taskId=ue7756adc-9d3d-40e1-a8d8-27adc8ff130&title=&width=792)
+![optimize_thought.png](/img/2022-09-09-chaosblade-java/optimize_thought.png)
 
 # 6.JIT(及时编译)导致CPU抖动
 ## 6.1 问题描述
