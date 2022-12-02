@@ -22,11 +22,11 @@ All CPU cores on node B in Kubernetes cluster A are fully utilized, resulting in
 The network of pod D in the Kubernetes cluster C is abnormal, which causes access exceptions in the service related to D.
 We can use the following sentence to describe the failure: A certain component on a certain machine (or resources in the cluster, such as node and pod) failed, which caused the related impact. We can also view the fault detail by splitting the description, as shown in the following figure:
 
-![](https://yqintl.alicdn.com/b137f6819df734ba681cf37d6005e4a24cbb9af7.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/b137f6819df734ba681cf37d6005e4a24cbb9af7.png)
 
 These four parts can be used to describe the existing fault scenario. Therefore, we have abstracted a fault scenario model, also known as the chaos experimental model.
 
-![](https://yqintl.alicdn.com/795a1dba3eeeff01bcb04e277687f1cc4972a800.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/795a1dba3eeeff01bcb04e277687f1cc4972a800.png)
 
 ## 2. An Introduction to the Experimental Model
 This experimental model is described in detail below:
@@ -80,7 +80,7 @@ At the beginning of designing ChaosBlade, the ease of use and the convenience of
 - Kubernetes Platform: Experimental scenarios, such as CPU, memory, network, disk, and process on nodes, experimental scenarios in Pod network and the Pod itself, such as killing Pod, and experimental scenarios in containers, such as the preceding Docker container
 - Cloud Resources: Alibaba Cloud ECS downtime and other experimental scenarios
 ## 2. Tool Usage
-![](https://yqintl.alicdn.com/ca4801527fab0074b2a0fd4d675569e453e3f7e8.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/ca4801527fab0074b2a0fd4d675569e453e3f7e8.png)
 
 ChaosBlade is a tool that can be used by downloading and decompressing directly. It does not need to be installed. The calling mode it supports includes a CLI mode that directly executes blade commands.
 
@@ -89,7 +89,7 @@ For example, in the figure above about network latency, if you add the -h parame
 Another way to call ChaosBlade is Web mode, which exposes HTTP services by executing server commands. At the upper level, if you build your chaos experimental platform, you can call ChaosBlade directly through HTTP requests.
 
 ## 3. Tool Architecture Design
-![](https://yqintl.alicdn.com/16a9118e25ea689b30a88a6a67dd4ba7e1ef8838.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/16a9118e25ea689b30a88a6a67dd4ba7e1ef8838.png)
 
 ChaosBlade is packaged into independent projects according to the field, and each project is implemented according to the best practices of each field. This meets the usage habits of each field and establishes the relationship with the chaosblade cli project through the chaos experimental model, making it convenient to use ChaosBlade for uniform calls. The experimental scenarios in each field are described in YAML files based on the chaos experimental model and exposed to the upper chaos experiment platform. The platform automatically senses the changes of the experimental scenario according to the changes in the description files. The platform can also be developed when no new scenarios are needed. This way, the chaos platform can focus more on other parts of the chaos project. The currently included actuator items are listed below:
 
@@ -103,18 +103,18 @@ ChaosBlade is packaged into independent projects according to the field, and eac
 ## 4. Examples
 An example of Dubbo microservice is used to introduce the use of ChaosBlade. This microservice Demo involves three-level calls. The consumer calls the provider, and the provider calls the base. The provider also calls the mk-demo database. The provider and the base have two instances.
 
-![](https://yqintl.alicdn.com/e203a88f1894dd439c1e31172a99245cc1039d79.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/e203a88f1894dd439c1e31172a99245cc1039d79.png)
 
 The experimental scenario of this example is database call delay. First, we define the monitoring metrics: the number of slow SQL statements and alert information. The expected assumption: the number of slow SQL statements increases, and the DingTalk group receives slow SQL alerts. Next, perform the experiment. We use chaosblade directly. You can look at the lower left part of the figure above. When we inject the calls of MySQL query for demo-provider, if the database is demo and the table name is d_discount, 50% of query operations will be delayed by 600 milliseconds.
 
-![](https://yqintl.alicdn.com/2f6a45bd3f203182e552578bf7a6abd261e8c582.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/2f6a45bd3f203182e552578bf7a6abd261e8c582.png)
 
 We use Alibaba Cloud ARMS for monitoring and alerting. As you can see, the DingTalk group receives an alert soon after performing the chaos experiment. The effect meets the expectation by comparing it with the monitoring metrics defined earlier. However, it should be noted that the results from this instance does not mean it will meet the expectation in the future, so continuous verification by chaos engineering is needed. If slow SQL statements occur, ARMS tracing analysis can be used to troubleshoot and locate them. You can see which statement is slow in execution.
 
 # Chaos Engineering Platform: chaosblade-box
 Users expect to focus on solving system high availability problems through chaos engineering rather than the selection and deployment of experimental tools. Thus, ChaosBlade is upgraded, and the open-source chaosblade-box, a chaos engineering platform, is provided. The platform hosts mainstream chaos experimental tools, automates the deployment of tools, and implements chaos engineering through a unified operation page.
 
-![](https://yqintl.alicdn.com/fad6c07086319b8eea7d555cd2f8a35631756f34.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/fad6c07086319b8eea7d555cd2f8a35631756f34.png)
 
 The following section describes chaosblade-box through its features, architecture design, and use cases.
 
@@ -128,18 +128,18 @@ It has the following features:
 - Multi-Dimensional Experiment Mode: It supports experiment orchestration from the dimension of hosts to Kubernetes resources and applications.
 - Integrated Cloud-Native Ecosystem: It uses Helm for deployment management, integrates Prometheus for monitoring, and supports the hosting of cloud-native experimental tools.
 ## 2. Platform Architecture Design
-![](https://yqintl.alicdn.com/73a5c9df7f3036da52d543bd6e508570bd68bffa.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/73a5c9df7f3036da52d543bd6e508570bd68bffa.png)
 
 You can use the console page to automate the deployment of managed tools, such as chaosblade and LitmusChaos, and unify the experimental scenarios according to the chaos experimental model established by the community. You can also divide the target resources according to hosts, Kubernetes, and applications and use the target manager to control them. On the experiment creation page, you can select target resources in a visible way. The platform executes experimental scenarios of different tools by calling chaos executor. You can observe the experiment metrics with access to Prometheus monitoring. Rich experiment reports will be provided in the future. The deployment of chaosblade-box is also very simple.
 
 You can see the details on here.
 
 ## 3. Instructions
-![](https://yqintl.alicdn.com/1d6afaff51d1d882f968fbc79647b1bf255b8030.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/1d6afaff51d1d882f968fbc79647b1bf255b8030.png)
 
 After the installation and deployment are completed, you can configure the Kubernetes cluster or host information to view the cluster or host data on the Machine List page. Click Experiment Management to create the experiment. The drill dimensions include the host, node, pod, and container. After you select the corresponding dimension, the corresponding resource list appears, and you can select it easily. The drill contains all hosted experimental scenarios. After the experiment is created, you are redirected to the drill details page automatically. Click Execute to jump to the task details page.
 
-![](https://yqintl.alicdn.com/2c1341f8817ac6529073c2ea2e7541243995b19e.png)
+![](/img/2022-03-03-chaosblade-from-tool-to-platform/2c1341f8817ac6529073c2ea2e7541243995b19e.png)
 
 The page of drill task details displays the basic information of the experiment and the status of the experiment task. You can easily control the experiment and clarify the status of the experiment task.
 
