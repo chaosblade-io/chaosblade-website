@@ -2,41 +2,39 @@
 title: Platform Box Quick Start
 ---
 
-为验证系统的容错性和可恢复性等性能，您可以将合适的故障注入到系统中，观察系统的表现，从而识别系统中可能存在的问题并及时修复。本文以CPU满载演练为例，介绍如何使用Box平台进行故障注入。
+To verify the fault tolerance and recoverability of the system, you can inject appropriate faults into the system and observe the system performance to identify possible problems and rectify them in time. This paper uses the CPU full load experiment as an example to describe how to use the Box platform for fault injection.
+## Step 1: Install the probe
+Probes are primarily a command channel and data collection, so they need to be installed on the machine or cluster they are **running on**
+Go to the Box main screen, select **Overview** in the left navigation bar, and click **Install a experiment Probe** in the Welcome **Failure experiment** section. For details, see [Probe Installation Guide](./installation-and-deployment/agent-install.md)
+## Step 2: Creating an experiment
 
-## 步骤一：安装探针
-探针主要功能是命令下发通道和数据收集，所以需要在**待演练**的目标机器或集群中安装探针
-进入Box主页面，在左侧导航栏中选择**概览**，在欢迎**体验故障演练**区域单击**安装演练探针**。具体操作请参见[探针安装指南](./installation-and-deployment/agent-install.md)
-## 步骤二：创建演练
+1. In the left navigation bar of the AHAS console.Select **My Space**
+2. On the top left corner of the **My Space** page click **New experiment**, then click  **New Blank experiment**.
+3. On the **experiment Configuration** page, fill in the **experiment Name**, **experiment description**, and **experiment label**.
+4. Do the following configuration in the **Experiment Object** section of the **Configuration TAB** ![image.png](/img/zh/quick-start/drill-target.png)
+   1. On the **experiment object** page,set the group name、resource type, and machine list.
+       > **Note** **the machine list**  You can select one or more machines.
+   2. Click **+ Adding an experiment**，then select **The CPU on the host is fully loaded**，then click **confirm**.
+   3. Click **save**，then click **next**.
+5. At **Global Configuration** complete the following configuration.
+   1. Select **Experiment Process** for **Execution in sequence**.
+   2. At **Recovery Policy** Area **+ Adding a Policy，** select **CPU Specifications**，then click **confirm**.
+   3. Set the automatic recovery time to 30 minutes.
+6. click **Next**.
+## Step 3：Executing an experiment
 
-1. 在AHAS控制台左侧导航栏中选择** 我的空间**。
-2. 在**我的空间**页面左上角单击**新建演练**，然后单击**新建空白演练**。
-3. 在**演练配置**页面，填写**演练名称**、**演练描述**和**演练标签**。
-4. 在**配置**页签的**演练对象**区域完成以下配置。![image.png](/img/zh/quick-start/drill-target.png)
-   1. 在**演练对象**页面设置分组名称、资源类型和机器列表等。
-> **说明** **机器列表**中可以选择一台或多台机器。
+1. Choose from the navigation bar on the left **chaos experiment > my space**。
+2. At **my space** Click on the right of the target experiment task **experiment of the operation column**，then at **Start performing the experiment** Click in the dialog box **confirm**.After the fault is injected, the CPU indicator of the target machine increases, indicating that the fault has taken effect.![image.png](/img/zh/quick-start/box-drill-result.png)
+## Step 4：Stopping an experiment
+You can stop the experiment in the following two ways.
 
-   2. 单击** + 添加演练内容**，然后选择**主机内CPU满载**，然后单击**确定**。
-   3. 单击**保存**，然后单击**下一步**。
-5. 在**全局配置**页面完成以下配置。
-   1. 选择**演练流程**为**顺序执行**。
-   2. 在**恢复策略**区域单击 **+ 新增策略，**选择 **CPU指标**，然后单击**确定**。
-   3. 设置自动恢复时间为30分钟。
-6. 单击**下一步**。
-## 步骤二：执行演练
-
-1. 在左侧导航栏中选择**故障演练 > 我的空间**。
-2. 在**我的空间**中单击目标演练任务右侧**操作**列的**演练**，然后在**开始执行演练**对话框中单击**确认**。可以看出故障开始注入之后，目标机器的CPU指标开始增加，说明故障已经生效。![image.png](/img/zh/quick-start/box-drill-result.png)
-## 步骤三：停止演练
-您可以通过以下两种方式停止演练。
-
-- 自动停止：当演练时间超过自动恢复时间，即可自动停止。可在演练页面**保护策略**区域查看自动恢复时间，本示例为 30 分钟。![image.png](/img/zh/quick-start/drill-recovery.png)
-- 手动停止：在演练**执行情况**区域单击**日志**。若日志中显示“当前步骤运行结束，需要等待用户确认”信息，则单击**脚本方式制造CPU满载**右侧的继续图标恢复演练。若需直接停止演练，则单击停止图标。![image.png](/img/zh/quick-start/drill-stop.png)
-## 查看演练信息
-演练结束后，您可以在演练详情页查看演练时长、演练过程中的CPU指标曲线、演练参数和演练日志等信息。
+- Automatic stop: If the experiment time exceeds the automatic recovery time, the experiment stops automatically.Available on the experiment page **Protection Policy** Area View the automatic recovery time，In this example, 30 minutes.![image.png](/img/zh/quick-start/drill-recovery.png)
+- Manual stop：In practice **Status of Execution** Area Click **Log**. If the current step is complete, wait for user confirmation is displayed in the log，then click  **Create a CPU load in script mode** The Continue icon on the right resumes the experiment. To stop the experiment directly, click the Stop icon。![image.png](/img/zh/quick-start/drill-stop.png)
+## Viewing experiment Information
+After the experiment is complete, you can view the experiment duration, CPU indicator curve, experiment parameters, and experiment logs on the experiment details page.
 ![image.png](/img/zh/quick-start/drill-information.png)
 
-- 滑动鼠标至**CPU指标**时序曲线，即可查看某时间点的演练机器的具体CPU指标。
-- 单击**机器信息**区域的**参数**，即可查看脚本方式制造CPU满载节点执行参数信息。
-- 单击**机器信息**区域的**日志**，即可查看演练过程的日志信息。
-- 单击页面右上角的**查看详情**，可查看该演练任务的配置和演练日志信息。
+- Slide the mouse to **CPU Specifications** Time sequence curve，You can view specific CPU indicators of the experiment machine at a certain point in time.
+- **Information of machine** Of the region **parameter**，You can view the execution parameters of a fully-loaded CPU node.
+- Click **Information of machine** Of the region **log**，You can view logs about the experiment process.
+- Click Top right corner of the page **View Details**，You can view the configuration and experiment logs of the experiment task.

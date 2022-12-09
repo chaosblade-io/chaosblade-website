@@ -2,24 +2,24 @@
 title: Platform Box Install And Uninstall
 ---
 
-本篇文档主要描述如何安装混沌工程平台ChaosBlade-Box。
-## 主机环境下安装
-### 环境准备
-#### 第一步，确保环境中已经安装 [Java](https://www.oracle.com/java/technologies/downloads/)
-如要查看 Helm 是否已经安装，请执行如下命令：
+This document describes how to install the Chaos Engineering Platform：ChaosBlade-Box.
+## Install on a host
+### Environment Preparation
+#### First, ensure that the environment is installed [Java](https://www.oracle.com/java/technologies/downloads/)
+To see if the Helm is installed, run the following command:
 ```shell
 java -verison
 ```
-以下是预期输出：
+Here is the expected output:
 ```shell
 java version "1.8.0_151"
 Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
 ```
-#### 第二步，确保环境能自动安装探针
-以下环境保障，**主要用于平台自动安装探针时需要用到，如果不需要此功能，可不用安装**
+#### Second, ensure that the environment can automatically install the probe：
+The following environmental safeguards，**This function is mainly used when the probe is automatically installed on the platform. If this function is not required, you do not need to install it**
 
-1. 确保环境中安装了`ansible`
+1. Make sure the environment is installed `ansible`
 ```shell
 # Check if there is already installed
 ansible --version
@@ -28,7 +28,7 @@ ansible --version
 yum install ansible -y
 ```
 
-2. 确保环境中安装了`expect`，将 [sshKey.sh](https://github.com/chaosblade-io/chaosblade-box/blob/main/ssh/sshKey.sh) 和chaosblade-box-version.jar放在同一个目录中
+2. Make sure the environment is installed `expect`，let [sshKey.sh](https://github.com/chaosblade-io/chaosblade-box/blob/main/ssh/sshKey.sh) and chaosblade-box-version.jar in the same directory
 ```shell
 # Check if there is already installed
 expect -v
@@ -37,7 +37,7 @@ expect -v
 yum install expect -y
 ```
 
-3. 生成public key
+3. generate public key
 ```shell
 # Check if there is already a key, if there is, delete the previous backup
 ls ~/.ssh
@@ -46,8 +46,8 @@ rm -rf ~/.ssh/*
 # generate public key
 ssh-keygen -t rsa
 ```
-### 运行应用
-如果已经安装过了`MYSQL`，需要创建`chaosblade`的database，如果没有安装，可以通过`Docker`进行安装运行
+### Running the Application
+If it's already installed `MYSQL`，You need to create `chaosblade`s database，If not installed, you can pass `Docker` install and run
 ```shell
 docker run -d -it -p 3306:3306 \
             -e MYSQL_DATABASE=chaosblade \
@@ -58,63 +58,62 @@ docker run -d -it -p 3306:3306 \
             --default-time_zone='+8:00' \
             --lower_case_table_names=1
 ```
-> Notes:  需要将 DATASOURCE_PASSWORD替换成自定义的密码
+> Notes:  You need to replace **DATASOURCE_PASSWORD** with a custom password
 
-可通过以下命令，启动Box
+You can run the following command to start the Box
 ```shell
 nohup java -Duser.timezone=Asia/Shanghai -jar chaosblade-box-1.0.0.jar --spring.datasource.url="jdbc:mysql://DATASOURCE_HOST:3306/chaosblade?characterEncoding=utf8&useSSL=false" --spring.datasource.username=DATASOURCE_USERNAME --spring.datasource.password=DATASOURCE_PASSWORD --chaos.server.domain=BOX-HOST> chaosblade-box.log 2>&1 &
 ```
-> Notes: 需要替换参数DATASOURCE_HOST、DATASOURCE_USERNAME、DATASOURCE_PASSWORD
+> Notes: Need to replace parameter DATASOURCE_HOST、DATASOURCE_USERNAME、DATASOURCE_PASSWORD
 
 
-### 验证安装
-可直接查看进程是否存在，并通过 [http://127.0.0.1:7001](http://127.0.0.1:7001/) 去访问平台
+### Verify installation
+You can check whether the process exists and pass the command [http://127.0.0.1:7001](http://127.0.0.1:7001/) Go to the platform
 ```shell
 ps -ef | grep chaosblade-box
 ```
-### 卸载ChaosBlade-Box
-如果需要卸载ChaosBlade-Box
+### Uninstall ChaosBlade-Box
+If you need to uninstall **ChaosBlade-Box**
 ```shell
-# 1. 先查看box进程pid
+# 1. Check the box process pid first
 ps -ef | grep chaosblade-box
 
-# 2. 直接杀掉对应的进程
+# 2. Directly kill the corresponding process
 kill process-pid
 ```
-##  Kubernetes环境下安装
-### 环境准备
-具体环境准备参见：[Kubernetes下安装环境准备](./environment-prepare.md/#kubernetes下安装环境准备)
-### 使用Helm安装
-#### 第一步，下载Box Chart包
-查看所有可以下载的 [box-release](https://github.com/chaosblade-io/chaosblade-box/releases)，下载到本地，如：
+## Installation in  Kubernetes Environment
+### Environment Preparation
+For details, see：[Prepare the installation Kubernetes environment](./environment-prepare.md/#Prepare the installation Kubernetes environment)
+### Install with Helm
+#### First, download the Box Chart package
+See all available for download  [box-release](https://github.com/chaosblade-io/chaosblade-box/releases)，Download to local, such as:
 ```shell
 wget https://github.com/chaosblade-io/chaosblade-box/releases/download/v1.0.2/chaosblade-box-1.0.2.tgz
 ```
-#### 第二步，进行安装
+#### Second , installation
 ```shell
 helm install chaosblade-box chaosblade-box-1.0.0.tgz --namespace chaosblade --set spring.datasource.password=DATASOURCE_PASSWORD
 ```
-### 验证安装
-要查看Box运行情况，请执行以下命令：
+### Verify installation
+To see how the Box is running, run the following command：
 ```shell
 kubectl get po -n chaosblade
 ```
-以下是预期输出
+Here is the expected output:
 ```shell
 NAME                                    READY   STATUS    RESTARTS   AGE
 chaosblade-box-5bc47b676f-2gjh9         1/1     Running   0          15d
 chaosblade-box-mysql-58cc864896-2jxrs   1/1     Running   0          15d
 ```
-如果你的实际输出与预期输出相符，表示ChaosBlade-Box已经安装成功。
-> ⚠️注意
-> 如果实际输出的`STATUS` 状态不是 `Running`，则需要运行以下命令查看 Pod 的详细信息，然后依据错误提示排查并解决问题。
-
+If your actual output matches the expected output, ChaosBlade-Box has been installed successfully.
+> ⚠️Attention:
+> If the actual output **STATUS** is not Running, you need to run the following command to view Pod details, and then troubleshoot the problem according to the error message.
 ```shell
-# 以chaosblade-box为例
+# As chaosblade-box example
 kubectl describe po chaosblade-box-5bc47b676f-2gjh9 -n chaosblade
 ```
-###  卸载ChaosBlade-Box
-如果需要卸载ChaosBlade-Box，请执行以下命令：
+###  Uninstall ChaosBlade-Box
+To uninstall ChaosBladder-box, run the following command:
 ```shell
 helm un chaosblade-box -n chaosblade
 ```
