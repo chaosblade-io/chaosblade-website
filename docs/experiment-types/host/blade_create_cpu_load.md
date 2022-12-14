@@ -95,4 +95,4 @@ blade create cpu fullload --percent 50
 ```
 
 ## 实现原理
-利用消耗CPU时间片来做。详见代码：[burncpu](https://github.com/chaosblade-io/chaosblade-exec-os/blob/master/exec/bin/burncpu/burncpu.go)
+利用消耗CPU时间片来做。详见代码：[burncpu](https://github.com/chaosblade-io/chaosblade-exec-os/blob/master/exec/cpu/cpu.go#L329)
