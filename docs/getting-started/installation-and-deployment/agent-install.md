@@ -2,67 +2,67 @@
 title: Agent Install
 ---
 
-探针主要作为平台端建联、命令下发通道和数据收集等功能，所以如果需要对目标集群或主机进行演练，需要在端侧的目标集群或主机上安装探针，以便将平台编排好的演练转化成命令，下发到目标机器上。
+The probe functions as a platform connection, command delivery channel, and data collection. Therefore, if you need to experiment the target cluster or host, install the probe on the target cluster or host so that the expriment can be converted into commands and delivered to the target host.
 
-在 [安装Box平台](./platform-box-install-and-uninstall.md) 后，进入Box主页，在左侧导航栏选择**探针管理**，根据端侧环境选择不同的探针安装方式
+At [install Box platform](./platform-box-install-and-uninstall.md) then ，enter Box main page，In the left navigation bar, select **Probe Management**，Select different probe installation methods based on the end-side environment
 ![image.png](/img/zh/quick-start/agent/agent-manager.png)
-## 主机环境下安装
-### 自动安装探针
-利用自动安装探针，需要在安装Box平台时已有[自动安装探针环境准备](./platform-box-install-and-uninstall.md/#第二步确保环境能自动安装探针)，否则无法使用
+## Install on a host
+### Automatic probe installation
+Take advantage of the automatic installation probes, which need to be available when the Box platform is installed [Environment preparation for automatic probe installation](./platform-box-install-and-uninstall.md/#Step 2 Ensure that the environment can automatically install the probe)，Otherwise, it cannot be used.
 
-1. 进入**探针管理**页面后，点选右上角的**自动安装探针**按钮
+1. Enter **Probe Management** page，then click on the top right corner **Automatic probe installation** button
 
 ![image.png](/img/zh/quick-start/agent/agent-auto-install.png)
 
-2. 根据是否已有应用名，选择**已有应用**和**新增应用，**并填写目标主机的**IP地址**及SSH登陆的**用户**和**密码**
+2. Depending on whether the application name exists，select **Existing Applications** and **Adding an Application，**And fill in the target host **IP address** And SSH login **username** and **password**
 
 ![image.png](/img/zh/quick-start/agent/agent-install-app.png)
 
-3. 最后点击安装即可
-### 手动安装探针
+3. Finally, click Install
+### Manually install the probe
 
-1. 进入**探针管理**页面后，点选右上角的**手动安装探针**按钮 或 页面中的**接入探针**，进入探针安装指引页面
+1. Enter **Probe Management** page ，then click to the top right **Manually install the probe** buttoon or  on the page **Access probe** ，The probe installation guide page is displayed,
 
 ![image.png](/img/zh/quick-start/agent/agent-install-manual.png)
 
-2. 点击**主机**，进入主机手动安装的命令提示页面
+2. Click **host** ，The command prompt page for manual host installation is displayed
 
 ![image.png](/img/zh/quick-start/agent/agent-install-list.png)
 
-3. 复制命令提示页面的命令，并将必要参数进行替换后，在目标主机上执行即可
+3. Copy the commands on the command prompt page, replace the required parameters, and run the commands on the target host
 
 ![image.png](/img/zh/quick-start/agent/agent-install-linux.png)
-_参数说明如下：_
+_The parameters are described as follows:_
 
-| **参数名** | **备注** | **default** | **示例** |
-| --- | --- | --- | --- |
-| p | 应用名 | chaos-default-app | my-test |
-| g | 应用分组名 | chaos-default-app-group | my-test-group |
-| P | agent端口号 | 19527 | 19527 |
+| **Parameter Name** | **note**       | **default** | **example**   |
+| --- |----------------| --- |---------------|
+| p | app-name       | chaos-default-app | my-test       |
+| g | app-group-name | chaos-default-app-group | my-test-group |
+| P | agent-port     | 19527 | 19527         |
 | t | chaosblade-box的ip:port | 
  | 172.0.0.1:7001 |
 
-## Kubernetes环境下安装
-Kubernetes环境下只提供手动安装方式
+## Kubernetes environment installation
+In the Kubernetes environment, only manual installation is available
 
-1. 进入**探针管理**页面后，点选右上角的**手动安装探针**按钮 或 页面中的**接入探针**，进入探针安装指引页面
+1. Enter**Probe Management**After the page, click on the top right corner**Manually install the probe**button or on the page **Access probe**，The probe installation guide page is displayed
 
 ![image.png](/img/zh/quick-start/agent/agent-install-manual.png)
 
-2. 点击**自建Kubernetes**，进入主机手动安装的命令提示页面
+2. Click **build Kubernetes**，The command prompt page for manual host installation is displayed
 
 ![image.png](/img/zh/quick-start/agent/agent-install-list-k8s.png)
 
-3. 根据安装提示页面上的指引，先下载Chart包，然后利用Helm进行安装
+3. Follow the instructions on the installation tips page to download the Chart package first, and then install with Helm
 
 ![image.png](/img/zh/quick-start/agent/agent-install-k8s.png)
-_参数说明如下：_
+_The parameters are described as follows:_
 
-| **参数名** | **备注** | **default** | **示例** |
-| --- | --- | --- | --- |
-| transport.endpoint | chaosblade-box的ip:port | 
- | 127.0.0.1:7001 |
-| controller.cluster_id | 安装k8s集群的ID |  | abcdefg123hi |
-| controller.cluster_name | 安装k8s集群的name |  | test-cluster |
+| **paramas**             | **note**                         | **default** | **example**  |
+|-------------------------|----------------------------------| --- |--------------|
+| transport.endpoint      | chaosblade-box的ip:port           | 
+ | 127.0.0.1:7001          |
+| controller.cluster_id   | the Installed k8s cluster's ID   |  | abcdefg123hi |
+| controller.cluster_name | the Installed k8s cluster's name |  | test-cluster |
 
-4. 如果需要对该集群进行演练，则需要再安装chaosblade-operator，具体可参考[chaosblade-operator安装指引](./tool-chaosblade-install-and-uninstall.md/#kubernetes环境下安装)
+4. If you need to experiment the cluster, install chaosblade-operator. For details, see ChaosBlade-Operator[chaosblade-operator Installation Guide](./tool-chaosblade-install-and-uninstall.md/# Installation kubernetes Environment)
