@@ -184,6 +184,17 @@
                   "id": "version-1.7.0/experiment-types/host/blade create script exit"
                 }
               ]
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Time",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/experiment-types/host/blade create time travel"
+                }
+              ]
             }
           ]
         },

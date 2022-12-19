@@ -60,6 +60,11 @@ module.exports = {
               "experiment-types/host/blade create script delay",
               "experiment-types/host/blade create script exit",
             ]
+          },
+          {
+            "Time": [
+              "experiment-types/host/blade create time travel",
+            ]
           }
         ]
       },

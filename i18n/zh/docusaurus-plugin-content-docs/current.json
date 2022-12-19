@@ -43,6 +43,10 @@
     "message": "脚本",
     "description": "The label for category Types of Chaos Experiments in sidebar docs"
   },
+  "sidebar.docs.category.Time": {
+    "message": "时间",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
   "sidebar.docs.category.Node": {
     "message": "节点",
     "description": "The label for category Types of Chaos Experiments in sidebar docs"
