@@ -21,6 +21,7 @@ module.exports = {
       "community/docs",
       "community/PR-guide",
       "community/dev-standard",
+      "community/os-dev-guide",
       "community/issue-standard",
     ],
     "Types of Chaos Experiments": [
