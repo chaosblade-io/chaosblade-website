@@ -1,10 +1,13 @@
-# OS Scenario Extension Development Documentation
+---
+title: OS Scenario Extension Development Documentation
+---
+
 
 [chaosblade-exec-os](https://github.com/chaosblade-io/chaosblade-exec-os) is a basic resource scenario project, such as CPU, memory, process, network, disk and other system resource basic scenarios. This article introduces the basic resource scenario extension in detail from four aspects: project engineering, execution process, scenario extension, and packaging test.
 
 # Project Structure
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/90ef69c6-6c2f-4989-ba8b-1be56686372b.png)
+![image](/img/doc-image/os-dev-guide/90ef69c6-6c2f-4989-ba8b-1be56686372b.png)
 
 The code of this project consists of four parts:
 
@@ -19,7 +22,7 @@ The code of this project consists of four parts:
 
 # Execution Flow
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/aed33af9-3670-4428-9a41-e67676247303.png)
+![image](/img/doc-image/os-dev-guide/aed33af9-3670-4428-9a41-e67676247303.png)
 
 1.  Executing the basic resource scene through blade will call `bin/chaos_os` file to run.
 
@@ -70,7 +73,7 @@ Mapping with the ChaosBlade chaos engineering experimental model, shutdown can b
 
 The extended failure scenario is similar to the process failure scenario, such as killing a process and stopping a process, which can be realized by referring to the process scenario.
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/9f6ac3fe-5c55-42b0-874b-1d44b05e36e8.png)
+![image](/img/doc-image/os-dev-guide/9f6ac3fe-5c55-42b0-874b-1d44b05e36e8.png)
 
 It can be seen from the existing process scene code that in the exec directory, create a process directory to define the target is the process failure scene model definition `ProcessCommandModelSpec`, in this model respectively define the kill process kill scene and stop process stop scene experimental action model NewXXXProcessActionCommandSpec, Each scenario is defined in `process_kill.go` and `process_stop.go` respectively.
 Taking KillProcessActionCommandSpec as an example, the following content needs to be defined mainly according to `BaseExpActionCommandSpec`:
@@ -260,7 +263,7 @@ After the restart scenario is implemented, this scenario can be added to the shu
 
 The `shutdown_halt.go` and `shutdown_poweroff.go` implementations can also be added in this way. Since the shutdown command controls shutdown, power-off, and reboot operations through parameters, the general code can be extracted into the shutdown.go file, and other scene files can call the functions in this file. The final code is as follows:
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/b183f750-a3d9-4063-b1c3-c1b1520a3184.png)
+![image](/img/doc-image/os-dev-guide/b183f750-a3d9-4063-b1c3-c1b1520a3184.png)
 
 shutdown_halt.go codes：
 

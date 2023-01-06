@@ -4,7 +4,7 @@
 
 # 项目工程
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/90ef69c6-6c2f-4989-ba8b-1be56686372b.png)
+![image](/img/doc-image/os-dev-guide/90ef69c6-6c2f-4989-ba8b-1be56686372b.png)
 
 该项目核心代码包含四部分：
 
@@ -19,7 +19,7 @@
 
 # 执行流程
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/aed33af9-3670-4428-9a41-e67676247303.png)
+![image](/img/doc-image/os-dev-guide/aed33af9-3670-4428-9a41-e67676247303.png)
 
 1.  通过 blade执行基础资源场景会调用 bin/chaos\_os执行
 
@@ -70,7 +70,7 @@
 
 此次扩展的故障场景类似于进程故障场景，如杀进程、进程停止，可以参考进程场景实现。
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/9f6ac3fe-5c55-42b0-874b-1d44b05e36e8.png)
+![image](/img/doc-image/os-dev-guide/9f6ac3fe-5c55-42b0-874b-1d44b05e36e8.png)
 
 通过已有进程场景代码可以看出，在 exec目录下，创建 process目录来定义 target是 process的故障场景模型定义 ProcessCommandModelSpec，在此模型中分别定义杀进程kill场景和停止进程stop场景实验action模型 NewXXXProcessActionCommandSpec，每个场景在分别在process\_kill和 process\_stop中定义。
 
@@ -261,7 +261,7 @@
 
 同样可以按此方式追加关机实现 shutdown\_halt.go和断电shutdown\_poweroff.go实现。由于 shutdown命令通过参数控制关机、断电、重启操作，所以可以将通用的代码可以提取到shutdown.go文件中，其他场景文件调用此文件中函数调用即可。最终代码如下：
 
-![image](https://alidocs.oss-accelerate.aliyuncs.com/res/a4jKqmxykw8Ynw19/img/b183f750-a3d9-4063-b1c3-c1b1520a3184.png)
+![image](/img/doc-image/os-dev-guide/b183f750-a3d9-4063-b1c3-c1b1520a3184.png)
 
 shutdown\_halt.go实现代码：
 
