@@ -9,7 +9,7 @@ hide_table_of_contents: false
 ChaosBlade 是阿里巴巴 2019 年开源的混沌工程项目，包含混沌工程实验工具 ChaosBlade 和混沌工程平台 ChaosBlade-box，旨在通过混沌工程帮助企业解决云原生过程中高可用问题。实验工具 ChaosBlade 支持 3 大系统平台，4 种编程语言应用，共涉及 200 多的实验场景，3000 多个实验参数，可以精细化的控制实验范围。 混沌工程平台 ChaosBlade-Box 支持实验工具托管，除已托管 ChaosBlade 外，还支持 Litmuschaos 实验工具。已登记使用企业 40 多家，其中已在工商银行、中国移动、小米、京东等企业中落地使用。
 ![image.png](/img/logo.png)
 
-经过全体 Reviewer 提名与讨论，社区很高兴地宣布，**晁元宁（GitHub ID: @ID：Yuaninga）正式晋升为 ChaosBlade 社区 Reviewer** 。晁元宁同学在过去的一段时间，积极、活跃地参与到 ChaosBlade 社区讨论与贡献，不仅参与完善了官网文档建设，更是积极参与到多个 module 的 bug fix 和 feature 的贡献中来，提交了多大 11 个 PR，涉及 chaosblade-operator、chaosblade-exec-os 和 chaosblade-website 等三个项目中。满足社区对 Reviewer 持续贡献的期望。恭喜元宁！
+经过全体 Reviewer 提名与讨论，社区很高兴地宣布，**晁元宁（GitHub ID: @ID：Yuaninga ，中国移动磐基PaaS平台）正式晋升为 ChaosBlade 社区 Reviewer** 。晁元宁同学在过去的一段时间，积极、活跃地参与到 ChaosBlade 社区讨论与贡献，不仅参与完善了官网文档建设，更是积极参与到多个 module 的 bug fix 和 feature 的贡献中来，提交了多达 11 个 PR，涉及 chaosblade-operator、chaosblade-exec-os 和 chaosblade-website 等三个项目中。满足社区对 Reviewer 持续贡献的期望。恭喜元宁！
 具体可见其 Reviewer 的 [promotion Reviewer pr](https://github.com/chaosblade-io/community/pull/10)
 Committer 证书：
 
