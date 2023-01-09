@@ -10,7 +10,7 @@ ChaosBlade 是阿里巴巴 2019 年开源的混沌工程项目，包含混沌工
 ![image.png](/img/logo.png)
 
 经过全体 Reviewer 提名与讨论，社区很高兴地宣布，**晁元宁（GitHub ID: @ID：Yuaninga）正式晋升为 ChaosBlade 社区 Reviewer** 。晁元宁同学在过去的一段时间，积极、活跃地参与到 ChaosBlade 社区讨论与贡献，不仅参与完善了官网文档建设，更是积极参与到多个 module 的bug fix和 feature 的贡献中来，提交了多大11个PR，涉及 chaosblade-operator、chaosblade-exec-os 和 chaosblade-website 等三个项目中。满足社区对 Reviewer 持续贡献的期望。恭喜元宁！
-具体可见其Reviewer的 [promotion Reviewer pr](https://github.com/chaosblade-io/community/pull/10)
+具体可见其 Reviewer 的 [promotion Reviewer pr](https://github.com/chaosblade-io/community/pull/10)
 Committer 证书：
 
 ![](/img/blog/chaosblade-certificate-yuanning.jpg)
