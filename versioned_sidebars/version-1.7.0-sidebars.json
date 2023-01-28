@@ -35,7 +35,7 @@
         {
           "collapsed": true,
           "type": "category",
-          "label": "Blade User Guaid",
+          "label": "Chaosblade tool quick start",
           "items": [
             {
               "type": "doc",
@@ -52,7 +52,7 @@
             {
               "collapsed": true,
               "type": "category",
-              "label": "cli user guaid",
+              "label": "Cli mode user guaid",
               "items": [
                 {
                   "type": "doc",
