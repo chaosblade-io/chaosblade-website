@@ -35,6 +35,68 @@
         {
           "collapsed": true,
           "type": "category",
+          "label": "Blade User Guaid",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/chaosblade-tool-quick-start"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/server-mode-user-guaid"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/yaml-mode-user-guaid"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "cli user guaid",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-check"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-prepare"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-revoke"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-create"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-destroy"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-query"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-status"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.7.0/getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-version"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
           "label": "Installation And Deployment",
           "items": [
             {

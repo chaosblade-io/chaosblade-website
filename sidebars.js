@@ -9,6 +9,26 @@ module.exports = {
       "getting-started/platform-box-quick-start",
       "getting-started/quick-start",
       {
+        "Chaosblade tool quick start": [
+          "getting-started/chaosblade-tool-quick-start/chaosblade-tool-quick-start",
+          "getting-started/chaosblade-tool-quick-start/server-mode-user-guaid",
+          "getting-started/chaosblade-tool-quick-start/yaml-mode-user-guaid",
+          {
+            "Cli mode user guaid": [
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-check",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-prepare",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-revoke",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-create",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-destroy",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-query",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-status",
+                "getting-started/chaosblade-tool-quick-start/cli-mode-user-guaid/blade-version",
+            ]
+          }
+        ]
+      },
+      {
         "Installation And Deployment": [
           "getting-started/installation-and-deployment/platform-box-install-and-uninstall",
           "getting-started/installation-and-deployment/tool-chaosblade-install-and-uninstall",
