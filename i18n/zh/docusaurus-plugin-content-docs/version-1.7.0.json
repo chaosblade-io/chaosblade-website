@@ -11,6 +11,14 @@
     "message": "开始使用",
     "description": "Chaosblade platform and tools usage docs"
   },
+  "sidebar.docs.category.Chaosblade tool quick start": {
+    "message": "ChaosBlade工具使用快速入门",
+    "description": "Chaosblade tool quick start"
+  },
+  "sidebar.docs.category.Cli mode user guaid": {
+    "message": "CLI模式使用简介",
+    "description": "Cli mode user guaid"
+  },
   "sidebar.docs.category.Installation And Deployment": {
     "message": "安装与部署",
     "description": "Chaosblade platform and tools usage docs"

@@ -24,10 +24,17 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## Deployment
+## Tagging a new version
 
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+1. First, make sure the current docs version (the `./docs` directory) is ready to be frozen.
+2. Enter a new version number.
+
+```shell
+yarn docusaurus docs:version 1.1.0
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+When tagging a new version, the document versioning mechanism will:
+
+- Copy the full `docs/` folder contents into a new `versioned_docs/version-[versionName]/` folder.
+- Create a versioned sidebars file based from your current [sidebar](https://docusaurus.io/docs/docs-introduction#sidebar) configuration (if it exists) - saved as `versioned_sidebars/version-[versionName]-sidebars.json`.
+- Append the new version number to `versions.json`.
