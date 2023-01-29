@@ -32,7 +32,7 @@ Use "blade [command] --help" for more information about a command.
 ```
 | **Command** | **Description**                                                                                                       |
 | --- |-----------------------------------------------------------------------------------------------------------------------|
-| blade server | 将chaosblade作为[server启动](https://chaosblade.io/docs/getting-started/chaosblade-tool-quick-start/server-mode-use-guaid) |
+| blade server | 将chaosblade作为[server启动](https://chaosblade.io/docs/getting-started/chaosblade-tool-quick-start/server-mode-user-guaid) |
 | blade check | 校验该机器是否满足chaosblade工具运行环境                                                                                             |
 | blade prepare | 挂载jvm探针至目标Java进程                                                                                                      |
 | blade revoke | 撤回jvm探针挂载                                                                                                             |
