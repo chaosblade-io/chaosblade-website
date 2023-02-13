@@ -1772,7 +1772,7 @@
     "@docusaurus/utils-validation" "2.2.0"
     tslib "^2.4.0"
 
-"@docusaurus/plugin-google-gtag@2.2.0", "@docusaurus/plugin-google-gtag@^2.2.0":
+"@docusaurus/plugin-google-gtag@2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.2.0.tgz#7b086d169ac5fe9a88aca10ab0fd2bf00c6c6b12"
   integrity sha512-6SOgczP/dYdkqUMGTRqgxAS1eTp6MnJDAQMy8VCF1QKbWZmlkx4agHDexihqmYyCujTYHqDAhm1hV26EET54NQ==
@@ -1780,6 +1780,16 @@
     "@docusaurus/core" "2.2.0"
     "@docusaurus/types" "2.2.0"
     "@docusaurus/utils-validation" "2.2.0"
+    tslib "^2.4.0"
+
+"@docusaurus/plugin-google-gtag@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.3.1.tgz#b8da54a60c0a50aca609c3643faef78cb4f247a0"
+  integrity sha512-uXtDhfu4+Hm+oqWUySr3DNI5cWC/rmP6XJyAk83Heor3dFjZqDwCbkX8yWPywkRiWev3Dk/rVF8lEn0vIGVocA==
+  dependencies:
+    "@docusaurus/core" "2.3.1"
+    "@docusaurus/types" "2.3.1"
+    "@docusaurus/utils-validation" "2.3.1"
     tslib "^2.4.0"
 
 "@docusaurus/plugin-sitemap@2.2.0", "@docusaurus/plugin-sitemap@^2.2.0":
