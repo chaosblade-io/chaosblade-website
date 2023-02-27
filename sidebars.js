@@ -43,6 +43,16 @@ module.exports = {
       "community/dev-standard",
       "community/os-dev-guide",
       "community/issue-standard",
+      {
+        "Java dev guide": [
+          "community/java-dev-guide/architecture",
+          "community/java-dev-guide/model",
+          "community/java-dev-guide/plugin",
+          "community/java-dev-guide/bytecode",
+          "community/java-dev-guide/protocol",
+          "community/java-dev-guide/practise"
+        ]
+      }
     ],
     "Types of Chaos Experiments": [
       {
