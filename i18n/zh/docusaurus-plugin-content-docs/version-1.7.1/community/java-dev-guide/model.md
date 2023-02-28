@@ -1,8 +1,11 @@
-# 模型篇
+---
+title: 模型篇
+sidebar_position: 2
+---
 
 遵循此模型，可以简单明了的执行一次混沌实验，控制实验的最小爆炸半径。并且可以方便快捷的扩展新的实验场景或者增强现有场景。[chaosblade](https://github.com/chaosblade-io/chaosblade) 和 [chaosblade-exec-jvm](https://github.com/chaosblade-io/chaosblade-exec-jvm) 工程都根据此模型实现。
 
-# 模型定义
+## 模型定义
 
 在给出模型之前先讨论实施一次混沌实验明确的问题：
 
@@ -25,6 +28,7 @@
 伪代码可以写成：
 
 ```
+
 Toolkit.
     // 实验靶点
     dubbo.
@@ -40,9 +44,9 @@ Toolkit.
     delay(3000);
 ```
 
-# chaosblade 模型实现
+## chaosblade 模型实现
 
-## chaosblade cli 调用
+### chaosblade cli 调用
 
 针对上述例子，chaosblade 调用命令是：
 
@@ -57,11 +61,11 @@ blade create dubbo delay --time 3000 --consumer --service com.example.HelloServi
 
 **注：** 由于 chaosblade 是在单机执行的工具，所以混沌实验模型中的 scope 默认为本机，不再显示声明。
 
-## chaosblade 模型结构图
+### chaosblade 模型结构图
 
 为了有个更加直观的认识，我们先通过一下的模型结构图来大致看一下模型之间的关系。核心接口模型是：`ModelSpec`，由它引申出来的是`FlagSpec`和`ActionSpec`这两个接口。其中，`ModelSpec`已有的具体实现有：druid、myql、servlet等；则是如myql下的dalay之类的；FlagSpec是各类自定义参数，比如--time。更加详细的模型定义说明请见后续小节。
 
-## chaosblade 模型定义
+### chaosblade 模型定义
 
 ```java
 public interface ModelSpec {
@@ -115,7 +119,7 @@ public interface FlagSpec {
 
 **注：** 实验匹配器定义。
 
-## chaosblade 模型具体实现
+### chaosblade 模型具体实现
 
 拿 sevlet 组件举例，sevlet  作为混沌实验组件，目前包含延迟、自定义异常抛出，具体实现为：
 
@@ -202,6 +206,6 @@ public class DelayActionSpec extends BaseActionSpec {
 
 - `DelayActionSpec` 包含 2 个场景参数和 3个规则匹配器。
 
-# 总结
+## 总结
 
 通过以上事例，可以看出此模型简单、易实现，并且可以覆盖目前已知的实验场景。后续可以对此模型进行完善，成为一个混沌实验标准。

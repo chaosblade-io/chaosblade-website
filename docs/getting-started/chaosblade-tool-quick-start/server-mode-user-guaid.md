@@ -1,5 +1,5 @@
 ---
-title: Server模式使用简介
+title: Server 模式使用简介
 ---
 
 本文档主要介绍如何通过 Server 模式进行混沌工程实验

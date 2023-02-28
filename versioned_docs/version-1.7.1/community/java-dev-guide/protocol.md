@@ -1,4 +1,7 @@
-# 协议篇
+---
+title: 协议篇
+sidebar_position: 5
+---
 
 本篇介绍 `chaosblade` 与 `chaosblade-exec-jvm` 之间通信接口 API，此 API 遵循《[混沌实验模型](https://github.com/chaosblade-io/chaosblade/wiki/混沌实验模型)》。
 
@@ -22,13 +25,13 @@ blade create dubbo delay --time 3000 --service com.example.HelloService --versio
 
 ```json
 {
-	"suid": "su378dsn137s53bs8adcn",
-	"target": "dubbo",
-	"action": "delay",
-	"time": "3000",
-	"service": "com.example.HelloService",
-	"version": "1.0.0",
-	"consumer": "true"
+  "suid": "su378dsn137s53bs8adcn",
+  "target": "dubbo",
+  "action": "delay",
+  "time": "3000",
+  "service": "com.example.HelloService",
+  "version": "1.0.0",
+  "consumer": "true"
 }
 ```
 

@@ -1,5 +1,6 @@
 ---
 title: Environment Prepare
+sidebar_position: 0
 ---
 
 ## Installation in Kubernetes Environment

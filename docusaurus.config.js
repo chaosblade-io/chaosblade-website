@@ -41,6 +41,11 @@ const config = {
     ({
         image: 'img/cb-logo.png',
         metadata: [{ name: 'twitter:card', content: 'summary' }],
+        docs: {
+            sidebar: {
+              autoCollapseCategories: true,
+            },
+        },
         colorMode: {
             defaultMode: 'light',
             disableSwitch: false,
@@ -49,6 +54,7 @@ const config = {
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
+            additionalLanguages: ['java','go'],
         },
         algolia: {
             appId: 'AJZLJ48ZRO',
@@ -100,7 +106,7 @@ const config = {
                     to: '/docs',
                 },{
                     label: 'Contribute documents',
-                    to: '/docs/community/docs',
+                    to: '/docs/community',
                 }],
             }, {
                 title: 'Community',

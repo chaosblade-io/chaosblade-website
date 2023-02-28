@@ -1,5 +1,6 @@
 ---
 title: Platform Box Quick Start
+sidebar_position: 2
 ---
 
 To verify the fault tolerance and recoverability of the system, you can inject appropriate faults into the system and observe the system performance to identify possible problems and rectify them in time. This paper uses the CPU full load experiment as an example to describe how to use the Box platform for fault injection.

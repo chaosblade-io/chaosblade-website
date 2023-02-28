@@ -1,5 +1,6 @@
 ---
 title: PR Submission Guidelines
+sidebar_position: 1
 ---
 
 ## Preparation
