@@ -1,5 +1,6 @@
 ---
 title: Platform Box Install And Uninstall
+sidebar_position: 1
 ---
 
 This document describes how to install the Chaos Engineering Platform：ChaosBlade-Box.

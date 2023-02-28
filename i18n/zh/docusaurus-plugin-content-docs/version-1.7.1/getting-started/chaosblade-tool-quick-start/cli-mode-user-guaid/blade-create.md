@@ -3,19 +3,25 @@ title: blade create
 ---
 
 本文档主要介绍`blade create`命令使用
+
 ## Usage
+
 创建混沌工程演练实验。每个实验对应一个 `uid`，后续的查询、销毁实验都要用到此 `uid`，如果遗忘了 `uid`，可以通过 `blade status --type create` 命令进行查询。 `create` 可以简写为 `c`，即 `blade create` 可以简写为 `blade c`。
+
 ```shell
 Usage:
   blade create [command]
 
 Aliases:
   create, c
-  
+
 blade create [target] [action] [flags]
 ```
+
 ## Exec
+
 进入解压包本地所放置的路径，可通过`blade create -h`查看所有支持的演练场景的`target`，具体该`target`下支持那些`action`和`flags`，可通过在命令后面加`-h`来进行查看。
+
 ```
 [root@test chaosblade]# ./blade c -h
 Create a chaos engineering experiment
@@ -81,9 +87,13 @@ Global Flags:
 
 Use "blade create [command] --help" for more information about a command.
 ```
+
 ## Examples
+
 ### 主机场景
-在`Host`进行cpu满载的演练，具体支持参数，可通过`./blade c cpu fullload -h`进行查看，里面会有具体参数解析
+
+在`Host`进行 cpu 满载的演练，具体支持参数，可通过`./blade c cpu fullload -h`进行查看，里面会有具体参数解析
+
 ```
 # 查看 create 命令帮助文档
 blade create -h
@@ -112,10 +122,13 @@ blade destroy 6fa04946baf42920
 # 返回值会打印此次实验的命令。再次使用 top 命令验证实验效果
 %Cpu0  :  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 ```
+
 > 其中上述结果中的`6fa04946baf42920`就是该次演练的`uid`
 
-### K8S场景
-在`Kubernetes`对集群中 `default` namespace中的，`nginx-swer23kj-12345` pod 进行 cpu满载演练
+### K8S 场景
+
+在`Kubernetes`对集群中 `default` namespace 中的，`nginx-swer23kj-12345` pod 进行 cpu 满载演练
+
 ```
 # 查看如何创建 k8s 混沌实验
 blade create k8s -h
@@ -132,7 +145,9 @@ blade c k8s pod-cpu fullload --cpu-percent 100 --names nginx-swer23kj-12345 --na
 # 销毁上述实验
 blade destroy 6fa04946baf42920
 ```
-可通 `kubectl top`命令验证实验效果，并和pod 中 resource limit 进行比较
+
+可通 `kubectl top`命令验证实验效果，并和 pod 中 resource limit 进行比较
+
 ```
 kubectl top pod nginx-swer23kj-12345 -n default
 ```

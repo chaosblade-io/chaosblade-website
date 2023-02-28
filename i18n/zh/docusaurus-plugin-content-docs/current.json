@@ -12,11 +12,11 @@
     "description": "Chaosblade platform and tools usage docs"
   },
   "sidebar.docs.category.Chaosblade tool quick start": {
-    "message": "ChaosBlade工具使用快速入门",
+    "message": "ChaosBlade 工具使用快速入门",
     "description": "Chaosblade tool quick start"
   },
-  "sidebar.docs.category.Cli mode user guaid": {
-    "message": "CLI模式使用简介",
+  "sidebar.docs.category.CLI Mode User Guide": {
+    "message": "CLI 模式使用简介",
     "description": "Cli mode user guaid"
   },
   "sidebar.docs.category.Installation And Deployment": {
@@ -25,10 +25,10 @@
   },
   "link.item.label.Contribute documents": {
     "message": "贡献文档",
-    "description": "The label of footer link with label=Contribute documents linking to /docs/community/docs"
+    "description": "The label of footer link with label=Contribute documents linking to /docs/community"
   },
-  "sidebar.docs.category.Java dev guide": {
-    "message": "Java场景扩展开发文档",
+  "sidebar.docs.category.Java Dev Guide": {
+    "message": "Java 场景扩展开发文档",
     "description": "Java dev guide"
   },
   "sidebar.docs.category.Types of Chaos Experiments": {

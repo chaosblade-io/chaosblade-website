@@ -6,18 +6,18 @@ id: blade create k8s
 
 ## 介绍
 创建 kubernetes 相关的实验场景，除了使用 blade 命令创建场景外，还可以将实验使用 yaml 文件描述，使用 kubectl 命令执行。目前支持的实验场景如下：
-* [blade create k8s node-cpu](/docs/experiment-types/k8s/blade%20create%20k8s%20node-cpu) Node 节点 CPU 负载场景
-* [blade create k8s node-network](/docs/experiment-types/k8s/blade%20create%20k8s%20node-network) Node 节点网络场景
-* [blade create k8s node-process](/docs/experiment-types/k8s/blade%20create%20k8s%20node-process) Node 节点进程场景
-* [blade create k8s node-disk](/docs/experiment-types/k8s/blade%20create%20k8s%20node-disk) Node 节点磁盘场景
-* [blade create k8s pod-pod](/docs/experiment-types/k8s/blade%20create%20k8s%20pod-pod) Pod 资源场景，比如杀 Pod
-* [blade create k8s pod-network](/docs/experiment-types/k8s/blade%20create%20k8s%20pod-network) Pod 网络资源场景，比如网络延迟
-* [blade create k8s pod-IO](/docs/experiment-types/k8s/blade%20create%20k8s%20pod-IO) Pod IO 文件系统异常场景
-* [blade create k8s pod-fail](/docs/experiment-types/k8s/blade%20create%20k8s%20pod-fail) Pod 不可用异常场景
-* [blade create k8s container-container](/docs/experiment-types/k8s/blade%20create%20k8s%20container-container) Container 资源场景，比如杀容器
-* [blade create k8s container-cpu](/docs/experiment-types/k8s/blade%20create%20k8s%20container-cpu) 容器内 CPU 负载场景
-* [blade create k8s container-network](/docs/experiment-types/k8s/blade%20create%20k8s%20container-network) 容器内网络场景
-* [blade create k8s container-process](/docs/experiment-types/k8s/blade%20create%20k8s%20container-process) 容器内进程场景
+* [blade create k8s node-cpu](./blade%20create%20k8s%20node-cpu) Node 节点 CPU 负载场景
+* [blade create k8s node-network](./blade%20create%20k8s%20node-network) Node 节点网络场景
+* [blade create k8s node-process](./blade%20create%20k8s%20node-process) Node 节点进程场景
+* [blade create k8s node-disk](./blade%20create%20k8s%20node-disk) Node 节点磁盘场景
+* [blade create k8s pod-pod](./blade%20create%20k8s%20pod-pod) Pod 资源场景，比如杀 Pod
+* [blade create k8s pod-network](./blade%20create%20k8s%20pod-network) Pod 网络资源场景，比如网络延迟
+* [blade create k8s pod-IO](./blade%20create%20k8s%20pod-IO) Pod IO 文件系统异常场景
+* [blade create k8s pod-fail](./blade%20create%20k8s%20pod-fail) Pod 不可用异常场景
+* [blade create k8s container-container](./blade%20create%20k8s%20container-container) Container 资源场景，比如杀容器
+* [blade create k8s container-cpu](./blade%20create%20k8s%20container-cpu) 容器内 CPU 负载场景
+* [blade create k8s container-network](./blade%20create%20k8s%20container-network) 容器内网络场景
+* [blade create k8s container-process](./blade%20create%20k8s%20container-process) 容器内进程场景
 
 ## 部署
 执行 Kubernetes 实验场景，需要提前部署 ChaosBlade Operator，Helm 安装包下载地址：https://github.com/chaosblade-io/chaosblade-operator/releases 。使用以下命令安装:

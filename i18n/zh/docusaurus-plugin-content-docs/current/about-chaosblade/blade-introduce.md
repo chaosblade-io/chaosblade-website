@@ -1,7 +1,8 @@
 ---
-title: ChaosBlade工具介绍
+title: ChaosBlade 工具介绍
 ---
-本文档主要介绍ChaosBlade混沌工程演练执行工具的架构特性、模块分层及执行方式。
+
+本文档主要介绍 ChaosBlade 混沌工程演练执行工具的架构特性、模块分层及执行方式。
 
 ## 工具架构
 
@@ -17,9 +18,9 @@ chaosblade 依据领域实现封装成各自独立的项目，每个项目根据
 
 ## 执行方式
 
-演练执行支持以下几种方式，不同执行方式具体的使用手册可参考 [k8s容器内cpu满载](../experiment-types/k8s/blade_create_k8s_container-cpu.md)：
- 
-- Cli命令行模式：直接通过cli命令方式执行演练，可直接执行主机环境和Kubernetes环境上的演练
-- Yaml文件模式：该方式只对Kubernetes集群进行演练时使用，使用yaml配置文件创建演练  通过定义chaosblade crd资源的方式
-- Server模式：即利用`./blade server start` 将ChaosBlade工具作为一个server启动，然后再通过http远程调用的方式下发命令
-- 平台模式：直接在ChaosBlade-Box可视化平台上，直接通过交互界面创建演练
+演练执行支持以下几种方式，不同执行方式具体的使用手册可参考 [k8s 容器内 cpu 满载](../experiment-types/k8s/container/blade_create_k8s_container-cpu.md)：
+
+- Cli 命令行模式：直接通过 cli 命令方式执行演练，可直接执行主机环境和 Kubernetes 环境上的演练
+- Yaml 文件模式：该方式只对 Kubernetes 集群进行演练时使用，使用 yaml 配置文件创建演练 通过定义 chaosblade crd 资源的方式
+- Server 模式：即利用`./blade server start` 将 ChaosBlade 工具作为一个 server 启动，然后再通过 http 远程调用的方式下发命令
+- 平台模式：直接在 ChaosBlade-Box 可视化平台上，直接通过交互界面创建演练

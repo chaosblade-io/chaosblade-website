@@ -10,7 +10,7 @@ ChaosBlade 提供的的 k8s 实验类型支持通过**容器** Cpu 负载实验�
 kubernetes 下 容器内 CPU 负载实验场景，同基础资源的 CPU 场景。该场景可向指定容器注入 CPU 负载异常，注入后容器所在 pod cpu 使用率将提升。
 
 支持 CPU 场景命令如下：
-* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](/docs/experiment-types/host/blade%20create%20cpu%20load)
+* `blade create k8s container-cpu load`，容器内 CPU 负载场景，同 [blade create cpu load](../host/blade%20create%20cpu%20load)
 
 
 ## 参数
@@ -145,4 +145,4 @@ kubectl delete -f examples/increase_container_cpu_load_by_id.yaml
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](./blade%20create%20k8s) 常见问题

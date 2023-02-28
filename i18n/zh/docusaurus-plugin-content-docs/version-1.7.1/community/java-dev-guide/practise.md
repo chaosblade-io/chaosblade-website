@@ -1,4 +1,7 @@
-# 开发实战
+---
+title: 开发实战
+sidebar_position: 6
+---
 
 本篇介绍 `chaosblade-exec-jvm` 如何从零开始如何开发一个组件故障场景。
 
@@ -11,9 +14,9 @@
 - 定义`ActionExecutor`
 - 定义`plugin`
 
-## Lettuce故障场景
+## Lettuce 故障场景
 
-`Lettuce`是一个基于`netty`异步通信的`redis`客户端，本篇开发`lettuce plugin`，对自定义输入匹配的key实现：
+`Lettuce`是一个基于`netty`异步通信的`redis`客户端，本篇开发`lettuce plugin`，对自定义输入匹配的 key 实现：
 
 - `string`值类型的值篡改
 
@@ -34,7 +37,7 @@
 - `getLongDesc()`描述
 - `getExample()`例子
 
-````java
+```java
 public class LettuceModeSpec extends FrameworkModelSpec {
 
     @Override
@@ -63,11 +66,11 @@ public class LettuceModeSpec extends FrameworkModelSpec {
         return "lettuce --key=name update --value=meepo";
     }
 }
-````
+```
 
-`lettuce --key=name update --value=meepo` 
+`lettuce --key=name update --value=meepo`
 
-- `lettuce`作为实验的靶点， 
+- `lettuce`作为实验的靶点，
 - `update`是实验的动作，具体可参数模型篇。
 
 - `--key` 模型中的 matchers，实验规则匹配器，`KeyMatcherSpec`继承`BasePredicateMatcherSpec`，会`required()`判断是是否是必输字段。
@@ -125,7 +128,9 @@ public class ValueFlagSpec implements FlagSpec {
     }
 }
 ```
+
 在`UpdateAction`里面添加`ValueFlagSpec` 和`LettuceActionExecutor`,`LettuceActionExecutor`是实验`upadte`的执行阶段，后面介绍。
+
 ```java
 public class UpdateActionSpec extends BaseActionSpec {
 
@@ -174,7 +179,7 @@ public class UpdateActionSpec extends BaseActionSpec {
 
 然后在`LettuceModeSpec`中的`createNewMatcherSpecs()`方法中添加`UpdateActionSpec`和`ValueMatcherSpec`即可。
 
-````java
+```java
     @Override
     public List<MatcherSpec> createNewMatcherSpecs() {
         addActionSpec(new UpdateActionSpec());
@@ -182,7 +187,7 @@ public class UpdateActionSpec extends BaseActionSpec {
         matchers.add(new KeyMatcherSpec());
         return matchers;
     }
-````
+```
 
 #### 定义切点
 
@@ -190,7 +195,7 @@ public class UpdateActionSpec extends BaseActionSpec {
 
 方法中发出。`ClassMatcher`和`MethodMatcher`还有更多的匹配方式可参考插件篇
 
-````java
+```java
 public class LettucePointCut implements PointCut {
 
     @Override
@@ -205,7 +210,7 @@ public class LettucePointCut implements PointCut {
         return nameMethodMatcher;
     }
 }
-````
+```
 
 #### 定义`Enhancer`
 
@@ -336,40 +341,40 @@ public class LettucePlugin implements Plugin {
 
 #### 方式一
 
-首先提交代码push到自己的仓库、需要`go`、`java_home` 、`maven`
+首先提交代码 push 到自己的仓库、需要`go`、`java_home` 、`maven`
 
-- clone 
+- clone
 
-````shell script
+```shell script
 git clone https://github.com/chaosblade-io/chaosblade
-````
+```
 
-- 修改Makefile
+- 修改 Makefile
 
-````shell script
+```shell script
 cd chaosblade
 vi Makefile
-````
+```
 
-把`Makefile`里面的`BLADE_EXEC_JVM_PROJECT`改成修改成你fork的仓库地址，保存退出
-![](./images/edit-chaosblade-exec-jvm.png)
+把`Makefile`里面的`BLADE_EXEC_JVM_PROJECT`改成修改成你 fork 的仓库地址，保存退出
+![](/img/doc-image/java-dev-guide/edit-chaosblade-exec-jvm.png)
 
 - 编译
 
-````shell script
+```shell script
 // linux
 make build_linux
 // macos
 make build_darwin
-````
+```
 
 #### 方式二
 
-如果已经下载了`chaosblade`relase包可以使用此方式，在`chaosblade-exec-jvm`目录下编译打包，需要`java_home` 、`maven`
+如果已经下载了`chaosblade`relase 包可以使用此方式，在`chaosblade-exec-jvm`目录下编译打包，需要`java_home` 、`maven`
 
-````java
+```java
 make build
-````
+```
 
 编译成功后，在当前目录生成如下`yml`和`jar`
 
@@ -377,33 +382,32 @@ make build
 - `build-target/chaosblade-0.6.0/lib/sandbox/module/chaosblade-java-agent-0.6.0.jar`
 
 **分别将`yml`和`jar`替换到如下图的`chaosblade`目录下：**
-![](./images/chaos-blade-path.png)
+![](/img/doc-image/java-dev-guide/chaos-blade-path.png)
 
 ### 混沌实验
 
-- 挂载`agent`：`--pid 3356` 是被攻击应用的jvm进程号，每次挂载对应一个 uid，卸载agent的时候需要uid
+- 挂载`agent`：`--pid 3356` 是被攻击应用的 jvm 进程号，每次挂载对应一个 uid，卸载 agent 的时候需要 uid
 
-````shell script
+```shell script
 ./blade prepare jvm --pid 3356
-````
+```
 
 - 创建混沌实验
 
-````shell script
+```shell script
 ./blade c lettuce --key=name update --value=tiny
-````
+```
 
-![演示](./images/lettuce-experiment.gif)
+![演示](/img/doc-image/java-dev-guide/lettuce-experiment.gif)
 
 - 销毁
 
-````shell script
+```shell script
 ./blade create destroy 863c8c5a2c2c3deb
-````
+```
 
-### 卸载agent
+### 卸载 agent
 
-````shell script
+```shell script
 ./blade destroy 6a0863a4f0da8a38
-````
-
+```

@@ -1,5 +1,6 @@
 ---
 title: ChaosBlade-Box Platform Introduction
+sidebar_position: 2
 ---
 This document mainly introduces the modules, functions and exercise arrangement of ChaosBlade-Box chaos engineering platform.
 

@@ -1,10 +1,16 @@
-# 架构篇
+---
+title: 架构篇
+sidebar_position: 1
+---
+
 本篇介绍 `chaosblade-exec-jvm` 的系统架构设计，分别介绍了从命令下发、插件加载、`PointCut`匹配、故障注入、插件卸载的实现原理。
 
 ## 系统设计
 
 Chaosblade-exec-jvm通过JavaAgent attach方式来实现类的transform注入故障，底层使用[jvm-sandbox](https://github.com/alibaba/jvm-sandbox)实现，通过插件的可拔插设计来扩展对不同java应用的支持，可以很方便的扩展插件，参考[如何扩展插件](./plugin.md)。
+
 ### 模块管理
+
 #### SandboxModule
 
 作为Sandbox（chaosblade）的模块、所有的Sandbox事件，如Agent挂载（模块加载）、Agent卸载（模块卸载）、模块激活、模块冻结等都会在此触发，Sandbox内置jetty容器，访问api回调到注解为@Http("/xx")的方法，来实现故障能力。
@@ -30,11 +36,12 @@ Sandbox内置jetty容器，访问api回调到注解为@Http("/xx")的方法，�
 |blade create| CreateHandler创建一个实验，StatusManager注册状态，满足一定条件的插件加载。 |
 |blade status|StatusHandler去StatusManager查询实验状态。|
 |blade destroy|DestroyHandler销毁实验，满足一定条件的插件卸载。|
+
 ## 实现原理
 
 以servlet，api的接口延迟为例，实现原理如下图。
 
-![ 原理图](./images/delay-design.jpg)
+![ 原理图](/img/doc-image/java-dev-guide/delay-design.jpg)
 
 ### 实验步骤
 
@@ -77,11 +84,11 @@ public void add(PluginBean plugin) {
             return;
         }
         String enhancerName = plugin.getEnhancer().getClass().getSimpleName();
-  			// 创建filter PointCut匹配
+     // 创建filter PointCut匹配
         Filter filter = SandboxEnhancerFactory.createFilter(enhancerName, pointCut);
    
         if (plugin.isAfterEvent()) {
-          	// 事件监听
+           // 事件监听
             int watcherId = moduleEventWatcher.watch(filter, SandboxEnhancerFactory.createAfterEventListener(plugin),
                 Type.BEFORE, Type.RETURN);
             watchIds.put(PluginUtil.getIdentifierForAfterEvent(plugin), watcherId);
@@ -112,7 +119,7 @@ public void beforeAdvice(String targetName,
             Object object,
             Method method, 
             Object[] methodArguments) throws Exception {
-  			// StatusManager 
+     // StatusManager 
         if (!ManagerFactory.getStatusManager().expExists(targetName)) {
             return;
         }
@@ -130,16 +137,18 @@ public void beforeAdvice(String targetName,
 ````shell
 ./blade create servlet --requestpath=/topic delay --time=3000
 ````
+
 该命令下发后，触发SandboxModule @Http("/create")注解标记的方法，将事件分发给com.alibaba.chaosblade.exec.service.handler.CreateHandler处理
 在判断必要的uid、target、action、model参数后调用handleInjection，handleInjection通过状态管理器注册本次实验，如果插件类型是PreCreateInjectionModelHandler的类型，将预处理一些东西。同是如果Action类型是DirectlyInjectionAction，那么将直接进行故障能力注入，如jvm oom等，如果不是那么将加载插件。
 
 #### ModelSpec
-- PreCreateInjectionModelHandler	预创建
-- PreDestroyInjectionModelHandler	预销毁
+
+- PreCreateInjectionModelHandler 预创建
+- PreDestroyInjectionModelHandler 预销毁
+
 #### DirectlyInjectionAction
 
 如果ModelSpec是PreCreateInjectionModelHandler类型，且ActionSpec的类型是DirectlyInjectionAction类型，将直接进行故障能力注入，比如JvmOom故障能力，ActionSpec的类型不是DirectlyInjectionAction类型，将加载插件。
-
 
 |  | DirectlyInjectionAction |Not DirectlyInjectionAction|
 |  ----  | ----  | ----  |
@@ -148,7 +157,7 @@ public void beforeAdvice(String targetName,
 
 ````java
 private Response handleInjection(String suid, Model model, ModelSpec modelSpec) {
- 				// 注册
+     // 注册
         RegisterResult result = this.statusManager.registerExp(suid, model);
         if (result.isSuccess()) {
             // handle injection
@@ -189,7 +198,7 @@ public class ServletEnhancer extends BeforeEnhancer {
     public EnhancerModel doBeforeAdvice(ClassLoader classLoader, String className, Object object,
                                         Method method, Object[] methodArguments)
         throws Exception {
-      	// 获取原方法的一些参数
+       // 获取原方法的一些参数
         Object request = methodArguments[0];
         String queryString = ReflectUtil.invokeMethod(request, "getQueryString", new Object[] {}, false);
         String contextPath = ReflectUtil.invokeMethod(request, "getContextPath", new Object[] {}, false);
@@ -198,7 +207,7 @@ public class ServletEnhancer extends BeforeEnhancer {
 
         String requestPath = StringUtils.isBlank(contextPath) ? requestURI : requestURI.replaceFirst(contextPath, "");
 
-      	// 
+       // 
         MatcherModel matcherModel = new MatcherModel();
         matcherModel.add(ServletConstant.QUERY_STRING_KEY, queryString);
         matcherModel.add(ServletConstant.METHOD_KEY, requestMethod);
@@ -208,7 +217,7 @@ public class ServletEnhancer extends BeforeEnhancer {
 }
 ````
 
-####  参数匹配和能力注入（Inject调用）
+#### 参数匹配和能力注入（Inject调用）
 
 inject阶段首先获取StatusManager注册的实验，compare(model, enhancerModel)经常参数比对，失败后return，limitAndIncrease(statusMetric)判断 --effect-count --effect-percent来控制影响的次数和百分比
 
@@ -287,17 +296,20 @@ public void sleep(long timeInMillis, int offsetInMillis) {
             timeInMillis = offsetInMillis;
         }
         try {
-          	// 触发延迟
+           // 触发延迟
             TimeUnit.MILLISECONDS.sleep(timeInMillis);
         } catch (InterruptedException e) {
             LOGGER.error("running delay action interrupted", e);
         }
     }
 ```
+
 ### 销毁实验
+
 ````shell
 ./blade destroy 52a27bafc252beee
 ````
+
 该命令下发后，触发SandboxModule @Http("/destory")注解标记的方法，将事件分发给com.alibaba.chaosblade.exec.service.handler.DestroyHandler处理。注销本次故障的状态。
 
 如果插件的ModelSpec是PreDestroyInjectionModelHandler类型，且ActionSpec的类型是DirectlyInjectionAction类型，停止故障能力注入，ActionSpec的类型不是DirectlyInjectionAction类型，将卸载插件。
@@ -318,10 +330,13 @@ public Response handle(Request request) {
         return destroy(uid);
     }
 ````
+
 ### 卸载Agent
+
 ````shell
 ./blade revoke 98e792c9a9a5dfea
 ````
+
 该命令下发后，触发SandboxModule unload()事件，同是插件卸载。
 
 ```java

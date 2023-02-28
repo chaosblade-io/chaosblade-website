@@ -1,5 +1,6 @@
 ---
 title: ChaosBlade Execution Tools Introduction
+sidebar_position: 3
 ---
 This document mainly introduces the architectural features, module layering and execution methods of the ChaosBlade chaos engineering exercise execution tool.
 
@@ -17,7 +18,7 @@ Based on the domain implementation, chaosblade is packaged into a separate proje
 
 ## Drill Execution
 
-The drill execution supports the following methods, and the specific user manuals for different execution methods can be referred to [k8s-contianer-cpu-fullload](../experiment-types/k8s/blade_create_k8s_container-cpu.md)：
+The drill execution supports the following methods, and the specific user manuals for different execution methods can be referred to [k8s-contianer-cpu-fullload](../experiment-types/k8s/container/blade_create_k8s_container-cpu.md)：
  
 - Cli command line mode: Execute the drill directly through the cli command, which can directly execute the drill on the host environment and Kubernetes environment.
 - Yaml file mode: This mode is only used for the Kubernetes cluster exercise, using the yaml configuration file to create the exercise by defining the chaosblade crd resource

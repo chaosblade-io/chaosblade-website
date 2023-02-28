@@ -159,4 +159,4 @@ kubectl delete blade remove-container-by-id
 
 
 ## 常见问题
-其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](./blade%20create%20k8s) 常见问题

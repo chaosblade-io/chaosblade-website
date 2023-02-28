@@ -1,5 +1,6 @@
 ---
 title: Development standard
+sidebar_position: 2
 ---
 
 ## Code Style
@@ -10,8 +11,8 @@ Code style is a set of rules or guidelines when writing source codes of a softwa
 
 Project chaosblade is written in Golang. And currently we use three tools to help conform code styles in this project. These three tools are:
 
-* [gofmt](https://golang.org/cmd/gofmt)
-* [go vet](https://golang.org/cmd/vet/)
+- [gofmt](https://golang.org/cmd/gofmt)
+- [go vet](https://golang.org/cmd/vet/)
 
 ### Code Review Comments
 
@@ -25,7 +26,7 @@ For a project, existing tools and rules may not be sufficient. To align more in 
 
 When constructing a struct, if comments needed for fields in struct, keep a blank line between fields. The encouraged way is as following:
 
-``` golang
+```golang
 // correct example
 // ContainerManager is the default implement of interface ContainerMgr.
 type ContainerManager struct {
@@ -67,7 +68,7 @@ type ContainerManager struct {
 
 When defining interface functions, we should always explicitly add formal parameters, and this helps a lot to code readability. For example, the following way are preferred:
 
-``` golang
+```golang
 // correct example
 // ContainerMgr is an interface to define all operations against container.
 type ContainerMgr interface {
@@ -82,7 +83,7 @@ type ContainerMgr interface {
 
 However, missing formal parameter's name would make interface unreadable, since we would never know what the parameter's real meaning unless turning to one implementation of this interface:
 
-``` golang
+```golang
 // wrong example
 type ContainerMgr interface {
 	// Start a container.
@@ -101,13 +102,13 @@ In addition, a blank line between function's comments is encouraged to make inte
 
 When importing packages, to improve readabilities, we should import package by sequence:
 
-* Golang's built-in system packages;
-* project's own packages;
-* third-party packages.
+- Golang's built-in system packages;
+- project's own packages;
+- third-party packages.
 
 And we should keep a blank line among these three kinds of packages like the following:
 
-``` golang
+```golang
 import (
 	"fmt"
 	"strings"
@@ -129,7 +130,7 @@ Variable object should be declared at the beginning of the go file following pac
 
 When generating error in one function execution failure, we should generally use the following way to append string "failed to do something" and the specific err instance to construct a new error:
 
-``` golang
+```golang
 fmt.Errorf("failed to do something: %v", err)
 ```
 
@@ -139,7 +140,7 @@ When an err could be thrown out, please remember to add it in the error construc
 
 chaosblade encourages contributors to take advantages of `return fast` to simply source code and indent less. For example, the following codes are discouraged:
 
-``` golang
+```golang
 // wrong example
 if retry {
 	if t, err := calculateSleepTime(d); err == nil {
@@ -154,7 +155,7 @@ return nil
 
 In code above, there are some indents which can be avoided. The encouraged way is like the following:
 
-``` golang
+```golang
 // correct example
 if !retry {
 	return nil
@@ -209,6 +210,6 @@ We should take `DRY(Don't Repeat Yourself)` into consideration when adding anyth
 
 If you think much more practical code styles should be introduced in chaosblade. Please submit a pull request to make this better.
 
-
 ### Reference
+
 [Pouch Code Style](https://github.com/alibaba/pouch/blob/master/docs/contributions/code_styles.md)
