@@ -27,6 +27,10 @@
     "message": "贡献文档",
     "description": "The label of footer link with label=Contribute documents linking to /docs/community/docs"
   },
+  "sidebar.docs.category.Java dev guide": {
+    "message": "Java场景扩展开发文档",
+    "description": "Java dev guide"
+  },
   "sidebar.docs.category.Types of Chaos Experiments": {
     "message": "混沌工程实验类型",
     "description": "The label for category Types of Chaos Experiments in sidebar docs"
