@@ -5,7 +5,7 @@
 
 一个简单的插件包含`Plugin`、`PointCut`、`Enhancer`、`ModelSpec`、`ActionSpec`、`ActionExecutor`
 ## 调用插件的时序图
-一个简单的插件调用的顺序图，非`DirectlyInjectionAction`的`ActionFlag`，关于`DirectlyInjectionAction`可参考[原理篇](./design.md)
+一个简单的插件调用的顺序图，非`DirectlyInjectionAction`的`ActionFlag`。
 ![时序图](./images/plugin.jpg)
 
 ## 插件扩展的步骤
