@@ -103,3 +103,43 @@
 .cncfLogo {
     height: 90px;
 }
+
+@media screen and (max-width: 768px) {
+    .whiteboardCol {
+      --ifm-col-width: calc(6 / 12 * 100%) !important;
+  
+      flex: 0 0 var(--ifm-col-width) !important;
+      max-width: var(--ifm-col-width) !important;
+    }
+}
+
+.logoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.logoWrapper img {
+    width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+.logoWrapper {
+    height: 100px;
+}
+}
+
+.heroLogoWrapper {
+    position: relative;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 192px;
+    height: 192px;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    border-radius: 48px;
+    transform: translateX(-50%);
+  }
