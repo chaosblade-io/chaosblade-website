@@ -93,8 +93,25 @@ function Home() {
                     </Section>
                 )}
                 <Section isDark>
-                    <LogoCarousel logos={logos}></LogoCarousel>
+                    {/* <LogoCarousel logos={logos}></LogoCarousel> */}
+                    <div className={styles.companyUsage}>
+                    <div className="container text--center">
+                        <h2>
+                        <Translate>Who is using ChaosBlade?</Translate>
+                        </h2>
+                        <div className="row">
+                            {logos.map((w) => (
+                            <div key={w.name} className={clsx('col col--2', styles.whiteboardCol)}>
+                                <a className={styles.logoWrapper} href={w.url} target="_blank">
+                                <img style={w.style} src={'/img/logos/' + w.img} alt={w.name} />
+                                </a>
+                            </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
                 </Section>
+                
             </main>
             <div className={clsx('hero', styles.hero)}>
                 <div className="container text--center">
