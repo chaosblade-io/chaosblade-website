@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/img/logo.png" width="256" alt="ChaosBlade Logo" />
+  <img src="static/img/logo.png" width="300" alt="ChaosBlade Logo" />
 </p>
 <h1 align="center">Website</h1>
 
@@ -75,7 +75,7 @@ chaosblade-website
 │   └── img/
 ├── docusaurus.config.js
 ├── package.json
-└──  sidebars.json
+└── sidebars.json
 ```
 
 ## Website configuration
@@ -93,9 +93,9 @@ The `data.json` file contains the users who use ChaosBlade.
 1. First, make sure the current docs version (the `./docs` directory) is ready to be frozen.
 2. Enter a new version number.
 
-```shell
-yarn docusaurus docs:version 1.1.0
-```
+    ```shell
+    yarn docusaurus docs:version 1.1.0
+    ```
 
 When tagging a new version, the document versioning mechanism will:
 
