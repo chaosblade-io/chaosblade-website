@@ -3,8 +3,11 @@ title: blade check
 ---
 
 本文档主要介绍`blade check`命令使用
+
 ## Usage
-该命令主要用于**Linux主机**上演练实验时，对主机环境进行校验，判断其是否满足chaosblade实验环境
+
+该命令主要用于**Linux 主机**上演练实验时，对主机环境进行校验，判断其是否满足 chaosblade 实验环境
+
 ```shell
 Usage:
   blade check
@@ -12,16 +15,21 @@ Usage:
 
 Aliases:
   check, k
-  
-blade check [target] [action] 
-```
-## Description
-该命令目前支持校验， Linux主机系统层场景和java场景 环境所需配置，如相关系统命令工具或java不存在时，可在演练执行前进行安装。
-## Exec
-进入解压包本地所放置的路径，可通过`./blade check -h`查看所有支持的target，目前支持两种
 
-- OS：验证Linux主机系统层场景所需环境是否支持
--  Java：验证Java应用层场景所需环境是否支持
+blade check [target] [action]
+```
+
+## Description
+
+该命令目前支持校验， Linux 主机系统层场景和 java 场景 环境所需配置，如相关系统命令工具或 java 不存在时，可在演练执行前进行安装。
+
+## Exec
+
+进入解压包本地所放置的路径，可通过`./blade check -h`查看所有支持的 target，目前支持两种
+
+- OS：验证 Linux 主机系统层场景所需环境是否支持
+- Java：验证 Java 应用层场景所需环境是否支持
+
 ```
 [root@test chaosblade]# ./blade check -h
 Check the environment for chaosblade
@@ -48,7 +56,9 @@ Global Flags:
 
 Use "blade check [command] --help" for more information about a command.
 ```
+
 可通过`./blade check os -h`查看主机系统下具体演练实验场景，是否符合可以执行的条件。
+
 ```
 [root@test chaosblade]# ./blade check os -h
 Check the environment of os for chaosblade
@@ -76,16 +86,21 @@ Use "blade check os [command] --help" for more information about a command.
 ```
 
 ## Examples
-校验主机是否具备演练系统层场景`cpu fullload`（cpu满载）的环境
+
+校验主机是否具备演练系统层场景`cpu fullload`（cpu 满载）的环境
+
 ```
 [root@test chaosblade]# ./blade check os cpu fullload
 ```
+
 校验主机是否具备演练所有系统层场景的环境
+
 ```
 [root@test chaosblade]# ./blade check os
 ```
 
 ## 报错结果和对应处理方法
+
 <table>
 <tr>
 <td><b>错误返回中的error信息</b></td>

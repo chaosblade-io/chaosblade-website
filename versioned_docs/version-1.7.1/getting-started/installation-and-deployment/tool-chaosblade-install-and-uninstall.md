@@ -1,5 +1,6 @@
 ---
 title: Tool ChaosBlade Install And Uninstall
+sidebar_position: 2
 ---
 
 This document describes how to install the Chaos Engineering tool : ChaosBlade

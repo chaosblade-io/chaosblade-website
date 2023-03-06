@@ -3,19 +3,25 @@ title: blade status
 ---
 
 本文档主要介绍`blade status`命令使用
+
 ## Usage
+
 查询混沌实验和混沌实验环境状态，可通过创建的混沌实验的 uid 或命令类型来查询混沌实验。 status 可以简写为 s，即 `blade status` 可以简写为 `blade s`。
+
 ```
 Usage:
   blade status
 
 Aliases:
   status, s
-  
+
 blade status [flags]
 ```
+
 ## Exec
+
 进入解压包本地所放置的路径，可通过`blade status -h`查看支持命令和参数。
+
 ```
   --asc bool        默认值为 false，按 CreateTime 进行降序排序
   --limit string    查询实验数目限制，支持 OFFSET 子句，例如：limit 4,3 就表示从位置5开始，返回后3项
@@ -28,7 +34,9 @@ blade status [flags]
 # 可使用的父命令参数
   -d, --debug   设置 DEBUG 执行模式
 ```
+
 ## Examples
+
 ```
 # 查看 status 命令帮助文档
 blade status -h
@@ -88,7 +96,8 @@ blade status --type prepare
         ]
 }
 ```
+
 ## Q&A
 
-Q:{"code":406,"success":false,"error":"data not found"} 
+Q:{"code":406,"success":false,"error":"data not found"}
 A:查询的实验不存在，可能是数据文件 chaosblade.dat 丢失，这时如果需要停止实验，需要手工停止 blade 进程

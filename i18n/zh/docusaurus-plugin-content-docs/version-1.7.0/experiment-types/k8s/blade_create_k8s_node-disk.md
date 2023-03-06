@@ -11,8 +11,8 @@ id: blade create k8s node-disk
 
 ## 命令
 支持 CPU 场景命令如下：
-* `blade create k8s node-disk fill`，节点磁盘填充，同 [blade create disk fill](/docs/experiment-types/host/blade%20create%20disk%20fill)
-* `blade create k8s node-disk burn`，节点磁盘IO读写负载，同 [blade create disk burn](/docs/experiment-types/host/blade%20create%20disk%20burn)
+* `blade create k8s node-disk fill`，节点磁盘填充，同 [blade create disk fill](../host/blade%20create%20disk%20fill)
+* `blade create k8s node-disk burn`，节点磁盘IO读写负载，同 [blade create disk burn](../host/blade%20create%20disk%20burn)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -99,4 +99,4 @@ blade query k8s create <UID>
 
 
 ## 常见问题
-其他问题参考 [blade create k8s](/docs/experiment-types/k8s/blade%20create%20k8s) 常见问题
+其他问题参考 [blade create k8s](./blade%20create%20k8s) 常见问题

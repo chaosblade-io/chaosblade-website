@@ -1,5 +1,6 @@
 ---
 title: OS Scenario Extension Development Documentation
+sidebar_position: 3
 ---
 
 

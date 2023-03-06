@@ -1,5 +1,6 @@
 ---
 title: Agent Install
+sidebar_position: 3
 ---
 
 The probe functions as a platform connection, command delivery channel, and data collection. Therefore, if you need to experiment the target cluster or host, install the probe on the target cluster or host so that the expriment can be converted into commands and delivered to the target host.
