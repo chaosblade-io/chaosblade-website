@@ -115,9 +115,9 @@ function Home() {
         </Section>
         <Section isDark>
           <div className="container text--center">
-            <h2>
+            <h3 className={styles.heroTitle}>
               <Translate>Who is using ChaosBlade?</Translate>
-            </h2>
+            </h3>
             <div className="row">
               {logos.map((w) => (
                 <div
