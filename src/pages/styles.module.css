@@ -12,6 +12,12 @@
     overflow: hidden;
 }
 
+.heroTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
 @media screen and (max-width: 966px) {
     .heroBanner {
         padding: 2rem;
@@ -142,4 +148,4 @@
     background: #fff;
     border-radius: 48px;
     transform: translateX(-50%);
-  }
+}
