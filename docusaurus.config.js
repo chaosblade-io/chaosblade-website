@@ -181,10 +181,12 @@ const config = {
     ],
 
     stylesheets: [
+        '//g.alicdn.com/mamba/assets/0.0.13/mse-arc-ui.min.css',
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=block',
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=block'
     ],
     scripts: [
+        '//g.alicdn.com/mamba/assets/0.0.13/mse-arc-ui.min.js',
         'https://buttons.github.io/buttons.js'
     ],
 };
