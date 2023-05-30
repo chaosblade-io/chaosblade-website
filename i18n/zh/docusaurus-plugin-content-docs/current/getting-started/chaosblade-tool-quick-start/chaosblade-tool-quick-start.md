@@ -17,17 +17,17 @@ sidebar_position: 2
 
 ### 第一步，工具包下载
 
-下载二进制工具包 [chaosblade-1.7.0-linux-amd64.tar.gz](https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.0/chaosblade-1.7.0-linux-amd64.tar.gz)
+下载二进制工具包 [chaosblade-1.7.2-linux-amd64.tar.gz](https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosblade-1.7.2-linux-amd64.tar.gz)
 
 ```shell
-wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.0/chaosblade-1.7.0-linux-amd64.tar.gz
+wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosblade-1.7.2-linux-amd64.tar.gz
 
 ```
 
 ### 第二步，工具解压
 
 ```shell
-tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz -o /opt/chaosblade
+tar -xvf chaosblade-1.7.2-linux-amd64.tar.gz -o /opt/chaosblade
 ```
 
 ## 准备验证
@@ -37,7 +37,7 @@ tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz -o /opt/chaosblade
 ```
 [root@test chaosblade]# cd /opt/chaosblade
 [root@test chaosblade]# ./blade version
-version: 1.7.0
+version: 1.7.2
 env: #1 SMP Tue May 26 11:42:35 UTC 2020 x86_64
 build-time: Thu Oct 20 02:18:52 UTC 2022
 ```

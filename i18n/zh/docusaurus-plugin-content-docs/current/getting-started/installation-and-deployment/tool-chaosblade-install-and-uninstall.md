@@ -13,10 +13,10 @@ ChaosBlade 是一款可通过支持 cli 命令的端侧命令行工具。所以�
 
 ```shell
 # 1. download tar
-wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.0/chaosblade-1.7.0-linux-amd64.tar.gz
+wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosblade-1.7.2-linux-amd64.tar.gz
 
 # 2. unzip and entry chaosblade directory
-tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz && cd chaosblade-1.7.0/
+tar -xvf chaosblade-1.7.2-linux-amd64.tar.gz && cd chaosblade-1.7.2/
 ```
 
 ### 验证安装
@@ -30,7 +30,7 @@ tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz && cd chaosblade-1.7.0/
 以下是预期输出：
 
 ```shell
-version: 1.7.0
+version: 1.7.2
 env: #1 SMP Thu Mar 17 17:08:06 UTC 2022 x86_64
 build-time: Tue Sep  6 07:06:55 UTC 2022
 ```
@@ -40,7 +40,7 @@ build-time: Tue Sep  6 07:06:55 UTC 2022
 只需要将下载和解压的工具包直接删除即可
 
 ```shell
-rm -rf chaosblade-1.7.0*
+rm -rf chaosblade-1.7.2*
 ```
 
 ## Kubernetes 环境下安装
@@ -53,16 +53,16 @@ rm -rf chaosblade-1.7.0*
 
 #### 第一步，下载 Box Chart 包
 
-查看所有可以下载的 [chaosblade-release](https://github.com/chaosblade-io/chaosblade/releases)，下载到本地，以下`1.7.0 amd64`版本为例：
+查看所有可以下载的 [chaosblade-release](https://github.com/chaosblade-io/chaosblade/releases)，下载到本地，以下`1.7.2 amd64`版本为例：
 
 ```shell
-wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.0/chaosblade-operator-1.7.0.tgz
+wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosblade-operator-1.7.2.tgz
 ```
 
 #### 第二步，进行安装
 
 ```shell
-helm install chaosblade-operator chaosblade-operator-1.7.0.tgz --namespace chaosblade
+helm install chaosblade-operator chaosblade-operator-1.7.2.tgz --namespace chaosblade
 ```
 
 ### 验证安装

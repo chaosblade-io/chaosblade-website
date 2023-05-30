@@ -35,7 +35,7 @@ blade version
 # 查看 blade 工具版本信息
 [root@test chaosblade]# blade version
 
-version: 1.7.0 # 版本
+version: 1.7.2 # 版本
 env: #1 SMP Tue May 26 11:42:35 UTC 2020 x86_64  # 环境信息
 build-time: Thu Oct 20 02:18:52 UTC 2022 # 构建时间
 ```
