@@ -20,7 +20,7 @@ _很荣幸晋升为ChaosBlade社区Maintainer，在以后我将努力践行Maint
 
 ---
 
-ChaosBlade自项目发起以来，就秉持着开放的开源思想，目前的社区发展于生态建设更是离不开各个企业于社区同学的共建。目前我们更是在发展的关键阶段，开源贡献小组正在火热招募贡献者，希望更多的同学参与到我们的开源建设当中来，一起参与到社区的建设和代码贡献中来：
+ChaosBlade自项目发起以来，就秉持着开放的开源思想，目前的社区发展于生态建设更是离不开各个企业社区同学的共建。目前我们更是在发展的关键阶段，开源贡献小组正在火热招募贡献者，希望更多的同学参与到我们的开源建设当中来，一起参与到社区的建设和代码贡献中来：
 
 - 社区同学发展阶梯可见：[https://github.com/chaosblade-io/community/blob/main/Contributor_Ladder_CN.md](https://github.com/chaosblade-io/community/blob/main/Contributor_Ladder_CN.md)
 - 官网：[https://chaosblade.io/](https://chaosblade.io/)
