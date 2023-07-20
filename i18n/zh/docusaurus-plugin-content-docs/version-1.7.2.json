@@ -1,0 +1,74 @@
+{
+  "version.label": {
+    "message": "1.7.2",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.About ChaosBlade": {
+    "message": "关于chaosblade",
+    "description": "The label for category About ChaosBlade in sidebar docs"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "开始使用",
+    "description": "Chaosblade platform and tools usage docs"
+  },
+  "sidebar.docs.category.Chaosblade tool quick start": {
+    "message": "ChaosBlade工具使用快速入门",
+    "description": "Chaosblade tool quick start"
+  },
+  "sidebar.docs.category.Cli mode user guaid": {
+    "message": "CLI模式使用简介",
+    "description": "Cli mode user guaid"
+  },
+  "sidebar.docs.category.Installation And Deployment": {
+    "message": "安装与部署",
+    "description": "Chaosblade platform and tools usage docs"
+  },
+  "link.item.label.Contribute documents": {
+    "message": "贡献文档",
+    "description": "The label of footer link with label=Contribute documents linking to /docs/community"
+  },
+  "sidebar.docs.category.Types of Chaos Experiments": {
+    "message": "混沌工程实验类型",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Physical Host": {
+    "message": "物理主机",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Network": {
+    "message": "网络",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Disk": {
+    "message": "磁盘",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Process": {
+    "message": "进程",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Script": {
+    "message": "脚本",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Time": {
+    "message": "时间",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Redis": {
+    "message": "Redis",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Node": {
+    "message": "节点",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Container": {
+    "message": "容器",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  },
+  "sidebar.docs.category.Application": {
+    "message": "应用",
+    "description": "The label for category Types of Chaos Experiments in sidebar docs"
+  }
+}
