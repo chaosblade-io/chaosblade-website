@@ -15,7 +15,8 @@ Maintainer Certificate：
 ![](/img/blog/chaosblade-maintainer-en-certificate-yuanning.png)
 Message from the new Maintainer:
 
-_I am honored to be promoted to ChaosBlade Community Maintainer. In the future, I will try my best to fulfill the responsibility of Maintainer and work together to build ChaosBlade. I firmly believe th
+_I am honored to be promoted to ChaosBlade Community Maintainer. In the future, I will try my best to fulfill the responsibility of Maintainer and work together to build ChaosBlade. I firmly believe  that  ChaosBlade will be stronger with the joint efforts of everyone. Here you can exchange questions and answers, improve your skills and challenge technical difficulties. Whether you are a novice or a Daniel, as long as you have time, enthusiasm and willingness, you are welcome to join the community, participate in contributions and embrace ChaosBlade.
+
 ---
 
 ChaosBlade has been adhering to the idea of open source since the project was launched. The current community development and ecological construction are inseparable from the joint construction of various enterprises and community students. At present, we are in a critical stage of development. The open source contribution team is actively recruiting contributors. We hope that more students will participate in our open source construction and participate in community construction and code contribution:
