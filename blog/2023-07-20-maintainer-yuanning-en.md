@@ -12,7 +12,7 @@ After nomination and discussion of all Maintainers, the community is pleased to 
 For details, see [promotion Maintainer pr](https://github.com/chaosblade-io/community/pull/12)
 Maintainer Certificate：
 
-![](/img/blog/chaosblade-maintainer-en-certificate-yuanning.jpg)
+![](/img/blog/chaosblade-maintainer-en-certificate-yuanning.png)
 Message from the new Maintainer:
 
 _I am honored to be promoted to ChaosBlade Community Maintainer. In the future, I will try my best to fulfill the responsibility of Maintainer and work together to build ChaosBlade. I firmly believe th

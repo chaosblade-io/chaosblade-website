@@ -13,7 +13,7 @@ ChaosBlade 是阿里巴巴 2019 年开源的混沌工程项目，包含混沌工
 具体可见其 Maintainer 的 [promotion Maintainer pr](https://github.com/chaosblade-io/community/pull/12)
 Maintainer 证书：
 
-![](/img/blog/chaosblade-maintainer-ch-certificate-yuanning.jpg)
+![](/img/blog/chaosblade-maintainer-ch-certificate-yuanning.png)
 新晋 Maintainer 寄语：
 
 _很荣幸晋升为ChaosBlade社区Maintainer，在以后我将努力践行Maintainer贡献者职责，和大家一起共同建设ChaosBlade。我坚信在大家的共同努力下 ChaosBlade 一定会更加强大。这里可以交流答疑、可以提升技术、可以挑战技术难点，无论你是新手还是大牛，只要你有时间，有热情，有意愿，欢迎加入社区、参与贡献、拥抱 ChaosBlade ~~~
