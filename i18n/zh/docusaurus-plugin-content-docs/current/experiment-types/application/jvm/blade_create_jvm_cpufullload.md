@@ -8,7 +8,7 @@ title: 模拟 Java 进程 CPU 满载
 
 ## 参数
 
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](jvm.md)
 
 ```
 --cpu-count string   绑定的 CPU 核数，即指定几个核满载

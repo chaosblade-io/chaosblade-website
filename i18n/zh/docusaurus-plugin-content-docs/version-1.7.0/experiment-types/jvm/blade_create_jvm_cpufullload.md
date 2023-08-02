@@ -7,7 +7,7 @@ id: blade create jvm cpufullload
 指定 java 进程 CPU 满载，可以简写为 `blade c jvm cfl`
 
 ## 参数
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 ```
 --cpu-count string   绑定的 CPU 核数，即指定几个核满载
 ```

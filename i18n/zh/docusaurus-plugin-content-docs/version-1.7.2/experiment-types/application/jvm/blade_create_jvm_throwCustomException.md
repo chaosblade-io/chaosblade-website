@@ -7,7 +7,7 @@ id: blade create jvm throwCustomException
 指定类方法抛自定义异常，命令可以简写为 `blade c jvm tce`
 
 ## 参数
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](jvm.md)
 ```
 --effect-count string     影响的请求条数
 --effect-percent string   影响的请求百分比
