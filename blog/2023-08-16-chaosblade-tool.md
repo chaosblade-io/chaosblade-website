@@ -5,6 +5,8 @@ tags: [ chaosblade ]
 description: 本文将重点介绍 ChaosBlade Tool 的架构以及实现细节。
 hide_table_of_contents: false
 ---
+> 转自：https://mp.weixin.qq.com/s?__biz=Mzg3MzgxMjc3NA==&amp;mid=2247484052&amp;idx=1&amp;sn=4a452ed452e26dfc8f6607857a46cb98&amp;chksm=cedb04ddf9ac8dcb1e85df5de6c5c159b5578949b7e828cdd7f1ee23802eb47d1d441a227c05&token=1141223089&lang=zh_CN#rd
+> 微信公众号:柠檬汁Code
 
 # 前言
 
@@ -364,6 +366,4 @@ ChaosBlade Cli是故障工具箱中的触发者，它提供故障指令的生成
 
 # 作者介绍
 
-张斌斌（Github 账号：binbin0325，公众号:柠檬汁Code）Sentinel-Golang Committer 、ChaosBlade Committer 、 Nacos PMC 、Apache Dubbo-Go Committer。目前主要关注于混沌工程、中间件以及云原生方向。
-
-![](/img/2023-08-16-chaosblade-tool/info.png)
+张斌斌（Github 账号：[binbin0325](https://github.com/binbin0325)，公众号:[柠檬汁Code](https://binbin0325.github.io/)）Sentinel-Golang Committer 、ChaosBlade Committer 、 Nacos PMC 、Apache Dubbo-Go Committer。目前主要关注于混沌工程、中间件以及云原生方向。
