@@ -6,7 +6,7 @@ description: 本文将重点介绍 ChaosBlade Tool 的架构以及实现细节�
 hide_table_of_contents: false
 ---
 > 转自：https://mp.weixin.qq.com/s?__biz=Mzg3MzgxMjc3NA==&amp;mid=2247484052&amp;idx=1&amp;sn=4a452ed452e26dfc8f6607857a46cb98&amp;chksm=cedb04ddf9ac8dcb1e85df5de6c5c159b5578949b7e828cdd7f1ee23802eb47d1d441a227c05&token=1141223089&lang=zh_CN#rd
-> 微信公众号:柠檬汁Code
+> 来源：微信公众号(柠檬汁Code)
 
 # 前言
 
