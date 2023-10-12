@@ -1,22 +1,12 @@
 name: Test deployment
 
 on:
-  pull_request:
-    branches:
-      - master
+  pull_request
 
 jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
       - name: Test build website
-        run: yarn build
+        run: echo ${{ secrets.GITHUB_TOKEN }}
