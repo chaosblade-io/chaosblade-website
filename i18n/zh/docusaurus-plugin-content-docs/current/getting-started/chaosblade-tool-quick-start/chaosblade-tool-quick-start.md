@@ -27,7 +27,8 @@ wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosb
 ### 第二步，工具解压
 
 ```shell
-tar -xvf chaosblade-1.7.2-linux-amd64.tar.gz -o /opt/chaosblade
+tar -xvf chaosblade-1.7.2-linux-amd64.tar.gz -C /opt/
+ln -s /opt/chaosblade-1.7.2 /opt/chaosblade
 ```
 
 ## 准备验证
