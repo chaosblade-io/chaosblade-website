@@ -8,7 +8,7 @@ title: 模拟执行指定脚本
 
 ## 参数
 
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 
 ```
 --effect-count string     影响的请求条数

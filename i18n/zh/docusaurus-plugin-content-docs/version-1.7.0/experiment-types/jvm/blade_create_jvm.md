@@ -5,13 +5,13 @@ id: blade create jvm
 # Jvm相关场景
 ## 介绍
 jvm 本身相关场景，以及可以指定类，方法注入延迟、返回值、异常故障场景，也可以编写 groovy 和 java 脚本来实现复杂的场景。目前支持的场景如下
-* [blade create jvm CodeCacheFilling](blade create jvm CodeCacheFilling.md) 填充 jvm code cache
-* [blade create jvm OutOfMemoryError](blade create jvm OutOfMemoryError.md) 内存溢出，支持堆、栈、metaspace 区溢出
-* [blade create jvm cpufullload](blade create jvm cpufullload.md) java 进程 CPU 使用率满载
-* [blade create jvm delay](blade create jvm delay.md) 方法延迟
-* [blade create jvm return](blade create jvm return.md) 指定返回值
-* [blade create jvm script](blade create jvm script.md) 编写 groovy 和 java 实现场景
-* [blade create jvm throwCustomException](blade create jvm throwCustomException.md) 抛自定义异常场景
+* [blade create jvm CodeCacheFilling](blade_create_jvm_CodeCacheFilling.md) 填充 jvm code cache
+* [blade create jvm OutOfMemoryError](blade_create_jvm_OutOfMemoryError.md) 内存溢出，支持堆、栈、metaspace 区溢出
+* [blade create jvm cpufullload](blade_create_jvm_cpufullload.md) java 进程 CPU 使用率满载
+* [blade create jvm delay](blade_create_jvm_delay.md) 方法延迟
+* [blade create jvm return](blade_create_jvm_return.md) 指定返回值
+* [blade create jvm script](blade_create_jvm_script.md) 编写 groovy 和 java 实现场景
+* [blade create jvm throwCustomException](blade_create_jvm_throwCustomException.md) 抛自定义异常场景
 
 ## 参数
 此处列举 jvm 支持的通用参数：

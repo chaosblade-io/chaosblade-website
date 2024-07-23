@@ -7,7 +7,7 @@ id: blade create jvm script
 编写 java 或者 groovy 脚本实现复杂的故障场景，比如篡改参数、修改返回值、抛自定义异常等
 
 ## 参数
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 ```
 --effect-count string     影响的请求条数
 --effect-percent string   影响的请求百分比
