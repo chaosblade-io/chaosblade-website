@@ -18,7 +18,8 @@ wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.0/chaosb
 ```
 ### 第二步，工具解压
 ```shell
-tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz -o /opt/chaosblade
+tar -xvf chaosblade-1.7.0-linux-amd64.tar.gz -C /opt/
+ln -s /opt/chaosblade-1.7.0 /opt/chaosblade
 ```
 ## 准备验证
 进入解压包本地所放置的路径，通过`./blade version`或`./blade v`来查看是否可用，预期结果如下：
