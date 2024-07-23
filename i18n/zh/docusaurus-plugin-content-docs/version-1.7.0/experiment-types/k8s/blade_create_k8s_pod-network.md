@@ -143,4 +143,4 @@ blade destroy 127f1ee0afcd4798
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](./blade_create_k8s) 常见问题
+其他问题参考 [blade create k8s](./blade_create_k8s.md) 常见问题
