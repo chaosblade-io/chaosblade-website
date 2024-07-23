@@ -10,9 +10,9 @@ kubernetes Pod 网络相关场景，同基础资源的网络场景
 
 支持的网络场景命令如下：
 
-- `blade create k8s pod-network delay` Pod 网络延迟场景，同 [blade create network delay](blade create network delay.md)
-- `blade create k8s pod-network loss` Pod 网络丢包场景，同 [blade create network loss](blade create network loss.md)
-- `blade create k8s pod-network dns` Pod 域名访问异常场景，同 [blade create network dns](blade create network dns.md)
+- `blade create k8s pod-network delay` Pod 网络延迟场景，同 [blade create network delay](../../host/network/blade_create_network_delay.md)
+- `blade create k8s pod-network loss` Pod 网络丢包场景，同 [blade create network loss](../../host/network/blade_create_network_loss.md)
+- `blade create k8s pod-network dns` Pod 域名访问异常场景，同 [blade create network dns](../../host/network/blade_create_network_dns.md)
 
 ## 参数
 

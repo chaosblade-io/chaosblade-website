@@ -7,7 +7,7 @@ id: blade create jvm return
 指定类方法的返回值，仅支持基本类型、null 和 String 类型的返回值。
 
 ## 参数
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 ```
 --effect-count string     影响的请求条数
 --effect-percent string   影响的请求百分比

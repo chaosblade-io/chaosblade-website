@@ -9,9 +9,9 @@ kubernetes 下 容器内网络实验场景，同基础资源网络场景，由�
 
 ## 命令
 支持的网络场景命令如下：
-* `blade create k8s container-network delay` container 网络延迟场景，同 [blade create network delay](blade create network delay.md)
-* `blade create k8s container-network loss` container 网络丢包场景，同 [blade create network loss](blade create network loss.md)
-* `blade create k8s container-network dns` container 域名访问异常场景，同 [blade create network dns](blade create network dns.md)
+* `blade create k8s container-network delay` container 网络延迟场景，同 [blade create network delay](../host/blade_create_network_delay.md)
+* `blade create k8s container-network loss` container 网络丢包场景，同 [blade create network loss](../host/blade_create_network_loss.md)
+* `blade create k8s container-network dns` container 域名访问异常场景，同 [blade create network dns](../host/blade_create_network_dns.md)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -134,4 +134,4 @@ blade destroy 6e46a5df94e0b065
 Q: {"code":504,"success":false,"error":"unexpected status, the real value is Error","result":{"uid":"623841684347c05f","success":false,"error":"unexpected status, the real value is Error","statuses":[{"uid":"4b25f66580c4dbf465a1b167c4c6967e987773442e5d47f0bee5db0a5e27a12d","name":"php-redis","state":"Error","kind":"container","error":"10.0.0.1 www.baidu.com #chaosblade has been exist exit status 1","success":false,"nodeName":"cn-hangzhou.192.168.0.203"}]}}
 A: 所以实验已经存在
 
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](blade_create_k8s.md) 常见问题

@@ -7,7 +7,7 @@ id: blade create jvm delay
 指定类方法调用延迟
 
 ## 参数
-以下是此场景特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+以下是此场景特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 ```
 --effect-count string     影响的请求条数
 --effect-percent string   影响的请求百分比

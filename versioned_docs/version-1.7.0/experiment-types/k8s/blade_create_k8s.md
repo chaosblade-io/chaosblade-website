@@ -6,18 +6,18 @@ id: blade create k8s
 
 ## 介绍
 创建 kubernetes 相关的实验场景，除了使用 blade 命令创建场景外，还可以将实验使用 yaml 文件描述，使用 kubectl 命令执行。目前支持的实验场景如下：
-* [blade create k8s node-cpu](blade create k8s node-cpu.md) Node 节点 CPU 负载场景
-* [blade create k8s node-network](blade create k8s node-network.md) Node 节点网络场景
-* [blade create k8s node-process](blade create k8s node-process.md) Node 节点进程场景
-* [blade create k8s node-disk](blade create k8s node-disk.md) Node 节点磁盘场景
-* [blade create k8s pod-pod](blade create k8s pod-pod.md) Pod 资源场景，比如杀 Pod
-* [blade create k8s pod-network](blade create k8s pod-network.md) Pod 网络资源场景，比如网络延迟
-* [blade create k8s pod-IO](blade create k8s pod-IO.md) Pod IO 文件系统异常场景
-* [blade create k8s pod-fail](blade create k8s pod-fail.md) Pod 不可用异常场景
-* [blade create k8s container-container](blade create k8s container-container.md) Container 资源场景，比如杀容器
-* [blade create k8s container-cpu](blade create k8s container-cpu.md) 容器内 CPU 负载场景
-* [blade create k8s container-network](blade create k8s container-network.md) 容器内网络场景
-* [blade create k8s container-process](blade create k8s container-process.md) 容器内进程场景
+* [blade create k8s node-cpu](blade_create_k8s_node-cpu.md) Node 节点 CPU 负载场景
+* [blade create k8s node-network](blade_create_k8s_node-network.md) Node 节点网络场景
+* [blade create k8s node-process](blade_create_k8s_node-process.md) Node 节点进程场景
+* [blade create k8s node-disk](blade_create_k8s_node-disk.md) Node 节点磁盘场景
+* [blade create k8s pod-pod](blade_create_k8s_pod-pod.md) Pod 资源场景，比如杀 Pod
+* [blade create k8s pod-network](blade_create_k8s_pod-network.md) Pod 网络资源场景，比如网络延迟
+* [blade create k8s pod-IO](blade_create_k8s_pod-IO.md) Pod IO 文件系统异常场景
+* [blade create k8s pod-fail](blade_create_k8s_pod-fail.md) Pod 不可用异常场景
+* [blade create k8s container-container](blade_create_k8s_container-container.md) Container 资源场景，比如杀容器
+* [blade create k8s container-cpu](blade_create_k8s_container-cpu.md) 容器内 CPU 负载场景
+* [blade create k8s container-network](blade_create_k8s_container-network.md) 容器内网络场景
+* [blade create k8s container-process](blade_create_k8s_container-process.md) 容器内进程场景
 
 ## 部署
 执行 Kubernetes 实验场景，需要提前部署 ChaosBlade Operator，Helm 安装包下载地址：https://github.com/chaosblade-io/chaosblade-operator/releases 。使用以下命令安装:

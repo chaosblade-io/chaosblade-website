@@ -9,8 +9,8 @@ kubernetes 节点磁盘场景，包含磁盘填充和磁盘IO读写高
 
 ## 命令
 支持 CPU 场景命令如下：
-* `blade create k8s node-disk fill`，节点磁盘填充，同 [blade create disk fill](blade create disk fill.md)
-* `blade create k8s node-disk burn`，节点磁盘IO读写负载，同 [blade create disk burn](blade create disk burn.md)
+* `blade create k8s node-disk fill`，节点磁盘填充，同 [blade create disk fill](../host/blade_create_disk_fill.md)
+* `blade create k8s node-disk burn`，节点磁盘IO读写负载，同 [blade create disk burn](../host/blade_create_disk_burn.md)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -53,4 +53,4 @@ blade query k8s create <UID>
 
 
 ## 常见问题
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](blade_create_k8s.md) 常见问题

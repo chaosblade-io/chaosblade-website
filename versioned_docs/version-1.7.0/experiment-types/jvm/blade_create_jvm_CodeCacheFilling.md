@@ -8,7 +8,7 @@ CodeCache主要用于存放native code，其中主要是JIT编译后的代码。
 命令可以简写为：blade c jvm ccf
 
 ## 参数
-此场景无特有参数，通用参数详见：[blade create jvm](blade create jvm.md)
+此场景无特有参数，通用参数详见：[blade create jvm](blade_create_jvm.md)
 
 ## 案例
 注入 CodeCache 满故障：
