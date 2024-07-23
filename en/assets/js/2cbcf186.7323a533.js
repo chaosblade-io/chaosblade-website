@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchaosblade=self.webpackChunkchaosblade||[]).push([[2139],{39621:function(e){e.exports=JSON.parse('{"permalink":"/en/blog/tags/maintainer","page":1,"postsPerPage":2,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

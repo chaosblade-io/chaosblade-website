@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchaosblade=self.webpackChunkchaosblade||[]).push([[6383],{81719:function(a){a.exports=JSON.parse('{"label":"chaosblade","permalink":"/blog/tags/chaosblade","allTagsPath":"/blog/tags","count":21}')}}]);

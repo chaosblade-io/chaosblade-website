@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchaosblade=self.webpackChunkchaosblade||[]).push([[2335],{24628:e=>{e.exports=JSON.parse('{"label":"Reviewer","permalink":"/en/blog/tags/reviewer","allTagsPath":"/en/blog/tags","count":1}')}}]);
