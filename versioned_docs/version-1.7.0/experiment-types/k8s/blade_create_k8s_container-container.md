@@ -142,4 +142,4 @@ blade destroy 17d7021c777b76e3
 删除容器后，执行销毁实验命令不会恢复容器，需要靠容器自身的管理拉起！
 
 ## 常见问题
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](blade_create_k8s.md) 常见问题

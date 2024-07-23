@@ -145,4 +145,4 @@ kubectl delete -f examples/increase_container_cpu_load_by_id.yaml
 ```
 
 ## 常见问题
-其他问题参考 [blade create k8s](../host/blade_create_cpu_load.md) 常见问题
+其他问题参考 [blade create k8s](blade_create_k8s.md) 常见问题

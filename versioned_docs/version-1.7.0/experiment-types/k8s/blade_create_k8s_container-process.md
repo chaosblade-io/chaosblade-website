@@ -9,8 +9,8 @@ kubernetes 下 容器内进程场景，同基础资源的进程场景
 
 ## 命令
 支持的进程场景命令如下：
-* `blade create k8s container-process kill` 杀容器内指定进程，同 [blade create process kill](../../host/process/blade_create_process_kill.md)
-* `blade create k8s container-process stop` 挂起容器内指定进程，同 [blade create process stop](../../host/process/blade_create_process_stop.md)
+* `blade create k8s container-process kill` 杀容器内指定进程，同 [blade create process kill](../host/blade_create_process_kill.md)
+* `blade create k8s container-process stop` 挂起容器内指定进程，同 [blade create process stop](../host/blade_create_process_stop.md)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
@@ -201,4 +201,4 @@ Q:
 ```
 A：目标进程找不到
 
-其他问题参考 [blade create k8s](blade create k8s.md) 常见问题
+其他问题参考 [blade create k8s](blade_create_k8s.md) 常见问题

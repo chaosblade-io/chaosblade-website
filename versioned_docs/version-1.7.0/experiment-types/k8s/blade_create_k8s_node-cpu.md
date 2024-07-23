@@ -9,7 +9,7 @@ kubernetes 节点 CPU 负载实验场景，同基础资源的 CPU 场景
 
 ## 命令
 支持 CPU 场景命令如下：
-* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](../../host/cpu/blade_create_cpu_load.md)
+* `blade create k8s node-cpu load`，节点 CPU 负载场景，同 [blade create cpu load](../host/blade_create_cpu_load.md)
 
 ## 参数
 除了上述基础场景各自所需的参数外，在 kubernetes 环境下，还支持的参数如下：
