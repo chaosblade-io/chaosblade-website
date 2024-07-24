@@ -1,11 +1,9 @@
-name: Test to Build
+name: Test deployment
 
 on:
-  push:
+  pull_request:
     branches:
       - master
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 jobs:
   build:
