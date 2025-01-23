@@ -26,7 +26,7 @@ ChaosBlade 是一款遵循混沌实验模型的混沌实验执行工具，具有
 
 ![](/img/blog/chaosblade-experiment-model.png)
 
-此模型很简洁，这个倒三角模型供分为四层：第一个是 Target，我们演练的目标是什么；然后是 Scope，定义了我们实验范围；其次是 Matcher，我们实验场景触发匹配的规则有哪些；最后一个是 Action，我们执行的实验行为，也就是我们要做什么演练。举个例子，比如我们要对一台机器上的 double 应用调用 serviceA 服务做调用延迟实验。那么我们来对齐一下实验模型，首先 Target 就是 double，我们要对 double 服务做演练。Scope 是本机，就是这一台机器上 double 应用。然后匹配规则是服务名 serviceA，那么它的 action 是什么？是延迟，通过实验模型描述之后，层次清晰，而且该模型覆盖目前所有的实验场景。我们再来看一下基于混沌实验模型 ChaosBlade 目前所具备的场景。
+此模型很简洁，这个倒三角模型供分为四层：第一个是 Target，我们演练的目标是什么；然后是 Scope，定义了我们实验范围；其次是 Matcher，我们实验场景触发匹配的规则有哪些；最后一个是 Action，我们执行的实验行为，也就是我们要做什么演练。举个例子，比如我们要对一台机器上的 dubbo 应用调用 serviceA 服务做调用延迟实验。那么我们来对齐一下实验模型，首先 Target 就是 dubbo，我们要对 dubbo 服务做演练。Scope 是本机，就是这一台机器上 dubbo 应用。然后匹配规则是服务名 serviceA，那么它的 action 是什么？是延迟，通过实验模型描述之后，层次清晰，而且该模型覆盖目前所有的实验场景。我们再来看一下基于混沌实验模型 ChaosBlade 目前所具备的场景。
 
 ![](/img/blog/experiment-of-chaosblade.png)
 
