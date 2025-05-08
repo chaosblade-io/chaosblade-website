@@ -138,7 +138,7 @@ ChaosBlade Box是混沌工程演练平台，主要解决了ChoasBlade工具集�
 
 -   **ChaosBlade-Box Console**：ChaosBlade可视化组件，主要提供一套用户友好的Web界面，用户可以通过该界面进行混沌工程实验的编排与操作管理。
 
--   **ChaosBlade-Box Server**：核心逻辑组件，主要负责混沌工程实验的管理与编排，探针与应用管理。包括组件，Chaos Engine：演练引擎，包括流程编排、安全管控、演练报告等功能；Chaos Runner：演练执行器，兼容多种执行工具；Chaos Experinece：演练经验库等。
+-   **ChaosBlade-Box Server**：核心逻辑组件，主要负责混沌工程实验的管理与编排，探针与应用管理。包括组件，Chaos Engine：演练引擎，包括流程编排、安全管控、演练报告等功能；Chaos Runner：演练执行器，兼容多种执行工具；Chaos Experience：演练经验库等。
 
 -   **Agent**：核心逻辑组件，部署在用户终端的主机或Kubernetes集群内，主要负责和ChaosBlade-Box Server建联上报心跳并作为命令下发通道。
 
