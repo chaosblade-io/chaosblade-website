@@ -12,12 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-image: node:buster
+.PHONY: license-check
+license-check:
+	@echo "Checking license headers..."
+	docker run -it --rm -v $(shell pwd):/github/workspace ghcr.io/korandoru/hawkeye check
 
-tasks:
-  - init: yarn
-    command: yarn start
+.PHONY: license-format
+license-format:
+	@echo "Formatting license headers..."
+	docker run -it --rm -v $(shell pwd):/github/workspace ghcr.io/korandoru/hawkeye format
 
-ports:
-  - port: 3000
-    onOpen: open-preview
+.PHONY: help
+help:
+	@echo "Makefile commands:"
+	@echo "  license-check   - Check license headers in source files"
+	@echo "  license-format  - Format license headers in source files"
+	
