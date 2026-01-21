@@ -21,7 +21,7 @@ Aliases:
 Examples:
 blade destroy 47cc0744f1bb
 
-blade check [target] [action] [flags]
+blade destroy [command]
 ```
 
 ## Exec
