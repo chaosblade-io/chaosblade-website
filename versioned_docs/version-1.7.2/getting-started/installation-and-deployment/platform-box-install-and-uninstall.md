@@ -113,6 +113,8 @@ If your actual output matches the expected output, ChaosBlade-Box has been insta
 # As chaosblade-box example
 kubectl describe po chaosblade-box-5bc47b676f-2gjh9 -n chaosblade
 ```
+> If you are using Apple's m1/m2 chip, please replace the image of chaosblade-box-mysql to arm64v8/mysql:8.0-oraclelinux8, otherwise there will be an error message
+> no matching manifest for linux/arm64/v8 in the manifest list entries
 ###  Uninstall ChaosBlade-Box
 To uninstall ChaosBladder-box, run the following command:
 ```shell
