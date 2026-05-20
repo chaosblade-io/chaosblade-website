@@ -39,17 +39,42 @@ VERSIONS_DIR="$RECEIPT_HOME/versions"
 NO_MODIFY_PATH="${BLADE_AI_NO_MODIFY_PATH:-0}"
 SKIP_VERIFY="${BLADE_AI_SKIP_VERIFY:-0}"
 
-# ── Re-exec with bash if running under sh ─────────────────────────────────────
+# ── Re-exec with bash if running under sh / bash-posix ───────────────────────
+#
+# Users often invoke the script as ``sh install.sh`` which bypasses
+# the shebang. The script uses bash-only features (arrays, ``[[ ]]``,
+# process substitution); under POSIX /bin/sh it dies at parse time
+# with cryptic ``syntax error`` messages.
+#
+# Subtle case: on macOS, ``/bin/sh`` is actually bash running in POSIX
+# mode. ``$BASH_VERSION`` is still set in that mode (because it IS
+# bash), so a naive ``[ -z "${BASH_VERSION:-}" ]`` check would miss
+# this scenario — the script would keep running with bash-posix and
+# still die on bash-only syntax. We additionally check the POSIX mode
+# flags (``$POSIXLY_CORRECT`` and ``$SHELLOPTS``) and re-exec via
+# plain bash (no --posix) when either is set.
+#
+# The guard variable prevents an infinite loop if the re-exec itself
+# somehow lands back in a constrained shell.
+__blade_ai_install_needs_reexec() {
+    [ -z "${BASH_VERSION:-}" ] && return 0
+    [ -n "${POSIXLY_CORRECT:-}" ] && return 0
+    case ":${SHELLOPTS:-}:" in
+        *":posix:"*) return 0 ;;
+    esac
+    return 1
+}
 
-if [ -z "${BASH_VERSION:-}" ] && [ -z "${__BLADE_AI_INSTALL_REEXEC:-}" ]; then
+if __blade_ai_install_needs_reexec && [ -z "${__BLADE_AI_INSTALL_REEXEC:-}" ]; then
     if command -v bash >/dev/null 2>&1; then
         export __BLADE_AI_INSTALL_REEXEC=1
-        exec bash -- "$0" "$@"
+        exec bash "$0" "$@"
     else
-        echo "Error: This script requires bash. Please install bash first."
+        echo "Error: This script requires bash. Please install bash first." >&2
         exit 1
     fi
 fi
+unset -f __blade_ai_install_needs_reexec 2>/dev/null || true
 
 # ── Color support ──────────────────────────────────────────────────────────────
 
@@ -72,6 +97,7 @@ info()   { echo -e "${DIM}${1}${NC}"; }
 # ── Parse arguments ────────────────────────────────────────────────────────────
 
 FORCE_INSTALL_DIR=""
+FORCE_OVERWRITE=0
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --version)
@@ -84,6 +110,8 @@ while [[ $# -gt 0 ]]; do
             NO_MODIFY_PATH=1; shift ;;
         --skip-verify)
             SKIP_VERIFY=1; warn "Skipping checksum verification"; shift ;;
+        --yes|-y)
+            FORCE_OVERWRITE=1; shift ;;
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "  --version VERSION   Install specific version (default: latest blade-ai-v* release"
@@ -91,16 +119,25 @@ while [[ $# -gt 0 ]]; do
             echo "  --prefix PATH       Install to custom directory"
             echo "  --no-modify-path    Don't modify shell profile PATH"
             echo "  --skip-verify       Skip SHA256 verification (NOT recommended)"
+            echo "  --yes, -y           Auto-confirm overwriting an existing same-version install"
+            echo "                      (no effect when the target dir does not exist)"
             echo "  -h, --help          Show this help"
             echo ""
             echo "Environment variables:"
             echo "  BLADE_AI_VERSION    Same as --version (set to specific semver to pin)"
             echo "  BLADE_AI_MIRROR     Override download base URL"
             echo "  BLADE_AI_INSTALL_DIR  Override install directory"
+            echo "  BLADE_AI_FORCE_OVERWRITE  Set to 1 to auto-confirm overwrites (same as --yes)"
             exit 0 ;;
         *) err "Unknown option: $1" ;;
     esac
 done
+
+# Env var form for the overwrite override — matches the other
+# BLADE_AI_* knobs so Dockerfiles / CI can set it without re-quoting.
+if [[ "${BLADE_AI_FORCE_OVERWRITE:-0}" == "1" ]]; then
+    FORCE_OVERWRITE=1
+fi
 
 # ── Detect download tool ───────────────────────────────────────────────────────
 
@@ -257,6 +294,49 @@ fi
 
 BIN_DIR="${INSTALL_DIR}"
 SYMLINK_DIR="$HOME/.local/bin"
+
+# ── Existing-install overwrite check ──────────────────────────────────────────
+#
+# Done BEFORE the download so the user's "no" answer costs zero
+# network traffic and zero filesystem mutation. Resolution rules:
+#
+#   * Target dir doesn't exist → nothing to ask, fall through.
+#   * --yes / -y / BLADE_AI_FORCE_OVERWRITE=1 → log + overwrite silently.
+#   * stdin is not a tty (e.g. ``curl ... | bash`` / Dockerfile / CI)
+#     → overwrite silently to preserve the historical "one-liner =
+#     unattended" semantics. Scripts that want strict checking
+#     should pass --yes explicitly.
+#   * Otherwise (interactive tty) → prompt y/N. Anything other than
+#     y/yes (case-insensitive) cancels with exit 0 — nothing was
+#     downloaded, nothing was deleted.
+#
+# The actual removal still happens later (after download +
+# verification succeed). This block only decides whether we're
+# allowed to remove at all.
+if [[ -d "${INSTALL_DIR}" ]]; then
+    if [[ ${FORCE_OVERWRITE} -eq 1 ]]; then
+        info "Existing install detected at ${INSTALL_DIR} — will overwrite (--yes)."
+    elif [ ! -t 0 ]; then
+        info "Existing install detected at ${INSTALL_DIR} — will overwrite (non-interactive)."
+    else
+        echo ""
+        warn "Existing install detected at: ${INSTALL_DIR}"
+        info "  (Same version ${APP_VERSION}; the directory will be removed and re-created.)"
+        info "  (User config / memory / skills under ~/.blade-ai are NOT touched.)"
+        echo ""
+        printf "Overwrite the existing install? [y/N] "
+        ans=""
+        read -r ans || true
+        case "${ans}" in
+            y|Y|yes|YES|Yes) ;;
+            *)
+                echo ""
+                info "Cancelled — nothing was downloaded or modified."
+                exit 0
+                ;;
+        esac
+    fi
+fi
 
 # ── Download URL construction ──────────────────────────────────────────────────
 
