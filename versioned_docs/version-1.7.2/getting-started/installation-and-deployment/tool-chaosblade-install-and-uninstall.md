@@ -34,7 +34,7 @@ rm -rf chaosblade-1.7.2*
 ### Environment Preparation
 For details, see ：[Prepare the Kubernetes installation  environment](./environment-prepare.md/#Prepare the kubernetes installation environment)
 ### Install with Helm
-#### First, download the Box Chart package
+#### First, download the ChaosBlade Operator Chart package
 See all available for download [chaosblade-release](https://github.com/chaosblade-io/chaosblade/releases)，Download to local，as `1.7.2 amd64`example：
 ```shell
 wget https://github.com/chaosblade-io/chaosblade/releases/download/v1.7.2/chaosblade-operator-1.7.2.tgz
@@ -57,7 +57,7 @@ chaosblade-tool-hvqcv                   1/1     Running   0          6s
 chaosblade-tool-q8jjd                   1/1     Running   0          6s
 ```
 
-If your actual output matches the expected output, ChaosBlade-Box has been installed successfully.
+If your actual output matches the expected output, ChaosBlade has been installed successfully.
 > ⚠️Attention 
 > If the actual output **STATUS** is not Running, you need to run the following command to view Pod details, and then troubleshoot the problem according to the error message
 
